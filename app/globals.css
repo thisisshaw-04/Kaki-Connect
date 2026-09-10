@@ -451,7 +451,8 @@
   flex: 1;
 }
 
-.sos-toggle {
+.sos-toggle,
+.opening-toggle {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -461,6 +462,220 @@
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+.opening-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fbf6f0;
+  cursor: pointer;
+  animation: opening-dismiss 0.55s ease 2.55s forwards;
+}
+
+.opening-toggle:checked + .opening-screen {
+  animation: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 20px solid #d4efe4;
+  animation: opening-ring 2.4s ease-out both;
+}
+
+.opening-lockup {
+  position: relative;
+  z-index: 1;
+  width: min(84%, 320px);
+}
+
+.opening-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: opening-pop 0.75s cubic-bezier(0.22, 1.15, 0.36, 1) both;
+}
+
+.opening-steam {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 42px;
+  height: 52px;
+  margin-left: -8px;
+  pointer-events: none;
+}
+
+.opening-steam i {
+  position: absolute;
+  bottom: 0;
+  width: 7px;
+  height: 22px;
+  border-radius: 999px;
+  background: #c9a6f0;
+  opacity: 0;
+  animation: opening-steam 1.5s ease-in-out 0.45s infinite;
+}
+
+.opening-steam i:nth-child(1) {
+  left: 8px;
+  animation-delay: 0.45s;
+}
+
+.opening-steam i:nth-child(2) {
+  left: 18px;
+  height: 26px;
+  background: #f5d04a;
+  animation-delay: 0.7s;
+}
+
+.opening-steam i:nth-child(3) {
+  left: 28px;
+  animation-delay: 0.95s;
+}
+
+.opening-spark {
+  position: absolute;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  background: #7ecdb4;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: opening-twinkle 1.4s ease-in-out infinite;
+}
+
+.opening-spark-a {
+  top: 22%;
+  left: 16%;
+  animation-delay: 0.2s;
+}
+
+.opening-spark-b {
+  top: 28%;
+  right: 14%;
+  width: 10px;
+  height: 10px;
+  background: #f5d04a;
+  animation-delay: 0.55s;
+}
+
+.opening-spark-c {
+  bottom: 24%;
+  left: 20%;
+  width: 11px;
+  height: 11px;
+  background: #c9a6f0;
+  animation-delay: 0.9s;
+}
+
+.opening-hint {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b5e52;
+  animation: opening-hint 0.5s ease 1.15s both;
+}
+
+@keyframes opening-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.86) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes opening-ring {
+  from {
+    transform: scale(0.62);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.18);
+    opacity: 0.28;
+  }
+}
+
+@keyframes opening-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scaleX(1);
+  }
+  25% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scaleX(0.6);
+  }
+}
+
+@keyframes opening-twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(12deg);
+  }
+}
+
+@keyframes opening-hint {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opening-dismiss {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-screen {
+    animation: opening-dismiss 0.2s ease 0.5s forwards;
+  }
+
+  .opening-logo,
+  .opening-glow,
+  .opening-spark,
+  .opening-steam i,
+  .opening-hint {
+    animation: none;
+    opacity: 1;
+  }
+
+  .opening-steam i {
+    display: none;
+  }
 }
 
 .sos-overlay {

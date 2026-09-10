@@ -1,3 +1,4 @@
+import { OpeningScreen } from "@/components/opening-screen";
 import { brand } from "@/lib/data";
 import { GoButton, UiPic } from "@/components/ui-bits";
 
@@ -33,7 +34,9 @@ export default function RolePage() {
   const rest = roles.slice(1);
 
   return (
-    <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
+    <div className="relative h-full min-h-0">
+      <OpeningScreen />
+      <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
       <span
         aria-hidden
         className="pointer-events-none absolute -top-8 -left-10 size-40 rounded-full border-[18px] border-[#d4efe4]"
@@ -45,8 +48,8 @@ export default function RolePage() {
         ✦
       </span>
       <div className="relative mb-6 flex items-center justify-between">
-        <span className="flex size-14 items-center justify-center rounded-full bg-white">
-          <UiPic src="/ui/icon-logo.svg" alt="" className="size-10" />
+        <span className="flex size-14 items-center justify-center overflow-hidden rounded-full bg-white">
+          <UiPic src="/brand/kakiconnect-mark.png" alt="" className="size-11 object-contain" />
         </span>
       </div>
 
@@ -94,6 +97,7 @@ export default function RolePage() {
             </span>
           </a>
         ))}
+      </div>
       </div>
     </div>
   );
