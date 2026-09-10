@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
-import { Card, Pill, SlashMark, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Pill, SlashMark, UiPic } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
 
 export default function VolunteerRequests() {
@@ -56,15 +55,10 @@ export default function VolunteerRequests() {
                 <p className="text-sm text-muted-foreground">{request.place}</p>
                 <p className="mt-1 text-sm">{request.group}</p>
                 <p className="mt-2 text-xs font-semibold text-[#1b5e20]">{request.badge}</p>
-                {request.featured ? (
-                  <span className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18181b] text-[13px] font-bold text-white">
-                    I Can Help <ArrowRight className="size-4" />
-                  </span>
-                ) : (
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    I Can Help <ArrowRight className="size-4" />
-                  </span>
-                )}
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-[13px] font-bold">I Can Help</span>
+                  <GoButton />
+                </div>
               </Card>
             </Link>
           </li>

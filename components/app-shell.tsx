@@ -62,45 +62,40 @@ export function AppShell({
   className?: string;
 }) {
   const items = nav[role];
+  const circle =
+    "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-foreground active:scale-95";
 
   return (
-    <div className={cn("relative flex h-full min-h-0 flex-col bg-white", className)}>
-      <header className="shrink-0 bg-white">
-        <div className="flex items-center gap-2 px-4 py-3">
+    <div className={cn("relative flex h-full min-h-0 flex-col bg-[#eef1ea]", className)}>
+      <header className="shrink-0 bg-[#eef1ea]">
+        <div className="flex items-center justify-between px-5 pt-3 pb-1">
           {onBack ? (
-            <button
-              type="button"
-              aria-label="Go back"
-              onClick={onBack}
-              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#f4f5f7] text-foreground active:scale-95"
-            >
+            <button type="button" aria-label="Go back" onClick={onBack} className={circle}>
               <ArrowLeft className="size-5" />
             </button>
           ) : backHref ? (
-            <Link
-              href={backHref}
-              aria-label="Go back"
-              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#f4f5f7] text-foreground active:scale-95"
-            >
+            <Link href={backHref} aria-label="Go back" className={circle}>
               <ArrowLeft className="size-5" />
             </Link>
           ) : (
-            <div className="size-11 shrink-0" />
+            <div className="size-12 shrink-0" />
           )}
-          <div className="min-w-0 flex-1 text-center">
-            <p className="text-[18px] leading-6 font-extrabold tracking-[-0.03em] text-foreground">
-              {title ?? brand.name}
-            </p>
-            {subtitle ? (
-              <p className="mt-0.5 flex items-center justify-center gap-1 text-[11px] font-medium tracking-[0.04em] text-muted-foreground">
-                {subtitle}
+          <div className="flex min-w-12 justify-end">{action}</div>
+        </div>
+        {title || subtitle ? (
+          <div className="px-6 pb-2 text-center">
+            {title ? (
+              <p className="text-[26px] leading-[1.1] font-extrabold tracking-[-0.04em] text-foreground">
+                {title ?? brand.name}
               </p>
             ) : null}
+            {subtitle ? (
+              <p className="mt-1 text-[12px] font-medium text-muted-foreground">{subtitle}</p>
+            ) : null}
           </div>
-          <div className="flex min-w-11 justify-end">{action}</div>
-        </div>
+        ) : null}
         {typeof progress === "number" ? (
-          <div className="kaki-progress-track mx-5 mb-2">
+          <div className="kaki-progress-track mx-6 mb-2">
             <span
               className="kaki-progress-fill"
               style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
@@ -111,22 +106,20 @@ export function AppShell({
       <main
         className={cn(
           "flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-3",
-          showNav && "pb-28"
+          showNav && "pb-32"
         )}
       >
         {children}
       </main>
       {footer ? (
-        <div className="relative z-20 shrink-0 bg-white px-5 pt-1 pb-3">
-          {footer}
-        </div>
+        <div className="relative z-20 shrink-0 bg-[#eef1ea] px-5 pt-1 pb-3">{footer}</div>
       ) : null}
       {showNav ? (
         <nav
           aria-label="Main navigation"
-          className="pointer-events-none absolute inset-x-0 bottom-3 z-30 px-5"
+          className="pointer-events-none absolute inset-x-0 bottom-3 z-30 px-6"
         >
-          <div className="pointer-events-auto flex items-center justify-around rounded-[30px] bg-white px-2 py-2 shadow-[0_16px_40px_-18px_rgba(22,24,29,0.45)] ring-1 ring-black/5">
+          <div className="pointer-events-auto flex items-end justify-between">
             {items.map((item) => {
               const active = current === item.href;
               const Icon = item.icon;
@@ -134,20 +127,24 @@ export function AppShell({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={cn(
-                    "flex min-h-[52px] min-w-[56px] flex-1 flex-col items-center justify-center gap-0.5 px-1 text-[10px] font-semibold transition",
-                    active ? "text-[#16181d]" : "text-muted-foreground"
-                  )}
+                  className="flex flex-col items-center gap-1"
                 >
                   <span
                     className={cn(
-                      "flex size-10 items-center justify-center rounded-full",
-                      active ? "bg-[#16181d] text-white" : "bg-transparent"
+                      "flex size-14 items-center justify-center rounded-full shadow-[0_8px_20px_-12px_rgba(22,24,29,0.35)]",
+                      active ? "bg-[#16181d] text-white" : "bg-white text-[#8b8e93]"
                     )}
                   >
                     <Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} />
                   </span>
-                  {item.label}
+                  <span
+                    className={cn(
+                      "text-[10px] font-semibold",
+                      active ? "text-[#16181d]" : "text-muted-foreground"
+                    )}
+                  >
+                    {item.label}
+                  </span>
                 </Link>
               );
             })}

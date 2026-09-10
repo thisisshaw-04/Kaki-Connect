@@ -18,7 +18,7 @@ export function PrimaryLink({
     black:
       "min-h-12 rounded-full bg-[#16181d] text-[13px] font-bold text-white shadow-sm hover:bg-black active:scale-95",
     outline:
-      "min-h-14 rounded-full bg-[#f4f5f7] text-base font-semibold text-[#16181d]",
+      "min-h-14 rounded-full bg-white text-base font-semibold text-[#16181d]",
     ghost: "min-h-12 rounded-full text-sm font-semibold text-muted-foreground",
     secondary:
       "min-h-14 rounded-full bg-[#fff3c9] text-base font-semibold text-[#3d3200]",

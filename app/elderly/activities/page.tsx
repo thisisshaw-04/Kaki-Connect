@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Shield, Sun } from "lucide-react";
+import { MapPin, Phone, Shield, Sun } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Pill, UiPic } from "@/components/ui-bits";
 import {
   activityFilters,
   familyMember,
@@ -29,7 +29,7 @@ export default function ActivitiesPage() {
     <AppShell
       role="elderly"
       title="KakiConnect"
-      subtitle={`📍 ${senior.neighbourhood} Ave 3`}
+      subtitle={`${senior.neighbourhood} Ave 3`}
       backHref="/elderly/home"
       action={<SosButton />}
       showNav
@@ -37,7 +37,7 @@ export default function ActivitiesPage() {
     >
       <div className="space-y-5">
         <div>
-          <h1 className="text-[30px] font-extrabold tracking-[-0.04em]">
+          <h1 className="text-[26px] font-extrabold tracking-[-0.04em]">
             Good morning, {senior.name}!
           </h1>
           <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
@@ -59,7 +59,7 @@ export default function ActivitiesPage() {
               <span
                 key={item}
                 className={`shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold ${
-                  index === 0 ? "bg-[#16181d] text-white" : "bg-[#f4f5f7] text-foreground"
+                  index === 0 ? "bg-[#16181d] text-white" : "bg-white text-foreground"
                 }`}
               >
                 {item}
@@ -68,7 +68,7 @@ export default function ActivitiesPage() {
           </div>
         </div>
 
-        <Card tone="sky" className="overflow-hidden p-0">
+        <Card tone="butter" className="relative overflow-hidden p-0">
           <div className="relative h-40 overflow-hidden">
             <UiPic
               src="/ui/ill-reservoir.svg"
@@ -100,9 +100,10 @@ export default function ActivitiesPage() {
             </div>
             <Link
               href="/elderly/activities/support"
-              className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#16181d] text-[13px] font-bold text-white"
+              className="mt-4 flex items-center justify-between"
             >
-              Join this Kaki Group <ArrowRight className="size-4" />
+              <span className="text-[13px] font-bold">Join this Kaki Group</span>
+              <GoButton />
             </Link>
             <div className="mt-3 rounded-[22px] bg-white/75 p-3">
               <p className="flex items-center gap-1 text-sm font-bold">
@@ -119,33 +120,34 @@ export default function ActivitiesPage() {
           <h2 className="font-semibold">Happening Near You</h2>
           <span className="text-sm font-semibold">View all (8)</span>
         </div>
-        <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
           {nearbyActivities.map((item) => (
             <Link
               key={item.id}
               href="/elderly/activities/support"
               className="block"
             >
-              <Card tone={nearbyTone[item.id] ?? "white"} className="relative overflow-hidden">
+              <Card tone={nearbyTone[item.id] ?? "white"} className="relative flex min-h-[230px] flex-col overflow-hidden">
                 <UiPic
                   src={nearbyArt[item.id] ?? "/ui/icon-park.svg"}
                   alt=""
-                  className="pointer-events-none absolute -right-1 -top-1 h-20 w-20"
+                  className="mx-auto h-14 w-14"
                 />
-                <p className="pr-16 text-xs font-semibold">
+                <p className="mt-2 text-[11px] font-semibold">
                   {item.when} · {item.attending}
                 </p>
-                <h3 className="mt-1 pr-16 text-lg font-extrabold tracking-[-0.02em]">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.place}</p>
-                <div className="mt-2 flex flex-wrap gap-1.5">
+                <h3 className="mt-1 text-[15px] font-extrabold leading-tight tracking-[-0.02em]">{item.title}</h3>
+                <p className="mt-1 text-[11px] text-muted-foreground">{item.place}</p>
+                <div className="mt-2 flex flex-wrap gap-1">
                   {item.tags.map((tag) => (
-                    <Pill key={tag} className="bg-white/80 text-foreground">
+                    <Pill key={tag} className="px-2 py-0.5 text-[10px]">
                       {tag}
                     </Pill>
                   ))}
                 </div>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold">
-                  View & Join Group <ArrowRight className="size-4" />
+                <span className="mt-auto flex items-end justify-between pt-3">
+                  <span className="text-[11px] font-bold">View & Join Group</span>
+                  <GoButton className="size-9" />
                 </span>
               </Card>
             </Link>

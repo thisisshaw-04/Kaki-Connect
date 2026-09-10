@@ -26,17 +26,17 @@ export default function ElderlyWelcome() {
         </p>
 
         <div className="mt-5 grid grid-cols-3 gap-2">
-          <div className="flex flex-col items-center rounded-[28px] bg-[#fff3c9] px-2 py-4">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#f6e79c] px-2 py-5">
             <UiPic src="/ui/icon-kopi.svg" alt="" className="h-14 w-14" />
-            <span className="mt-1 text-[12px] font-bold">Kopi</span>
+            <span className="mt-2 text-[12px] font-bold">Kopi</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#dff5e8] px-2 py-4">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#d8efe4] px-2 py-5">
             <UiPic src="/ui/icon-kaki.svg" alt="" className="h-14 w-14" />
-            <span className="mt-1 text-[12px] font-bold">Kaki</span>
+            <span className="mt-2 text-[12px] font-bold">Kaki</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#ffe4e2] px-2 py-4">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#f5d6d2] px-2 py-5">
             <UiPic src="/ui/icon-care.svg" alt="" className="h-14 w-14" />
-            <span className="mt-1 text-[12px] font-bold">Care</span>
+            <span className="mt-2 text-[12px] font-bold">Care</span>
           </div>
         </div>
         <p className="mt-2 text-right">
@@ -45,7 +45,7 @@ export default function ElderlyWelcome() {
 
         <button
           type="button"
-          className="mt-2 flex w-full items-center gap-3 rounded-[28px] bg-[#f4f5f7] px-4 py-3.5 text-left"
+          className="mt-2 flex w-full items-center gap-3 rounded-[28px] bg-white px-4 py-3.5 text-left"
           onClick={() => {
             setPlaying(true);
             window.setTimeout(() => setPlaying(false), 3200);
@@ -68,7 +68,7 @@ export default function ElderlyWelcome() {
           <Play className="size-5 shrink-0 text-muted-foreground" />
         </button>
 
-        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#fff3c9] px-4 py-2.5 text-center text-[13px] font-semibold">
+        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#f6e79c] px-4 py-2.5 text-center text-[13px] font-semibold">
           <Shield className="size-4 text-[#715c00]" />
           100% Free & Safe for seniors and families
         </div>

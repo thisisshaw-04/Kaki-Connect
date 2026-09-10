@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Siren, X } from "lucide-react";
+import { Phone, X } from "lucide-react";
 import { familyMember } from "@/lib/data";
 
 export function SosButton() {
@@ -13,9 +13,8 @@ export function SosButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#ffe4e2] px-3.5 text-[12px] font-bold tracking-tight text-[#c62828] active:scale-95"
+        className="flex size-12 items-center justify-center rounded-full bg-[#f5d6d2] text-[11px] font-bold tracking-tight text-[#c62828] active:scale-95"
       >
-        <Siren className="size-4" />
         SOS
       </button>
       {open ? (

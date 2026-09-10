@@ -1,13 +1,14 @@
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const pastel = {
-  mint: "bg-[#dff5e8]",
-  sky: "bg-[#d7f0f7]",
-  butter: "bg-[#fff3c9]",
-  blush: "bg-[#ffe4e2]",
-  lavender: "bg-[#ece7ff]",
-  peach: "bg-[#ffe8d6]",
-  fog: "bg-[#f4f5f7]",
+  mint: "bg-[#d8efe4]",
+  sky: "bg-[#d5ebf5]",
+  butter: "bg-[#f6e79c]",
+  blush: "bg-[#f5d6d2]",
+  lavender: "bg-[#e5dff4]",
+  peach: "bg-[#f8e0cc]",
+  fog: "bg-white",
 } as const;
 
 export type PastelTone = keyof typeof pastel;
@@ -87,7 +88,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-white/70 px-3 py-1 text-[11px] font-semibold tracking-tight text-[#16181d]",
+        "inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold tracking-tight text-[#16181d]",
         className
       )}
     >
@@ -127,10 +128,8 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-[32px] p-5",
-        resolved === "white"
-          ? "bg-white shadow-[0_12px_32px_-20px_rgba(22,24,29,0.28)]"
-          : pastel[resolved],
+        "rounded-[28px] p-5",
+        resolved === "white" ? "bg-white" : pastel[resolved],
         className
       )}
     >
@@ -150,6 +149,38 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 export function choiceClass(on: boolean) {
   return cn(
     "w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-[#dff5e8]" : "bg-[#f4f5f7]"
+    on ? "bg-[#d8efe4]" : "bg-white"
+  );
+}
+
+export function GoButton({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "flex size-11 shrink-0 items-center justify-center rounded-full bg-[#16181d] text-white",
+        className
+      )}
+    >
+      <ArrowUpRight className="size-5" />
+    </span>
+  );
+}
+
+export function IconCircle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={cn(
+        "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[#16181d]",
+        className
+      )}
+    >
+      {children}
+    </span>
   );
 }

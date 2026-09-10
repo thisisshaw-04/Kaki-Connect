@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card, Portrait, StatusDot, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Portrait, StatusDot, UiPic } from "@/components/ui-bits";
 import { checkIns, outing, photos, senior, volunteer } from "@/lib/data";
 
 export default async function FamilyHome({
@@ -18,8 +18,8 @@ export default async function FamilyHome({
     return (
       <AppShell
         role="family"
-        title="KakiConnect"
-        subtitle="Today"
+        title="Today"
+        subtitle="KakiConnect"
         backHref="/family/link"
         showNav
         current="/family/home"
@@ -43,8 +43,8 @@ export default async function FamilyHome({
     return (
       <AppShell
         role="family"
-        title="KakiConnect"
-        subtitle="Today"
+        title="Today"
+        subtitle="KakiConnect"
         backHref="/family/link"
         showNav
         current="/family/home"
@@ -79,20 +79,20 @@ export default async function FamilyHome({
   return (
     <AppShell
       role="family"
-      title="KakiConnect"
-      subtitle="Today"
+      title="Today"
+      subtitle="KakiConnect"
       backHref="/family/link"
       showNav
       current="/family/home"
     >
       <div className="space-y-3.5">
-        <section className="relative overflow-hidden rounded-[32px] bg-[#dff5e8] p-5">
+        <section className="relative overflow-hidden rounded-[32px] bg-[#d8efe4] p-5">
           <UiPic
             src="/ui/icon-fish.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-1 h-28 w-28"
           />
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-2.5 py-1 text-[12px] font-semibold">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white px-2.5 py-1 text-[12px] font-semibold">
             <StatusDot live />
             Out right now
           </div>
@@ -114,57 +114,40 @@ export default async function FamilyHome({
           <p className="mt-2 text-[12px] text-[#3d4a42]">
             {latest?.label} · {latest?.time} · {done}/{checkIns.length} taps · home ~ {outing.expectedHome}
           </p>
-        </section>
-
-        <Card>
-          <div className="flex items-center justify-between">
-            <h2 className="font-semibold tracking-tight">Who he&apos;s with</h2>
-            <Link href="/family/outing" className="text-[13px] font-semibold">
-              Live check-ins
+          <div className="mt-4 flex justify-end">
+            <Link href="/family/outing">
+              <GoButton />
             </Link>
           </div>
-          <ul className="mt-3 space-y-3">
-            <li className="flex items-center gap-3">
-              <Portrait
-                src={photos.rachel}
-                alt={volunteer.name}
-                className="size-12 rounded-full"
-              />
-              <div>
-                <p className="font-semibold">{volunteer.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  Volunteer companion · walking with him
-                </p>
-              </div>
-            </li>
-            <li className="flex items-center gap-3">
-              <Portrait src={photos.ahmad} alt="Ahmad" className="size-12 rounded-full" />
-              <div>
-                <p className="font-semibold">Ahmad</p>
-                <p className="text-sm text-muted-foreground">Fishing kaki</p>
-              </div>
-            </li>
-            <li className="flex items-center gap-3">
-              <Portrait src={photos.susan} alt="Susan" className="size-12 rounded-full" />
-              <div>
-                <p className="font-semibold">Susan</p>
-                <p className="text-sm text-muted-foreground">Bringing extra bait</p>
-              </div>
-            </li>
-          </ul>
-        </Card>
+        </section>
+
+        <p className="px-1 text-[13px] font-semibold">Who he&apos;s with</p>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { src: photos.rachel, name: volunteer.name, hint: "Volunteer companion · walking with him" },
+            { src: photos.ahmad, name: "Ahmad", hint: "Fishing kaki" },
+            { src: photos.susan, name: "Susan", hint: "Bringing extra bait" },
+          ].map((person) => (
+            <div key={person.name} className="flex flex-col items-center rounded-[24px] bg-white p-3 text-center">
+              <Portrait src={person.src} alt={person.name} className="size-14 rounded-full" />
+              <p className="mt-2 text-[12px] font-extrabold leading-tight">{person.name}</p>
+              <p className="mt-1 text-[10px] leading-snug text-muted-foreground">{person.hint}</p>
+            </div>
+          ))}
+        </div>
 
         <Link
           href="/family/outing"
-          className="flex items-center justify-between rounded-[28px] bg-[#d7f0f7] p-4"
+          className="flex items-center justify-between rounded-[28px] bg-[#d5ebf5] p-4"
         >
           <div>
             <p className="font-semibold tracking-tight">Check-in timeline</p>
             <p className="text-sm text-muted-foreground">
               Left home, arrived, next tap at wrap-up
             </p>
+            <p className="mt-1 text-[13px] font-bold">Live check-ins</p>
           </div>
-          <ArrowRight className="size-5" />
+          <GoButton />
         </Link>
 
         <div className="flex gap-2.5">
