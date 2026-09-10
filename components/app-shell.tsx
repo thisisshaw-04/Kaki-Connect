@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowLeft,
   CalendarDays,
@@ -75,9 +74,9 @@ export function AppShell({
               <ArrowLeft className="size-5" />
             </button>
           ) : backHref ? (
-            <Link href={backHref} aria-label="Go back" className={circleBtn}>
+            <a href={backHref} aria-label="Go back" className={circleBtn}>
               <ArrowLeft className="size-5" />
-            </Link>
+            </a>
           ) : (
             <div className="size-12 shrink-0" />
           )}
@@ -124,7 +123,7 @@ export function AppShell({
               const active = current === item.href;
               const Icon = item.icon;
               return (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
@@ -146,7 +145,7 @@ export function AppShell({
                   >
                     {item.label}
                   </span>
-                </Link>
+                </a>
               );
             })}
           </div>

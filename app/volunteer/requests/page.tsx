@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { Card, GoButton, Pill, SlashMark, UiPic } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
@@ -20,7 +19,7 @@ export default function VolunteerRequests() {
       <ul className="mt-4 space-y-3">
         {volunteerRequests.map((request, index) => (
           <li key={request.id}>
-            <Link
+            <a
               href={request.id === "fishing" ? "/volunteer/outing" : "/volunteer/requests"}
               className="block"
             >
@@ -60,7 +59,7 @@ export default function VolunteerRequests() {
                   <GoButton />
                 </div>
               </Card>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

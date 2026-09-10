@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { SosButton } from "@/components/sos-button";
 import { GoButton, Portrait, StatusDot } from "@/components/ui-bits";
@@ -25,7 +24,7 @@ export default function BuddiesPage() {
             key={person.id}
             className={index === 0 ? "col-span-2" : undefined}
           >
-            <Link
+            <a
               href={person.id === "raymond" ? "/elderly/call" : "/elderly/friends"}
               className={`relative flex min-h-[48px] rounded-[28px] p-4 ${
                 index === 0 ? "flex-row items-center gap-4" : "min-h-[220px] flex-col"
@@ -57,7 +56,7 @@ export default function BuddiesPage() {
               <span className={index === 0 ? "ml-auto" : "mt-auto self-end pt-3"}>
                 <GoButton />
               </span>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { GoButton } from "@/components/ui-bits";
 import { week } from "@/lib/data";
@@ -60,9 +59,9 @@ export default function FamilyWeek() {
           return (
             <li key={item.date}>
               {item.status === "live" ? (
-                <Link href="/family/outing" className="block rounded-[28px] bg-[#d8efe4] p-4">
+                <a href="/family/outing" className="block rounded-[28px] bg-[#d8efe4] p-4">
                   {inner}
-                </Link>
+                </a>
               ) : (
                 <div className={`rounded-[28px] p-4 ${tones[index % tones.length]}`}>{inner}</div>
               )}

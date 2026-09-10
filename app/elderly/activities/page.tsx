@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MapPin, Phone, Shield, Sun } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
@@ -100,13 +99,13 @@ export default function ActivitiesPage() {
                 </Pill>
               ))}
             </div>
-            <Link
+            <a
               href="/elderly/activities/support"
               className="mt-4 flex items-center justify-between"
             >
               <span className="text-[13px] font-bold">Join this Kaki Group</span>
               <GoButton />
-            </Link>
+            </a>
             <div className="mt-3 rounded-[22px] bg-white/75 p-3">
               <p className="flex items-center gap-1 text-sm font-bold">
                 <Shield className="size-4" /> Family peace of mind active
@@ -124,7 +123,7 @@ export default function ActivitiesPage() {
         </div>
         <div className="space-y-3">
           {nearbyActivities.map((item) => (
-            <Link
+            <a
               key={item.id}
               href="/elderly/activities/support"
               className="block"
@@ -154,7 +153,7 @@ export default function ActivitiesPage() {
                   </span>
                 </div>
               </Card>
-            </Link>
+            </a>
           ))}
         </div>
 

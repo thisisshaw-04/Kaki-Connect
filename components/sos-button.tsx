@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Phone, X } from "lucide-react";
 import { familyMember } from "@/lib/data";
 
@@ -57,12 +56,12 @@ export function SosSheet() {
             Call Sarah
           </a>
         </div>
-        <Link
+        <a
           href="/elderly/care"
           className="sos-care-link mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#f4f4f2] text-sm font-semibold"
         >
           Open Care Hub
-        </Link>
+        </a>
       </div>
     </div>
   );

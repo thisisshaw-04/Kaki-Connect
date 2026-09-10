@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
@@ -25,7 +24,7 @@ export default function ElderlyHome() {
         <p className="text-sm text-muted-foreground">Tap to listen to options out loud</p>
         <ListenButton label="Listen" />
 
-        <Link href="/elderly/activities" className="block">
+        <a href="/elderly/activities" className="block">
           <Card tone="mint" className="relative min-h-[210px] overflow-hidden">
             <UiPic
               src="/ui/icon-park.svg"
@@ -44,9 +43,9 @@ export default function ElderlyHome() {
               <GoButton />
             </div>
           </Card>
-        </Link>
+        </a>
 
-        <Link href="/elderly/call" className="block">
+        <a href="/elderly/call" className="block">
           <Card tone="butter" className="relative overflow-hidden">
             <span className="absolute top-4 right-4 rounded-full bg-white px-3 py-1 text-[11px] font-bold text-[#766100]">
               Recommended for today
@@ -80,7 +79,7 @@ export default function ElderlyHome() {
               <GoButton />
             </div>
           </Card>
-        </Link>
+        </a>
       </div>
     </AppShell>
   );

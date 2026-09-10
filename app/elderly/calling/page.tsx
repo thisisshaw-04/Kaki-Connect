@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Mic, MicOff, PhoneOff, Subtitles, Users, Volume2 } from "lucide-react";
 import { SosButton } from "@/components/sos-button";
 import { Portrait } from "@/components/ui-bits";
@@ -79,7 +78,7 @@ export default function CallingPage() {
           </span>
           Add Kin
         </button>
-        <Link
+        <a
           href="/elderly/wrapup"
           aria-label="End call"
           className="flex min-w-14 flex-col items-center gap-1 text-xs"
@@ -88,7 +87,7 @@ export default function CallingPage() {
             <PhoneOff />
           </span>
           End Call
-        </Link>
+        </a>
       </div>
     </div>
   );

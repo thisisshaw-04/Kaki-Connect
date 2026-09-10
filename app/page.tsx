@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { brand } from "@/lib/data";
 import { GoButton, UiPic } from "@/components/ui-bits";
 
@@ -46,7 +45,7 @@ export default function RolePage() {
         Who do you want to signup as?
       </h1>
 
-      <Link
+      <a
         href={featured.href}
         className={`mt-6 flex flex-col rounded-[32px] ${featured.tone} p-5`}
       >
@@ -61,11 +60,11 @@ export default function RolePage() {
           <p className="text-sm font-bold">Continue</p>
           <GoButton />
         </div>
-      </Link>
+      </a>
 
       <div className="mt-3 grid grid-cols-2 gap-3">
         {rest.map((role) => (
-          <Link
+          <a
             key={role.href}
             href={role.href}
             className={`relative flex min-h-[210px] flex-col rounded-[28px] border border-[#16181d] ${role.tone} p-4`}
@@ -77,7 +76,7 @@ export default function RolePage() {
               <span className="text-sm font-bold">Continue</span>
               <GoButton />
             </span>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

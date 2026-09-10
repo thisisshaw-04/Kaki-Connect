@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
@@ -86,7 +85,7 @@ export default async function FamilyHome({
       current="/family/home"
     >
       <div className="space-y-3.5">
-        <Link
+        <a
           href="/family/outing"
           className="relative block overflow-hidden rounded-[32px] bg-[#d8efe4] p-5"
         >
@@ -121,7 +120,7 @@ export default async function FamilyHome({
             <p className="text-[13px] font-bold">Open this outing</p>
             <GoButton />
           </div>
-        </Link>
+        </a>
 
         <p className="px-1 text-[15px] font-semibold">Who he&apos;s with</p>
         <ul className="space-y-2">
@@ -140,7 +139,7 @@ export default async function FamilyHome({
           ))}
         </ul>
 
-        <Link
+        <a
           href="/family/outing"
           className="flex items-center justify-between rounded-[28px] bg-[#d5ebf5] p-4"
         >
@@ -152,7 +151,7 @@ export default async function FamilyHome({
             <p className="mt-1 text-[13px] font-bold">Live check-ins</p>
           </div>
           <GoButton />
-        </Link>
+        </a>
 
         <div className="flex gap-2.5">
           <PrimaryLink href="/family/note" className="flex-1">
@@ -165,13 +164,13 @@ export default async function FamilyHome({
         </div>
 
         <p className="text-center text-[11px] text-muted-foreground">
-          <Link href="/family/home?view=quiet" className="underline decoration-black/20">
+          <a href="/family/home?view=quiet" className="underline decoration-black/20">
             Preview a quiet day
-          </Link>
+          </a>
           {" · "}
-          <Link href="/family/home?view=error" className="underline decoration-black/20">
+          <a href="/family/home?view=error" className="underline decoration-black/20">
             If updates fail
-          </Link>
+          </a>
         </p>
       </div>
     </AppShell>

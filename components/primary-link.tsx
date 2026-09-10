@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function PrimaryLink({
@@ -25,7 +24,7 @@ export function PrimaryLink({
   } as const;
 
   return (
-    <Link
+    <a
       href={href}
       className={cn(
         "inline-flex w-full items-center justify-center gap-2 px-5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d] focus-visible:ring-offset-2",
@@ -34,6 +33,6 @@ export function PrimaryLink({
       )}
     >
       {children}
-    </Link>
+    </a>
   );
 }
