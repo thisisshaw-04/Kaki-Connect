@@ -47,7 +47,7 @@ export default function ElderlyHome() {
 
         <a href="/elderly/call" className="block">
           <Card tone="butter" className="relative">
-            <div className="flex items-start justify-between gap-3">
+            <div className="flex flex-wrap items-start justify-between gap-2">
               <Pill>Cozy & relaxing at home</Pill>
               <span className="shrink-0 rounded-full bg-white px-3 py-1 text-[11px] font-bold text-[#766100]">
                 Recommended for today
