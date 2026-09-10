@@ -51,7 +51,7 @@ export default async function FamilyHome({
       >
         <Card tone="mint" className="relative overflow-hidden">
           <UiPic
-            src="/ui/icon-home.png"
+            src="/ui/icon-home.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
           />
@@ -88,7 +88,7 @@ export default async function FamilyHome({
       <div className="space-y-3.5">
         <section className="relative overflow-hidden rounded-[32px] bg-[#dff5e8] p-5">
           <UiPic
-            src="/ui/icon-fish.png"
+            src="/ui/icon-fish.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-1 h-28 w-28"
           />

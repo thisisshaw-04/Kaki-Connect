@@ -31,7 +31,7 @@ export default function VolunteerRequests() {
                 className="relative overflow-hidden"
               >
                 <UiPic
-                  src={request.id === "fishing" ? "/ui/icon-fish.png" : "/ui/icon-dimsum.png"}
+                  src={request.id === "fishing" ? "/ui/icon-fish.svg" : "/ui/icon-dimsum.svg"}
                   alt=""
                   className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
                 />

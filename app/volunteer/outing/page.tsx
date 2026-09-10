@@ -36,7 +36,7 @@ export default function VolunteerOuting() {
         </div>
         <Card tone="mint" className="relative overflow-hidden">
           <UiPic
-            src="/ui/icon-fish.png"
+            src="/ui/icon-fish.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
           />

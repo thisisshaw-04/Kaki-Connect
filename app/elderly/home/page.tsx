@@ -39,7 +39,7 @@ export default function ElderlyHome() {
         <Link href="/elderly/activities" className="block">
           <Card tone="mint" className="relative overflow-hidden">
             <UiPic
-              src="/ui/icon-park.png"
+              src="/ui/icon-park.svg"
               alt=""
               className="pointer-events-none absolute -right-2 -top-2 h-28 w-28 opacity-95"
             />
@@ -62,7 +62,7 @@ export default function ElderlyHome() {
               Recommended for today
             </span>
             <UiPic
-              src="/ui/icon-home.png"
+              src="/ui/icon-home.svg"
               alt=""
               className="pointer-events-none absolute -right-1 top-8 h-24 w-24"
             />

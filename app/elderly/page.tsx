@@ -27,15 +27,15 @@ export default function ElderlyWelcome() {
 
         <div className="mt-5 grid grid-cols-3 gap-2">
           <div className="flex flex-col items-center rounded-[28px] bg-[#fff3c9] px-2 py-4">
-            <UiPic src="/ui/icon-kopi.png" alt="" className="h-14 w-14" />
+            <UiPic src="/ui/icon-kopi.svg" alt="" className="h-14 w-14" />
             <span className="mt-1 text-[12px] font-bold">Kopi</span>
           </div>
           <div className="flex flex-col items-center rounded-[28px] bg-[#dff5e8] px-2 py-4">
-            <UiPic src="/ui/icon-kaki.png" alt="" className="h-14 w-14" />
+            <UiPic src="/ui/icon-kaki.svg" alt="" className="h-14 w-14" />
             <span className="mt-1 text-[12px] font-bold">Kaki</span>
           </div>
           <div className="flex flex-col items-center rounded-[28px] bg-[#ffe4e2] px-2 py-4">
-            <UiPic src="/ui/icon-care.png" alt="" className="h-14 w-14" />
+            <UiPic src="/ui/icon-care.svg" alt="" className="h-14 w-14" />
             <span className="mt-1 text-[12px] font-bold">Care</span>
           </div>
         </div>

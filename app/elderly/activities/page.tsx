@@ -13,9 +13,9 @@ import {
 } from "@/lib/data";
 
 const nearbyArt: Record<string, string> = {
-  "teh-c": "/ui/icon-kopi.png",
-  "park-walk": "/ui/icon-park.png",
-  herbal: "/ui/icon-tea.png",
+  "teh-c": "/ui/icon-kopi.svg",
+  "park-walk": "/ui/icon-park.svg",
+  herbal: "/ui/icon-tea.svg",
 };
 
 const nearbyTone: Record<string, "sky" | "mint" | "lavender"> = {
@@ -71,7 +71,7 @@ export default function ActivitiesPage() {
         <Card tone="sky" className="overflow-hidden p-0">
           <div className="relative h-40 overflow-hidden">
             <UiPic
-              src="/ui/ill-reservoir.png"
+              src="/ui/ill-reservoir.svg"
               alt="Bedok Reservoir at sunset"
               className="h-full w-full object-cover"
             />
@@ -128,7 +128,7 @@ export default function ActivitiesPage() {
             >
               <Card tone={nearbyTone[item.id] ?? "white"} className="relative overflow-hidden">
                 <UiPic
-                  src={nearbyArt[item.id] ?? "/ui/icon-park.png"}
+                  src={nearbyArt[item.id] ?? "/ui/icon-park.svg"}
                   alt=""
                   className="pointer-events-none absolute -right-1 -top-1 h-20 w-20"
                 />

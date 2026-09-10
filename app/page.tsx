@@ -8,21 +8,21 @@ const roles = [
     href: "/elderly",
     title: "Elderly",
     hint: "Find activities and kakis",
-    art: "/ui/icon-elderly.png",
+    art: "/ui/icon-elderly.svg",
     tone: "bg-[#dff5e8]",
   },
   {
     href: "/family",
     title: "Family",
     hint: "Stay updated when Dad goes out",
-    art: "/ui/icon-family.png",
+    art: "/ui/icon-family.svg",
     tone: "bg-[#ffe4e2]",
   },
   {
     href: "/volunteer",
     title: "Volunteer",
     hint: "Help seniors stay connected",
-    art: "/ui/icon-volunteer.png",
+    art: "/ui/icon-volunteer.svg",
     tone: "bg-[#d7f0f7]",
   },
 ];
@@ -31,7 +31,7 @@ export default function RolePage() {
   return (
     <div className="flex h-full min-h-0 flex-col overflow-y-auto px-6 py-8">
       <div className="mb-8 flex items-center gap-3">
-        <UiPic src="/ui/icon-logo.png" alt="" className="size-14" />
+        <UiPic src="/ui/icon-logo.svg" alt="" className="size-14" />
         <div>
           <h1 className="text-[28px] leading-none font-extrabold tracking-[-0.04em] text-[#16181d]">
             {brand.name}

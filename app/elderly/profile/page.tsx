@@ -17,7 +17,7 @@ export default function ElderlyProfile() {
       <div className="space-y-4">
         <Card tone="sky" className="relative overflow-hidden">
           <UiPic
-            src="/ui/icon-elderly.png"
+            src="/ui/icon-elderly.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-3 h-28 w-28"
           />

@@ -16,7 +16,7 @@ export default function FamilyWelcome() {
         </p>
         <Card tone="mint" className="relative mt-6 overflow-hidden">
           <UiPic
-            src="/ui/icon-family.png"
+            src="/ui/icon-family.svg"
             alt=""
             className="pointer-events-none absolute -right-3 -top-2 h-28 w-28"
           />

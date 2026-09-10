@@ -16,7 +16,7 @@ export default function VolunteerWelcome() {
       <div className="flex flex-1 flex-col gap-4">
         <div className="relative overflow-hidden rounded-[32px] bg-[#d7f0f7] p-5">
           <UiPic
-            src="/ui/icon-volunteer.png"
+            src="/ui/icon-volunteer.svg"
             alt=""
             className="pointer-events-none absolute -right-2 -top-3 h-28 w-28"
           />

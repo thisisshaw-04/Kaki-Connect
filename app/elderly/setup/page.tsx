@@ -185,7 +185,7 @@ export default function ElderlySetup() {
             </p>
           </div>
           <Card tone="sky" className="flex items-center gap-4">
-            <UiPic src="/ui/icon-elderly.png" alt="" className="size-16" />
+            <UiPic src="/ui/icon-elderly.svg" alt="" className="size-16" />
             <div className="flex-1">
               <p className="flex items-center gap-1 text-sm font-semibold text-primary">
                 <Check className="size-4" /> Using Uncle Joy avatar
@@ -450,10 +450,10 @@ export default function ElderlySetup() {
           {activities.map((item) => {
             const art =
               item.id === "kopi"
-                ? "/ui/icon-kopi.png"
+                ? "/ui/icon-kopi.svg"
                 : item.id === "park"
-                  ? "/ui/icon-park.png"
-                  : "/ui/icon-karaoke.png";
+                  ? "/ui/icon-park.svg"
+                  : "/ui/icon-karaoke.svg";
             return (
             <button
               key={item.id}
@@ -663,7 +663,7 @@ export default function ElderlySetup() {
       {step === 9 ? (
         <div className="flex flex-1 flex-col items-center pt-8 text-center">
           <div className="flex size-24 items-center justify-center rounded-full bg-[#dff5e8]">
-            <UiPic src="/ui/icon-kaki.png" alt="" className="size-20" />
+            <UiPic src="/ui/icon-kaki.svg" alt="" className="size-20" />
           </div>
           <p className="mt-4 text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
             Profile Activated
