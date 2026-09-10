@@ -44,7 +44,7 @@ export default function CareHubPage() {
           <p className="text-sm text-muted-foreground">{fsc.hours}</p>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#16181d] font-bold text-white"
+            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#16181d] font-bold text-white"
           >
             <Phone className="size-4" /> Call {fsc.phone}
           </a>

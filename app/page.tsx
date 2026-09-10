@@ -52,7 +52,7 @@ export default function RolePage() {
       >
         <UiPic src={featured.art} alt="" className="absolute -right-2 -top-2 size-28" />
         <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
-        <p className="mt-1 max-w-[70%] text-sm text-[#5b616b]">{featured.hint}</p>
+        <p className="mt-1 max-w-[70%] text-sm text-muted-foreground">{featured.hint}</p>
         <div className="mt-8 flex items-end justify-between">
           <p className="text-sm font-bold">Continue</p>
           <GoButton />
@@ -68,9 +68,10 @@ export default function RolePage() {
           >
             <UiPic src={role.art} alt="" className="mx-auto size-16" />
             <p className="mt-2 text-[18px] font-extrabold tracking-[-0.03em]">{role.title}</p>
-            <p className="mt-1 text-[12px] leading-snug text-[#5b616b]">{role.hint}</p>
-            <span className="mt-auto self-end">
-              <GoButton className="size-10" />
+            <p className="mt-1 text-[13px] leading-snug text-muted-foreground">{role.hint}</p>
+            <span className="mt-auto flex items-center justify-between pt-3">
+              <span className="text-sm font-bold">Continue</span>
+              <GoButton />
             </span>
           </Link>
         ))}

@@ -53,7 +53,7 @@ export default function FamilyWeek() {
                   <p className="mt-1 text-sm text-muted-foreground">{item.with}</p>
                 ) : null}
               </div>
-              {item.status === "live" ? <GoButton /> : <GoButton className="bg-[#16181d]/90" />}
+              {item.status === "live" ? <GoButton /> : null}
             </div>
           );
 

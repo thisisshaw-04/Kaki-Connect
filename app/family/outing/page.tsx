@@ -29,7 +29,14 @@ export default function FamilyOuting() {
           <p className="mb-2 text-sm font-semibold">
             {done} of {checkIns.length} check-ins
           </p>
-          <div className="kaki-progress-track">
+          <div
+            className="kaki-progress-track"
+            role="progressbar"
+            aria-label="Outing check-ins"
+            aria-valuemin={0}
+            aria-valuemax={checkIns.length}
+            aria-valuenow={done}
+          >
             <span
               className="kaki-progress-fill"
               style={{ width: `${(done / checkIns.length) * 100}%` }}

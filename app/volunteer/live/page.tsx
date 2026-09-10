@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui-bits";
 import { familyMember, fsc, outing, volunteerLiveTaps } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -83,13 +82,13 @@ export default function VolunteerLive() {
                 {item.done ? (
                   <span className="text-xs font-semibold text-[#1b5e20]">Sent</span>
                 ) : (
-                  <Button
-                    size="sm"
-                    className="rounded-full"
+                  <button
+                    type="button"
+                    className="min-h-12 shrink-0 rounded-full bg-[#16181d] px-4 text-sm font-bold text-white"
                     onClick={() => tap(item.id)}
                   >
                     Tap to send
-                  </Button>
+                  </button>
                 )}
               </div>
             </li>
@@ -112,13 +111,13 @@ export default function VolunteerLive() {
         <div className="grid grid-cols-2 gap-2">
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-12 items-center justify-center rounded-full bg-[#16181d] text-sm font-bold text-white"
+            className="flex min-h-14 items-center justify-center rounded-full bg-[#16181d] px-3 text-center text-sm font-bold text-white"
           >
             Call Daughter Sarah
           </a>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="flex min-h-12 items-center justify-center rounded-full bg-[#f4f5f7] text-sm font-bold"
+            className="flex min-h-14 items-center justify-center rounded-full bg-[#f4f5f7] px-3 text-center text-sm font-bold"
           >
             Contact FSC
           </a>

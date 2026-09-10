@@ -54,11 +54,13 @@ export default function ActivitiesPage() {
             <h2 className="font-semibold">What would you like to do?</h2>
             <span className="text-xs text-muted-foreground">Swipe for more</span>
           </div>
-          <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+          <div className="mt-2 flex gap-2 overflow-x-auto pb-1" role="list" aria-label="Activity filters">
             {activityFilters.map((item, index) => (
               <span
                 key={item}
-                className={`shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold ${
+                role="listitem"
+                aria-current={index === 0 ? "true" : undefined}
+                className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-[13px] font-semibold ${
                   index === 0 ? "bg-[#16181d] text-white" : "bg-white text-foreground"
                 }`}
               >
@@ -118,37 +120,39 @@ export default function ActivitiesPage() {
 
         <div className="flex items-center justify-between">
           <h2 className="font-semibold">Happening Near You</h2>
-          <span className="text-sm font-semibold">View all (8)</span>
+          <span className="text-sm font-medium text-muted-foreground">View all (8)</span>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-3">
           {nearbyActivities.map((item) => (
             <Link
               key={item.id}
               href="/elderly/activities/support"
               className="block"
             >
-              <Card tone={nearbyTone[item.id] ?? "white"} className="relative flex min-h-[230px] flex-col overflow-hidden">
+              <Card tone={nearbyTone[item.id] ?? "white"} className="flex items-start gap-3 p-4">
                 <UiPic
                   src={nearbyArt[item.id] ?? "/ui/icon-park.svg"}
                   alt=""
-                  className="mx-auto h-14 w-14"
+                  className="size-14 shrink-0"
                 />
-                <p className="mt-2 text-[11px] font-semibold">
-                  {item.when} · {item.attending}
-                </p>
-                <h3 className="mt-1 text-[15px] font-extrabold leading-tight tracking-[-0.02em]">{item.title}</h3>
-                <p className="mt-1 text-[11px] text-muted-foreground">{item.place}</p>
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {item.tags.map((tag) => (
-                    <Pill key={tag} className="px-2 py-0.5 text-[10px]">
-                      {tag}
-                    </Pill>
-                  ))}
+                <div className="min-w-0 flex-1">
+                  <p className="text-[13px] font-semibold">
+                    {item.when} · {item.attending}
+                  </p>
+                  <h3 className="mt-1 text-[17px] font-extrabold leading-tight tracking-[-0.02em]">{item.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.place}</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {item.tags.map((tag) => (
+                      <Pill key={tag} className="text-[11px]">
+                        {tag}
+                      </Pill>
+                    ))}
+                  </div>
+                  <span className="mt-3 flex items-center justify-between">
+                    <span className="text-sm font-bold">View & Join Group</span>
+                    <GoButton />
+                  </span>
                 </div>
-                <span className="mt-auto flex items-end justify-between pt-3">
-                  <span className="text-[11px] font-bold">View & Join Group</span>
-                  <GoButton className="size-9" />
-                </span>
               </Card>
             </Link>
           ))}
@@ -162,13 +166,13 @@ export default function ActivitiesPage() {
           <div className="mt-3 grid grid-cols-2 gap-2">
             <a
               href="tel:995"
-              className="flex min-h-12 items-center justify-center gap-1 rounded-full bg-white text-sm font-bold text-[#c62828]"
+              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-white text-sm font-bold text-[#9b1c1c]"
             >
               <Phone className="size-4" /> Call 995
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-12 items-center justify-center gap-1 rounded-full bg-[#16181d] text-sm font-bold text-white"
+              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-[#16181d] text-sm font-bold text-white"
             >
               <Phone className="size-4" /> Call Sarah
             </a>

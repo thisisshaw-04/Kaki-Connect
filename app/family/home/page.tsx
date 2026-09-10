@@ -86,7 +86,10 @@ export default async function FamilyHome({
       current="/family/home"
     >
       <div className="space-y-3.5">
-        <section className="relative overflow-hidden rounded-[32px] bg-[#d8efe4] p-5">
+        <Link
+          href="/family/outing"
+          className="relative block overflow-hidden rounded-[32px] bg-[#d8efe4] p-5"
+        >
           <UiPic
             src="/ui/icon-fish.svg"
             alt=""
@@ -103,7 +106,7 @@ export default async function FamilyHome({
             <MapPin className="mt-0.5 size-4 shrink-0" />
             {outing.title} · {outing.pavilion}
           </p>
-          <div className="mt-4 flex gap-1.5">
+          <div className="mt-4 flex gap-1.5" aria-hidden>
             {checkIns.map((item) => (
               <span
                 key={item.id}
@@ -111,30 +114,31 @@ export default async function FamilyHome({
               />
             ))}
           </div>
-          <p className="mt-2 text-[12px] text-[#3d4a42]">
+          <p className="mt-2 text-[13px] text-[#3d4a42]">
             {latest?.label} · {latest?.time} · {done}/{checkIns.length} taps · home ~ {outing.expectedHome}
           </p>
-          <div className="mt-4 flex justify-end">
-            <Link href="/family/outing">
-              <GoButton />
-            </Link>
+          <div className="mt-4 flex items-end justify-between gap-3">
+            <p className="text-[13px] font-bold">Open this outing</p>
+            <GoButton />
           </div>
-        </section>
+        </Link>
 
-        <p className="px-1 text-[13px] font-semibold">Who he&apos;s with</p>
-        <div className="grid grid-cols-3 gap-2">
+        <p className="px-1 text-[15px] font-semibold">Who he&apos;s with</p>
+        <ul className="space-y-2">
           {[
             { src: photos.rachel, name: volunteer.name, hint: "Volunteer companion · walking with him" },
             { src: photos.ahmad, name: "Ahmad", hint: "Fishing kaki" },
             { src: photos.susan, name: "Susan", hint: "Bringing extra bait" },
           ].map((person) => (
-            <div key={person.name} className="flex flex-col items-center rounded-[24px] bg-white p-3 text-center">
+            <li key={person.name} className="flex items-center gap-3 rounded-[24px] bg-white p-3">
               <Portrait src={person.src} alt={person.name} className="size-14 rounded-full" />
-              <p className="mt-2 text-[12px] font-extrabold leading-tight">{person.name}</p>
-              <p className="mt-1 text-[10px] leading-snug text-muted-foreground">{person.hint}</p>
-            </div>
+              <div className="min-w-0">
+                <p className="font-extrabold leading-tight">{person.name}</p>
+                <p className="mt-0.5 text-sm leading-snug text-muted-foreground">{person.hint}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <Link
           href="/family/outing"

@@ -18,7 +18,7 @@ export default function ElderlyWelcome() {
         <h1 className="mt-1 text-[34px] leading-[1.05] font-extrabold tracking-[-0.045em]">
           Welcome to KakiConnect! ☕
         </h1>
-        <p className="mt-2 text-[10px] tracking-[0.12em] text-[#737781] uppercase">
+        <p className="mt-2 text-xs tracking-[0.12em] text-muted-foreground uppercase">
           {brand.hangul}
         </p>
         <p className="mt-3 max-w-sm text-[16px] leading-[26px] text-muted-foreground">
@@ -45,7 +45,8 @@ export default function ElderlyWelcome() {
 
         <button
           type="button"
-          className="mt-2 flex w-full items-center gap-3 rounded-[28px] bg-white px-4 py-3.5 text-left"
+          aria-pressed={playing}
+          className="mt-2 flex min-h-14 w-full items-center gap-3 rounded-[28px] bg-white px-4 py-3.5 text-left"
           onClick={() => {
             setPlaying(true);
             window.setTimeout(() => setPlaying(false), 3200);
@@ -55,13 +56,13 @@ export default function ElderlyWelcome() {
             <Volume2 className="size-5" />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="flex items-center gap-1.5 text-[13px] font-semibold">
+            <span className="flex flex-wrap items-center gap-1.5 text-[13px] font-semibold">
               Tap to listen to greeting
               <span className="rounded-full bg-[#d7f0f7] px-1.5 py-0.5 text-xs text-[#124780]">
                 Voice
               </span>
             </span>
-            <span className="block truncate text-[12px] text-muted-foreground">
+            <span className="mt-0.5 block text-[13px] leading-snug text-muted-foreground">
               Hokkien • English • Mandarin • Malay
             </span>
           </span>

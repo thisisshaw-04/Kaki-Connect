@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Mic, MicOff, PhoneOff, Subtitles, Users, Volume2 } from "lucide-react";
+import { SosButton } from "@/components/sos-button";
 import { Portrait } from "@/components/ui-bits";
 import { photos } from "@/lib/data";
 
@@ -24,7 +25,7 @@ export default function CallingPage() {
           <p className="font-bold">Uncle Raymond</p>
           <p className="text-xs text-white/80">04:15 • Good Signal</p>
         </div>
-        <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold">SOS</span>
+        <SosButton />
       </div>
       <div className="relative z-10 mx-4 mt-auto mb-3 overflow-hidden rounded-2xl border border-white/20">
         <Portrait
@@ -48,21 +49,31 @@ export default function CallingPage() {
       <div className="relative z-20 flex items-center justify-around px-4 pb-4">
         <button
           type="button"
+          aria-pressed={muted}
+          aria-label={muted ? "Unmute microphone" : "Mute microphone"}
           onClick={() => setMuted((value) => !value)}
-          className="flex flex-col items-center gap-1 text-xs"
+          className="flex min-w-14 flex-col items-center gap-1 text-xs"
         >
           <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
             {muted ? <MicOff /> : <Mic />}
           </span>
           Mic {muted ? "Off" : "On"}
         </button>
-        <button type="button" className="flex flex-col items-center gap-1 text-xs">
+        <button
+          type="button"
+          aria-label="Speaker"
+          className="flex min-w-14 flex-col items-center gap-1 text-xs"
+        >
           <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
             <Volume2 />
           </span>
           Speaker
         </button>
-        <button type="button" className="flex flex-col items-center gap-1 text-xs">
+        <button
+          type="button"
+          aria-label="Add family member"
+          className="flex min-w-14 flex-col items-center gap-1 text-xs"
+        >
           <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
             <Users />
           </span>
@@ -71,7 +82,7 @@ export default function CallingPage() {
         <Link
           href="/elderly/wrapup"
           aria-label="End call"
-          className="flex flex-col items-center gap-1 text-xs"
+          className="flex min-w-14 flex-col items-center gap-1 text-xs"
         >
           <span className="flex size-16 items-center justify-center rounded-full bg-[#ba1a1a]">
             <PhoneOff />

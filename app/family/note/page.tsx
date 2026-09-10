@@ -37,6 +37,7 @@ export default function FamilyNote() {
             It’ll show on his home screen as a small card. He can heart it. You won’t get a read receipt — that’s on purpose.
           </p>
           <Button
+            type="button"
             className="mt-5 h-12 w-full rounded-full"
             onClick={() => {
               setStatus("idle");
@@ -54,22 +55,27 @@ export default function FamilyNote() {
               This is a nudge, not a chat thread. He’ll see it before he leaves or when he’s next on the app.
             </p>
           </div>
-          <Textarea
-            value={note}
-            onChange={(event) => {
-              setNote(event.target.value);
-              if (status === "error") setStatus("idle");
-            }}
-            rows={5}
-            className="min-h-32 rounded-2xl text-base"
-            placeholder="Bring a bottle of water?"
-          />
+          <label className="block" htmlFor="family-note">
+            <span className="sr-only">Note to Dad</span>
+            <Textarea
+              id="family-note"
+              value={note}
+              onChange={(event) => {
+                setNote(event.target.value);
+                if (status === "error") setStatus("idle");
+              }}
+              rows={5}
+              className="min-h-32 rounded-2xl text-base md:text-base"
+              placeholder="Bring a bottle of water?"
+            />
+          </label>
           {status === "error" ? (
             <p className="text-sm font-medium text-destructive">
               Write a few words so he knows it’s from you.
             </p>
           ) : null}
           <Button
+            type="button"
             className="mt-auto h-14 w-full rounded-full text-base"
             onClick={send}
           >

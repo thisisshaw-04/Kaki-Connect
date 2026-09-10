@@ -63,7 +63,7 @@
   --secondary: #f6e79c;
   --secondary-foreground: #3d3200;
   --muted: #e6e9e2;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #4b5563;
   --accent: #d5ebf5;
   --accent-foreground: #124780;
   --destructive: #e11d48;
@@ -434,12 +434,22 @@
   flex: 1;
   flex-direction: column;
   overflow: hidden;
-  background-color: #ffffff;
+  position: relative;
+  background-color: #eef1ea;
 }
 
 .phone-app > * {
   min-height: 0;
   flex: 1;
+}
+
+.phone-app a:focus-visible,
+.phone-app button:focus-visible,
+.phone-app input:focus-visible,
+.phone-app select:focus-visible,
+.phone-app textarea:focus-visible {
+  outline: 2px solid #16181d;
+  outline-offset: 2px;
 }
 
 .phone-home {

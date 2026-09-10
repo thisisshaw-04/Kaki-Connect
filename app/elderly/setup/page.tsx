@@ -166,7 +166,7 @@ export default function ElderlySetup() {
             <button
               type="button"
               onClick={next}
-              className="mt-2 w-full py-2 text-center text-sm text-muted-foreground"
+              className="mt-2 flex min-h-12 w-full items-center justify-center py-2 text-center text-sm font-semibold text-muted-foreground"
             >
               Skip voice greeting for now
             </button>
@@ -200,15 +200,18 @@ export default function ElderlySetup() {
               </div>
             </div>
           </Card>
-          <label className="block space-y-2">
+          <label className="block space-y-2" htmlFor="display-name">
             <span className="text-sm font-semibold">Your Display Name</span>
             <div className="relative">
               <input
+                id="display-name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
+                autoComplete="name"
+                enterKeyHint="next"
                 className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 pr-12 text-lg outline-none focus:ring-4 focus:ring-black/10"
               />
-              <Mic className="absolute top-1/2 right-4 size-5 -translate-y-1/2 text-[#fde047]" />
+              <Mic aria-hidden className="absolute top-1/2 right-4 size-5 -translate-y-1/2 text-[#fde047]" />
             </div>
             <p className="flex items-start gap-1 text-xs text-muted-foreground">
               <Info className="mt-0.5 size-3.5 shrink-0" />
@@ -222,9 +225,10 @@ export default function ElderlySetup() {
                 <button
                   key={item}
                   type="button"
+                  aria-pressed={title === item}
                   onClick={() => setTitle(item)}
                   className={cn(
-                    "rounded-full px-4 py-2 text-sm font-semibold",
+                    "min-h-11 rounded-full px-4 text-sm font-semibold",
                     title === item
                       ? "bg-[#16181d] text-white"
                       : "bg-[#f4f5f7] text-foreground"
@@ -259,6 +263,7 @@ export default function ElderlySetup() {
                 <button
                   key={item.id}
                   type="button"
+                  aria-pressed={age === item.id}
                   onClick={() => setAge(item.id)}
                   className={cn(
                     choiceClass(age === item.id)
@@ -281,6 +286,7 @@ export default function ElderlySetup() {
             <select
               value={estate}
               onChange={(event) => setEstate(event.target.value)}
+              aria-label="Your estate or town"
               className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 text-base"
             >
               {estates.map((item) => (
@@ -293,11 +299,12 @@ export default function ElderlySetup() {
                 <button
                   key={item}
                   type="button"
+                  aria-pressed={estate.startsWith(item)}
                   onClick={() =>
                     setEstate(item === "Bedok" ? "Bedok / East Coast" : item)
                   }
                   className={cn(
-                    "rounded-full px-3 py-1.5 text-sm font-semibold",
+                    "min-h-11 rounded-full px-3 text-sm font-semibold",
                     estate.startsWith(item) ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
                   )}
                 >
@@ -332,6 +339,7 @@ export default function ElderlySetup() {
                 <button
                   key={item.id}
                   type="button"
+                  aria-pressed={on}
                   onClick={() =>
                     setLangs((current) =>
                       current.includes(item.id)
@@ -390,6 +398,7 @@ export default function ElderlySetup() {
             <button
               key={item.id}
               type="button"
+              aria-pressed={mobility === item.id}
               onClick={() => setMobility(item.id)}
               className={cn(
                 choiceClass(mobility === item.id)
@@ -422,6 +431,7 @@ export default function ElderlySetup() {
               <button
                 key={item.id}
                 type="button"
+                aria-pressed={support === item.id}
                 onClick={() => setSupport(item.id)}
                 className={cn(
                   choiceClass(support === item.id)
@@ -458,6 +468,7 @@ export default function ElderlySetup() {
             <button
               key={item.id}
               type="button"
+              aria-pressed={activity === item.id}
               onClick={() => setActivity(item.id)}
               className={cn(
                 "flex items-center justify-between gap-3",
@@ -515,9 +526,10 @@ export default function ElderlySetup() {
                 <button
                   key={item}
                   type="button"
+                  aria-pressed={relation === item}
                   onClick={() => setRelation(item)}
                   className={cn(
-                    "rounded-full px-3 py-1.5 text-sm font-semibold",
+                    "min-h-11 rounded-full px-3 text-sm font-semibold",
                     relation === item ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
                   )}
                 >
@@ -525,21 +537,31 @@ export default function ElderlySetup() {
                 </button>
               ))}
             </div>
-            <label className="mt-3 block text-sm font-semibold">Contact Name</label>
+            <label className="mt-3 block text-sm font-semibold" htmlFor="contact-name">
+              Contact Name
+            </label>
             <input
+              id="contact-name"
               value={contactName}
               onChange={(event) => setContactName(event.target.value)}
-              className="mt-1 h-12 w-full rounded-full bg-[#f4f5f7] px-3"
+              autoComplete="name"
+              className="mt-1 h-12 w-full rounded-full bg-[#f4f5f7] px-4 text-base"
             />
-            <label className="mt-3 block text-sm font-semibold">Mobile Phone Number</label>
+            <label className="mt-3 block text-sm font-semibold" htmlFor="contact-phone">
+              Mobile Phone Number
+            </label>
             <div className="mt-1 flex gap-2">
               <span className="flex h-12 items-center rounded-full bg-[#f4f5f7] px-3 text-sm">
                 🇸🇬 +65
               </span>
               <input
+                id="contact-phone"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
-                className="h-12 flex-1 rounded-full bg-[#f4f5f7] px-3"
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel-national"
+                className="h-12 flex-1 rounded-full bg-[#f4f5f7] px-4 text-base"
               />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
@@ -554,6 +576,8 @@ export default function ElderlySetup() {
           </Card>
           <button
             type="button"
+            role="checkbox"
+            aria-checked={fscEscalation}
             onClick={() => setFscEscalation((value) => !value)}
             className={cn("flex items-start gap-3", choiceClass(fscEscalation))}
           >
@@ -593,7 +617,7 @@ export default function ElderlySetup() {
             <p className="mt-1 text-sm text-muted-foreground">0:10 / 0:10</p>
             <button
               type="button"
-              className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#16181d] px-4 py-2 text-sm font-bold text-white"
+              className="mt-3 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#16181d] px-4 text-sm font-bold text-white"
             >
               <Play className="size-4" /> Play My Greeting
             </button>
@@ -627,6 +651,7 @@ export default function ElderlySetup() {
             <button
               key={item.id}
               type="button"
+              aria-pressed={textSize === item.id}
               onClick={() => setTextSize(item.id)}
               className={cn(
                 "flex items-center justify-between",

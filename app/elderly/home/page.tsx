@@ -19,13 +19,11 @@ export default function ElderlyHome() {
       current="/elderly/home"
     >
       <div className="space-y-3">
-        <div className="flex items-start justify-between gap-3">
-          <h1 className="text-[26px] leading-[1.1] font-extrabold tracking-[-0.04em]">
-            What would you like to do today, {senior.name}?
-          </h1>
-          <ListenButton label="Listen" />
-        </div>
+        <h1 className="text-[26px] leading-[1.15] font-extrabold tracking-[-0.04em]">
+          What would you like to do today, {senior.name}?
+        </h1>
         <p className="text-sm text-muted-foreground">Tap to listen to options out loud</p>
+        <ListenButton label="Listen" />
 
         <Link href="/elderly/activities" className="block">
           <Card tone="mint" className="relative min-h-[210px] overflow-hidden">
@@ -72,9 +70,9 @@ export default function ElderlyHome() {
                 className="size-12 rounded-full"
               />
               <div className="min-w-0 flex-1">
-                <p className="truncate font-bold">{raymond.name}</p>
-                <p className="text-[11px] font-semibold text-[#1b5e20]">Online now</p>
-                <p className="truncate text-xs text-muted-foreground">Shared: {raymond.shared}</p>
+                <p className="font-bold">{raymond.name}</p>
+                <p className="text-[13px] font-semibold text-[#1b5e20]">Online now</p>
+                <p className="text-xs text-muted-foreground">Shared: {raymond.shared}</p>
               </div>
             </div>
             <div className="mt-5 flex items-end justify-between gap-3">

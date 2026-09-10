@@ -28,7 +28,7 @@ export function PrimaryLink({
     <Link
       href={href}
       className={cn(
-        "inline-flex w-full items-center justify-center gap-2 px-5 transition",
+        "inline-flex w-full items-center justify-center gap-2 px-5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d] focus-visible:ring-offset-2",
         styles[variant],
         className
       )}

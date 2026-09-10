@@ -74,7 +74,12 @@ export function UiPic({
 }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={alt} className={cn("object-contain", className)} />
+    <img
+      src={src}
+      alt={alt}
+      aria-hidden={alt ? undefined : true}
+      className={cn("object-contain", className)}
+    />
   );
 }
 
@@ -99,9 +104,9 @@ export function Pill({
 
 export function StatusDot({ live = false }: { live?: boolean }) {
   return (
-    <span className="relative flex size-2.5">
+    <span className="relative flex size-2.5" aria-hidden>
       {live ? (
-        <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#2e7d32] opacity-60" />
+        <span className="absolute inline-flex size-full rounded-full bg-[#2e7d32] opacity-60 motion-safe:animate-ping" />
       ) : null}
       <span
         className={cn(
@@ -148,14 +153,15 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 
 export function choiceClass(on: boolean) {
   return cn(
-    "w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-[#d8efe4]" : "bg-white"
+    "min-h-14 w-full rounded-[28px] p-4 text-left transition",
+    on ? "bg-[#d8efe4] ring-2 ring-[#16181d]" : "bg-white"
   );
 }
 
 export function GoButton({ className }: { className?: string }) {
   return (
     <span
+      aria-hidden
       className={cn(
         "flex size-11 shrink-0 items-center justify-center rounded-full bg-[#16181d] text-white",
         className
