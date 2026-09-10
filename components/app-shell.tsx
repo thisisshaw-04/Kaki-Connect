@@ -95,18 +95,20 @@ export function AppShell({
           </div>
         ) : null}
         {typeof progress === "number" ? (
-          <div
-            className="kaki-progress-track mx-6 mb-2"
-            role="progressbar"
-            aria-label="Setup progress"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(Math.min(100, Math.max(0, progress)))}
-          >
-            <span
-              className="kaki-progress-fill"
-              style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
-            />
+          <div className="px-6 pb-2">
+            <div
+              className="kaki-progress-track"
+              role="progressbar"
+              aria-label="Setup progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(Math.min(100, Math.max(0, progress)))}
+            >
+              <span
+                className="kaki-progress-fill"
+                style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
+              />
+            </div>
           </div>
         ) : null}
       </header>

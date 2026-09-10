@@ -141,6 +141,8 @@
 
   .kaki-progress-track {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     height: 6px;
     background-color: #eadfce;
     border-radius: 9999px;
