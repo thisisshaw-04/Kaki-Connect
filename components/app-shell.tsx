@@ -112,7 +112,9 @@ export function AppShell({
         {children}
       </main>
       {footer ? (
-        <div className="shrink-0 px-5 pb-3 pt-1">{footer}</div>
+        <div className="relative z-20 shrink-0 bg-[var(--surface)] px-5 pt-1 pb-3">
+          {footer}
+        </div>
       ) : null}
       {showNav ? (
         <nav

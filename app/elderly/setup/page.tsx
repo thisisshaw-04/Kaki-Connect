@@ -151,7 +151,7 @@ export default function ElderlySetup() {
           <button
             type="button"
             onClick={next}
-            className="inline-flex min-h-16 w-full items-center justify-center gap-2 rounded-full bg-primary text-base font-semibold text-white shadow-md active:scale-[0.98]"
+            className="relative z-20 inline-flex min-h-16 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-primary text-base font-semibold text-white shadow-md active:scale-[0.98]"
           >
             {step === 6
               ? "Confirm & Continue"

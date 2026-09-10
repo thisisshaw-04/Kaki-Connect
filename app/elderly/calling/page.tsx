@@ -1,18 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Mic, MicOff, PhoneOff, Subtitles, Users, Volume2 } from "lucide-react";
 import { Portrait } from "@/components/ui-bits";
 import { photos } from "@/lib/data";
 
 export default function CallingPage() {
-  const router = useRouter();
   const [muted, setMuted] = useState(false);
 
   return (
     <div className="phone-dark relative flex h-full min-h-0 flex-col bg-[#1b1c1a] text-white">
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <Portrait
           src={photos.raymondCall}
           alt="Uncle Raymond on a video call"
@@ -31,7 +30,7 @@ export default function CallingPage() {
         <Portrait
           src={photos.uncleSelfie}
           alt="You on camera"
-          className="ml-auto h-28 w-24"
+          className="pointer-events-none ml-auto h-28 w-24"
         />
       </div>
       <div className="relative z-10 mx-4 mb-3 rounded-2xl bg-black/55 p-3 backdrop-blur">
@@ -46,7 +45,7 @@ export default function CallingPage() {
           <span className="font-bold">Raymond:</span> “Wah, today the weather very good ah! Did you water your plants already?”
         </p>
       </div>
-      <div className="relative z-10 flex items-center justify-around px-4 pb-6">
+      <div className="relative z-20 flex items-center justify-around px-4 pb-4">
         <button
           type="button"
           onClick={() => setMuted((value) => !value)}
@@ -69,16 +68,16 @@ export default function CallingPage() {
           </span>
           Add Kin
         </button>
-        <button
-          type="button"
-          onClick={() => router.push("/elderly/wrapup")}
+        <Link
+          href="/elderly/wrapup"
+          aria-label="End call"
           className="flex flex-col items-center gap-1 text-xs"
         >
           <span className="flex size-16 items-center justify-center rounded-full bg-[#ba1a1a]">
             <PhoneOff />
           </span>
           End Call
-        </button>
+        </Link>
       </div>
     </div>
   );
