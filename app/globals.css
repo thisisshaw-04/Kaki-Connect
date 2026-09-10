@@ -520,6 +520,75 @@
   outline-offset: 2px;
 }
 
+.kc-display-name {
+  display: block;
+}
+
+.kc-display-name-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #16181d;
+}
+
+.kc-display-name-field {
+  position: relative;
+}
+
+.kc-display-name-field input {
+  display: block;
+  box-sizing: border-box;
+  height: 56px;
+  width: 100%;
+  border: 1.5px solid #000000;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 0 56px 0 22px;
+  font-size: 18px;
+  line-height: 56px;
+  color: #16181d;
+  outline: none;
+  box-shadow: none;
+}
+
+.phone-app .kc-display-name-field input:focus,
+.phone-app .kc-display-name-field input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.kc-display-name-mic {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%);
+  color: #000000;
+  pointer-events: none;
+}
+
+.kc-display-name-mic svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  stroke: #000000;
+  fill: none;
+}
+
+.kc-display-name-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #4b5563;
+}
+
 .phone-home {
   display: flex;
   flex-shrink: 0;

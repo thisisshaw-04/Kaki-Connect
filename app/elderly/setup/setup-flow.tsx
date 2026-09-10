@@ -6,7 +6,6 @@ import {
   Camera,
   Check,
   Info,
-  Mic,
   Play,
   Shield,
   Smile,
@@ -180,20 +179,32 @@ export function SetupFlow({ step }: { step: number }) {
               </div>
             </div>
           </Card>
-          <label className="block space-y-3" htmlFor="display-name">
-            <span className="text-sm font-semibold">Your Display Name</span>
-            <div className="relative">
+          <label className="kc-display-name" htmlFor="display-name">
+            <span className="kc-display-name-label">Your Display Name</span>
+            <div className="kc-display-name-field">
               <input
                 id="display-name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 autoComplete="name"
                 enterKeyHint="next"
-                className="h-14 w-full rounded-full border border-[#16181d] bg-white px-5 pr-14 text-lg outline-none focus:ring-4 focus:ring-black/10"
               />
-              <Mic aria-hidden className="absolute top-1/2 right-5 size-5 -translate-y-1/2 text-[#16181d]" />
+              <span className="kc-display-name-mic" aria-hidden>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#000000"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" x2="12" y1="19" y2="22" />
+                </svg>
+              </span>
             </div>
-            <p className="flex items-start gap-1.5 text-xs leading-relaxed text-muted-foreground">
+            <p className="kc-display-name-hint">
               <Info className="mt-0.5 size-3.5 shrink-0" />
               Tap the mic icon anytime to speak instead of typing.
             </p>
