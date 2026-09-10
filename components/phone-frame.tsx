@@ -53,9 +53,7 @@ export function PhoneFrame({
       <div className="phone-aurora" aria-hidden>
         <span className="blob blob-honey" />
         <span className="blob blob-sky" />
-        <span className="blob blob-ink" />
         <span className="blob blob-rose" />
-        <span className="blob blob-foam" />
         <svg className="phone-noise" aria-hidden>
           <filter id="phone-grain">
             <feTurbulence
