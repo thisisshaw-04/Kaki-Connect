@@ -228,10 +228,10 @@ export default function ElderlySetup() {
                   aria-pressed={title === item}
                   onClick={() => setTitle(item)}
                   className={cn(
-                    "min-h-11 rounded-full px-4 text-sm font-semibold",
+                    "min-h-11 rounded-full border border-[#16181d] px-4 text-sm font-semibold",
                     title === item
                       ? "bg-[#16181d] text-white"
-                      : "bg-[#f4f5f7] text-foreground"
+                      : "bg-white text-foreground"
                   )}
                 >
                   {item}
@@ -304,8 +304,8 @@ export default function ElderlySetup() {
                     setEstate(item === "Bedok" ? "Bedok / East Coast" : item)
                   }
                   className={cn(
-                    "min-h-11 rounded-full px-3 text-sm font-semibold",
-                    estate.startsWith(item) ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
+                    "min-h-11 rounded-full border border-[#16181d] px-3 text-sm font-semibold",
+                    estate.startsWith(item) ? "bg-[#16181d] text-white" : "bg-white"
                   )}
                 >
                   {item}
@@ -529,8 +529,8 @@ export default function ElderlySetup() {
                   aria-pressed={relation === item}
                   onClick={() => setRelation(item)}
                   className={cn(
-                    "min-h-11 rounded-full px-3 text-sm font-semibold",
-                    relation === item ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
+                    "min-h-11 rounded-full border border-[#16181d] px-3 text-sm font-semibold",
+                    relation === item ? "bg-[#16181d] text-white" : "bg-white"
                   )}
                 >
                   {item}
