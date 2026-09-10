@@ -47,10 +47,12 @@ export default function RolePage() {
       >
         ✦
       </span>
-      <div className="relative mb-6 flex items-center justify-between">
-        <span className="flex size-14 items-center justify-center overflow-hidden rounded-full bg-white">
-          <UiPic src="/brand/kakiconnect-mark.png" alt="" className="size-11 object-contain" />
-        </span>
+      <div className="relative mb-6">
+        <UiPic
+          src="/brand/kakiconnect-mark.png"
+          alt=""
+          className="h-12 w-auto object-contain object-left"
+        />
       </div>
 
       <p className="relative text-center text-sm font-medium text-muted-foreground">{brand.shortLine}</p>
