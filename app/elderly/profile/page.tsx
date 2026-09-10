@@ -24,7 +24,7 @@ export default function ElderlyProfile() {
           <p className="mt-3 text-sm">{senior.languages.join(" · ")}</p>
           <p className="mt-1 text-sm text-muted-foreground">{senior.block}</p>
           <UiPic
-            src="/illustrations/person-wave.png"
+            src="/illustrations/person-point.png"
             alt=""
             className="mx-auto mt-3 h-32 w-auto object-contain object-bottom"
           />
