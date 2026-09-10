@@ -52,17 +52,18 @@ export function PhoneFrame({
     <div className={cn("phone-desk", className)}>
       <div className="phone-fit">
         <div className="phone-device">
-          <span className="phone-btn phone-btn-silent" />
-          <span className="phone-btn phone-btn-vol-up" />
-          <span className="phone-btn phone-btn-vol-down" />
-          <span className="phone-btn phone-btn-power" />
           <div className="phone-chassis">
+            <span className="phone-btn phone-btn-silent" />
+            <span className="phone-btn phone-btn-vol-up" />
+            <span className="phone-btn phone-btn-vol-down" />
+            <span className="phone-btn phone-btn-power" />
             <div className="phone-glass">
               <div className="phone-screen">
                 <div className="phone-chrome-top">
                   <div className="phone-island" aria-hidden>
-                    <span className="phone-camera" />
                     <span className="phone-sensor" />
+                    <span className="phone-speaker" />
+                    <span className="phone-camera" />
                   </div>
                   <div className="phone-status">
                     <span className="phone-time">9:41</span>
