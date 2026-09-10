@@ -8,7 +8,7 @@ export function SosButton() {
     <label
       htmlFor={SOS_SHEET_ID}
       aria-label="Emergency SOS"
-      className="relative z-[90] flex size-12 cursor-pointer items-center justify-center rounded-full bg-[#f8d4d2] text-[13px] font-bold tracking-tight text-[#8f2428] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8f2428] focus-visible:ring-offset-2"
+      className="relative z-[90] inline-flex min-h-10 cursor-pointer items-center justify-center rounded-full border border-[#f8d4d2] bg-[#f8d4d2] px-3.5 py-1.5 text-[12px] font-bold tracking-tight text-[#8f2428] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8f2428] focus-visible:ring-offset-2"
     >
       SOS
     </label>

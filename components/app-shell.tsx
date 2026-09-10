@@ -34,7 +34,7 @@ const nav = {
 } as const;
 
 const circleBtn =
-  "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-foreground transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c] focus-visible:ring-offset-2";
+  "flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f6ede3] text-ink transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c] focus-visible:ring-offset-2";
 
 export function AppShell({
   children,
@@ -64,11 +64,12 @@ export function AppShell({
   className?: string;
 }) {
   const items = nav[role];
+  const heading = title ?? brand.name;
 
   return (
     <div className={cn("relative flex h-full min-h-0 flex-col bg-background", className)}>
       <header className="shrink-0 bg-background">
-        <div className="flex items-center justify-between px-5 pt-3 pb-1">
+        <div className="flex items-center justify-between gap-2 px-4 py-3">
           {onBack ? (
             <button type="button" aria-label="Go back" onClick={onBack} className={circleBtn}>
               <ArrowLeft className="size-5" />
@@ -78,24 +79,18 @@ export function AppShell({
               <ArrowLeft className="size-5" />
             </a>
           ) : (
-            <div className="size-12 shrink-0" />
+            <div className="size-10 shrink-0" />
           )}
-          <div className="flex min-w-12 justify-end">{action}</div>
-        </div>
-        {title || subtitle ? (
-          <div className="px-6 pb-2 text-center">
-            {title ? (
-              <p className="text-[24px] leading-[1.15] font-extrabold tracking-[-0.04em] text-foreground">
-                {title ?? brand.name}
-              </p>
-            ) : null}
+          <div className="min-w-0 flex-1 text-center">
+            <p className="text-[18px] leading-tight font-bold tracking-tight text-ink">{heading}</p>
             {subtitle ? (
-              <p className="mt-1 text-[13px] font-medium text-muted-foreground">{subtitle}</p>
+              <p className="mt-0.5 text-[11px] font-medium text-muted-foreground">{subtitle}</p>
             ) : null}
           </div>
-        ) : null}
+          <div className="flex min-w-10 shrink-0 justify-end">{action}</div>
+        </div>
         {typeof progress === "number" ? (
-          <div className="px-6 pb-2">
+          <div className="px-5 pb-2">
             <div
               className="kaki-progress-track"
               role="progressbar"
@@ -119,8 +114,11 @@ export function AppShell({
         <div className="relative z-20 shrink-0 bg-background px-5 pt-1 pb-3">{footer}</div>
       ) : null}
       {showNav ? (
-        <nav aria-label="Main navigation" className="shrink-0 bg-background px-4 pt-1 pb-2">
-          <div className="flex items-end justify-between gap-1">
+        <nav
+          aria-label="Main navigation"
+          className="shrink-0 border-t border-[#eadfce] bg-background px-2 pt-1 pb-2"
+        >
+          <div className="flex items-end justify-around">
             {items.map((item) => {
               const active = current === item.href;
               const Icon = item.icon;
@@ -129,22 +127,13 @@ export function AppShell({
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className="flex min-h-16 min-w-[64px] flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c]"
+                  className={cn(
+                    "flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c]",
+                    active ? "text-ink" : "text-muted-foreground"
+                  )}
                 >
-                  <span
-                    className={cn(
-                      "flex size-12 items-center justify-center rounded-full",
-                      active ? "bg-[#3a322c] text-white" : "bg-white text-[#7a6c60]"
-                    )}
-                  >
-                    <Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} />
-                  </span>
-                  <span
-                    className={cn(
-                      "text-center text-xs leading-tight font-semibold",
-                      active ? "text-[#3a322c]" : "text-muted-foreground"
-                    )}
-                  >
+                  <Icon className="size-6" strokeWidth={active ? 2.3 : 1.7} />
+                  <span className="text-center text-[11px] leading-tight font-semibold">
                     {item.label}
                   </span>
                 </a>

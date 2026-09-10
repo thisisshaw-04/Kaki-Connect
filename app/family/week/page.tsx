@@ -20,8 +20,8 @@ export default function FamilyWeek() {
   return (
     <AppShell
       role="family"
-      title="This week"
-      subtitle="KakiConnect"
+      title="KakiConnect"
+      subtitle="This week"
       backHref="/family/home"
       showNav
       current="/family/week"

@@ -135,7 +135,7 @@ export function Card({
     <div
       className={cn(
         "rounded-[28px] p-5",
-        resolved === "white" ? "bg-beige-card" : pastel[resolved],
+        resolved === "white" ? "bg-white ring-1 ring-[#eadfce]" : pastel[resolved],
         className
       )}
     >

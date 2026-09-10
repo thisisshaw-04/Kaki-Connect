@@ -9,7 +9,8 @@ export default function BuddiesPage() {
   return (
     <AppShell
       role="elderly"
-      title="Call Your Kaki"
+      title="KakiConnect"
+      subtitle="Buddies"
       backHref="/elderly/home"
       action={<SosButton />}
       showNav

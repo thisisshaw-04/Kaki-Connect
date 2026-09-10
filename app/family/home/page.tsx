@@ -17,8 +17,8 @@ export default async function FamilyHome({
     return (
       <AppShell
         role="family"
-        title="Today"
-        subtitle="KakiConnect"
+        title="KakiConnect"
+        subtitle="Today"
         backHref="/family/link"
         showNav
         current="/family/home"
@@ -42,8 +42,8 @@ export default async function FamilyHome({
     return (
       <AppShell
         role="family"
-        title="Today"
-        subtitle="KakiConnect"
+        title="KakiConnect"
+        subtitle="Today"
         backHref="/family/link"
         showNav
         current="/family/home"
@@ -78,8 +78,8 @@ export default async function FamilyHome({
   return (
     <AppShell
       role="family"
-      title="Today"
-      subtitle="KakiConnect"
+      title="KakiConnect"
+      subtitle="Today"
       backHref="/family/link"
       showNav
       current="/family/home"

@@ -128,8 +128,9 @@ export function SetupFlow({ step }: { step: number }) {
   return (
     <AppShell
       role="elderly"
+      title="KakiConnect"
       backHref={backHref}
-      action={<ListenButton className="bg-[#f6ede3] text-[#3a322c]" />}
+      action={<ListenButton />}
       progress={progress}
       footer={
         <div>
@@ -167,20 +168,27 @@ export function SetupFlow({ step }: { step: number }) {
               Use your friendly nickname, English name, or casual senior address so nearby Kakis know what to call you.
             </p>
           </div>
-          <Card className="flex items-center gap-4">
-            <UiPic src="/ui/icon-elderly.svg" alt="" className="size-16" />
-            <div className="flex-1">
-              <p className="flex items-center gap-1 text-sm font-semibold text-primary">
-                <Check className="size-4" /> Using Uncle Joy avatar
-              </p>
-              <div className="mt-2 flex gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold">
-                  <Camera className="size-3.5" /> Take Photo
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold">
-                  <Smile className="size-3.5" /> Choose Avatar
-                </span>
-              </div>
+          <Card className="flex flex-col items-center p-5 text-center">
+            <span className="relative inline-flex">
+              <UiPic
+                src="/illustrations/person-point.png"
+                alt=""
+                className="size-28 rounded-full bg-[#f6ede3] object-contain object-bottom p-2"
+              />
+              <span className="absolute right-1 bottom-1 flex size-7 items-center justify-center rounded-full bg-[#f6ede3] text-ink ring-2 ring-white">
+                <Check className="size-4" />
+              </span>
+            </span>
+            <p className="mt-3 inline-flex items-center gap-1 rounded-full bg-[#fbf6f0] px-3 py-1 text-sm font-semibold">
+              Using Uncle Joy avatar
+            </p>
+            <div className="mt-3 grid w-full grid-cols-2 gap-2">
+              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full border border-[#eadfce] bg-white px-3 text-xs font-semibold">
+                <Camera className="size-3.5" /> Take Photo
+              </span>
+              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full border border-[#eadfce] bg-white px-3 text-xs font-semibold">
+                <Smile className="size-3.5" /> Choose Avatar
+              </span>
             </div>
           </Card>
           <label className="kc-display-name" htmlFor="display-name">
@@ -223,14 +231,16 @@ export function SetupFlow({ step }: { step: number }) {
                   aria-pressed={title === item}
                   onClick={() => setTitle(item)}
                   className={cn(
-                    "min-h-11 rounded-full border border-[#3a322c] px-4 text-sm font-semibold",
+                    "min-h-11 rounded-xl border px-3 py-2 text-sm font-semibold",
                     title === item
-                      ? "bg-[#3a322c] text-white"
-                      : "bg-white text-foreground"
+                      ? "border-ink bg-ink text-white"
+                      : "border-[#eadfce] bg-white text-foreground"
                   )}
                 >
-                  {item}
-                  {title === item ? " · Selected" : " · + Add"}
+                  <span className="block">{item}</span>
+                  <span className="block text-[11px] font-medium opacity-80">
+                    {title === item ? "Selected" : "+ Add"}
+                  </span>
                 </button>
               ))}
             </div>
@@ -261,16 +271,28 @@ export function SetupFlow({ step }: { step: number }) {
                   aria-pressed={age === item.id}
                   onClick={() => setAge(item.id)}
                   className={cn(
-                    setupChoice(age === item.id)
+                    "rounded-[20px] border-2 bg-white p-4 text-left",
+                    age === item.id ? "border-ink bg-[#f6ede3]" : "border-[#eadfce]"
                   )}
                 >
-                  <p className="text-[11px] font-semibold tracking-wide text-primary uppercase">
-                    {item.tag}
-                  </p>
-                  <p className="mt-1 font-bold">{item.label}</p>
-                  {age === item.id ? (
-                    <p className="mt-1 text-xs font-semibold text-primary">Selected</p>
-                  ) : null}
+                  <div className="flex items-start justify-between gap-2">
+                    <span
+                      className={cn(
+                        "flex size-5 items-center justify-center rounded-full border-2",
+                        age === item.id ? "border-ink bg-ink text-white" : "border-[#c8bfb3] bg-white"
+                      )}
+                    >
+                      {age === item.id ? <Check className="size-3" /> : null}
+                    </span>
+                    {age === item.id ? (
+                      <span className="rounded-full bg-[#fbf6f0] px-2 py-0.5 text-[10px] font-bold">
+                        Selected
+                      </span>
+                    ) : (
+                      <span className="text-[11px] text-muted-foreground">{item.tag}</span>
+                    )}
+                  </div>
+                  <p className="mt-3 font-bold">{item.label}</p>
                 </button>
               ))}
             </div>
@@ -307,12 +329,12 @@ export function SetupFlow({ step }: { step: number }) {
                 </button>
               ))}
             </div>
-            <Card className="mt-4 p-4">
-              <p className="font-bold text-primary">14 Kakis are active in Bedok!</p>
+            <div className="mt-4 rounded-[24px] bg-[#f6ede3] p-4">
+              <p className="font-bold text-ink">14 Kakis are active in Bedok!</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       ) : null}
