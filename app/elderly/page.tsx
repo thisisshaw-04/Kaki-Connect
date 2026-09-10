@@ -5,6 +5,7 @@ import { ArrowRight, Heart, Play, Shield, Smile, Volume2 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { PrimaryLink } from "@/components/primary-link";
+import { UiPic } from "@/components/ui-bits";
 import { brand } from "@/lib/data";
 
 export default function ElderlyWelcome() {
@@ -22,6 +23,11 @@ export default function ElderlyWelcome() {
           <p className="absolute top-4 right-5 text-[11px] tracking-[0.16em] text-muted-foreground">
             {"// 01"}
           </p>
+          <UiPic
+            src="/illustrations/kopi-chat.png"
+            alt=""
+            className="mx-auto mb-4 h-28 w-auto"
+          />
           <div className="flex items-end justify-center gap-3">
             <div className="flex size-16 flex-col items-center justify-center rounded-2xl bg-[#f6ede3] text-ink">
               <span className="text-xl">☕</span>

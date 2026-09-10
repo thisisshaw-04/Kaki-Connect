@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill, Portrait } from "@/components/ui-bits";
+import { Card, Pill, Portrait, UiPic } from "@/components/ui-bits";
 import { outing, photos } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -32,12 +32,17 @@ export default function WrapupPage() {
             alt="Uncle Raymond"
             className="size-16 rounded-full"
           />
-          <div>
+          <div className="min-w-0 flex-1">
             <h1 className="text-[22px] font-bold leading-tight">
               Great Chat with Uncle Raymond!
             </h1>
             <p className="text-sm text-muted-foreground">Both audio & video quality stayed crisp!</p>
           </div>
+          <UiPic
+            src="/illustrations/kopi-chat.png"
+            alt=""
+            className="h-14 w-auto shrink-0"
+          />
         </div>
         <p className="text-[16px] leading-relaxed">
           You chatted for <strong>18 minutes</strong>! That was wonderful.

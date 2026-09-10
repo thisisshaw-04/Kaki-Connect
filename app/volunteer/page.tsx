@@ -1,6 +1,7 @@
 import { ArrowRight, Clock, HeartHandshake, Shield } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
+import { UiPic } from "@/components/ui-bits";
 
 const scope = [
   {
@@ -35,9 +36,16 @@ export default function VolunteerWelcome() {
       backHref="/"
     >
       <div className="flex flex-1 flex-col gap-4">
-        <p className="inline-flex w-fit rounded-full bg-green-wash px-3 py-1 text-[11px] font-bold text-[#1f5a48]">
-          Neighborhood Companionship Initiative
-        </p>
+        <div className="flex items-start justify-between gap-3">
+          <p className="inline-flex w-fit rounded-full bg-green-wash px-3 py-1 text-[11px] font-bold text-[#1f5a48]">
+            Neighborhood Companionship Initiative
+          </p>
+          <UiPic
+            src="/illustrations/person-wave.png"
+            alt=""
+            className="-mt-1 h-[84px] w-auto shrink-0"
+          />
+        </div>
         <h1 className="text-[28px] leading-[1.08] font-semibold tracking-[-0.02em]">
           Help an older adult stay connected.
         </h1>

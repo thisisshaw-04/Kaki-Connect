@@ -695,9 +695,11 @@ export function SetupFlow({ step }: { step: number }) {
 
       {step === 9 ? (
         <div className="flex flex-1 flex-col items-center pt-8 text-center">
-          <div className="flex size-24 items-center justify-center rounded-full bg-[#f6ede3]">
-            <UiPic src="/ui/icon-kaki.svg" alt="" className="size-20" />
-          </div>
+          <UiPic
+            src="/illustrations/person-point.png"
+            alt=""
+            className="h-40 w-auto"
+          />
           <p className="mt-4 text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
             Profile Activated
           </p>

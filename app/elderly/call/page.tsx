@@ -2,7 +2,7 @@ import { Check, Shield } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill, Portrait } from "@/components/ui-bits";
+import { Card, Pill, Portrait, UiPic } from "@/components/ui-bits";
 import { familyMember, friends, photos } from "@/lib/data";
 
 export default function CallSetup() {
@@ -19,8 +19,17 @@ export default function CallSetup() {
       current="/elderly/friends"
     >
       <div className="space-y-4">
-        <Pill>Friendly Connection · Call Your Kaki</Pill>
-        <p className="text-sm font-semibold text-[#1f5a48]">Online & Ready for Kopi Chat</p>
+        <div className="flex items-start justify-between gap-2">
+          <div>
+            <Pill>Friendly Connection · Call Your Kaki</Pill>
+            <p className="mt-2 text-sm font-semibold text-[#1f5a48]">Online & Ready for Kopi Chat</p>
+          </div>
+          <UiPic
+            src="/illustrations/person-phone.png"
+            alt=""
+            className="h-[76px] w-auto shrink-0"
+          />
+        </div>
         <Card className="overflow-hidden p-0">
           <Portrait
             src={photos.raymond}

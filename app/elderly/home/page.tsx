@@ -2,7 +2,7 @@ import { ArrowRight, Phone, Trees } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
-import { Portrait } from "@/components/ui-bits";
+import { Portrait, UiPic } from "@/components/ui-bits";
 import { friends, senior } from "@/lib/data";
 
 export default function ElderlyHome() {
@@ -38,22 +38,27 @@ export default function ElderlyHome() {
         </section>
 
         <a href="/elderly/activities" className="block">
-          <article className="flex flex-col rounded-[24px] border-2 border-lilac bg-white p-5">
+          <article className="relative flex flex-col overflow-hidden rounded-[24px] border-2 border-lilac bg-white p-5">
             <div className="flex items-start justify-between gap-2">
               <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-lilac">
                 Fresh air & walking
               </span>
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-green-wash text-[#1f5a48]">
-                <Trees className="size-6" />
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-green-wash text-[#1f5a48]">
+                <Trees className="size-5" />
               </span>
             </div>
-            <h2 className="mt-3 text-[22px] leading-tight font-semibold tracking-[-0.015em]">
+            <h2 className="mt-3 max-w-[13rem] text-[22px] leading-tight font-semibold tracking-[-0.015em]">
               Go out for an outdoor activity
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 max-w-[14rem] text-sm leading-relaxed text-muted-foreground">
               Join a small group for Sunset Fishing & Kopi, Dim Sum, or park strolls with a volunteer helper.
             </p>
-            <div className="mt-5 border-t border-lilac pt-3">
+            <UiPic
+              src="/illustrations/outing-walk.png"
+              alt=""
+              className="pointer-events-none absolute right-[-6px] bottom-16 h-[148px] w-auto"
+            />
+            <div className="relative z-10 mt-5 border-t border-lilac pt-3">
               <span className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-lilac text-[13px] font-bold text-ink">
                 Explore Outing Activities
                 <ArrowRight className="size-4" />
@@ -71,17 +76,22 @@ export default function ElderlyHome() {
               <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-lilac">
                 Cozy & relaxing at home
               </span>
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-lilac-wash text-[#5a3d8a]">
-                <Phone className="size-6" />
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-lilac-wash text-[#5a3d8a]">
+                <Phone className="size-5" />
               </span>
             </div>
-            <h2 className="mt-3 text-[22px] leading-tight font-semibold tracking-[-0.015em]">
+            <h2 className="mt-3 max-w-[14rem] text-[22px] leading-tight font-semibold tracking-[-0.015em]">
               Stay home & call a matched Kaki
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-muted-foreground">
               Have a friendly 1-on-1 video kopi chat with Uncle Raymond (matched based on Hokkien & gardening).
             </p>
-            <div className="mt-3 flex items-center gap-3 rounded-xl bg-[#fbf6f0] p-3 ring-1 ring-lilac">
+            <UiPic
+              src="/illustrations/kopi-chat.png"
+              alt=""
+              className="pointer-events-none absolute right-[-10px] top-[78px] h-[92px] w-auto"
+            />
+            <div className="relative z-10 mt-3 flex items-center gap-3 rounded-xl bg-[#fbf6f0] p-3 ring-1 ring-lilac">
               <Portrait
                 src={raymond.photo}
                 alt={raymond.name}
@@ -95,7 +105,7 @@ export default function ElderlyHome() {
                 <p className="truncate text-xs text-muted-foreground">Shared: {raymond.shared}</p>
               </div>
             </div>
-            <div className="mt-5 border-t border-lilac pt-3">
+            <div className="relative z-10 mt-5 border-t border-lilac pt-3">
               <span className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-lilac text-[13px] font-bold text-ink">
                 Video Call Uncle Raymond
                 <ArrowRight className="size-4" />

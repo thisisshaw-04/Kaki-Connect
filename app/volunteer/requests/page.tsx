@@ -1,5 +1,5 @@
 import { AppShell } from "@/components/app-shell";
-import { Card, GoButton, Pill, SlashMark } from "@/components/ui-bits";
+import { Card, GoButton, Pill, SlashMark, UiPic } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
 
 export default function VolunteerRequests() {
@@ -12,10 +12,19 @@ export default function VolunteerRequests() {
       showNav
       current="/volunteer/requests"
     >
-      <h1 className="text-[30px] font-extrabold tracking-[-0.04em]">Open Companion Requests</h1>
-      <p className="mt-1 text-sm text-muted-foreground">
-        All Requests (4) · Nearby East Coast & Bedok
-      </p>
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <h1 className="text-[30px] font-extrabold tracking-[-0.04em]">Open Companion Requests</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            All Requests (4) · Nearby East Coast & Bedok
+          </p>
+        </div>
+        <UiPic
+          src="/illustrations/outing-walk.png"
+          alt=""
+          className="h-20 w-auto shrink-0"
+        />
+      </div>
       <ul className="mt-4 space-y-3">
         {volunteerRequests.map((request, index) => (
           <li key={request.id}>

@@ -1,6 +1,6 @@
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card } from "@/components/ui-bits";
+import { Card, UiPic } from "@/components/ui-bits";
 
 export default function VolunteerCommunity() {
   return (
@@ -13,10 +13,19 @@ export default function VolunteerCommunity() {
       current="/volunteer/community"
     >
       <div className="space-y-4">
-        <h1 className="text-2xl font-bold">Community</h1>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Heartlands Edition tips, Fei Yue FSC updates, and the companionship safety guide.
-        </p>
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold">Community</h1>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              Heartlands Edition tips, Fei Yue FSC updates, and the companionship safety guide.
+            </p>
+          </div>
+          <UiPic
+            src="/illustrations/person-broom.png"
+            alt=""
+            className="h-24 w-auto shrink-0"
+          />
+        </div>
         <Card tone="lavender">
           <p className="font-bold">Safe & Dignified Companionship</p>
           <p className="mt-1 text-sm text-muted-foreground">

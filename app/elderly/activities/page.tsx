@@ -2,7 +2,7 @@ import { MapPin, Phone, Shield, Sun } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
-import { Card, GoButton, Pill, Portrait } from "@/components/ui-bits";
+import { Card, GoButton, Pill, Portrait, UiPic } from "@/components/ui-bits";
 import {
   activityFilters,
   familyMember,
@@ -16,6 +16,12 @@ const nearbyTone: Record<string, "sky" | "mint" | "lavender"> = {
   "teh-c": "sky",
   "park-walk": "mint",
   herbal: "lavender",
+};
+
+const nearbyArt: Record<string, string> = {
+  "teh-c": "/illustrations/kopi-chat.png",
+  "park-walk": "/illustrations/outing-walk.png",
+  herbal: "/illustrations/person-tablet.png",
 };
 
 export default function ActivitiesPage() {
@@ -64,12 +70,17 @@ export default function ActivitiesPage() {
           </div>
         </div>
 
-        <Card tone="butter" className="overflow-hidden p-0">
-          <div className="relative h-40 overflow-hidden">
+        <Card tone="butter" className="relative overflow-hidden p-0">
+          <div className="relative h-40 overflow-hidden bg-green-wash">
             <Portrait
               src={photos.reservoir}
               alt="Bedok Reservoir at sunset"
-              className="h-full w-full"
+              className="h-full w-full opacity-90"
+            />
+            <UiPic
+              src="/illustrations/fishing.png"
+              alt=""
+              className="pointer-events-none absolute right-2 -bottom-2 h-36 w-auto"
             />
             <Pill className="absolute top-3 left-3 bg-white text-ink">
               Specially picked for you today
@@ -123,8 +134,8 @@ export default function ActivitiesPage() {
               href="/elderly/activities/support"
               className="block"
             >
-              <Card tone={nearbyTone[item.id] ?? "white"} className="p-4">
-                <div className="min-w-0">
+              <Card tone={nearbyTone[item.id] ?? "white"} className="relative overflow-hidden p-4">
+                <div className="min-w-0 pr-16">
                   <p className="text-[13px] font-semibold">
                     {item.when} · {item.attending}
                   </p>
@@ -142,6 +153,11 @@ export default function ActivitiesPage() {
                     <GoButton />
                   </span>
                 </div>
+                <UiPic
+                  src={nearbyArt[item.id] ?? "/illustrations/person-point.png"}
+                  alt=""
+                  className="pointer-events-none absolute right-[-4px] bottom-1 h-[92px] w-auto"
+                />
               </Card>
             </a>
           ))}

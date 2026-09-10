@@ -1,6 +1,6 @@
 import { AppShell } from "@/components/app-shell";
 import { SosButton } from "@/components/sos-button";
-import { GoButton, Portrait, StatusDot } from "@/components/ui-bits";
+import { GoButton, Portrait, StatusDot, UiPic } from "@/components/ui-bits";
 import { friends } from "@/lib/data";
 
 const tones = ["bg-green-wash", "bg-beige-card", "bg-lilac-wash"];
@@ -16,9 +16,16 @@ export default function BuddiesPage() {
       showNav
       current="/elderly/friends"
     >
-      <p className="text-center text-sm leading-relaxed text-muted-foreground">
-        Friendly 1-on-1 kopi chats with matched kakis. Family only sees that a chat happened.
-      </p>
+      <div className="flex items-end justify-between gap-2">
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          Friendly 1-on-1 kopi chats with matched kakis. Family only sees that a chat happened.
+        </p>
+        <UiPic
+          src="/illustrations/kopi-chat.png"
+          alt=""
+          className="h-16 w-auto shrink-0"
+        />
+      </div>
       <ul className="mt-5 grid grid-cols-2 gap-3">
         {friends.map((person, index) => (
           <li

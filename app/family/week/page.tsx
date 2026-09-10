@@ -1,5 +1,5 @@
 import { AppShell } from "@/components/app-shell";
-import { GoButton } from "@/components/ui-bits";
+import { GoButton, UiPic } from "@/components/ui-bits";
 import { week } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +7,12 @@ const kindLabel = {
   outing: "Outing",
   call: "Video chat",
   home: "At home",
+};
+
+const kindArt = {
+  outing: "/illustrations/outing-walk.png",
+  call: "/illustrations/kopi-chat.png",
+  home: "/illustrations/person-phone.png",
 };
 
 const tones = [
@@ -51,7 +57,10 @@ export default function FamilyWeek() {
                   <p className="mt-1 text-sm text-muted-foreground">{item.with}</p>
                 ) : null}
               </div>
-              {item.status === "live" ? <GoButton /> : null}
+              <div className="flex shrink-0 items-end gap-2">
+                <UiPic src={kindArt[item.kind]} alt="" className="h-14 w-auto" />
+                {item.status === "live" ? <GoButton /> : null}
+              </div>
             </div>
           );
 

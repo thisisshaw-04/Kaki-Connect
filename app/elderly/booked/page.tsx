@@ -2,7 +2,7 @@ import { Check, Play, Shield } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill, Portrait } from "@/components/ui-bits";
+import { Card, Pill, Portrait, UiPic } from "@/components/ui-bits";
 import { kakis, outing, photos, volunteer } from "@/lib/data";
 
 export default function BookedPage() {
@@ -16,13 +16,22 @@ export default function BookedPage() {
       current="/elderly/home"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#d5efe6] text-[#1f5a48]">
-          Confirmed • 4 Kakis & 1 Volunteer
-        </Pill>
-        <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
-          Coordinated dual-match
-        </p>
-        <h1 className="text-[26px] leading-tight font-bold">Your Outing is Ready!</h1>
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <Pill className="bg-[#d5efe6] text-[#1f5a48]">
+              Confirmed • 4 Kakis & 1 Volunteer
+            </Pill>
+            <p className="mt-2 text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
+              Coordinated dual-match
+            </p>
+            <h1 className="mt-1 text-[26px] leading-tight font-bold">Your Outing is Ready!</h1>
+          </div>
+          <UiPic
+            src="/illustrations/fishing.png"
+            alt=""
+            className="h-24 w-auto shrink-0"
+          />
+        </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           We found wonderful kakis and a friendly volunteer companion to join you for a gentle, sunlit afternoon.
         </p>
