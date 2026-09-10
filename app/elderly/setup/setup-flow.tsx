@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
-import { Card, Pill, SlashMark, UiPic, choiceClass } from "@/components/ui-bits";
+import { Card, Pill, SlashMark, UiPic } from "@/components/ui-bits";
 import { familyMember, senior } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -98,6 +98,13 @@ const textSizes = [
   { id: "xl", label: "Extra Large", hint: "Clear, high magnification" },
 ];
 
+function setupChoice(on: boolean) {
+  return cn(
+    "min-h-14 w-full rounded-[28px] p-4 text-left transition",
+    on ? "bg-[#f6ede3] ring-2 ring-[#3a322c]" : "bg-[#fbf6f0]"
+  );
+}
+
 export function SetupFlow({ step }: { step: number }) {
   const [name, setName] = useState(senior.name);
   const [title, setTitle] = useState("Uncle");
@@ -122,7 +129,7 @@ export function SetupFlow({ step }: { step: number }) {
     <AppShell
       role="elderly"
       backHref={backHref}
-      action={<ListenButton />}
+      action={<ListenButton className="bg-[#f6ede3] text-[#3a322c]" />}
       progress={progress}
       footer={
         <div>
@@ -160,7 +167,7 @@ export function SetupFlow({ step }: { step: number }) {
               Use your friendly nickname, English name, or casual senior address so nearby Kakis know what to call you.
             </p>
           </div>
-          <Card tone="sky" className="flex items-center gap-4">
+          <Card className="flex items-center gap-4">
             <UiPic src="/ui/icon-elderly.svg" alt="" className="size-16" />
             <div className="flex-1">
               <p className="flex items-center gap-1 text-sm font-semibold text-primary">
@@ -254,7 +261,7 @@ export function SetupFlow({ step }: { step: number }) {
                   aria-pressed={age === item.id}
                   onClick={() => setAge(item.id)}
                   className={cn(
-                    choiceClass(age === item.id)
+                    setupChoice(age === item.id)
                   )}
                 >
                   <p className="text-[11px] font-semibold tracking-wide text-primary uppercase">
@@ -300,7 +307,7 @@ export function SetupFlow({ step }: { step: number }) {
                 </button>
               ))}
             </div>
-            <Card tone="sky" className="mt-4 p-4">
+            <Card className="mt-4 p-4">
               <p className="font-bold text-primary">14 Kakis are active in Bedok!</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.
@@ -337,7 +344,7 @@ export function SetupFlow({ step }: { step: number }) {
                   }
                   className={cn(
                     "flex items-center gap-3",
-                    choiceClass(on)
+                    setupChoice(on)
                   )}
                 >
                   <span className="flex size-9 items-center justify-center rounded-full bg-white text-xs font-bold text-primary">
@@ -349,7 +356,7 @@ export function SetupFlow({ step }: { step: number }) {
               );
             })}
           </div>
-          <Card tone="butter">
+          <Card>
             <p className="font-bold">Helpful Tip · No worries!</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Speaking local dialects helps us pair you with Kakis who love the same banter!
@@ -389,7 +396,7 @@ export function SetupFlow({ step }: { step: number }) {
               aria-pressed={mobility === item.id}
               onClick={() => setMobility(item.id)}
               className={cn(
-                choiceClass(mobility === item.id)
+                setupChoice(mobility === item.id)
               )}
             >
               <SlashMark label={item.mark} />
@@ -422,7 +429,7 @@ export function SetupFlow({ step }: { step: number }) {
                 aria-pressed={support === item.id}
                 onClick={() => setSupport(item.id)}
                 className={cn(
-                  choiceClass(support === item.id)
+                  setupChoice(support === item.id)
                 )}
               >
                 <p className="font-bold">{item.title}</p>
@@ -454,7 +461,7 @@ export function SetupFlow({ step }: { step: number }) {
               onClick={() => setActivity(item.id)}
               className={cn(
                 "flex items-center justify-between gap-3",
-                choiceClass(activity === item.id)
+                setupChoice(activity === item.id)
               )}
             >
               <span className="min-w-0">
@@ -482,7 +489,7 @@ export function SetupFlow({ step }: { step: number }) {
           <p className="text-[16px] leading-[26px] text-muted-foreground">
             Link a trusted family member or caregiver so they stay updated whenever you go on an outing.
           </p>
-          <Card tone="mint">
+          <Card>
             <p className="flex items-center gap-2 text-sm font-bold text-primary">
               <Shield className="size-4" /> Protected by Fei Yue Community Care
             </p>
@@ -496,7 +503,7 @@ export function SetupFlow({ step }: { step: number }) {
           <Card>
             <div className="flex items-center justify-between">
               <p className="font-bold">Primary Emergency Contact</p>
-              <span className="rounded-full bg-[#d5efe6] px-2 py-0.5 text-[11px] font-bold text-[#1f5a48]">
+              <span className="rounded-full bg-[#f6ede3] px-2 py-0.5 text-[11px] font-bold text-[#3a322c]">
                 Verified · Active
               </span>
             </div>
@@ -547,7 +554,7 @@ export function SetupFlow({ step }: { step: number }) {
               SMS alert with live tracking will be sent to this number.
             </p>
           </Card>
-          <Card tone="blush">
+          <Card>
             <p className="font-bold">Automatic Safety Escalation · 60 Min Guarantee</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               If no check-in or reply is received within 60 minutes after an outing begins, an urgent alert and live GPS location will be automatically escalated to your family contact (+65 9123 4567) and the community care center.
@@ -558,7 +565,7 @@ export function SetupFlow({ step }: { step: number }) {
             role="checkbox"
             aria-checked={fscEscalation}
             onClick={() => setFscEscalation((value) => !value)}
-            className={cn("flex items-start gap-3", choiceClass(fscEscalation))}
+            className={cn("flex items-start gap-3", setupChoice(fscEscalation))}
           >
             <span
               className={cn(
@@ -591,7 +598,7 @@ export function SetupFlow({ step }: { step: number }) {
           <p className="text-[16px] leading-[26px] text-muted-foreground">
             A short 10-second voice note makes fellow Kakis feel welcome and at ease.
           </p>
-          <Card highlight>
+          <Card>
             <p className="font-bold">Voice Note Recorded</p>
             <p className="mt-1 text-sm text-muted-foreground">0:10 / 0:10</p>
             <button
@@ -601,7 +608,7 @@ export function SetupFlow({ step }: { step: number }) {
               <Play className="size-4" /> Play My Greeting
             </button>
           </Card>
-          <Card tone="butter">
+          <Card>
             <p className="font-semibold">Example prompt to say:</p>
             <p className="mt-1 text-sm italic">
               “Hello! I am Uncle Tan, love morning kopi and brisk walks!”
@@ -634,7 +641,7 @@ export function SetupFlow({ step }: { step: number }) {
               onClick={() => setTextSize(item.id)}
               className={cn(
                 "flex items-center justify-between",
-                choiceClass(textSize === item.id)
+                setupChoice(textSize === item.id)
               )}
             >
               <span>
@@ -666,7 +673,7 @@ export function SetupFlow({ step }: { step: number }) {
 
       {step === 9 ? (
         <div className="flex flex-1 flex-col items-center pt-8 text-center">
-          <div className="flex size-24 items-center justify-center rounded-full bg-[#d5efe6]">
+          <div className="flex size-24 items-center justify-center rounded-full bg-[#f6ede3]">
             <UiPic src="/ui/icon-kaki.svg" alt="" className="size-20" />
           </div>
           <p className="mt-4 text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
