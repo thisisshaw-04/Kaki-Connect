@@ -21,4 +21,12 @@ npm run dev -- --port 4321
 
 Open [http://localhost:4321](http://localhost:4321) and choose a role.
 
+## GitHub Pages
+
+The app is a static export. Pushing `main` to GitHub runs `.github/workflows/pages.yml` and publishes:
+
+**https://thisisshaw-04.github.io/Kaki-Connect/**
+
+In the GitHub repo, set **Settings → Pages → Source** to **GitHub Actions** if it is not already. Local `next dev` still serves from `/` so preview is unchanged.
+
 The original Stitch HTML export lives in [`stitch/`](./stitch) as visual reference. It is not the running app.

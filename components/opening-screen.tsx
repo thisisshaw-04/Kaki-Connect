@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/base-path";
+
 export function OpeningScreen() {
   return (
     <>
@@ -6,7 +8,7 @@ export function OpeningScreen() {
         <span className="opening-lockup">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/brand/kakiconnect-logo.png"
+            src={withBase("/brand/kakiconnect-logo.png")}
             alt="KakiConnect. Good Neighbours. Warmer Tomorrows."
             className="opening-logo"
           />

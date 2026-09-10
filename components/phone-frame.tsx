@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { SosSheet, SOS_SHEET_ID } from "@/components/sos-button";
+import { BasePathFix } from "@/components/base-path-fix";
 
 function SignalIcon() {
   return (
@@ -92,6 +93,7 @@ export function PhoneFrame({
                   </div>
                 </div>
                 <div className="phone-app">
+                  <BasePathFix />
                   <input id={SOS_SHEET_ID} type="checkbox" className="sos-toggle" />
                   <div className="phone-app-body">{children}</div>
                   <SosSheet />

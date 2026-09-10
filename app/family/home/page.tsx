@@ -1,15 +1,15 @@
+"use client";
+
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { MapPin, Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
 import { Card, GoButton, Portrait, StatusDot, UiPic } from "@/components/ui-bits";
 import { checkIns, outing, photos, senior, volunteer } from "@/lib/data";
 
-export default async function FamilyHome({
-  searchParams,
-}: {
-  searchParams: Promise<{ view?: string }>;
-}) {
-  const { view } = await searchParams;
+function FamilyHomeInner() {
+  const view = useSearchParams().get("view");
   const quiet = view === "quiet";
   const failed = view === "error";
 
@@ -174,5 +174,13 @@ export default async function FamilyHome({
         </p>
       </div>
     </AppShell>
+  );
+}
+
+export default function FamilyHome() {
+  return (
+    <Suspense fallback={null}>
+      <FamilyHomeInner />
+    </Suspense>
   );
 }

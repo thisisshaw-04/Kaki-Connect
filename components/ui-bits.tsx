@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { withBase } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 
 /** Fixed colour system: beige, lilac, crimson, green. */
@@ -60,7 +61,7 @@ export function Portrait({
 }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={alt} className={cn("object-cover", className)} />
+    <img src={withBase(src)} alt={alt} className={cn("object-cover", className)} />
   );
 }
 
@@ -76,7 +77,7 @@ export function UiPic({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
+      src={withBase(src)}
       alt={alt}
       aria-hidden={alt ? undefined : true}
       className={cn("object-contain", className)}
