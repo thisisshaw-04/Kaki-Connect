@@ -1,75 +1,159 @@
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Shield, Sun } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
-import { Initials, Pill } from "@/components/ui-bits";
-import { activities } from "@/lib/data";
+import { SosButton } from "@/components/sos-button";
+import { Card, Pill, Portrait } from "@/components/ui-bits";
+import {
+  activityFilters,
+  familyMember,
+  nearbyActivities,
+  outing,
+  photos,
+  senior,
+} from "@/lib/data";
 
 export default function ActivitiesPage() {
-  const [featured, ...rest] = activities;
-
   return (
     <AppShell
       role="elderly"
-      title="Outings nearby"
+      title="KakiConnect"
+      subtitle={`📍 ${senior.neighbourhood} Ave 3`}
       backHref="/elderly/home"
-      action={<ListenButton />}
+      action={<SosButton />}
       showNav
       current="/elderly/home"
     >
       <div className="space-y-5">
         <div>
-          <h1 className="font-display text-[24px] font-semibold tracking-[-0.03em]">
-            Good morning, Uncle Tan
+          <h1 className="text-[22px] font-semibold tracking-[-0.015em]">
+            Good morning, {senior.name}!
           </h1>
-          <p className="mt-1 text-muted-foreground">Bedok North · bright and breezy</p>
+          <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+            <Sun className="size-4 text-[#715c00]" />
+            {outing.weather}
+          </p>
+          <div className="mt-3">
+            <ListenButton label="Listen to today's activities" />
+          </div>
         </div>
 
-        <Link
-          href="/elderly/outing"
-          className="relative block overflow-hidden rounded-[28px] bg-primary p-5 text-primary-foreground shadow-[0_16px_32px_-16px_rgba(47,93,151,0.85)]"
-        >
-          <div className="absolute -top-10 -right-8 size-32 rounded-full bg-[#ffdd67]/20" />
-          <div className="relative">
-          <Pill className="bg-[#ffdd67] text-[#3d3200]">Picked for this afternoon</Pill>
-          <h2 className="font-display mt-3 text-[26px] leading-[1.1] font-semibold tracking-[-0.03em]">{featured.title}</h2>
-          <p className="mt-2 flex items-center gap-1 text-sm text-primary-foreground/90">
-            <MapPin className="size-4" />
-            {featured.place}
-          </p>
-          <div className="mt-4 flex items-center gap-3 rounded-2xl bg-white/12 p-3 ring-1 ring-white/15">
-            <div className="flex -space-x-2">
-              <Initials name="Ahmad" className="size-9 ring-2 ring-primary" />
-              <Initials name="Susan" tone="gold" className="size-9 ring-2 ring-primary" />
-            </div>
-            <p className="text-sm">
-              Ahmad and Auntie Susan are going. Wei Ming can walk with you.
-            </p>
+        <div>
+          <div className="flex items-center justify-between">
+            <h2 className="font-semibold">What would you like to do?</h2>
+            <span className="text-xs text-muted-foreground">Swipe for more</span>
           </div>
-          <span className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#ffdd67] font-bold text-[#3d3200] shadow-[0_4px_0_#e4c451]">
-            See this outing <ArrowRight className="size-4" />
-          </span>
+          <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+            {activityFilters.map((item, index) => (
+              <span
+                key={item}
+                className={`shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold ${
+                  index === 0 ? "bg-primary text-white" : "bg-[#f0eeea] text-foreground"
+                }`}
+              >
+                {item}
+              </span>
+            ))}
           </div>
-        </Link>
+        </div>
 
+        <Card className="overflow-hidden p-0">
+          <div className="relative h-36">
+            <Portrait
+              src={photos.reservoir}
+              alt="Bedok Reservoir at sunset"
+              className="h-full w-full"
+            />
+            <Pill className="absolute top-3 left-3 bg-[#ffdd67] text-[#3d3200]">
+              Specially picked for you today
+            </Pill>
+          </div>
+          <div className="p-5">
+            <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
+              {outing.area}
+            </p>
+            <h2 className="mt-1 text-[22px] font-bold leading-tight">{outing.title}</h2>
+            <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
+              <MapPin className="size-4" />
+              {outing.place}
+            </p>
+            <p className="mt-3 text-sm">
+              <span className="font-semibold">2 Kakis joining:</span> {outing.kakisJoining}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {outing.access.map((item) => (
+                <Pill key={item} className="bg-[#f0eeea] text-foreground">
+                  {item}
+                </Pill>
+              ))}
+            </div>
+            <Link
+              href="/elderly/activities/support"
+              className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18181b] text-[13px] font-bold text-white"
+            >
+              Join this Kaki Group <ArrowRight className="size-4" />
+            </Link>
+            <div className="mt-3 rounded-xl bg-[#eaf1f8] p-3">
+              <p className="flex items-center gap-1 text-sm font-bold text-primary">
+                <Shield className="size-4" /> Family peace of mind active
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                Your daughter Sarah will be automatically notified when your group gathers safely at the location.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <div className="flex items-center justify-between">
+          <h2 className="font-semibold">Happening Near You</h2>
+          <span className="text-sm font-semibold text-primary">View all (8)</span>
+        </div>
         <div className="space-y-3">
-          {rest.map((item) => (
+          {nearbyActivities.map((item) => (
             <Link
               key={item.id}
-              href="/elderly/outing"
-              className="lift block rounded-[22px] p-4 transition hover:-translate-y-0.5"
+              href="/elderly/activities/support"
+              className="block rounded-[20px] border border-[#c2c6d1]/30 bg-white p-4"
             >
-              <p className="text-xs font-semibold tracking-wide text-primary uppercase">
-                {item.start}
+              <p className="text-xs font-semibold text-primary">
+                {item.when} · {item.attending}
               </p>
               <h3 className="mt-1 text-lg font-bold">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.place}</p>
-              <p className="mt-2 text-sm">
-                {item.companions.map((c) => c.name).join(" · ")}
-              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {item.tags.map((tag) => (
+                  <Pill key={tag} className="bg-[#f0eeea] text-foreground">
+                    {tag}
+                  </Pill>
+                ))}
+              </div>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                View & Join Group <ArrowRight className="size-4" />
+              </span>
             </Link>
           ))}
         </div>
+
+        <Card className="bg-[#fff6f5]">
+          <p className="font-bold">Need assistance right now?</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Reach Silver Generation Ambassador or emergency response hotline with one tap.
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <a
+              href="tel:995"
+              className="flex min-h-12 items-center justify-center gap-1 rounded-full bg-[#ba1a1a] text-sm font-bold text-white"
+            >
+              <Phone className="size-4" /> Call 995
+            </a>
+            <a
+              href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
+              className="flex min-h-12 items-center justify-center gap-1 rounded-full bg-primary text-sm font-bold text-white"
+            >
+              <Phone className="size-4" /> Call Sarah
+            </a>
+          </div>
+        </Card>
       </div>
     </AppShell>
   );

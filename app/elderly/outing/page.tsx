@@ -1,66 +1,104 @@
+import { Check } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
-import { ListenButton } from "@/components/listen-button";
 import { PrimaryLink } from "@/components/primary-link";
-import { Initials, Pill } from "@/components/ui-bits";
-import { outing } from "@/lib/data";
+import { SosButton } from "@/components/sos-button";
+import { Card, Portrait } from "@/components/ui-bits";
+import { kakis, outing, photos, volunteer } from "@/lib/data";
 
 export default function OutingDetails() {
   return (
     <AppShell
       role="elderly"
-      title="Outing"
-      backHref="/elderly/activities"
-      action={<ListenButton />}
+      title="KakiConnect"
+      backHref="/elderly/activities/companion"
+      action={<SosButton />}
+      showNav
+      current="/elderly/home"
     >
-      <div className="flex flex-1 flex-col gap-4">
-        <div>
-          <Pill>Today · {outing.start}</Pill>
-          <h1 className="mt-2 text-[26px] leading-tight font-bold">{outing.title}</h1>
-          <p className="mt-1 text-muted-foreground">{outing.place}</p>
+      <div className="space-y-4">
+        <p className="text-sm font-semibold text-primary">
+          {outing.dayLabel}, 4:30 PM · {outing.spacesLeft} Spaces Left
+        </p>
+        <h1 className="text-[26px] leading-tight font-bold">{outing.title}</h1>
+        <p className="text-muted-foreground">{outing.jetty}</p>
+        <div className="flex items-center gap-2">
+          <div className="flex -space-x-2">
+            <Portrait src={photos.rachel} alt="Rachel" className="size-9 rounded-full ring-2 ring-white" />
+            {kakis.slice(0, 2).map((person) => (
+              <Portrait
+                key={person.name}
+                src={person.photo}
+                alt={person.name}
+                className="size-9 rounded-full ring-2 ring-white"
+              />
+            ))}
+          </div>
+          <p className="text-sm">Care guide + 3 senior kakis ready</p>
         </div>
 
-        <p className="text-[16px] leading-relaxed text-muted-foreground">
-          {outing.notes} Your daughter Priya will get a simple update when you
-          leave, arrive, and come home — not a live map.
-        </p>
+        <Card>
+          <p className="text-sm font-semibold text-primary">Support Match: {volunteer.name}</p>
+          <p className="text-sm text-muted-foreground">
+            Verified Companion • First-Aid Certified
+          </p>
+        </Card>
 
-        <div className="rounded-2xl border border-border bg-card p-4">
-          <h2 className="font-bold">Who’s going</h2>
+        <Card>
+          <p className="font-bold">Social Match • Your 3 Kakis</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Matched based on gentle walking pace, East-side neighbourhood, and morning kopi preferences.
+          </p>
           <ul className="mt-3 space-y-3">
-            {outing.companions.map((person) => (
-              <li key={person.name} className="flex items-center gap-3">
-                <Initials name={person.name} />
+            {kakis.map((person) => (
+              <li key={person.name} className="flex gap-3">
+                <Portrait
+                  src={person.photo}
+                  alt={person.name}
+                  className="size-12 rounded-xl"
+                />
                 <div>
-                  <p className="font-semibold">{person.name}</p>
-                  <p className="text-sm text-muted-foreground">{person.note}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="font-bold">
+                      {person.name}, {person.age}
+                    </p>
+                    <span className="text-xs font-semibold text-primary">{person.fit}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{person.neighbourhood}</p>
+                  <p className="mt-0.5 text-sm italic">&quot;{person.quote}&quot;</p>
+                  <p className="text-xs text-muted-foreground">
+                    {person.languages.join(" · ")}
+                  </p>
                 </div>
               </li>
             ))}
-            <li className="flex items-center gap-3">
-              <Initials name="Wei Ming" tone="green" />
-              <div>
-                <p className="font-semibold">Wei Ming · volunteer</p>
-                <p className="text-sm text-muted-foreground">
-                  Walks with you from the block and back
-                </p>
-              </div>
-            </li>
           </ul>
-        </div>
+        </Card>
 
-        <div className="flex flex-wrap gap-2">
-          {outing.access.map((item) => (
-            <Pill key={item} className="bg-muted text-foreground">
-              {item}
-            </Pill>
-          ))}
-        </div>
-
-        <div className="mt-auto pt-4">
-          <PrimaryLink href="/elderly/booked" className="h-16 text-lg">
-            Count me in
-          </PrimaryLink>
-        </div>
+        <Card>
+          <p className="font-bold">Accessibility & Dignity Guarantee</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Audited specifically for senior physical ease and comfort before every outing.
+          </p>
+          <ul className="mt-3 space-y-2 text-sm">
+            {[
+              ["Wheelchair Friendly Restroom", "Barrier-free, wide door, grab bars verified near the jetty."],
+              ["Shaded Bench Seating", "Rest benches every 50 meters along the route with ample shade."],
+              ["Step-Free Pathway", "Step-free ramp access verified from Bedok MRT bus stop to jetty."],
+            ].map(([title, detail]) => (
+              <li key={title} className="flex gap-2">
+                <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                <span>
+                  <span className="font-semibold">{title}</span>
+                  <span className="block text-muted-foreground">{detail}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+        <PrimaryLink href="/elderly/booked">Join Activity</PrimaryLink>
+        <PrimaryLink href="/elderly/care" variant="outline">
+          Message Rachel or Group
+        </PrimaryLink>
       </div>
     </AppShell>
   );

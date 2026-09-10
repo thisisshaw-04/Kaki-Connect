@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Home, Trees } from "lucide-react";
+import { ArrowRight, Home, MapPin, Trees } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
-import { Pill, Sticker } from "@/components/ui-bits";
-import { outing, friends, senior } from "@/lib/data";
+import { SosButton } from "@/components/sos-button";
+import { Card, Pill } from "@/components/ui-bits";
+import { friends, senior } from "@/lib/data";
 
 export default function ElderlyHome() {
   const raymond = friends[0];
@@ -11,71 +12,92 @@ export default function ElderlyHome() {
   return (
     <AppShell
       role="elderly"
-      title="Today"
+      title="KakiConnect"
+      subtitle={`📍 ${senior.neighbourhood}`}
       backHref="/"
-      action={<ListenButton label="Listen" />}
+      action={<SosButton />}
       showNav
       current="/elderly/home"
     >
-      <div className="space-y-3.5">
+      <div className="space-y-4">
         <section>
-          <p className="text-[13px] font-semibold tracking-tight text-primary">
-            Bedok · {outing.weather}
+          <div className="flex items-center justify-between">
+            <p className="text-[13px] font-semibold text-primary">Today&apos;s Choice</p>
+            <ListenButton label="Listen" />
+          </div>
+          <p className="mt-1 text-[11px] font-medium tracking-wide text-muted-foreground uppercase">
+            Thursday Morning
           </p>
-          <h1 className="font-display mt-1 text-[26px] leading-[1.1] font-semibold tracking-[-0.03em]">
+          <h1 className="mt-1 text-[22px] leading-[30px] font-semibold tracking-[-0.015em]">
             What would you like to do today, {senior.name}?
           </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Tap to listen to options out loud
+          </p>
         </section>
 
-        <Link
-          href="/elderly/activities"
-          className="lift block rounded-[24px] p-5 transition hover:-translate-y-0.5"
-        >
-          <Pill>
-            <Trees className="size-3.5" />
-            Fresh air
-          </Pill>
-          <h2 className="mt-3 text-[20px] font-bold tracking-tight">
-            Go out for a bit
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-            Sunset fishing this afternoon, or a slower walk. Someone can walk
-            with you from the block.
-          </p>
-          <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-            See nearby outings <ArrowRight className="size-4" />
-          </span>
+        <Link href="/elderly/activities" className="block">
+          <Card className="flex flex-col">
+            <div className="flex items-start justify-between gap-2">
+              <Pill>
+                <Trees className="size-3.5" />
+                Fresh air & walking
+              </Pill>
+              <span className="flex size-12 items-center justify-center rounded-2xl bg-[#d4e3ff]/60 text-primary">
+                <Trees className="size-6" />
+              </span>
+            </div>
+            <h2 className="mt-3 text-[22px] font-bold leading-tight">
+              Go out for an outdoor activity
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Join a small group for Sunset Fishing & Kopi, Dim Sum, or park strolls with a volunteer helper.
+            </p>
+            <span className="mt-5 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18181b] text-[13px] font-bold text-white">
+              Explore Outing Activities <ArrowRight className="size-4" />
+            </span>
+          </Card>
         </Link>
 
-        <Link
-          href="/elderly/call"
-          className="lift-fun relative block overflow-hidden rounded-[24px] p-5"
-        >
-          <Sticker className="absolute top-0 right-5 rounded-t-none">
-            Easy for today
-          </Sticker>
-          <Pill className="bg-[#fff4c4] text-[#715c00]">
-            <Home className="size-3.5" />
-            Stay in
-          </Pill>
-          <h2 className="mt-3 text-[20px] font-bold tracking-tight">
-            Stay home and call a friend
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-            {raymond.name} is free. You both like gardens and a slow kopi chat.
-          </p>
-          <div className="mt-3 flex items-center gap-3 rounded-2xl bg-white/80 px-3 py-3 ring-1 ring-[#e4c451]/30">
-            <div className="flex size-10 items-center justify-center rounded-full bg-[#ffe17a] font-bold">
-              R
+        <Link href="/elderly/call" className="block">
+          <Card highlight className="relative">
+            <span className="absolute top-0 right-6 rounded-b-lg bg-[#ffdd67] px-3 py-0.5 text-[11px] font-bold text-[#766100]">
+              Recommended for today
+            </span>
+            <div className="mt-2 flex items-start justify-between gap-2">
+              <Pill className="bg-[#FEF7DC] text-[#766100]">
+                <Home className="size-3.5" />
+                Cozy & relaxing at home
+              </Pill>
+              <span className="flex size-12 items-center justify-center rounded-2xl bg-[#ffdd67] text-[#766100]">
+                <MapPin className="hidden" />
+                <Home className="size-6" />
+              </span>
             </div>
-            <div>
-              <p className="font-semibold">{raymond.name}</p>
-              <p className="text-xs font-semibold text-[#1b5e20]">Online now</p>
+            <h2 className="mt-3 text-[22px] font-bold leading-tight">
+              Stay home & call a matched Kaki
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Have a friendly 1-on-1 video kopi chat with Uncle Raymond (matched based on Hokkien & gardening).
+            </p>
+            <div className="mt-3 flex items-center gap-3 rounded-xl border border-[#c2c6d1]/30 bg-[#f0eeea] p-3">
+              <div className="flex size-10 items-center justify-center rounded-full bg-[#ffe17a] font-bold">
+                R
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between">
+                  <p className="truncate font-bold">{raymond.name}</p>
+                  <p className="text-[11px] font-semibold text-primary">Online now</p>
+                </div>
+                <p className="truncate text-xs text-muted-foreground">
+                  Shared: {raymond.shared}
+                </p>
+              </div>
             </div>
-          </div>
-          <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-            Start a video call <ArrowRight className="size-4" />
-          </span>
+            <span className="mt-5 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18181b] text-[13px] font-bold text-white">
+              Video Call Uncle Raymond <ArrowRight className="size-4" />
+            </span>
+          </Card>
         </Link>
       </div>
     </AppShell>

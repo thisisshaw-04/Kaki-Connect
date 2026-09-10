@@ -1,7 +1,7 @@
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { StatusDot } from "@/components/ui-bits";
-import { checkIns, outing, senior } from "@/lib/data";
+import { Card, StatusDot } from "@/components/ui-bits";
+import { checkIns, outing, senior, volunteer } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export default function FamilyOuting() {
@@ -10,7 +10,8 @@ export default function FamilyOuting() {
   return (
     <AppShell
       role="family"
-      title="This outing"
+      title="KakiConnect"
+      subtitle="This outing"
       backHref="/family/home"
       showNav
       current="/family/home"
@@ -22,21 +23,19 @@ export default function FamilyOuting() {
             {senior.name} is still out
           </div>
           <h1 className="mt-2 text-2xl font-bold">{outing.title}</h1>
-          <p className="text-muted-foreground">{outing.place}</p>
+          <p className="text-muted-foreground">{outing.pavilion}</p>
         </div>
-
         <div>
           <p className="mb-2 text-sm font-semibold">
             {done} of {checkIns.length} check-ins
           </p>
-          <div className="h-2 overflow-hidden rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-primary"
+          <div className="kaki-progress-track">
+            <span
+              className="kaki-progress-fill"
               style={{ width: `${(done / checkIns.length) * 100}%` }}
             />
           </div>
         </div>
-
         <ol className="space-y-4">
           {checkIns.map((item) => (
             <li key={item.id} className="flex gap-3">
@@ -60,12 +59,11 @@ export default function FamilyOuting() {
             </li>
           ))}
         </ol>
-
-        <p className="rounded-2xl bg-muted px-4 py-3 text-sm leading-relaxed">
-          Wei Ming taps these. You are not watching a map — just the moments
-          Dad agreed to share.
-        </p>
-
+        <Card>
+          <p className="text-sm leading-relaxed">
+            {volunteer.name} taps these. You are not watching a map — just the moments Dad agreed to share, plus SMS alerts to your phone.
+          </p>
+        </Card>
         <PrimaryLink href="/family/note" variant="outline">
           Send “don’t forget your cap”
         </PrimaryLink>

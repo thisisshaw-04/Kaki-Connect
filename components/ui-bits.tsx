@@ -17,7 +17,7 @@ export function Initials({
   };
   const initials = name
     .split(" ")
-    .filter((part) => !["Uncle", "Auntie"].includes(part))
+    .filter((part) => !["Uncle", "Auntie", "Mr", "Mdm"].includes(part))
     .slice(0, 2)
     .map((part) => part[0])
     .join("");
@@ -25,13 +25,28 @@ export function Initials({
   return (
     <div
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-[18px] text-sm font-bold ring-1 ring-black/5",
+        "flex size-12 shrink-0 items-center justify-center rounded-[16px] text-sm font-bold",
         tones[tone],
         className
       )}
     >
       {initials}
     </div>
+  );
+}
+
+export function Portrait({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={alt} className={cn("object-cover", className)} />
   );
 }
 
@@ -70,21 +85,34 @@ export function StatusDot({ live = false }: { live?: boolean }) {
   );
 }
 
-export function Sticker({
+export function Card({
   children,
   className,
+  highlight = false,
 }: {
   children: React.ReactNode;
   className?: string;
+  highlight?: boolean;
 }) {
   return (
-    <span
+    <div
       className={cn(
-        "inline-flex items-center rounded-md bg-[#ffdd67] px-2 py-0.5 text-[10px] font-bold tracking-wide text-[#3d3200] uppercase shadow-[0_2px_0_#e4c451]",
+        "rounded-[24px] border bg-white p-5",
+        highlight
+          ? "border-2 border-[#ffdd67] bg-gradient-to-b from-[#fffef9] to-white"
+          : "border-[#c2c6d1]/30",
         className
       )}
     >
       {children}
+    </div>
+  );
+}
+
+export function SlashMark({ label = "//" }: { label?: string }) {
+  return (
+    <span className="text-[11px] tracking-[0.18em] text-[#737781]/70">
+      {label}
     </span>
   );
 }

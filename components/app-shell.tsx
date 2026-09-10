@@ -2,10 +2,12 @@ import Link from "next/link";
 import {
   ArrowLeft,
   CalendarDays,
-  Heart,
-  Phone,
+  HeartHandshake,
+  Shield,
   User,
   Users,
+  Heart,
+  Phone,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { brand } from "@/lib/data";
@@ -14,9 +16,10 @@ type Role = "elderly" | "family" | "volunteer";
 
 const nav = {
   elderly: [
-    { href: "/elderly/home", label: "Today", icon: CalendarDays },
-    { href: "/elderly/friends", label: "Friends", icon: Users },
-    { href: "/elderly/profile", label: "Me", icon: User },
+    { href: "/elderly/home", label: "Activities", icon: CalendarDays },
+    { href: "/elderly/friends", label: "Buddies", icon: Users },
+    { href: "/elderly/care", label: "Care Hub", icon: Shield },
+    { href: "/elderly/profile", label: "Profile", icon: User },
   ],
   family: [
     { href: "/family/home", label: "Today", icon: Heart },
@@ -24,64 +27,99 @@ const nav = {
     { href: "/family/note", label: "Note", icon: Phone },
   ],
   volunteer: [
-    { href: "/volunteer/requests", label: "Requests", icon: CalendarDays },
-    { href: "/volunteer/live", label: "Live", icon: Heart },
+    { href: "/volunteer/requests", label: "Missions", icon: HeartHandshake },
+    { href: "/volunteer/live", label: "Check-in", icon: Shield },
+    { href: "/volunteer/community", label: "Community", icon: Users },
+    { href: "/volunteer/profile", label: "Profile", icon: User },
   ],
 } as const;
 
 export function AppShell({
   children,
   title,
+  subtitle,
   backHref,
+  onBack,
   role,
   action,
   showNav = false,
   current,
+  progress,
+  footer,
+  className,
 }: {
   children: React.ReactNode;
   title?: string;
+  subtitle?: string;
   backHref?: string;
+  onBack?: () => void;
   role: Role;
   action?: React.ReactNode;
   showNav?: boolean;
   current?: string;
+  progress?: number;
+  footer?: React.ReactNode;
+  className?: string;
 }) {
   const items = nav[role];
 
   return (
-    <div className="flex h-full min-h-0 flex-col bg-transparent">
-      <header className="shrink-0">
-        <div className="flex items-center gap-2 px-4 py-2">
-          {backHref ? (
+    <div className={cn("relative flex h-full min-h-0 flex-col bg-transparent", className)}>
+      <header className="shrink-0 border-b border-[#c2c6d1]/30 bg-[#fbf9f5]">
+        <div className="flex items-center gap-2 px-4 py-3">
+          {onBack ? (
+            <button
+              type="button"
+              aria-label="Go back"
+              onClick={onBack}
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f0eeea] text-foreground shadow-xs active:scale-95"
+            >
+              <ArrowLeft className="size-5" />
+            </button>
+          ) : backHref ? (
             <Link
               href={backHref}
               aria-label="Go back"
-              className="flex size-11 items-center justify-center rounded-full bg-white/80 text-primary shadow-[0_2px_8px_rgba(47,93,151,0.08)] ring-1 ring-primary/10"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f0eeea] text-foreground shadow-xs active:scale-95"
             >
               <ArrowLeft className="size-5" />
             </Link>
           ) : (
-            <div className="size-11" />
+            <div className="size-10 shrink-0" />
           )}
           <div className="min-w-0 flex-1 text-center">
-            <p className="font-display text-[13px] font-semibold tracking-[-0.02em] text-primary">
-              {brand.name}
+            <p className="text-[18px] leading-6 font-bold tracking-[-0.01em] text-foreground">
+              {title ?? brand.name}
             </p>
-            {title ? (
-              <h1 className="truncate text-[15px] font-semibold tracking-tight text-foreground">
-                {title}
-              </h1>
+            {subtitle ? (
+              <p className="mt-0.5 flex items-center justify-center gap-1 text-[11px] font-medium tracking-[0.04em] text-muted-foreground">
+                {subtitle}
+              </p>
             ) : null}
           </div>
-          <div className="flex min-w-11 justify-end">{action}</div>
+          <div className="flex min-w-10 justify-end">{action}</div>
         </div>
+        {typeof progress === "number" ? (
+          <div className="kaki-progress-track mx-4 mb-3">
+            <span
+              className="kaki-progress-fill"
+              style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
+            />
+          </div>
+        ) : null}
       </header>
       <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-4">
         {children}
       </main>
+      {footer ? (
+        <div className="shrink-0 px-5 pb-3 pt-1">{footer}</div>
+      ) : null}
       {showNav ? (
-        <div className="shrink-0 px-4 pb-1">
-          <nav className="flex items-center gap-1 rounded-full bg-white/85 p-1 shadow-[0_10px_28px_-12px_rgba(47,93,151,0.45)] ring-1 ring-primary/10 backdrop-blur-md">
+        <nav
+          aria-label="Main navigation"
+          className="shrink-0 border-t border-[#c2c6d1]/30 bg-white px-2 py-1.5"
+        >
+          <div className="flex items-center justify-around">
             {items.map((item) => {
               const active = current === item.href;
               const Icon = item.icon;
@@ -90,19 +128,23 @@ export function AppShell({
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex min-h-12 flex-1 flex-col items-center justify-center gap-0.5 rounded-full px-2 text-[11px] font-semibold tracking-tight transition",
+                    "flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-[11px] font-semibold transition",
                     active
-                      ? "bg-primary text-primary-foreground shadow-[0_6px_16px_-8px_rgba(47,93,151,0.9)]"
-                      : "text-muted-foreground hover:bg-muted/80"
+                      ? "text-primary"
+                      : "text-muted-foreground hover:bg-[#f0eeea]"
                   )}
                 >
-                  <Icon className="size-[18px]" />
+                  <Icon
+                    className="size-6"
+                    strokeWidth={active ? 2.4 : 1.8}
+                    fill={active ? "currentColor" : "none"}
+                  />
                   {item.label}
                 </Link>
               );
             })}
-          </nav>
-        </div>
+          </div>
+        </nav>
       ) : null}
     </div>
   );

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Card } from "@/components/ui-bits";
 import { senior } from "@/lib/data";
 
 export default function FamilyNote() {
@@ -21,19 +22,19 @@ export default function FamilyNote() {
   return (
     <AppShell
       role="family"
-      title="A note to Dad"
+      title="KakiConnect"
+      subtitle="A note to Dad"
       backHref="/family/home"
       showNav
       current="/family/note"
     >
       {status === "sent" ? (
-        <div className="lift-fun rounded-[24px] p-5">
-          <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+        <Card highlight>
+          <h1 className="text-[26px] font-semibold tracking-[-0.02em]">
             Sent to {senior.name}
           </h1>
           <p className="mt-2 leading-relaxed text-muted-foreground">
-            It’ll show on his home screen as a small card. He can heart it. You
-            won’t get a read receipt — that’s on purpose.
+            It’ll show on his home screen as a small card. He can heart it. You won’t get a read receipt — that’s on purpose.
           </p>
           <Button
             className="mt-5 h-12 w-full rounded-full"
@@ -44,16 +45,13 @@ export default function FamilyNote() {
           >
             Write another
           </Button>
-        </div>
+        </Card>
       ) : (
         <div className="flex flex-1 flex-col gap-4">
           <div>
-            <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
-              Keep it short
-            </h1>
+            <h1 className="text-[26px] font-semibold tracking-[-0.02em]">Keep it short</h1>
             <p className="mt-2 text-muted-foreground">
-              This is a nudge, not a chat thread. He’ll see it before he leaves
-              or when he’s next on the app.
+              This is a nudge, not a chat thread. He’ll see it before he leaves or when he’s next on the app.
             </p>
           </div>
           <Textarea
@@ -72,7 +70,7 @@ export default function FamilyNote() {
             </p>
           ) : null}
           <Button
-            className="mt-auto h-14 w-full rounded-full text-base shadow-[0_12px_24px_-12px_rgba(47,93,151,0.85)]"
+            className="mt-auto h-14 w-full rounded-full text-base"
             onClick={send}
           >
             Send note

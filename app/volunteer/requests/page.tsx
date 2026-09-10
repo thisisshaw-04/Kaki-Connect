@@ -1,45 +1,69 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
+import { Card, Pill, SlashMark } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
 
 export default function VolunteerRequests() {
   return (
     <AppShell
       role="volunteer"
-      title="Open requests"
+      title="KakiConnect"
+      subtitle="Volunteer Mode"
       backHref="/volunteer"
       showNav
       current="/volunteer/requests"
     >
-      <h1 className="text-2xl font-bold">Near Bedok this week</h1>
-      <p className="mt-2 text-muted-foreground">
-        Pick one you can actually finish. Better one complete walk than three
-        maybes.
+      <h1 className="text-2xl font-bold">Open Companion Requests</h1>
+      <p className="mt-1 text-sm text-muted-foreground">
+        All Requests (4) · Nearby East Coast & Bedok
       </p>
-      <ul className="mt-5 space-y-3">
-        {volunteerRequests.map((request) => (
+      <ul className="mt-4 space-y-3">
+        {volunteerRequests.map((request, index) => (
           <li key={request.id}>
             <Link
-              href={
-                request.id === "fishing-today"
-                  ? "/volunteer/outing"
-                  : "/volunteer/requests"
-              }
-              className="block rounded-2xl border border-border bg-card p-4"
+              href={request.id === "fishing" ? "/volunteer/outing" : "/volunteer/requests"}
+              className="block"
             >
-              <p className="text-xs font-semibold tracking-wide text-primary uppercase">
-                {request.when}
-              </p>
-              <h2 className="mt-1 text-lg font-bold">{request.title}</h2>
-              <p className="text-sm text-muted-foreground">
-                {request.senior} · {request.place}
-              </p>
-              <p className="mt-2 text-sm">{request.need}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{request.group}</p>
+              <Card highlight={request.featured}>
+                <div className="flex items-start justify-between gap-2">
+                  <SlashMark label={`// 0${index + 1}`} />
+                  {request.featured ? (
+                    <Pill className="bg-[#ffdd67] text-[#3d3200]">
+                      Featured Match · {request.distance}
+                    </Pill>
+                  ) : null}
+                </div>
+                <p className="mt-2 text-[11px] font-semibold tracking-wide text-primary uppercase">
+                  Walking Companionship
+                </p>
+                <h2 className="mt-1 text-lg font-bold">{request.title}</h2>
+                <p className="text-sm text-muted-foreground">
+                  {request.senior} · {request.age}y · {request.hangul}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed">{request.blurb}</p>
+                <p className="mt-2 text-sm font-semibold">{request.need}</p>
+                <p className="mt-1 text-sm">{request.when}</p>
+                <p className="text-sm text-muted-foreground">{request.place}</p>
+                <p className="mt-1 text-sm">{request.group}</p>
+                <p className="mt-2 text-xs font-semibold text-[#1b5e20]">{request.badge}</p>
+                {request.featured ? (
+                  <span className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#18181b] text-[13px] font-bold text-white">
+                    I Can Help <ArrowRight className="size-4" />
+                  </span>
+                ) : (
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    I Can Help <ArrowRight className="size-4" />
+                  </span>
+                )}
+              </Card>
             </Link>
           </li>
         ))}
       </ul>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Need a tailored route? Update your transit preferences in Profile to receive instant SMS companion matches.
+      </p>
     </AppShell>
   );
 }

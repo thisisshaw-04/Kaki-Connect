@@ -1,42 +1,73 @@
+import { ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { senior } from "@/lib/data";
+import { Card, Pill, SlashMark } from "@/components/ui-bits";
 
 export default function VolunteerWelcome() {
   return (
-    <AppShell role="volunteer" backHref="/">
-      <div className="flex flex-1 flex-col">
-        <p className="text-[13px] font-semibold tracking-tight text-primary">Volunteer</p>
-        <h1 className="font-display mt-2 text-[28px] leading-[1.08] font-semibold tracking-[-0.04em]">
-          Walk with someone. That’s the whole job.
-        </h1>
-        <p className="mt-3 text-[16px] leading-relaxed text-muted-foreground">
-          You are company for a neighbourhood outing — not a nurse. Family
-          Service Centre is on call if the weather turns or plans change.
+    <AppShell
+      role="volunteer"
+      title="KakiConnect"
+      subtitle="Volunteer Mode"
+      backHref="/"
+    >
+      <div className="flex flex-1 flex-col gap-4">
+        <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
+          Neighborhood Companionship Initiative
         </p>
-        <ul className="mt-6 space-y-3">
-          {[
-            {
-              title: "Travel and company only",
-              body: "Walks, MRT, a seat at the kopitiam. No medical care.",
-            },
-            {
-              title: "Family already knows",
-              body: `${senior.name}’s daughter sees your check-ins. You are not reporting in secret.`,
-            },
-            {
-              title: "Addresses unlock late",
-              body: "Block details appear only after you accept a request.",
-            },
-          ].map((item) => (
-            <li key={item.title} className="lift rounded-[22px] p-4">
-              <p className="font-bold">{item.title}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{item.body}</p>
+        <h1 className="text-[26px] leading-tight font-bold">
+          Help an older adult stay connected.
+        </h1>
+        <p className="text-[16px] leading-relaxed text-muted-foreground">
+          Accompany a senior to their favorite neighborhood activity. Every small walk, MRT trip, or reservoir visit helps prevent isolation right in your estate.
+        </p>
+        <Pill>Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
+        <p className="text-sm font-semibold">Scope of Volunteering · // Reassurances</p>
+        {[
+          {
+            n: "01",
+            title: "Non-medical, peer travel only",
+            body: "Friendly companion walking and leisure journeys only. No clinical lifting, nursing, or medication administration responsibilities.",
+          },
+          {
+            n: "02",
+            title: "24/7 FSC Coordinator On-Call",
+            body: "Direct Family Service Centre care desk line. Quick escalation support whenever weather changes or sudden changes occur.",
+          },
+          {
+            n: "03",
+            title: "Privacy-Protected Details",
+            body: "Senior profiles and NRIC information remain strictly safeguarded under PDPA. Meeting addresses unlock only when a walk is confirmed.",
+          },
+        ].map((item) => (
+          <Card key={item.n}>
+            <SlashMark label={item.n} />
+            <p className="mt-1 font-bold">{item.title}</p>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+          </Card>
+        ))}
+        <Card className="bg-[#fffef9]">
+          <p className="font-bold">Kaki Volunteer Quick Tips · 봉사 팁</p>
+          <ul className="mt-2 space-y-2 text-sm">
+            <li>
+              <strong>Walk at Their Rhythm.</strong> Never rush curbs or MRT gantries. Allow seniors to set their comfortable walking pace.
             </li>
-          ))}
-        </ul>
-        <div className="mt-auto pt-8">
-          <PrimaryLink href="/volunteer/requests">See open requests</PrimaryLink>
+            <li>
+              <strong>Hydration Check.</strong> Encourage water breaks, particularly during humid Singapore afternoon outings.
+            </li>
+            <li>
+              <strong>Check-In & Check-Out.</strong> Tap &apos;Arrived at Void Deck&apos; upon pickup so the elder&apos;s family gets quiet peace of mind.
+            </li>
+          </ul>
+        </Card>
+        <div className="mt-auto pt-2">
+          <PrimaryLink href="/volunteer/requests">
+            View Open Requests (4 Nearby)
+            <ArrowRight className="size-5" />
+          </PrimaryLink>
+          <p className="mt-2 text-center text-sm text-muted-foreground">
+            Your neighborhood has 4 seniors looking for a walking buddy today
+          </p>
         </div>
       </div>
     </AppShell>

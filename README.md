@@ -1,16 +1,16 @@
-# Beside the kopitiam — KakiConnect, rewritten
+# KakiConnect
 
-A neighbourhood companion for older adults in Singapore, plus a **family view** so a daughter in Punggol can see how Dad’s afternoon is going — without a live map, and without calling everyone a “kaki.”
+A clickable Singapore community companion demo, rebuilt to match the [Stitch](https://stitch.withgoogle.com/projects/15237305400784592082) screens: **Serene Play** cream stationery, Plus Jakarta Sans, yellow **Listen**, pink **SOS**, and the original elderly / volunteer journeys.
 
-The product name stays **KakiConnect**. The voice does not. Copy talks about neighbours, friends, company, and family.
+Family is kept as a third role so daughter **Sarah Tan** can follow outing check-ins without changing those journeys.
 
-## What you can do
+## Roles
 
-- **Seniors:** pick a quiet day in, or join an outing such as sunset fishing at Bedok Reservoir. Call Uncle Raymond from the sofa.
-- **Family:** see that Dad left home, arrived, who he’s with, and when he’s expected back. Send a short note. Preview a quiet day and a failed refresh.
-- **Volunteers:** take a walk-with request and tap check-ins that family can see.
+- **Elderly:** splash → 10-step setup (name, age & estate, languages, mobility, support, favourite activity, Family Peace of Mind, voice note, text size, all set) → Today’s Choice → Discover → support preference → companion match → outing details → booking. Buddies: call Uncle Raymond → live kopi video → 18-minute wrap-up. Care Hub for Sarah, Fei Yue FSC, 995.
+- **Family:** welcome → what you can see → today (live outing, quiet day, failed refresh) → check-in timeline → this week → a short note.
+- **Volunteer:** welcome & scope → open requests (fishing tomorrow 3:30, dim sum with Mdm Wong) → route & timings → meeting plan (Sarah Tan + Sarah Lee / Fei Yue) → 1-tap live check-in → safety guidelines.
 
-Seniors choose what family sees. No GPS trail, no call recordings, no medical log.
+Demo characters: Uncle Tan (Tan Ah Kow), Sarah Tan, Rachel Lin, Uncle Raymond, Ahmad, Susan, Mr Tan. No login or database.
 
 ## Run locally
 
@@ -20,5 +20,3 @@ npm run dev -- --port 4321
 ```
 
 Open [http://localhost:4321](http://localhost:4321) and choose a role.
-
-This is a clickable demo with fixed characters (Uncle Tan, Priya, Wei Ming). There is no login or database.

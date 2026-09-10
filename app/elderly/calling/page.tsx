@@ -2,50 +2,84 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Mic, MicOff, PhoneOff, Video, VideoOff } from "lucide-react";
-import { Initials } from "@/components/ui-bits";
-import { friends } from "@/lib/data";
+import { Mic, MicOff, PhoneOff, Subtitles, Users, Volume2 } from "lucide-react";
+import { Portrait } from "@/components/ui-bits";
+import { photos } from "@/lib/data";
 
 export default function CallingPage() {
-  const person = friends[0];
   const router = useRouter();
   const [muted, setMuted] = useState(false);
-  const [cameraOff, setCameraOff] = useState(false);
 
   return (
-    <div className="phone-dark flex h-full min-h-0 flex-col bg-[#1b1c1a] px-6 py-8 text-white">
-        <p className="text-center text-sm text-white/70">Connected · 00:12</p>
-        <div className="mt-10 flex flex-1 flex-col items-center justify-center">
-          <Initials name={person.name} className="size-28 text-3xl" />
-          <h1 className="mt-5 text-2xl font-bold">{person.name}</h1>
-          <p className="mt-1 text-white/70">Kopi chat from home</p>
+    <div className="phone-dark relative flex h-full min-h-0 flex-col bg-[#1b1c1a] text-white">
+      <div className="absolute inset-0">
+        <Portrait
+          src={photos.raymondCall}
+          alt="Uncle Raymond on a video call"
+          className="h-full w-full"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
+      </div>
+      <div className="relative z-10 flex items-center justify-between px-5 pt-4">
+        <div>
+          <p className="font-bold">Uncle Raymond</p>
+          <p className="text-xs text-white/80">04:15 • Good Signal</p>
         </div>
-        <div className="flex items-center justify-center gap-4 pb-8">
-          <button
-            type="button"
-            onClick={() => setMuted((value) => !value)}
-            className="flex size-14 flex-col items-center justify-center rounded-full bg-white/15"
-            aria-label={muted ? "Unmute" : "Mute"}
-          >
+        <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold">SOS</span>
+      </div>
+      <div className="relative z-10 mx-4 mt-auto mb-3 overflow-hidden rounded-2xl border border-white/20">
+        <Portrait
+          src={photos.uncleSelfie}
+          alt="You on camera"
+          className="ml-auto h-28 w-24"
+        />
+      </div>
+      <div className="relative z-10 mx-4 mb-3 rounded-2xl bg-black/55 p-3 backdrop-blur">
+        <p className="text-[11px] font-bold tracking-wide text-[#ffdd67] uppercase">
+          Conversation Starter
+        </p>
+        <p className="mt-1 text-sm">Ask Uncle Raymond about his home garden plants!</p>
+        <p className="mt-3 flex items-center gap-1 text-xs font-semibold">
+          <Subtitles className="size-3.5" /> Live Subtitles (English / Singlish)
+        </p>
+        <p className="mt-1 text-sm leading-relaxed">
+          <span className="font-bold">Raymond:</span> “Wah, today the weather very good ah! Did you water your plants already?”
+        </p>
+      </div>
+      <div className="relative z-10 flex items-center justify-around px-4 pb-6">
+        <button
+          type="button"
+          onClick={() => setMuted((value) => !value)}
+          className="flex flex-col items-center gap-1 text-xs"
+        >
+          <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
             {muted ? <MicOff /> : <Mic />}
-          </button>
-          <button
-            type="button"
-            onClick={() => router.push("/elderly/friends")}
-            className="flex size-16 items-center justify-center rounded-full bg-[#ba1a1a]"
-            aria-label="End call"
-          >
+          </span>
+          Mic {muted ? "Off" : "On"}
+        </button>
+        <button type="button" className="flex flex-col items-center gap-1 text-xs">
+          <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
+            <Volume2 />
+          </span>
+          Speaker
+        </button>
+        <button type="button" className="flex flex-col items-center gap-1 text-xs">
+          <span className="flex size-14 items-center justify-center rounded-full bg-white/15">
+            <Users />
+          </span>
+          Add Kin
+        </button>
+        <button
+          type="button"
+          onClick={() => router.push("/elderly/wrapup")}
+          className="flex flex-col items-center gap-1 text-xs"
+        >
+          <span className="flex size-16 items-center justify-center rounded-full bg-[#ba1a1a]">
             <PhoneOff />
-          </button>
-          <button
-            type="button"
-            onClick={() => setCameraOff((value) => !value)}
-            className="flex size-14 items-center justify-center rounded-full bg-white/15"
-            aria-label={cameraOff ? "Turn camera on" : "Turn camera off"}
-          >
-            {cameraOff ? <VideoOff /> : <Video />}
-          </button>
-        </div>
+          </span>
+          End Call
+        </button>
+      </div>
     </div>
   );
 }

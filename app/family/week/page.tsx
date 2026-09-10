@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
+import { Card } from "@/components/ui-bits";
 import { week } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -13,16 +14,15 @@ export default function FamilyWeek() {
   return (
     <AppShell
       role="family"
-      title="This week"
+      title="KakiConnect"
+      subtitle="This week"
       backHref="/family/home"
       showNav
       current="/family/week"
     >
-      <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
-        A light week so far
-      </h1>
+      <h1 className="text-[26px] font-semibold tracking-[-0.02em]">A light week so far</h1>
       <p className="mt-2 text-muted-foreground">
-        Two outings, one chat. No medical log — just how he spent his time.
+        Two outings, one kopi chat. No medical log — just how he spent his time.
       </p>
       <ol className="mt-5 space-y-3">
         {week.map((item) => {
@@ -30,12 +30,7 @@ export default function FamilyWeek() {
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-3">
-                <p
-                  className={cn(
-                    "text-sm font-semibold",
-                    live ? "text-[#ffdd67]" : "text-primary"
-                  )}
-                >
+                <p className={cn("text-sm font-semibold", live ? "text-[#ffdd67]" : "text-primary")}>
                   {item.day} · {item.date}
                 </p>
                 <span
@@ -53,33 +48,24 @@ export default function FamilyWeek() {
               </div>
               <h2 className="mt-1 font-bold">{item.title}</h2>
               {item.with ? (
-                <p
-                  className={cn(
-                    "mt-1 text-sm",
-                    live ? "text-primary-foreground/80" : "text-muted-foreground"
-                  )}
-                >
+                <p className={cn("mt-1 text-sm", live ? "text-primary-foreground/80" : "text-muted-foreground")}>
                   {item.with}
                 </p>
               ) : null}
             </>
           );
 
-          const className = cn(
-            "block rounded-[22px] p-4",
-            item.status === "live"
-              ? "bg-primary text-primary-foreground shadow-[0_12px_24px_-14px_rgba(47,93,151,0.9)]"
-              : "lift"
-          );
-
           return (
             <li key={item.date}>
               {item.status === "live" ? (
-                <Link href="/family/outing" className={className}>
+                <Link
+                  href="/family/outing"
+                  className="block rounded-[22px] bg-primary p-4 text-primary-foreground"
+                >
                   {inner}
                 </Link>
               ) : (
-                <div className={className}>{inner}</div>
+                <Card>{inner}</Card>
               )}
             </li>
           );
