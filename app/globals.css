@@ -50,6 +50,7 @@
   --color-green: var(--green);
   --color-green-wash: var(--green-wash);
   --color-ink: var(--ink);
+  --color-white: #ffffff;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);

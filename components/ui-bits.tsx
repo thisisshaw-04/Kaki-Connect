@@ -94,7 +94,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-beige-card px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink",
+        "inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink",
         className
       )}
     >

@@ -44,9 +44,7 @@ export default function ElderlyHome() {
           <Card tone="butter" className="relative">
             <div className="flex flex-wrap items-start justify-between gap-2">
               <Pill>Cozy & relaxing at home</Pill>
-              <span className="shrink-0 rounded-full bg-beige-card px-3 py-1 text-[11px] font-bold text-[#5a3d8a]">
-                Recommended for today
-              </span>
+              <Pill className="font-bold text-[#5a3d8a]">Recommended for today</Pill>
             </div>
             <h2 className="mt-4 text-[22px] font-extrabold leading-tight tracking-[-0.03em]">
               Stay home & call a matched Kaki

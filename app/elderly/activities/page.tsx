@@ -71,7 +71,7 @@ export default function ActivitiesPage() {
               alt="Bedok Reservoir at sunset"
               className="h-full w-full"
             />
-            <Pill className="absolute top-3 left-3 bg-[#f6ede3] text-[#3a322c]">
+            <Pill className="absolute top-3 left-3 bg-white text-ink">
               Specially picked for you today
             </Pill>
           </div>
