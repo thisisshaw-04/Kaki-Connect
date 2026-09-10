@@ -7,7 +7,7 @@ export default function FamilyLink() {
     <AppShell role="family" title="What you can see" backHref="/family">
       <div className="flex flex-1 flex-col gap-5">
         <div>
-          <h1 className="text-2xl font-bold">
+          <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
             {senior.name} invited {familyMember.name}
           </h1>
           <p className="mt-2 text-muted-foreground">
@@ -16,7 +16,7 @@ export default function FamilyLink() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border bg-card p-4">
+        <div className="lift rounded-[22px] p-4">
           <h2 className="font-bold text-[#1b5e20]">He is sharing</h2>
           <ul className="mt-2 space-y-2 text-sm leading-relaxed">
             {familyShare.yes.map((item) => (

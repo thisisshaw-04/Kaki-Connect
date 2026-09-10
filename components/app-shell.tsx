@@ -49,14 +49,14 @@ export function AppShell({
   const items = nav[role];
 
   return (
-    <div className="flex h-full min-h-0 flex-col bg-[var(--surface)]">
-      <header className="shrink-0 border-b border-border/70 bg-[var(--surface)]">
-        <div className="flex items-center gap-2 px-4 py-2.5">
+    <div className="flex h-full min-h-0 flex-col bg-transparent">
+      <header className="shrink-0">
+        <div className="flex items-center gap-2 px-4 py-2">
           {backHref ? (
             <Link
               href={backHref}
               aria-label="Go back"
-              className="flex size-11 items-center justify-center rounded-full text-primary hover:bg-muted"
+              className="flex size-11 items-center justify-center rounded-full bg-white/80 text-primary shadow-[0_2px_8px_rgba(47,93,151,0.08)] ring-1 ring-primary/10"
             >
               <ArrowLeft className="size-5" />
             </Link>
@@ -64,11 +64,11 @@ export function AppShell({
             <div className="size-11" />
           )}
           <div className="min-w-0 flex-1 text-center">
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+            <p className="font-display text-[13px] font-semibold tracking-[-0.02em] text-primary">
               {brand.name}
             </p>
             {title ? (
-              <h1 className="truncate text-base font-semibold text-foreground">
+              <h1 className="truncate text-[15px] font-semibold tracking-tight text-foreground">
                 {title}
               </h1>
             ) : null}
@@ -76,34 +76,33 @@ export function AppShell({
           <div className="flex min-w-11 justify-end">{action}</div>
         </div>
       </header>
-      <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-5">
+      <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-4">
         {children}
       </main>
       {showNav ? (
-        <nav className="shrink-0 border-t border-border bg-[var(--surface)] px-3 py-2">
-          <ul className="flex items-center justify-around">
+        <div className="shrink-0 px-4 pb-1">
+          <nav className="flex items-center gap-1 rounded-full bg-white/85 p-1 shadow-[0_10px_28px_-12px_rgba(47,93,151,0.45)] ring-1 ring-primary/10 backdrop-blur-md">
             {items.map((item) => {
               const active = current === item.href;
               const Icon = item.icon;
               return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "flex min-h-12 min-w-[4.5rem] flex-col items-center justify-center gap-0.5 rounded-xl px-3 text-xs font-semibold",
-                      active
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-muted"
-                    )}
-                  >
-                    <Icon className="size-5" />
-                    {item.label}
-                  </Link>
-                </li>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "flex min-h-12 flex-1 flex-col items-center justify-center gap-0.5 rounded-full px-2 text-[11px] font-semibold tracking-tight transition",
+                    active
+                      ? "bg-primary text-primary-foreground shadow-[0_6px_16px_-8px_rgba(47,93,151,0.9)]"
+                      : "text-muted-foreground hover:bg-muted/80"
+                  )}
+                >
+                  <Icon className="size-[18px]" />
+                  {item.label}
+                </Link>
               );
             })}
-          </ul>
-        </nav>
+          </nav>
+        </div>
       ) : null}
     </div>
   );

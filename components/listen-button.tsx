@@ -9,7 +9,7 @@ export function ListenButton({ label = "Listen" }: { label?: string }) {
   return (
     <button
       type="button"
-      className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#ffdd67] px-3 text-sm font-bold text-[#3d3200]"
+      className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[#ffdd67] px-3 text-[12px] font-bold tracking-tight text-[#3d3200] shadow-[0_4px_0_#e4c451] active:translate-y-px active:shadow-none"
       onClick={() => {
         setPlaying(true);
         window.setTimeout(() => setPlaying(false), 1800);

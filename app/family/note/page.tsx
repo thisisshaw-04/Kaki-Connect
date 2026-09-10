@@ -27,8 +27,10 @@ export default function FamilyNote() {
       current="/family/note"
     >
       {status === "sent" ? (
-        <div className="rounded-[24px] border border-[#cfe3c8] bg-[#f3faf3] p-5">
-          <h1 className="text-2xl font-bold">Sent to {senior.name}</h1>
+        <div className="lift-fun rounded-[24px] p-5">
+          <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+            Sent to {senior.name}
+          </h1>
           <p className="mt-2 leading-relaxed text-muted-foreground">
             It’ll show on his home screen as a small card. He can heart it. You
             won’t get a read receipt — that’s on purpose.
@@ -46,7 +48,9 @@ export default function FamilyNote() {
       ) : (
         <div className="flex flex-1 flex-col gap-4">
           <div>
-            <h1 className="text-2xl font-bold">Keep it short</h1>
+            <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+              Keep it short
+            </h1>
             <p className="mt-2 text-muted-foreground">
               This is a nudge, not a chat thread. He’ll see it before he leaves
               or when he’s next on the app.
@@ -67,7 +71,10 @@ export default function FamilyNote() {
               Write a few words so he knows it’s from you.
             </p>
           ) : null}
-          <Button className="mt-auto h-14 w-full rounded-full text-base" onClick={send}>
+          <Button
+            className="mt-auto h-14 w-full rounded-full text-base shadow-[0_12px_24px_-12px_rgba(47,93,151,0.85)]"
+            onClick={send}
+          >
             Send note
           </Button>
         </div>

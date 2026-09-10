@@ -12,7 +12,9 @@ export default function FriendsPage() {
       showNav
       current="/elderly/friends"
     >
-      <h1 className="text-[24px] font-bold">People you already know</h1>
+      <h1 className="font-display text-[24px] font-semibold tracking-[-0.03em]">
+        People you already know
+      </h1>
       <p className="mt-2 text-muted-foreground">
         A short video call, or sit together at the next outing. No swiping.
       </p>
@@ -21,7 +23,7 @@ export default function FriendsPage() {
           <li key={person.id}>
             <Link
               href={person.id === "raymond" ? "/elderly/call" : "/elderly/friends"}
-              className="flex items-center gap-3 rounded-2xl border border-border bg-card p-4"
+              className="lift flex items-center gap-3 rounded-[22px] p-4 transition hover:-translate-y-0.5"
             >
               <Initials name={person.name} />
               <div className="min-w-0 flex-1">

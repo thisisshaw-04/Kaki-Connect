@@ -6,8 +6,8 @@ export default function VolunteerWelcome() {
   return (
     <AppShell role="volunteer" backHref="/">
       <div className="flex flex-1 flex-col">
-        <p className="text-sm font-semibold text-primary">Volunteer</p>
-        <h1 className="mt-2 text-[28px] leading-tight font-bold">
+        <p className="text-[13px] font-semibold tracking-tight text-primary">Volunteer</p>
+        <h1 className="font-display mt-2 text-[28px] leading-[1.08] font-semibold tracking-[-0.04em]">
           Walk with someone. That’s the whole job.
         </h1>
         <p className="mt-3 text-[16px] leading-relaxed text-muted-foreground">
@@ -29,7 +29,7 @@ export default function VolunteerWelcome() {
               body: "Block details appear only after you accept a request.",
             },
           ].map((item) => (
-            <li key={item.title} className="rounded-2xl border border-border bg-card p-4">
+            <li key={item.title} className="lift rounded-[22px] p-4">
               <p className="font-bold">{item.title}</p>
               <p className="mt-1 text-sm text-muted-foreground">{item.body}</p>
             </li>

@@ -9,13 +9,15 @@ export default function CallSetup() {
   return (
     <AppShell role="elderly" title="Video call" backHref="/elderly/friends">
       <div className="flex flex-1 flex-col">
-        <h1 className="text-[26px] font-bold">Call {person.name}</h1>
+        <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+          Call {person.name}
+        </h1>
         <p className="mt-2 text-[16px] text-muted-foreground">
           A short face-to-face from the sofa. Family only sees that a chat
           happened, not what you talked about.
         </p>
 
-        <div className="mt-6 rounded-[24px] border border-border bg-card p-5">
+        <div className="lift mt-6 rounded-[24px] p-5">
           <div className="flex items-center gap-4">
             <Initials name={person.name} className="size-16 text-lg" />
             <div>

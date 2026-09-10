@@ -18,19 +18,32 @@ export default function FamilyWeek() {
       showNav
       current="/family/week"
     >
-      <h1 className="text-2xl font-bold">A light week so far</h1>
+      <h1 className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+        A light week so far
+      </h1>
       <p className="mt-2 text-muted-foreground">
         Two outings, one chat. No medical log — just how he spent his time.
       </p>
       <ol className="mt-5 space-y-3">
         {week.map((item) => {
+          const live = item.status === "live";
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-3">
-                <p className="text-sm font-semibold text-primary">
+                <p
+                  className={cn(
+                    "text-sm font-semibold",
+                    live ? "text-[#ffdd67]" : "text-primary"
+                  )}
+                >
                   {item.day} · {item.date}
                 </p>
-                <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground">
+                <span
+                  className={cn(
+                    "text-xs font-semibold tracking-wide uppercase",
+                    live ? "text-primary-foreground/75" : "text-muted-foreground"
+                  )}
+                >
                   {item.status === "live"
                     ? "Happening now"
                     : item.status === "upcoming"
@@ -40,16 +53,23 @@ export default function FamilyWeek() {
               </div>
               <h2 className="mt-1 font-bold">{item.title}</h2>
               {item.with ? (
-                <p className="mt-1 text-sm text-muted-foreground">{item.with}</p>
+                <p
+                  className={cn(
+                    "mt-1 text-sm",
+                    live ? "text-primary-foreground/80" : "text-muted-foreground"
+                  )}
+                >
+                  {item.with}
+                </p>
               ) : null}
             </>
           );
 
           const className = cn(
-            "block rounded-2xl border p-4",
+            "block rounded-[22px] p-4",
             item.status === "live"
-              ? "border-[#cfe3c8] bg-[#f3faf3]"
-              : "border-border bg-card"
+              ? "bg-primary text-primary-foreground shadow-[0_12px_24px_-14px_rgba(47,93,151,0.9)]"
+              : "lift"
           );
 
           return (

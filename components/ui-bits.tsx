@@ -25,7 +25,7 @@ export function Initials({
   return (
     <div
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-2xl text-sm font-bold",
+        "flex size-12 shrink-0 items-center justify-center rounded-[18px] text-sm font-bold ring-1 ring-black/5",
         tones[tone],
         className
       )}
@@ -45,7 +45,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-[#eaf1f8] px-3 py-1 text-xs font-semibold text-primary",
+        "inline-flex items-center gap-1.5 rounded-full bg-[#eaf1f8] px-3 py-1 text-[11px] font-semibold tracking-tight text-primary",
         className
       )}
     >
@@ -66,6 +66,25 @@ export function StatusDot({ live = false }: { live?: boolean }) {
           live ? "bg-[#2e7d32]" : "bg-muted-foreground"
         )}
       />
+    </span>
+  );
+}
+
+export function Sticker({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center rounded-md bg-[#ffdd67] px-2 py-0.5 text-[10px] font-bold tracking-wide text-[#3d3200] uppercase shadow-[0_2px_0_#e4c451]",
+        className
+      )}
+    >
+      {children}
     </span>
   );
 }

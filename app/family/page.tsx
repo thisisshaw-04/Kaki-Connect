@@ -1,27 +1,35 @@
 import { Shield } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
+import { SlashMark } from "@/components/brand-mark";
 import { familyMember, senior } from "@/lib/data";
 
 export default function FamilyWelcome() {
   return (
     <AppShell role="family" backHref="/">
       <div className="flex flex-1 flex-col">
-        <p className="text-sm font-semibold text-primary">Family view</p>
-        <h1 className="mt-2 text-3xl leading-tight font-bold tracking-tight">
+        <div className="flex items-center justify-between">
+          <p className="text-[13px] font-semibold tracking-tight text-primary">
+            Family view
+          </p>
+          <SlashMark label="// Priya" />
+        </div>
+        <h1 className="font-display mt-2 text-[30px] leading-[1.08] font-semibold tracking-[-0.04em]">
           See how {senior.name}’s day is going.
         </h1>
-        <p className="mt-3 max-w-md text-[16px] leading-relaxed text-muted-foreground">
+        <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
           Hi {familyMember.name}. This is a calm check-in, not a tracker.{" "}
           {senior.name} chose what you can see — outings, who he’s with, and
           when he’s home.
         </p>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-4">
+        <div className="lift mt-6 rounded-[22px] p-4">
           <div className="flex items-start gap-3">
-            <Shield className="mt-0.5 size-5 text-primary" />
+            <span className="flex size-10 items-center justify-center rounded-2xl bg-[#eaf1f8] text-primary">
+              <Shield className="size-5" />
+            </span>
             <div>
-              <p className="font-semibold">Dignity first</p>
+              <p className="font-semibold tracking-tight">Dignity first</p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 No live GPS. No recordings. If he’s at home doing nothing in
                 particular, that’s all you’ll see: home, and well.
