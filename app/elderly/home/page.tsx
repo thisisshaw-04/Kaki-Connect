@@ -25,7 +25,7 @@ export default function ElderlyHome() {
         <ListenButton label="Listen" />
 
         <a href="/elderly/activities" className="block">
-          <Card tone="mint">
+          <Card tone="mint" className="border-2 border-ink">
             <Pill>Fresh air & walking</Pill>
             <h2 className="mt-4 text-[22px] font-extrabold leading-tight tracking-[-0.03em]">
               Go out for an outdoor activity
@@ -41,7 +41,7 @@ export default function ElderlyHome() {
         </a>
 
         <a href="/elderly/call" className="block">
-          <Card tone="butter" className="relative">
+          <Card tone="butter" className="relative border-2 border-ink">
             <div className="flex flex-wrap items-start justify-between gap-2">
               <Pill>Cozy & relaxing at home</Pill>
               <Pill className="font-bold text-[#5a3d8a]">Recommended for today</Pill>
