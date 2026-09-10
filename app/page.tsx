@@ -48,12 +48,16 @@ export default function RolePage() {
 
       <Link
         href={featured.href}
-        className={`relative mt-6 block overflow-hidden rounded-[32px] ${featured.tone} p-5`}
+        className={`mt-6 flex flex-col rounded-[32px] ${featured.tone} p-5`}
       >
-        <UiPic src={featured.art} alt="" className="absolute -right-2 -top-2 size-28" />
-        <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
-        <p className="mt-1 max-w-[70%] text-sm text-muted-foreground">{featured.hint}</p>
-        <div className="mt-8 flex items-end justify-between">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0 pt-1">
+            <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
+            <p className="mt-1 max-w-[12.5rem] text-sm text-muted-foreground">{featured.hint}</p>
+          </div>
+          <UiPic src={featured.art} alt="" className="size-20 shrink-0" />
+        </div>
+        <div className="mt-5 flex items-center justify-between">
           <p className="text-sm font-bold">Continue</p>
           <GoButton />
         </div>
@@ -64,7 +68,7 @@ export default function RolePage() {
           <Link
             key={role.href}
             href={role.href}
-            className={`relative flex min-h-[210px] flex-col overflow-hidden rounded-[28px] ${role.tone} p-4`}
+            className={`relative flex min-h-[210px] flex-col rounded-[28px] border border-[#16181d] ${role.tone} p-4`}
           >
             <UiPic src={role.art} alt="" className="mx-auto size-16" />
             <p className="mt-2 text-[18px] font-extrabold tracking-[-0.03em]">{role.title}</p>
