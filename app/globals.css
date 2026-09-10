@@ -71,8 +71,8 @@
   --green-wash: #d5efe6;
   --ink: #3a322c;
 
-  --surface: var(--beige);
-  --background: var(--beige);
+  --surface: #ffffff;
+  --background: #ffffff;
   --foreground: var(--ink);
   --card: var(--beige-card);
   --card-foreground: var(--ink);
@@ -493,7 +493,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #fdfbf8;
+  background: #ffffff;
   cursor: pointer;
   animation: opening-dismiss 0.55s ease 2.55s forwards;
 }
