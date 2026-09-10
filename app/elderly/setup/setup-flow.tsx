@@ -180,7 +180,7 @@ export function SetupFlow({ step }: { step: number }) {
               </div>
             </div>
           </Card>
-          <label className="block space-y-2" htmlFor="display-name">
+          <label className="block space-y-3" htmlFor="display-name">
             <span className="text-sm font-semibold">Your Display Name</span>
             <div className="relative">
               <input
@@ -189,13 +189,13 @@ export function SetupFlow({ step }: { step: number }) {
                 onChange={(event) => setName(event.target.value)}
                 autoComplete="name"
                 enterKeyHint="next"
-                className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 pr-12 text-lg outline-none focus:ring-4 focus:ring-black/10"
+                className="h-14 w-full rounded-full border border-[#16181d] bg-white px-5 pr-14 text-lg outline-none focus:ring-4 focus:ring-black/10"
               />
-              <Mic aria-hidden className="absolute top-1/2 right-4 size-5 -translate-y-1/2 text-[#fde047]" />
+              <Mic aria-hidden className="absolute top-1/2 right-5 size-5 -translate-y-1/2 text-[#16181d]" />
             </div>
-            <p className="flex items-start gap-1 text-xs text-muted-foreground">
+            <p className="flex items-start gap-1.5 text-xs leading-relaxed text-muted-foreground">
               <Info className="mt-0.5 size-3.5 shrink-0" />
-              Tap the yellow mic icon anytime to speak instead of typing.
+              Tap the mic icon anytime to speak instead of typing.
             </p>
           </label>
           <div>
@@ -267,7 +267,7 @@ export function SetupFlow({ step }: { step: number }) {
               value={estate}
               onChange={(event) => setEstate(event.target.value)}
               aria-label="Your estate or town"
-              className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 text-base"
+              className="h-14 w-full rounded-full border border-[#16181d] bg-white px-5 text-base"
             >
               {estates.map((item) => (
                 <option key={item}>{item}</option>
@@ -525,13 +525,13 @@ export function SetupFlow({ step }: { step: number }) {
               value={contactName}
               onChange={(event) => setContactName(event.target.value)}
               autoComplete="name"
-              className="mt-1 h-12 w-full rounded-full bg-[#f4f5f7] px-4 text-base"
+              className="mt-1 h-12 w-full rounded-full border border-[#16181d] bg-white px-5 text-base"
             />
             <label className="mt-3 block text-sm font-semibold" htmlFor="contact-phone">
               Mobile Phone Number
             </label>
             <div className="mt-1 flex gap-2">
-              <span className="flex h-12 items-center rounded-full bg-[#f4f5f7] px-3 text-sm">
+              <span className="flex h-12 items-center rounded-full border border-[#16181d] bg-white px-4 text-sm">
                 🇸🇬 +65
               </span>
               <input
@@ -541,7 +541,7 @@ export function SetupFlow({ step }: { step: number }) {
                 type="tel"
                 inputMode="numeric"
                 autoComplete="tel-national"
-                className="h-12 flex-1 rounded-full bg-[#f4f5f7] px-4 text-base"
+                className="h-12 flex-1 rounded-full border border-[#16181d] bg-white px-5 text-base"
               />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
