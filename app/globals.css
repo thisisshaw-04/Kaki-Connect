@@ -438,21 +438,77 @@
   background-color: var(--surface);
 }
 
-.phone-app > * {
+.phone-app-body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.phone-app-body > * {
   min-height: 0;
   flex: 1;
 }
 
-.phone-app > .sos-overlay {
+.sos-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sos-overlay {
+  display: none;
   position: absolute;
   inset: 0;
   z-index: 200;
-  display: flex;
-  flex: none;
   align-items: flex-end;
-  min-height: 0;
   padding: 16px;
   background: rgba(0, 0, 0, 0.4);
+}
+
+.phone-app:has(.sos-toggle:checked) .sos-overlay {
+  display: flex;
+}
+
+.sos-overlay-dismiss,
+.sos-overlay-card {
+  pointer-events: none;
+}
+
+.phone-app:has(.sos-toggle:checked) .sos-overlay-dismiss,
+.phone-app:has(.sos-toggle:checked) .sos-overlay-card {
+  animation: sos-clickable 1ms 400ms forwards;
+}
+
+@keyframes sos-clickable {
+  to {
+    pointer-events: auto;
+  }
+}
+
+.sos-overlay-dismiss {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.sos-overlay-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 32px;
+  background: #ffffff;
+  color: #16181d;
+  padding: 20px;
+  box-shadow: 0 20px 50px -20px rgba(22, 24, 29, 0.4);
 }
 
 .phone-app a:focus-visible,

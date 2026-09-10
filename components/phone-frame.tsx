@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SosSheet, SOS_SHEET_ID } from "@/components/sos-button";
 
 function SignalIcon() {
   return (
@@ -90,7 +91,16 @@ export function PhoneFrame({
                     </span>
                   </div>
                 </div>
-                <div className="phone-app">{children}</div>
+                <div className="phone-app">
+                  <input id={SOS_SHEET_ID} type="checkbox" className="sos-toggle" />
+                  <div className="phone-app-body">{children}</div>
+                  <SosSheet />
+                  <script
+                    dangerouslySetInnerHTML={{
+                      __html: `document.addEventListener("click",function(e){var t=e.target&&e.target.closest&&e.target.closest(".sos-care-link");if(t){var b=document.getElementById("${SOS_SHEET_ID}");if(b)b.checked=false;}});document.addEventListener("keydown",function(e){if(e.key==="Escape"){var b=document.getElementById("${SOS_SHEET_ID}");if(b)b.checked=false;}});`,
+                    }}
+                  />
+                </div>
                 <div className="phone-home" aria-hidden>
                   <span />
                 </div>
