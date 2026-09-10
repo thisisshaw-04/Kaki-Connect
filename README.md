@@ -20,3 +20,5 @@ npm run dev -- --port 4321
 ```
 
 Open [http://localhost:4321](http://localhost:4321) and choose a role.
+
+The original Stitch HTML export lives in [`stitch/`](./stitch) as visual reference. It is not the running app.
