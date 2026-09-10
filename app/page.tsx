@@ -37,21 +37,15 @@ export default function RolePage() {
     <div className="relative h-full min-h-0">
       <OpeningScreen />
       <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -top-1 left-1 size-20 rounded-full border-[8px] border-green-wash"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute top-36 -right-6 size-8 rotate-12 text-green"
-      >
-        ✦
-      </span>
-      <div className="relative mb-6">
+      <div className="relative mb-6 inline-grid size-[72px] place-items-center">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full border-[6px] border-green-wash"
+        />
         <UiPic
           src="/brand/kakiconnect-mark.png"
           alt=""
-          className="h-12 w-auto object-contain object-left"
+          className="relative h-10 w-10 object-contain"
         />
       </div>
 
