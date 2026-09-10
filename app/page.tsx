@@ -34,7 +34,7 @@ export default function RolePage() {
   const rest = roles.slice(1);
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-y-auto bg-[#eef1ea] px-5 py-6">
+    <div className="flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
       <div className="mb-6 flex items-center justify-between">
         <span className="flex size-14 items-center justify-center rounded-full bg-white">
           <UiPic src="/ui/icon-logo.svg" alt="" className="size-10" />

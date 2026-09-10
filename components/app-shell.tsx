@@ -67,8 +67,8 @@ export function AppShell({
   const items = nav[role];
 
   return (
-    <div className={cn("relative flex h-full min-h-0 flex-col bg-[#eef1ea]", className)}>
-      <header className="shrink-0 bg-[#eef1ea]">
+    <div className={cn("relative flex h-full min-h-0 flex-col bg-background", className)}>
+      <header className="shrink-0 bg-background">
         <div className="flex items-center justify-between px-5 pt-3 pb-1">
           {onBack ? (
             <button type="button" aria-label="Go back" onClick={onBack} className={circleBtn}>
@@ -115,10 +115,10 @@ export function AppShell({
         {children}
       </main>
       {footer ? (
-        <div className="relative z-20 shrink-0 bg-[#eef1ea] px-5 pt-1 pb-3">{footer}</div>
+        <div className="relative z-20 shrink-0 bg-background px-5 pt-1 pb-3">{footer}</div>
       ) : null}
       {showNav ? (
-        <nav aria-label="Main navigation" className="shrink-0 bg-[#eef1ea] px-4 pt-1 pb-2">
+        <nav aria-label="Main navigation" className="shrink-0 bg-background px-4 pt-1 pb-2">
           <div className="flex items-end justify-between gap-1">
             {items.map((item) => {
               const active = current === item.href;

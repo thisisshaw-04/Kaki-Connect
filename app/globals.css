@@ -51,8 +51,8 @@
 }
 
 :root {
-  --surface: #eef1ea;
-  --background: #eef1ea;
+  --surface: #f8f8f6;
+  --background: #f8f8f6;
   --foreground: #16181d;
   --card: #ffffff;
   --card-foreground: #16181d;
@@ -62,7 +62,7 @@
   --primary-foreground: #ffffff;
   --secondary: #f6e79c;
   --secondary-foreground: #3d3200;
-  --muted: #e6e9e2;
+  --muted: #eeeeec;
   --muted-foreground: #4b5563;
   --accent: #d5ebf5;
   --accent-foreground: #124780;
@@ -435,7 +435,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  background-color: #eef1ea;
+  background-color: var(--surface);
 }
 
 .phone-app > * {

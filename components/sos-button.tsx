@@ -62,7 +62,7 @@ export function SosButton() {
                   type="button"
                   aria-label="Close"
                   onClick={() => setOpen(false)}
-                  className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#eef1ea] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d]"
+                  className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f4f4f2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d]"
                 >
                   <X className="size-4" />
                 </button>
@@ -86,7 +86,7 @@ export function SosButton() {
               <Link
                 href="/elderly/care"
                 onClick={() => setOpen(false)}
-                className="mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#eef1ea] text-sm font-semibold"
+                className="mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#f4f4f2] text-sm font-semibold"
               >
                 Open Care Hub
               </Link>
