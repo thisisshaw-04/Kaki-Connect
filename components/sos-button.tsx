@@ -8,7 +8,7 @@ export function SosButton() {
     <label
       htmlFor={SOS_SHEET_ID}
       aria-label="Emergency SOS"
-      className="relative z-[90] flex size-12 cursor-pointer items-center justify-center rounded-full bg-[#f7c8c4] text-[13px] font-bold tracking-tight text-[#9b1c1c] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c1c] focus-visible:ring-offset-2"
+      className="relative z-[90] flex size-12 cursor-pointer items-center justify-center rounded-full bg-[#f8d4d2] text-[13px] font-bold tracking-tight text-[#8f2428] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8f2428] focus-visible:ring-offset-2"
     >
       SOS
     </label>
@@ -22,7 +22,7 @@ export function SosSheet() {
       <div className="sos-overlay-card">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold tracking-[0.08em] text-[#9b1c1c] uppercase">
+            <p className="text-xs font-semibold tracking-[0.08em] text-[#8f2428] uppercase">
               Need assistance right now?
             </p>
             <h2 id="sos-title" className="mt-1 text-[20px] font-extrabold tracking-tight">
@@ -35,7 +35,7 @@ export function SosSheet() {
           <label
             htmlFor={SOS_SHEET_ID}
             aria-label="Close"
-            className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#f4f4f2]"
+            className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#f6ede3]"
           >
             <X className="size-4" />
           </label>
@@ -43,14 +43,14 @@ export function SosSheet() {
         <div className="mt-4 grid grid-cols-2 gap-2">
           <a
             href="tel:995"
-            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#f7c8c4] font-bold text-[#9b1c1c]"
+            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#f8d4d2] font-bold text-[#8f2428]"
           >
             <Phone className="size-5" />
             Call 995
           </a>
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#d7e5f4] font-bold text-[#3d5270]"
+            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-lilac-wash font-bold text-[#5a3d8a]"
           >
             <Phone className="size-5" />
             Call Sarah
@@ -58,7 +58,7 @@ export function SosSheet() {
         </div>
         <a
           href="/elderly/care"
-          className="sos-care-link mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#f4f4f2] text-sm font-semibold"
+          className="sos-care-link mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#f6ede3] text-sm font-semibold"
         >
           Open Care Hub
         </a>

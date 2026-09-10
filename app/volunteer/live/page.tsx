@@ -70,7 +70,7 @@ export default function VolunteerLive() {
               key={item.id}
               className={cn(
                 "rounded-[28px] p-4",
-                item.done ? "bg-[#f4f5f7]" : "bg-[#d4efe4]"
+                item.done ? "bg-[#f6ede3]" : "bg-[#d5efe6]"
               )}
             >
               <div className="flex items-start justify-between gap-3">
@@ -80,11 +80,11 @@ export default function VolunteerLive() {
                   <p className="mt-1 text-sm">{item.detail}</p>
                 </div>
                 {item.done ? (
-                  <span className="text-xs font-semibold text-[#1b5e20]">Sent</span>
+                  <span className="text-xs font-semibold text-[#1f5a48]">Sent</span>
                 ) : (
                   <button
                     type="button"
-                    className="min-h-12 shrink-0 rounded-full bg-[#2a2218] px-4 text-sm font-bold text-white"
+                    className="min-h-12 shrink-0 rounded-full bg-[#3a322c] px-4 text-sm font-bold text-white"
                     onClick={() => tap(item.id)}
                   >
                     Tap to send
@@ -111,13 +111,13 @@ export default function VolunteerLive() {
         <div className="grid grid-cols-2 gap-2">
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-14 items-center justify-center rounded-full bg-[#2a2218] px-3 text-center text-sm font-bold text-white"
+            className="flex min-h-14 items-center justify-center rounded-full bg-[#3a322c] px-3 text-center text-sm font-bold text-white"
           >
             Call Daughter Sarah
           </a>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="flex min-h-14 items-center justify-center rounded-full bg-[#f4f5f7] px-3 text-center text-sm font-bold"
+            className="flex min-h-14 items-center justify-center rounded-full bg-[#f6ede3] px-3 text-center text-sm font-bold"
           >
             Contact FSC
           </a>

@@ -34,7 +34,7 @@ export default function CallingPage() {
         />
       </div>
       <div className="relative z-10 mx-4 mb-3 rounded-2xl bg-black/55 p-3 backdrop-blur">
-        <p className="text-[11px] font-bold tracking-wide text-[#ffdd67] uppercase">
+        <p className="text-[11px] font-bold tracking-wide text-[#5fbea4] uppercase">
           Conversation Starter
         </p>
         <p className="mt-1 text-sm">Ask Uncle Raymond about his home garden plants!</p>
@@ -83,7 +83,7 @@ export default function CallingPage() {
           aria-label="End call"
           className="flex min-w-14 flex-col items-center gap-1 text-xs"
         >
-          <span className="flex size-16 items-center justify-center rounded-full bg-[#ba1a1a]">
+          <span className="flex size-16 items-center justify-center rounded-full bg-[#d6454a]">
             <PhoneOff />
           </span>
           End Call

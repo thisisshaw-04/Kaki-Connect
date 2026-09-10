@@ -3,7 +3,7 @@ import { SosButton } from "@/components/sos-button";
 import { GoButton, Portrait, StatusDot } from "@/components/ui-bits";
 import { friends } from "@/lib/data";
 
-const tones = ["bg-[#f8e56a]", "bg-white", "bg-[#d7e5f4]"];
+const tones = ["bg-green-wash", "bg-beige-card", "bg-lilac-wash"];
 
 export default function BuddiesPage() {
   return (
@@ -45,7 +45,7 @@ export default function BuddiesPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="font-extrabold leading-tight">{person.name}</p>
                   {person.online ? (
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#1b5e20]">
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#1f5a48]">
                       <StatusDot live /> Online
                     </span>
                   ) : null}

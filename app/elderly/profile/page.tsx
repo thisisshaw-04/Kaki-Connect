@@ -31,7 +31,7 @@ export default function ElderlyProfile() {
         </Card>
         <Card tone="mint">
           <h2 className="font-bold">Family Peace of Mind</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4a42]">
+          <p className="mt-2 text-sm leading-relaxed text-[#3a322c]">
             {familyMember.name} ({familyMember.relation}, {familyMember.phone}) receives outing alerts. She does not get a live map unless the 60-minute safety escalation fires.
           </p>
           <ul className="mt-3 space-y-1 text-sm">

@@ -18,7 +18,7 @@ export default function FamilyOuting() {
     >
       <div className="space-y-5">
         <div>
-          <div className="flex items-center gap-2 text-sm font-semibold text-[#1b5e20]">
+          <div className="flex items-center gap-2 text-sm font-semibold text-[#1f5a48]">
             <StatusDot live />
             {senior.name} is still out
           </div>
@@ -49,7 +49,7 @@ export default function FamilyOuting() {
               <span
                 className={cn(
                   "mt-1 size-3 shrink-0 rounded-full",
-                  item.done ? "bg-[#2e7d32]" : "bg-border"
+                  item.done ? "bg-[#5fbea4]" : "bg-border"
                 )}
               />
               <div>

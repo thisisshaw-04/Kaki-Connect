@@ -20,7 +20,7 @@ export default function CallSetup() {
     >
       <div className="space-y-4">
         <Pill>Friendly Connection · Call Your Kaki</Pill>
-        <p className="text-sm font-semibold text-[#1b5e20]">Online & Ready for Kopi Chat</p>
+        <p className="text-sm font-semibold text-[#1f5a48]">Online & Ready for Kopi Chat</p>
         <Card className="overflow-hidden p-0">
           <Portrait
             src={photos.raymond}
@@ -35,7 +35,7 @@ export default function CallSetup() {
             <p className="mt-1 text-sm">{person.languages}</p>
             <button
               type="button"
-              className="mt-3 min-h-12 w-full rounded-full bg-[#ffe9a0] px-4 py-3 text-sm font-bold"
+              className="mt-3 min-h-12 w-full rounded-full bg-[#f6ede3] px-4 py-3 text-sm font-bold"
             >
               10s Voice Greeting · Tap to hear Uncle Raymond&apos;s warm hello
             </button>

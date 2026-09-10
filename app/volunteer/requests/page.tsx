@@ -36,7 +36,7 @@ export default function VolunteerRequests() {
                 <div className="flex items-start justify-between gap-2 pr-16">
                   <SlashMark label={`// 0${index + 1}`} />
                   {request.featured ? (
-                    <Pill className="bg-white/80 text-[#4a3200]">
+                    <Pill className="bg-white/80 text-[#3a322c]">
                       Featured Match · {request.distance}
                     </Pill>
                   ) : null}
@@ -53,7 +53,7 @@ export default function VolunteerRequests() {
                 <p className="mt-1 text-sm">{request.when}</p>
                 <p className="text-sm text-muted-foreground">{request.place}</p>
                 <p className="mt-1 text-sm">{request.group}</p>
-                <p className="mt-2 text-xs font-semibold text-[#1b5e20]">{request.badge}</p>
+                <p className="mt-2 text-xs font-semibold text-[#1f5a48]">{request.badge}</p>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-[13px] font-bold">I Can Help</span>
                   <GoButton />

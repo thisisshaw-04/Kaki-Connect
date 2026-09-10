@@ -52,8 +52,8 @@ export default function WrapupPage() {
                 type="button"
                 onClick={() => setRating(item)}
                 className={cn(
-                  "rounded-full border border-[#2a2218] px-4 py-2 text-sm font-semibold",
-                  rating === item ? "bg-[#2a2218] text-white" : "bg-white"
+                  "rounded-full border border-[#3a322c] px-4 py-2 text-sm font-semibold",
+                  rating === item ? "bg-[#3a322c] text-white" : "bg-white"
                 )}
               >
                 {item}

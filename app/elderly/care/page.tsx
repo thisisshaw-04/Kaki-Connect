@@ -16,7 +16,7 @@ export default function CareHubPage() {
       current="/elderly/care"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#ead9fa]">Care Hub</Pill>
+        <Pill className="bg-[#ede0fa]">Care Hub</Pill>
         <h1 className="text-[30px] leading-tight font-extrabold tracking-[-0.04em]">Help is always nearby</h1>
         <p className="text-[16px] leading-relaxed text-muted-foreground">
           Family peace of mind, Fei Yue FSC, and emergency numbers — without leaving the app.
@@ -32,7 +32,7 @@ export default function CareHubPage() {
             {familyMember.name} ({familyMember.relation}) is your verified emergency contact at {familyMember.phone}.
             She receives automated check-in SMS when an outing begins.
           </p>
-          <p className="mt-2 max-w-[90%] text-sm leading-relaxed text-[#3d4a42]">
+          <p className="mt-2 max-w-[90%] text-sm leading-relaxed text-[#3a322c]">
             60 Min Guarantee: if no check-in is received, an urgent alert and live GPS is escalated to family and the community care centre.
           </p>
         </Card>
@@ -44,7 +44,7 @@ export default function CareHubPage() {
           <p className="text-sm text-muted-foreground">{fsc.hours}</p>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#2a2218] font-bold text-white"
+            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#3a322c] font-bold text-white"
           >
             <Phone className="size-4" /> Call {fsc.phone}
           </a>
@@ -57,14 +57,14 @@ export default function CareHubPage() {
           <div className="mt-3 grid grid-cols-2 gap-2">
             <a
               href="tel:995"
-              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-white text-sm font-bold text-[#c62828]"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-white text-sm font-bold text-[#d6454a]"
             >
               995
               <span className="text-[11px] font-medium">Ambulance / SCDF</span>
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#2a2218] text-sm font-bold text-white"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#3a322c] text-sm font-bold text-white"
             >
               Call Sarah
               <span className="text-[11px] font-medium">Daughter</span>

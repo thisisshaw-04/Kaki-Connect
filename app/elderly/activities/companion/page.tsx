@@ -43,7 +43,7 @@ export default function SupportCompanionPage() {
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {volunteer.skills.map((skill) => (
-                <Pill key={skill} className="bg-[#fff4c4] text-[#4a3200]">
+                <Pill key={skill} className="bg-[#f6ede3] text-[#3a322c]">
                   {skill}
                 </Pill>
               ))}
@@ -57,7 +57,7 @@ export default function SupportCompanionPage() {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#ffe9a0] py-3 text-sm font-bold"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#f6ede3] py-3 text-sm font-bold"
             >
               <Play className="size-4" /> Listen to Rachel&apos;s voice greeting
             </button>
@@ -73,7 +73,7 @@ export default function SupportCompanionPage() {
               </a>
               <a
                 href="tel:67439821"
-                className="flex min-h-11 items-center justify-center rounded-full bg-[#f4f5f7] text-sm font-bold"
+                className="flex min-h-11 items-center justify-center rounded-full bg-[#f6ede3] text-sm font-bold"
               >
                 Safety hotline
               </a>

@@ -8,7 +8,7 @@ const roles = [
     title: "Elderly",
     hint: "Find activities and kakis",
     art: "/illustrations/person-point.png",
-    tone: "bg-[#f8e56a]",
+    tone: "bg-green-wash",
     featured: true,
   },
   {
@@ -16,7 +16,7 @@ const roles = [
     title: "Family",
     hint: "Stay updated when Dad goes out",
     art: "/illustrations/person-tablet.png",
-    tone: "bg-[#ead9fa]",
+    tone: "bg-lilac-wash",
     featured: false,
   },
   {
@@ -24,7 +24,7 @@ const roles = [
     title: "Volunteer",
     hint: "Help seniors stay connected",
     art: "/illustrations/person-wave.png",
-    tone: "bg-[#d4efe4]",
+    tone: "bg-beige-card ring-2 ring-ink",
     featured: false,
   },
 ];
@@ -39,11 +39,11 @@ export default function RolePage() {
       <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
       <span
         aria-hidden
-        className="pointer-events-none absolute -top-8 -left-10 size-40 rounded-full border-[18px] border-[#d4efe4]"
+        className="pointer-events-none absolute -top-8 -left-10 size-40 rounded-full border-[18px] border-green-wash"
       />
       <span
         aria-hidden
-        className="pointer-events-none absolute top-36 -right-6 size-8 rotate-12 text-[#7ecdb4]"
+        className="pointer-events-none absolute top-36 -right-6 size-8 rotate-12 text-green"
       >
         ✦
       </span>
@@ -54,7 +54,7 @@ export default function RolePage() {
       </div>
 
       <p className="relative text-center text-sm font-medium text-muted-foreground">{brand.shortLine}</p>
-      <h1 className="relative mt-1 text-center text-[32px] leading-[1.05] font-extrabold tracking-[-0.045em] text-[#2a2218]">
+      <h1 className="relative mt-1 text-center text-[32px] leading-[1.05] font-extrabold tracking-[-0.045em] text-ink">
         Who do you want to signup as?
       </h1>
 
@@ -64,7 +64,7 @@ export default function RolePage() {
       >
         <div className="min-w-0 flex-1 pb-5">
           <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
-          <p className="mt-1 max-w-[11rem] text-sm text-[#6b5e52]">{featured.hint}</p>
+          <p className="mt-1 max-w-[11rem] text-sm text-[#7a6c60]">{featured.hint}</p>
           <div className="mt-8 flex items-center justify-between gap-3 pr-2">
             <p className="text-sm font-bold">Continue</p>
             <GoButton />
@@ -85,7 +85,7 @@ export default function RolePage() {
             className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[28px] ${role.tone} p-4 pb-3`}
           >
             <p className="text-[18px] font-extrabold tracking-[-0.03em]">{role.title}</p>
-            <p className="mt-1 text-[13px] leading-snug text-[#6b5e52]">{role.hint}</p>
+            <p className="mt-1 text-[13px] leading-snug text-[#7a6c60]">{role.hint}</p>
             <UiPic
               src={role.art}
               alt=""

@@ -53,7 +53,7 @@ export default async function FamilyHome({
           <h1 className="mt-2 text-[28px] font-extrabold tracking-[-0.04em]">
             {senior.name} is at home
           </h1>
-          <p className="mt-2 leading-relaxed text-[#6b5e52]">
+          <p className="mt-2 leading-relaxed text-[#7a6c60]">
             No outing booked today. Last activity was a 22-minute video kopi chat with Uncle Raymond yesterday.
           </p>
           <UiPic
@@ -87,7 +87,7 @@ export default async function FamilyHome({
       <div className="space-y-3.5">
         <a
           href="/family/outing"
-          className="relative block overflow-hidden rounded-[32px] bg-[#d4efe4] p-5"
+          className="relative block overflow-hidden rounded-[32px] bg-[#d5efe6] p-5"
         >
           <UiPic
             src="/ui/icon-fish.svg"
@@ -101,7 +101,7 @@ export default async function FamilyHome({
           <h1 className="mt-3 max-w-[78%] text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
             {senior.name} is at {outing.area}
           </h1>
-          <p className="mt-2 flex max-w-[85%] items-start gap-2 text-[14px] leading-relaxed text-[#3d4a42]">
+          <p className="mt-2 flex max-w-[85%] items-start gap-2 text-[14px] leading-relaxed text-[#3a322c]">
             <MapPin className="mt-0.5 size-4 shrink-0" />
             {outing.title} · {outing.pavilion}
           </p>
@@ -109,11 +109,11 @@ export default async function FamilyHome({
             {checkIns.map((item) => (
               <span
                 key={item.id}
-                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#2a2218]" : "bg-white/70"}`}
+                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#3a322c]" : "bg-white/70"}`}
               />
             ))}
           </div>
-          <p className="mt-2 text-[13px] text-[#3d4a42]">
+          <p className="mt-2 text-[13px] text-[#3a322c]">
             {latest?.label} · {latest?.time} · {done}/{checkIns.length} taps · home ~ {outing.expectedHome}
           </p>
           <div className="mt-4 flex items-end justify-between gap-3">
@@ -141,7 +141,7 @@ export default async function FamilyHome({
 
         <a
           href="/family/outing"
-          className="flex items-center justify-between rounded-[28px] bg-[#d7e5f4] p-4"
+          className="flex items-center justify-between rounded-[28px] bg-[#f6ede3] p-4"
         >
           <div>
             <p className="font-semibold tracking-tight">Check-in timeline</p>

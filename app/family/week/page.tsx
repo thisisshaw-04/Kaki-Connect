@@ -10,11 +10,10 @@ const kindLabel = {
 };
 
 const tones = [
-  "bg-white",
-  "bg-[#d7e5f4]",
-  "bg-[#f8e56a]",
-  "bg-[#d4efe4]",
-  "bg-[#ead9fa]",
+  "bg-beige-card",
+  "bg-green-wash",
+  "bg-lilac-wash",
+  "bg-crimson-wash",
 ];
 
 export default function FamilyWeek() {
@@ -37,7 +36,7 @@ export default function FamilyWeek() {
           const inner = (
             <div className="flex items-end justify-between gap-3">
               <div className="min-w-0">
-                <p className={cn("text-sm font-semibold", live ? "text-[#1b5e20]" : "text-muted-foreground")}>
+                <p className={cn("text-sm font-semibold", live ? "text-[#1f5a48]" : "text-muted-foreground")}>
                   {item.day} · {item.date}
                 </p>
                 <span className="text-[11px] font-semibold tracking-wide uppercase text-muted-foreground">
@@ -59,7 +58,7 @@ export default function FamilyWeek() {
           return (
             <li key={item.date}>
               {item.status === "live" ? (
-                <a href="/family/outing" className="block rounded-[28px] bg-[#d4efe4] p-4">
+                <a href="/family/outing" className="block rounded-[28px] bg-[#d5efe6] p-4">
                   {inner}
                 </a>
               ) : (

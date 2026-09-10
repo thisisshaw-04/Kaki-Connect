@@ -7,7 +7,7 @@ export default function FamilyWelcome() {
   return (
     <AppShell role="family" title="KakiConnect" subtitle="Family Peace of Mind" backHref="/">
       <div className="flex flex-1 flex-col">
-        <Pill className="bg-[#ead9fa]">Caregiver Safety Network</Pill>
+        <Pill className="bg-[#ede0fa]">Caregiver Safety Network</Pill>
         <h1 className="mt-3 text-[30px] leading-[1.08] font-extrabold tracking-[-0.04em]">
           See how {senior.name}&apos;s day is going.
         </h1>
@@ -16,7 +16,7 @@ export default function FamilyWelcome() {
         </p>
         <Card tone="lavender" className="relative mt-6 overflow-hidden">
           <p className="font-semibold tracking-tight">Protected by Fei Yue Community Care</p>
-          <p className="mt-1 text-sm leading-relaxed text-[#6b5e52]">
+          <p className="mt-1 text-sm leading-relaxed text-[#7a6c60]">
             No live GPS unless the 60-minute safety escalation fires. No recordings. If he&apos;s at home, that&apos;s all you&apos;ll see: home, and well.
           </p>
           <UiPic

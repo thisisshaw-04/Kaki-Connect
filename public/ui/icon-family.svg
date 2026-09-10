@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
-  <circle cx="80" cy="80" r="72" fill="#EAD9FA"/>
-  <path d="M128 36l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#C9A6F0"/>
-  <circle cx="80" cy="48" r="16" fill="#E8B494" stroke="#2A2218" stroke-width="2.5"/>
-  <path d="M66 46c2-12 10-18 18-16 6 2 10 8 10 16" fill="#F4EEE6" stroke="#2A2218" stroke-width="2.5"/>
-  <circle cx="74" cy="48" r="1.8" fill="#2A2218"/>
-  <circle cx="86" cy="48" r="1.8" fill="#2A2218"/>
-  <path d="M68 48h4M88 48h4" stroke="#2A2218" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M74 56c4 3 8 3 12 0" stroke="#2A2218" stroke-width="2" stroke-linecap="round"/>
-  <path d="M52 86c0-10 12-16 28-16s28 6 28 16v22H52V86Z" fill="#C9A6F0" stroke="#2A2218" stroke-width="2.5"/>
-  <rect x="44" y="108" width="72" height="10" rx="2" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
-  <rect x="48" y="118" width="6" height="16" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
-  <rect x="106" y="118" width="6" height="16" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
-  <rect x="86" y="96" width="22" height="14" rx="2" fill="#FFFDF9" stroke="#2A2218" stroke-width="2"/>
-  <rect x="88" y="98" width="18" height="8" rx="1" fill="#2A2218"/>
+  <circle cx="80" cy="80" r="72" fill="#EDE0FA"/>
+  <path d="M128 36l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#C4A3ED"/>
+  <circle cx="80" cy="48" r="16" fill="#E8C4B0" stroke="#3A322C" stroke-width="2.5"/>
+  <path d="M66 46c2-12 10-18 18-16 6 2 10 8 10 16" fill="#F4EEE6" stroke="#3A322C" stroke-width="2.5"/>
+  <circle cx="74" cy="48" r="1.8" fill="#3A322C"/>
+  <circle cx="86" cy="48" r="1.8" fill="#3A322C"/>
+  <path d="M68 48h4M88 48h4" stroke="#3A322C" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M74 56c4 3 8 3 12 0" stroke="#3A322C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 86c0-10 12-16 28-16s28 6 28 16v22H52V86Z" fill="#C4A3ED" stroke="#3A322C" stroke-width="2.5"/>
+  <rect x="44" y="108" width="72" height="10" rx="2" fill="#C9B8A8" stroke="#3A322C" stroke-width="2"/>
+  <rect x="48" y="118" width="6" height="16" fill="#C9B8A8" stroke="#3A322C" stroke-width="2"/>
+  <rect x="106" y="118" width="6" height="16" fill="#C9B8A8" stroke="#3A322C" stroke-width="2"/>
+  <rect x="86" y="96" width="22" height="14" rx="2" fill="#FBF6F0" stroke="#3A322C" stroke-width="2"/>
+  <rect x="88" y="98" width="18" height="8" rx="1" fill="#3A322C"/>
 </svg>

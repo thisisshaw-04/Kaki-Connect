@@ -1,14 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/** Fixed colour system: beige, lilac, crimson, green. */
 export const pastel = {
-  mint: "bg-[#d4efe4]",
-  sky: "bg-[#d7e5f4]",
-  butter: "bg-[#f8e56a]",
-  blush: "bg-[#f7c8c4]",
-  lavender: "bg-[#ead9fa]",
-  peach: "bg-[#f3e0c8]",
-  fog: "bg-[#fffdf9]",
+  mint: "bg-green-wash",
+  sky: "bg-beige-card",
+  butter: "bg-lilac-wash",
+  blush: "bg-crimson-wash",
+  lavender: "bg-lilac-wash",
+  peach: "bg-beige-card",
+  fog: "bg-beige-card",
 } as const;
 
 export type PastelTone = keyof typeof pastel;
@@ -16,17 +17,17 @@ export type PastelTone = keyof typeof pastel;
 export function Initials({
   name,
   className,
-  tone = "blue",
+  tone = "green",
 }: {
   name: string;
   className?: string;
-  tone?: "blue" | "gold" | "rose" | "green";
+  tone?: "lilac" | "crimson" | "green" | "beige";
 }) {
   const tones = {
-    blue: "bg-[#d7e5f4] text-[#3d5270]",
-    gold: "bg-[#f8e56a] text-[#4a3200]",
-    rose: "bg-[#f7c8c4] text-[#8a2a32]",
-    green: "bg-[#d4efe4] text-[#1f5a48]",
+    lilac: "bg-lilac-wash text-[#5a3d8a]",
+    crimson: "bg-crimson-wash text-[#8f2428]",
+    green: "bg-green-wash text-[#1f5a48]",
+    beige: "bg-beige-card text-ink",
   };
   const initials = name
     .split(" ")
@@ -93,7 +94,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold tracking-tight text-[#2a2218]",
+        "inline-flex items-center gap-1.5 rounded-full bg-beige-card px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink",
         className
       )}
     >
@@ -106,12 +107,12 @@ export function StatusDot({ live = false }: { live?: boolean }) {
   return (
     <span className="relative flex size-2.5" aria-hidden>
       {live ? (
-        <span className="absolute inline-flex size-full rounded-full bg-[#2e7d32] opacity-60 motion-safe:animate-ping" />
+        <span className="absolute inline-flex size-full rounded-full bg-green opacity-60 motion-safe:animate-ping" />
       ) : null}
       <span
         className={cn(
           "relative inline-flex size-2.5 rounded-full",
-          live ? "bg-[#2e7d32]" : "bg-muted-foreground"
+          live ? "bg-green" : "bg-muted-foreground"
         )}
       />
     </span>
@@ -129,12 +130,12 @@ export function Card({
   highlight?: boolean;
   tone?: PastelTone | "white";
 }) {
-  const resolved = highlight ? "butter" : (tone ?? "white");
+  const resolved = highlight ? "lavender" : (tone ?? "white");
   return (
     <div
       className={cn(
         "rounded-[28px] p-5",
-        resolved === "white" ? "bg-white" : pastel[resolved],
+        resolved === "white" ? "bg-beige-card" : pastel[resolved],
         className
       )}
     >
@@ -145,7 +146,7 @@ export function Card({
 
 export function SlashMark({ label = "//" }: { label?: string }) {
   return (
-    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-white/70 px-2 text-[10px] font-semibold tracking-[0.08em] text-[#6b7280]">
+    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-beige-card/80 px-2 text-[10px] font-semibold tracking-[0.08em] text-[#7a6c60]">
       {label}
     </span>
   );
@@ -154,7 +155,7 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 export function choiceClass(on: boolean) {
   return cn(
     "min-h-14 w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-[#d4efe4] ring-2 ring-[#2a2218]" : "bg-white"
+    on ? "bg-green-wash ring-2 ring-ink" : "bg-beige-card"
   );
 }
 
@@ -163,7 +164,7 @@ export function GoButton({ className }: { className?: string }) {
     <span
       aria-hidden
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2a2218] text-white",
+        "flex size-11 shrink-0 items-center justify-center rounded-full bg-ink text-beige-card",
         className
       )}
     >
@@ -182,7 +183,7 @@ export function IconCircle({
   return (
     <span
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[#2a2218]",
+        "flex size-12 shrink-0 items-center justify-center rounded-full bg-beige-card text-ink",
         className
       )}
     >

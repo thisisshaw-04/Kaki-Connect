@@ -26,15 +26,15 @@ export default function ElderlyWelcome() {
         </p>
 
         <div className="mt-5 grid grid-cols-3 gap-2">
-          <div className="flex flex-col items-center rounded-[28px] bg-[#f8e56a] px-2 py-5">
+          <div className="flex flex-col items-center rounded-[28px] bg-lilac-wash px-2 py-5">
             <UiPic src="/ui/icon-kopi.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Kopi</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#d4efe4] px-2 py-5">
+          <div className="flex flex-col items-center rounded-[28px] bg-green-wash px-2 py-5">
             <UiPic src="/ui/icon-kaki.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Kaki</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#f7c8c4] px-2 py-5">
+          <div className="flex flex-col items-center rounded-[28px] bg-crimson-wash px-2 py-5">
             <UiPic src="/ui/icon-care.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Care</span>
           </div>
@@ -52,13 +52,13 @@ export default function ElderlyWelcome() {
             window.setTimeout(() => setPlaying(false), 3200);
           }}
         >
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2a2218] text-white">
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#3a322c] text-white">
             <Volume2 className="size-5" />
           </span>
           <span className="min-w-0 flex-1">
             <span className="flex flex-wrap items-center gap-1.5 text-[13px] font-semibold">
               Tap to listen to greeting
-              <span className="rounded-full bg-[#ead9fa] px-1.5 py-0.5 text-xs text-[#4a2f78]">
+              <span className="rounded-full bg-[#ede0fa] px-1.5 py-0.5 text-xs text-[#5a3d8a]">
                 Voice
               </span>
             </span>
@@ -69,8 +69,8 @@ export default function ElderlyWelcome() {
           <Play className="size-5 shrink-0 text-muted-foreground" />
         </button>
 
-        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#f8e56a] px-4 py-2.5 text-center text-[13px] font-semibold">
-          <Shield className="size-4 text-[#4a3200]" />
+        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-green-wash px-4 py-2.5 text-center text-[13px] font-semibold">
+          <Shield className="size-4 text-[#1f5a48]" />
           100% Free & Safe for seniors and families
         </div>
 
@@ -84,7 +84,7 @@ export default function ElderlyWelcome() {
           </p>
         </div>
         {playing ? (
-          <p className="mt-3 rounded-full bg-[#2a2218] px-4 py-2 text-center text-[13px] font-semibold text-white">
+          <p className="mt-3 rounded-full bg-[#3a322c] px-4 py-2 text-center text-[13px] font-semibold text-white">
             Playing greeting in English & Hokkien...
           </p>
         ) : null}

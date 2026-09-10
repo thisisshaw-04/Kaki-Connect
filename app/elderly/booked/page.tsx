@@ -16,7 +16,7 @@ export default function BookedPage() {
       current="/elderly/home"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#d4efe4] text-[#1b5e20]">
+        <Pill className="bg-[#d5efe6] text-[#1f5a48]">
           Confirmed • 4 Kakis & 1 Volunteer
         </Pill>
         <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
@@ -34,7 +34,7 @@ export default function BookedPage() {
           />
           <div className="p-5">
             <Pill>Reservoir Leisure · // 01 Outing Ticket</Pill>
-            <p className="mt-2 text-xs font-semibold text-[#4a3200]">Breezy & Shaded</p>
+            <p className="mt-2 text-xs font-semibold text-[#3a322c]">Breezy & Shaded</p>
             <h2 className="mt-1 text-xl font-bold">{outing.title}</h2>
             <p className="text-sm text-muted-foreground">
               {outing.dayLabel} · {outing.start} – {outing.end}
@@ -74,7 +74,7 @@ export default function BookedPage() {
           </p>
           <button
             type="button"
-            className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#ffe9a0] px-4 py-2 text-sm font-bold"
+            className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#f6ede3] px-4 py-2 text-sm font-bold"
           >
             <Play className="size-4" /> Listen to Rachel&apos;s voice note (0:15s)
           </button>
