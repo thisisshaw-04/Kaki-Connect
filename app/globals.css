@@ -443,6 +443,18 @@
   flex: 1;
 }
 
+.phone-app > .sos-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  min-height: 0;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .phone-app a:focus-visible,
 .phone-app button:focus-visible,
 .phone-app input:focus-visible,

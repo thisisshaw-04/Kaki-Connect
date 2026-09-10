@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Phone, X } from "lucide-react";
@@ -12,8 +12,9 @@ export function SosButton() {
   const titleId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
+  const ignoreBackdropRef = useRef(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setHost(document.querySelector(".phone-app") as HTMLElement | null);
   }, []);
 
@@ -23,20 +24,31 @@ export function SosButton() {
       if (event.key === "Escape") setOpen(false);
     }
     window.addEventListener("keydown", onKey);
-    closeRef.current?.focus();
+    const focusTimer = window.setTimeout(() => closeRef.current?.focus(), 80);
     const opener = openerRef.current;
     return () => {
+      window.clearTimeout(focusTimer);
       window.removeEventListener("keydown", onKey);
       opener?.focus();
     };
   }, [open]);
 
+  function openSheet() {
+    ignoreBackdropRef.current = true;
+    setOpen(true);
+    window.setTimeout(() => {
+      ignoreBackdropRef.current = false;
+    }, 450);
+  }
+
   const dialog =
     open && host
       ? createPortal(
           <div
-            className="absolute inset-0 z-50 flex items-end bg-black/40 p-4"
-            onClick={() => setOpen(false)}
+            className="sos-overlay"
+            onClick={() => {
+              if (!ignoreBackdropRef.current) setOpen(false);
+            }}
           >
             <div
               role="dialog"
@@ -104,8 +116,8 @@ export function SosButton() {
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label="Emergency SOS"
-        onClick={() => setOpen(true)}
-        className="flex size-12 items-center justify-center rounded-full bg-[#f5d6d2] text-[13px] font-bold tracking-tight text-[#9b1c1c] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c1c] focus-visible:ring-offset-2"
+        onClick={openSheet}
+        className="relative z-[90] flex size-12 items-center justify-center rounded-full bg-[#f5d6d2] text-[13px] font-bold tracking-tight text-[#9b1c1c] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c1c] focus-visible:ring-offset-2"
       >
         SOS
       </button>
