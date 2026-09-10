@@ -25,16 +25,7 @@ export default function ElderlyWelcome() {
           {brand.promise}
         </p>
 
-        <div className="relative mx-auto mt-3 h-32 w-full max-w-[200px]">
-          <span aria-hidden className="absolute top-1 left-1 size-20 rounded-full border-[12px] border-[#d4efe4]" />
-          <UiPic
-            src="/illustrations/person-wave.png"
-            alt=""
-            className="relative mx-auto h-32 w-auto object-contain object-bottom"
-          />
-        </div>
-
-        <div className="mt-4 grid grid-cols-3 gap-2">
+        <div className="mt-5 grid grid-cols-3 gap-2">
           <div className="flex flex-col items-center rounded-[28px] bg-[#f8e56a] px-2 py-5">
             <UiPic src="/ui/icon-kopi.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Kopi</span>
