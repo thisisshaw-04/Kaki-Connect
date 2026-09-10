@@ -79,8 +79,8 @@
   --card-foreground: var(--ink);
   --popover: var(--beige-card);
   --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--beige-card);
+  --primary: var(--lilac);
+  --primary-foreground: var(--ink);
   --secondary: var(--lilac-wash);
   --secondary-foreground: #5a3d8a;
   --muted: #efe4d6;
@@ -88,23 +88,23 @@
   --accent: var(--green-wash);
   --accent-foreground: #1f5a48;
   --destructive: var(--crimson);
-  --border: #eadfce;
-  --input: #eadfce;
-  --ring: var(--ink);
-  --chart-1: var(--ink);
-  --chart-2: var(--lilac);
+  --border: var(--lilac);
+  --input: var(--lilac);
+  --ring: var(--lilac);
+  --chart-1: var(--lilac);
+  --chart-2: var(--ink);
   --chart-3: var(--green);
   --chart-4: var(--crimson);
   --chart-5: var(--beige);
   --radius: 1.85rem;
   --sidebar: var(--beige);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--ink);
-  --sidebar-primary-foreground: var(--beige-card);
+  --sidebar-primary: var(--lilac);
+  --sidebar-primary-foreground: var(--ink);
   --sidebar-accent: var(--lilac-wash);
   --sidebar-accent-foreground: #5a3d8a;
-  --sidebar-border: #eadfce;
-  --sidebar-ring: var(--green);
+  --sidebar-border: var(--lilac);
+  --sidebar-ring: var(--lilac);
 }
 
 @layer base {
@@ -144,7 +144,7 @@
     max-width: 100%;
     box-sizing: border-box;
     height: 6px;
-    background-color: #eadfce;
+    background-color: var(--lilac-wash);
     border-radius: 9999px;
     overflow: hidden;
   }
@@ -153,7 +153,7 @@
     display: block;
     height: 100%;
     border-radius: 9999px;
-    background-color: var(--ink);
+    background-color: var(--lilac);
   }
 
   .lift {
@@ -622,7 +622,7 @@
 .phone-app input:focus-visible,
 .phone-app select:focus-visible,
 .phone-app textarea:focus-visible {
-  outline: 2px solid #16181d;
+  outline: 2px solid var(--lilac);
   outline-offset: 2px;
 }
 
@@ -648,7 +648,7 @@
   box-sizing: border-box;
   height: 56px;
   width: 100%;
-  border: 1.5px solid #000000;
+  border: 1.5px solid var(--lilac);
   border-radius: 999px;
   background: #ffffff;
   padding: 0 56px 0 22px;
@@ -662,7 +662,7 @@
 .phone-app .kc-display-name-field input:focus,
 .phone-app .kc-display-name-field input:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 0 4px rgba(196, 163, 237, 0.35);
 }
 
 .kc-display-name-mic {

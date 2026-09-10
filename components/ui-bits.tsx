@@ -94,7 +94,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink",
+        "inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink ring-1 ring-lilac",
         className
       )}
     >
@@ -135,7 +135,7 @@ export function Card({
     <div
       className={cn(
         "rounded-[28px] p-5",
-        resolved === "white" ? "bg-white ring-1 ring-[#eadfce]" : pastel[resolved],
+        resolved === "white" ? "bg-white ring-1 ring-lilac" : pastel[resolved],
         className
       )}
     >
@@ -155,7 +155,7 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 export function choiceClass(on: boolean) {
   return cn(
     "min-h-14 w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-green-wash ring-2 ring-ink" : "bg-beige-card"
+    on ? "bg-lilac-wash ring-2 ring-lilac" : "bg-white ring-1 ring-lilac"
   );
 }
 
@@ -164,7 +164,7 @@ export function GoButton({ className }: { className?: string }) {
     <span
       aria-hidden
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-full bg-ink text-beige-card",
+        "flex size-11 shrink-0 items-center justify-center rounded-full bg-lilac text-ink",
         className
       )}
     >
@@ -183,7 +183,7 @@ export function IconCircle({
   return (
     <span
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-full bg-beige-card text-ink",
+        "flex size-12 shrink-0 items-center justify-center rounded-full bg-lilac-wash text-[#5a3d8a]",
         className
       )}
     >

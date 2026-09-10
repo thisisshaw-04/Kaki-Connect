@@ -55,7 +55,7 @@ export default function ActivitiesPage() {
                 role="listitem"
                 aria-current={index === 0 ? "true" : undefined}
                 className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-[13px] font-semibold ${
-                  index === 0 ? "bg-[#3a322c] text-white" : "bg-white text-foreground"
+                  index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-lilac"
                 }`}
               >
                 {item}
@@ -161,7 +161,7 @@ export default function ActivitiesPage() {
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-[#3a322c] text-sm font-bold text-white"
+              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-lilac text-sm font-bold text-ink"
             >
               <Phone className="size-4" /> Call Sarah
             </a>

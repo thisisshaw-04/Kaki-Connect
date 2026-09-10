@@ -18,7 +18,7 @@ export default function ElderlyWelcome() {
       action={<ListenButton />}
     >
       <div className="flex flex-1 flex-col">
-        <div className="relative overflow-hidden rounded-[28px] border border-[#eadfce] bg-white px-5 py-6 text-center">
+        <div className="relative overflow-hidden rounded-[28px] border-2 border-lilac bg-white px-5 py-6 text-center">
           <p className="absolute top-4 right-5 text-[11px] tracking-[0.16em] text-muted-foreground">
             {"// 01"}
           </p>
@@ -48,19 +48,19 @@ export default function ElderlyWelcome() {
           <button
             type="button"
             aria-label="Listen to voice greeting"
-            className="mt-6 flex w-full items-center gap-3 rounded-xl border border-[#eadfce] bg-[#fbf6f0] px-4 py-3.5 text-left"
+            className="mt-6 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-lilac"
             onClick={() => {
               setPlaying(true);
               window.setTimeout(() => setPlaying(false), 3200);
             }}
           >
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-lilac text-ink">
               <Volume2 className="size-5" />
             </span>
             <span className="min-w-0 flex-1">
               <span className="flex flex-wrap items-center gap-1.5 text-[13px] font-semibold">
                 Tap to listen to greeting
-                <span className="rounded bg-[#f6ede3] px-1.5 py-0.5 text-xs text-ink">Voice</span>
+                <span className="rounded bg-white px-1.5 py-0.5 text-xs text-[#5a3d8a]">Voice</span>
               </span>
               <span className="mt-0.5 block text-[13px] text-muted-foreground">
                 Hokkien • English • Mandarin • Malay
@@ -70,8 +70,8 @@ export default function ElderlyWelcome() {
           </button>
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-2 rounded-full border border-[#eadfce] bg-[#fbf6f0] px-4 py-2.5 text-center text-[13px] font-semibold">
-          <Shield className="size-4 text-ink" />
+        <div className="mt-4 flex items-center justify-center gap-2 rounded-full bg-green-wash px-4 py-2.5 text-center text-[13px] font-semibold text-[#1f5a48]">
+          <Shield className="size-4 text-[#1f5a48]" />
           100% Free & Safe for seniors and families
         </div>
 
@@ -82,7 +82,7 @@ export default function ElderlyWelcome() {
           </PrimaryLink>
         </div>
         {playing ? (
-          <p className="mt-3 rounded-full bg-ink px-4 py-2 text-center text-[13px] font-semibold text-white">
+          <p className="mt-3 rounded-full bg-lilac px-4 py-2 text-center text-[13px] font-semibold text-ink">
             Playing greeting in English & Hokkien...
           </p>
         ) : null}

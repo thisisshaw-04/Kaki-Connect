@@ -43,7 +43,7 @@ export default function SupportCompanionPage() {
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {volunteer.skills.map((skill) => (
-                <Pill key={skill} className="bg-[#f6ede3] text-[#3a322c]">
+                <Pill key={skill} className="bg-lilac-wash text-[#5a3d8a]">
                   {skill}
                 </Pill>
               ))}
@@ -57,7 +57,7 @@ export default function SupportCompanionPage() {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#f6ede3] py-3 text-sm font-bold"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-lilac-wash py-3 text-sm font-bold text-[#5a3d8a]"
             >
               <Play className="size-4" /> Listen to Rachel&apos;s voice greeting
             </button>
@@ -67,13 +67,13 @@ export default function SupportCompanionPage() {
             <div className="mt-3 grid grid-cols-2 gap-2">
               <a
                 href="tel:+6590000000"
-                className="flex min-h-11 items-center justify-center gap-1 rounded-full bg-primary text-sm font-bold text-white"
+                className="flex min-h-11 items-center justify-center gap-1 rounded-full bg-lilac text-sm font-bold text-ink"
               >
                 <Phone className="size-4" /> Call Rachel
               </a>
               <a
                 href="tel:67439821"
-                className="flex min-h-11 items-center justify-center rounded-full bg-[#f6ede3] text-sm font-bold"
+                className="flex min-h-11 items-center justify-center rounded-full bg-crimson-wash text-sm font-bold text-[#8f2428]"
               >
                 Safety hotline
               </a>

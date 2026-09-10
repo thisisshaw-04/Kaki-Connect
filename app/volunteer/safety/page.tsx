@@ -94,7 +94,7 @@ export default function VolunteerSafety() {
           <div className="mt-3 space-y-2">
             <a
               href={`tel:${fsc.phone.replace("-", "")}`}
-              className="flex min-h-12 items-center justify-between rounded-[22px] bg-[#3a322c] px-4 font-bold text-white"
+              className="flex min-h-12 items-center justify-between rounded-[22px] bg-lilac px-4 font-bold text-ink"
             >
               <span>
                 Fei Yue FSC Befriender

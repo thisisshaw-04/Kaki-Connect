@@ -44,7 +44,7 @@ export default function CareHubPage() {
           <p className="text-sm text-muted-foreground">{fsc.hours}</p>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#3a322c] font-bold text-white"
+            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-lilac font-bold text-ink"
           >
             <Phone className="size-4" /> Call {fsc.phone}
           </a>
@@ -64,7 +64,7 @@ export default function CareHubPage() {
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#3a322c] text-sm font-bold text-white"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-lilac text-sm font-bold text-ink"
             >
               Call Sarah
               <span className="text-[11px] font-medium">Daughter</span>

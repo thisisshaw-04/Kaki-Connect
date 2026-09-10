@@ -35,7 +35,7 @@ export function SosSheet() {
           <label
             htmlFor={SOS_SHEET_ID}
             aria-label="Close"
-            className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#f6ede3]"
+            className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full bg-lilac-wash text-[#5a3d8a]"
           >
             <X className="size-4" />
           </label>
@@ -58,7 +58,7 @@ export function SosSheet() {
         </div>
         <a
           href="/elderly/care"
-          className="sos-care-link mt-3 flex min-h-12 items-center justify-center rounded-full bg-[#f6ede3] text-sm font-semibold"
+          className="sos-care-link mt-3 flex min-h-12 items-center justify-center rounded-full bg-lilac text-sm font-semibold text-ink"
         >
           Open Care Hub
         </a>

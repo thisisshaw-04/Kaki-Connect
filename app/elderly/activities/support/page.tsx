@@ -69,7 +69,7 @@ export default function SupportPreferencePage() {
         </p>
         <button
           type="button"
-              className="inline-flex items-center gap-2 rounded-full bg-[#f6ede3] px-4 py-2 text-sm font-bold"
+              className="inline-flex items-center gap-2 rounded-full bg-lilac-wash px-4 py-2 text-sm font-bold text-[#5a3d8a]"
         >
           <Volume2 className="size-4" /> Tap to listen in Hokkien / Mandarin / English
         </button>

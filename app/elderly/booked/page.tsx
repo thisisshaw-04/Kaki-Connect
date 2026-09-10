@@ -74,7 +74,7 @@ export default function BookedPage() {
           </p>
           <button
             type="button"
-            className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#f6ede3] px-4 py-2 text-sm font-bold"
+            className="mt-3 inline-flex items-center gap-2 rounded-full bg-lilac-wash px-4 py-2 text-sm font-bold text-[#5a3d8a]"
           >
             <Play className="size-4" /> Listen to Rachel&apos;s voice note (0:15s)
           </button>

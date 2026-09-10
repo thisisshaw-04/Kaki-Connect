@@ -104,7 +104,7 @@ export default async function FamilyHome({
             {checkIns.map((item) => (
               <span
                 key={item.id}
-                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#3a322c]" : "bg-white/70"}`}
+                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-lilac" : "bg-white/70"}`}
               />
             ))}
           </div>
@@ -124,7 +124,7 @@ export default async function FamilyHome({
             { src: photos.ahmad, name: "Ahmad", hint: "Fishing kaki" },
             { src: photos.susan, name: "Susan", hint: "Bringing extra bait" },
           ].map((person) => (
-            <li key={person.name} className="flex items-center gap-3 rounded-[24px] bg-white p-3">
+            <li key={person.name} className="flex items-center gap-3 rounded-[24px] bg-white p-3 ring-1 ring-lilac">
               <Portrait src={person.src} alt={person.name} className="size-14 rounded-full" />
               <div className="min-w-0">
                 <p className="font-extrabold leading-tight">{person.name}</p>

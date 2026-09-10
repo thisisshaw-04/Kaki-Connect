@@ -8,14 +8,14 @@ const scope = [
     title: "Non-medical, peer travel only",
     body: "Friendly companion walking and leisure journeys only. No clinical lifting, nursing, or medication administration responsibilities.",
     icon: HeartHandshake,
-    well: "bg-[#f6ede3] text-ink",
+    well: "bg-beige text-ink",
   },
   {
     n: "02",
     title: "24/7 FSC Coordinator On-Call",
     body: "Direct Family Service Centre care desk line. Quick escalation support whenever weather changes or sudden changes occur.",
     icon: Clock,
-    well: "bg-[#f6ede3] text-ink",
+    well: "bg-green-wash text-[#1f5a48]",
   },
   {
     n: "03",
@@ -54,7 +54,7 @@ export default function VolunteerWelcome() {
           return (
             <article
               key={item.n}
-              className="flex gap-3 rounded-[24px] border border-[#eadfce] bg-white p-4"
+              className="flex gap-3 rounded-[24px] border-2 border-lilac bg-white p-4"
             >
               <span
                 className={`flex size-12 shrink-0 items-center justify-center rounded-full ${item.well}`}
@@ -71,11 +71,11 @@ export default function VolunteerWelcome() {
             </article>
           );
         })}
-        <article className="rounded-[24px] border border-[#eadfce] bg-white p-4">
+        <article className="rounded-[24px] border-2 border-lilac bg-white p-4">
           <p className="font-bold">Kaki Volunteer Quick Tips</p>
           <ol className="mt-3 space-y-3 text-sm">
             <li className="flex gap-3">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#f6ede3] text-[11px] font-bold">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-lilac-wash text-[11px] font-bold text-[#5a3d8a]">
                 1
               </span>
               <span>
@@ -83,7 +83,7 @@ export default function VolunteerWelcome() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#f6ede3] text-[11px] font-bold">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-green-wash text-[11px] font-bold text-[#1f5a48]">
                 2
               </span>
               <span>
@@ -91,7 +91,7 @@ export default function VolunteerWelcome() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#f6ede3] text-[11px] font-bold">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-beige text-[11px] font-bold text-ink">
                 3
               </span>
               <span>

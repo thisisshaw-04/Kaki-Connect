@@ -84,7 +84,7 @@ export default function VolunteerLive() {
                 ) : (
                   <button
                     type="button"
-                    className="min-h-12 shrink-0 rounded-full bg-[#3a322c] px-4 text-sm font-bold text-white"
+                    className="min-h-12 shrink-0 rounded-full bg-lilac px-4 text-sm font-bold text-ink"
                     onClick={() => tap(item.id)}
                   >
                     Tap to send
@@ -111,13 +111,13 @@ export default function VolunteerLive() {
         <div className="grid grid-cols-2 gap-2">
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-14 items-center justify-center rounded-full bg-[#3a322c] px-3 text-center text-sm font-bold text-white"
+            className="flex min-h-14 items-center justify-center rounded-full bg-lilac px-3 text-center text-sm font-bold text-ink"
           >
             Call Daughter Sarah
           </a>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="flex min-h-14 items-center justify-center rounded-full bg-[#f6ede3] px-3 text-center text-sm font-bold"
+            className="flex min-h-14 items-center justify-center rounded-full bg-lilac-wash px-3 text-center text-sm font-bold text-[#5a3d8a] ring-1 ring-lilac"
           >
             Contact FSC
           </a>

@@ -24,7 +24,7 @@ const roles = [
     title: "Volunteer",
     hint: "Help seniors stay connected",
     art: "/illustrations/person-wave.png",
-    tone: "bg-beige-card ring-2 ring-ink",
+    tone: "bg-beige-card ring-2 ring-lilac",
     featured: false,
   },
 ];

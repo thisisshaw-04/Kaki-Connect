@@ -34,7 +34,7 @@ const nav = {
 } as const;
 
 const circleBtn =
-  "flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f6ede3] text-ink transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c] focus-visible:ring-offset-2";
+  "flex size-10 shrink-0 items-center justify-center rounded-full bg-lilac-wash text-[#5a3d8a] ring-1 ring-lilac transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lilac focus-visible:ring-offset-2";
 
 export function AppShell({
   children,
@@ -116,7 +116,7 @@ export function AppShell({
       {showNav ? (
         <nav
           aria-label="Main navigation"
-          className="shrink-0 border-t border-[#eadfce] bg-background px-2 pt-1 pb-2"
+          className="shrink-0 border-t border-lilac bg-background px-2 pt-1 pb-2"
         >
           <div className="flex items-end justify-around">
             {items.map((item) => {
@@ -128,8 +128,8 @@ export function AppShell({
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3a322c]",
-                    active ? "text-ink" : "text-muted-foreground"
+                    "flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lilac",
+                    active ? "text-[#5a3d8a]" : "text-muted-foreground"
                   )}
                 >
                   <Icon className="size-6" strokeWidth={active ? 2.3 : 1.7} />
