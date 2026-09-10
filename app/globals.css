@@ -473,7 +473,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #fbf6f0;
+  background: #fdfbf8;
   cursor: pointer;
   animation: opening-dismiss 0.55s ease 2.55s forwards;
 }
