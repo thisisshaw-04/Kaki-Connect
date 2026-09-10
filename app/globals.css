@@ -174,18 +174,138 @@
   max-height: 100dvh;
   align-items: center;
   justify-content: center;
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
   padding: 10px;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 18%, rgba(255, 246, 216, 0.55) 0%, transparent 58%),
-    radial-gradient(ellipse 90% 70% at 50% 100%, #d5dbe6 0%, #9aa3b4 72%),
-    #9aa3b4;
+    linear-gradient(160deg, #d7cfc4 0%, #c5d0e0 42%, #9eabc0 100%);
+}
+
+.phone-aurora {
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.blob-honey {
+  top: -18%;
+  left: -8%;
+  width: 62%;
+  height: 58%;
+  background: #ffdd67;
+  opacity: 0.72;
+  border-radius: 46% 54% 42% 58% / 52% 40% 60% 48%;
+  animation: blob-drift-a 18s ease-in-out infinite;
+}
+
+.blob-sky {
+  top: 8%;
+  right: -16%;
+  width: 58%;
+  height: 62%;
+  background: #4a76b1;
+  opacity: 0.55;
+  border-radius: 58% 42% 62% 38% / 44% 56% 44% 56%;
+  animation: blob-drift-b 22s ease-in-out infinite;
+}
+
+.blob-ink {
+  bottom: -22%;
+  left: 12%;
+  width: 70%;
+  height: 54%;
+  background: #2f5d97;
+  opacity: 0.42;
+  border-radius: 40% 60% 50% 50% / 60% 38% 62% 40%;
+  animation: blob-drift-c 26s ease-in-out infinite;
+}
+
+.blob-rose {
+  top: 38%;
+  left: -18%;
+  width: 48%;
+  height: 46%;
+  background: #ffdad6;
+  opacity: 0.7;
+  border-radius: 62% 38% 44% 56% / 48% 62% 38% 52%;
+  animation: blob-drift-a 20s ease-in-out infinite reverse;
+}
+
+.blob-foam {
+  bottom: 6%;
+  right: 4%;
+  width: 42%;
+  height: 40%;
+  background: #eaf1f8;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  border-radius: 50% 50% 38% 62% / 42% 58% 48% 52%;
+  animation: blob-drift-b 16s ease-in-out infinite reverse;
+}
+
+.phone-noise {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  filter: contrast(160%) brightness(120%);
+}
+
+@keyframes blob-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(7%, -5%) scale(1.12) rotate(8deg);
+  }
+}
+
+@keyframes blob-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-6%, 6%) scale(1.08) rotate(-6deg);
+  }
+}
+
+@keyframes blob-drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4%, -7%) scale(1.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
 }
 
 .phone-fit {
   width: calc(var(--phone-frame) * var(--phone-scale));
   height: calc(var(--phone-stack) * var(--phone-scale));
   position: relative;
+  z-index: 1;
   overflow: visible;
 }
 

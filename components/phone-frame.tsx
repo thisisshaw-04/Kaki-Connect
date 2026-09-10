@@ -50,6 +50,24 @@ export function PhoneFrame({
 }) {
   return (
     <div className={cn("phone-desk", className)}>
+      <div className="phone-aurora" aria-hidden>
+        <span className="blob blob-honey" />
+        <span className="blob blob-sky" />
+        <span className="blob blob-ink" />
+        <span className="blob blob-rose" />
+        <span className="blob blob-foam" />
+        <svg className="phone-noise" aria-hidden>
+          <filter id="phone-grain">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#phone-grain)" />
+        </svg>
+      </div>
       <div className="phone-fit">
         <div className="phone-device">
           <div className="phone-chassis">
