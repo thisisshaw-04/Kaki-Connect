@@ -39,7 +39,7 @@ export default function RolePage() {
       <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
       <span
         aria-hidden
-        className="pointer-events-none absolute -top-8 -left-10 size-40 rounded-full border-[18px] border-green-wash"
+        className="pointer-events-none absolute -top-1 left-1 size-20 rounded-full border-[8px] border-green-wash"
       />
       <span
         aria-hidden
