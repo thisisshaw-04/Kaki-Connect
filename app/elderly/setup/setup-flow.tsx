@@ -449,12 +449,6 @@ export function SetupFlow({ step }: { step: number }) {
             Tap what you&apos;d like to do with your new kaki.
           </p>
           {activities.map((item) => {
-            const art =
-              item.id === "kopi"
-                ? "/ui/icon-kopi.svg"
-                : item.id === "park"
-                  ? "/ui/icon-park.svg"
-                  : "/ui/icon-karaoke.svg";
             return (
             <button
               key={item.id}
@@ -466,16 +460,13 @@ export function SetupFlow({ step }: { step: number }) {
                 choiceClass(activity === item.id)
               )}
             >
-              <span className="flex min-w-0 items-center gap-3">
-                <UiPic src={art} alt="" className="size-14 shrink-0" />
-                <span>
-                  <span className="block font-bold">{item.title}</span>
-                  <span className="mt-1 block text-sm text-muted-foreground">
-                    {item.detail} · {item.hangul}
-                  </span>
+              <span className="min-w-0">
+                <span className="block font-bold">{item.title}</span>
+                <span className="mt-1 block text-sm text-muted-foreground">
+                  {item.detail} · {item.hangul}
                 </span>
               </span>
-              {activity === item.id ? <Check className="size-5" /> : null}
+              {activity === item.id ? <Check className="size-5 shrink-0" /> : null}
             </button>
             );
           })}

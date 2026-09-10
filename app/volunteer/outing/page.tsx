@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card, Pill, Portrait, UiPic } from "@/components/ui-bits";
+import { Card, Pill, Portrait } from "@/components/ui-bits";
 import {
   outing,
   photos,
@@ -34,13 +34,8 @@ export default function VolunteerOuting() {
             </p>
           </div>
         </div>
-        <Card tone="mint" className="relative overflow-hidden">
-          <UiPic
-            src="/ui/icon-fish.svg"
-            alt=""
-            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
-          />
-          <p className="pr-16 font-bold">
+        <Card tone="mint">
+          <p className="font-bold">
             Reservoir Fishing & Kopi Gathering with 3 peer kakis
           </p>
           <p className="text-sm text-muted-foreground">{outing.pavilion}</p>

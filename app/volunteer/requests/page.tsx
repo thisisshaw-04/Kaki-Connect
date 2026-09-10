@@ -1,5 +1,5 @@
 import { AppShell } from "@/components/app-shell";
-import { Card, GoButton, Pill, SlashMark, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Pill, SlashMark } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
 
 export default function VolunteerRequests() {
@@ -26,14 +26,8 @@ export default function VolunteerRequests() {
               <Card
                 highlight={request.featured}
                 tone={request.featured ? undefined : "sky"}
-                className="relative overflow-hidden"
               >
-                <UiPic
-                  src={request.id === "fishing" ? "/ui/icon-fish.svg" : "/ui/icon-dimsum.svg"}
-                  alt=""
-                  className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
-                />
-                <div className="flex items-start justify-between gap-2 pr-16">
+                <div className="flex items-start justify-between gap-2">
                   <SlashMark label={`// 0${index + 1}`} />
                   {request.featured ? (
                     <Pill className="bg-white/80 text-[#3a322c]">

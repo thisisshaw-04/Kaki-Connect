@@ -2,20 +2,15 @@ import { MapPin, Phone, Shield, Sun } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
-import { Card, GoButton, Pill, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Pill, Portrait } from "@/components/ui-bits";
 import {
   activityFilters,
   familyMember,
   nearbyActivities,
   outing,
+  photos,
   senior,
 } from "@/lib/data";
-
-const nearbyArt: Record<string, string> = {
-  "teh-c": "/ui/icon-kopi.svg",
-  "park-walk": "/ui/icon-park.svg",
-  herbal: "/ui/icon-tea.svg",
-};
 
 const nearbyTone: Record<string, "sky" | "mint" | "lavender"> = {
   "teh-c": "sky",
@@ -69,12 +64,12 @@ export default function ActivitiesPage() {
           </div>
         </div>
 
-        <Card tone="butter" className="relative overflow-hidden p-0">
+        <Card tone="butter" className="overflow-hidden p-0">
           <div className="relative h-40 overflow-hidden">
-            <UiPic
-              src="/ui/ill-reservoir.svg"
+            <Portrait
+              src={photos.reservoir}
               alt="Bedok Reservoir at sunset"
-              className="h-full w-full object-cover"
+              className="h-full w-full"
             />
             <Pill className="absolute top-3 left-3 bg-[#f6ede3] text-[#3a322c]">
               Specially picked for you today
@@ -128,13 +123,8 @@ export default function ActivitiesPage() {
               href="/elderly/activities/support"
               className="block"
             >
-              <Card tone={nearbyTone[item.id] ?? "white"} className="flex items-start gap-3 p-4">
-                <UiPic
-                  src={nearbyArt[item.id] ?? "/ui/icon-park.svg"}
-                  alt=""
-                  className="size-14 shrink-0"
-                />
-                <div className="min-w-0 flex-1">
+              <Card tone={nearbyTone[item.id] ?? "white"} className="p-4">
+                <div className="min-w-0">
                   <p className="text-[13px] font-semibold">
                     {item.when} · {item.attending}
                   </p>

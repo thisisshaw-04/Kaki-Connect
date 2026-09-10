@@ -87,21 +87,16 @@ export default async function FamilyHome({
       <div className="space-y-3.5">
         <a
           href="/family/outing"
-          className="relative block overflow-hidden rounded-[32px] bg-[#d5efe6] p-5"
+          className="block rounded-[32px] bg-[#d5efe6] p-5"
         >
-          <UiPic
-            src="/ui/icon-fish.svg"
-            alt=""
-            className="pointer-events-none absolute -right-2 -top-1 h-28 w-28"
-          />
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-2.5 py-1 text-[12px] font-semibold">
             <StatusDot live />
             Out right now
           </div>
-          <h1 className="mt-3 max-w-[78%] text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
+          <h1 className="mt-3 text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
             {senior.name} is at {outing.area}
           </h1>
-          <p className="mt-2 flex max-w-[85%] items-start gap-2 text-[14px] leading-relaxed text-[#3a322c]">
+          <p className="mt-2 flex items-start gap-2 text-[14px] leading-relaxed text-[#3a322c]">
             <MapPin className="mt-0.5 size-4 shrink-0" />
             {outing.title} · {outing.pavilion}
           </p>

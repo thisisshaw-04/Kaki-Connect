@@ -1,7 +1,7 @@
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { SosButton } from "@/components/sos-button";
-import { Card, GoButton, Pill, Portrait, UiPic } from "@/components/ui-bits";
+import { Card, GoButton, Pill, Portrait } from "@/components/ui-bits";
 import { friends, senior } from "@/lib/data";
 
 export default function ElderlyHome() {
@@ -25,17 +25,12 @@ export default function ElderlyHome() {
         <ListenButton label="Listen" />
 
         <a href="/elderly/activities" className="block">
-          <Card tone="mint" className="relative min-h-[210px] overflow-hidden">
-            <UiPic
-              src="/ui/icon-park.svg"
-              alt=""
-              className="pointer-events-none absolute -right-3 -top-3 h-24 w-24"
-            />
+          <Card tone="mint">
             <Pill>Fresh air & walking</Pill>
-            <h2 className="mt-4 max-w-[78%] text-[22px] font-extrabold leading-tight tracking-[-0.03em]">
+            <h2 className="mt-4 text-[22px] font-extrabold leading-tight tracking-[-0.03em]">
               Go out for an outdoor activity
             </h2>
-            <p className="mt-2 max-w-[85%] text-sm leading-relaxed text-[#3a322c]">
+            <p className="mt-2 text-sm leading-relaxed text-[#3a322c]">
               Join a small group for Sunset Fishing & Kopi, Dim Sum, or park strolls with a volunteer helper.
             </p>
             <div className="mt-6 flex items-end justify-between gap-3">
@@ -72,11 +67,6 @@ export default function ElderlyHome() {
                   Shared: {raymond.shared}
                 </p>
               </div>
-              <UiPic
-                src="/ui/icon-home.svg"
-                alt=""
-                className="size-16 shrink-0"
-              />
             </div>
             <div className="mt-5 flex items-end justify-between gap-3">
               <p className="text-[13px] font-bold">Video Call Uncle Raymond</p>
