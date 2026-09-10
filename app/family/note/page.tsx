@@ -1,0 +1,78 @@
+"use client";
+
+import { useState } from "react";
+import { AppShell } from "@/components/app-shell";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { senior } from "@/lib/data";
+
+export default function FamilyNote() {
+  const [note, setNote] = useState("Don’t forget your cap — it’s bright out.");
+  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+
+  function send() {
+    if (note.trim().length < 2) {
+      setStatus("error");
+      return;
+    }
+    setStatus("sent");
+  }
+
+  return (
+    <AppShell
+      role="family"
+      title="A note to Dad"
+      backHref="/family/home"
+      showNav
+      current="/family/note"
+      wide
+    >
+      {status === "sent" ? (
+        <div className="rounded-[24px] border border-[#cfe3c8] bg-[#f3faf3] p-5">
+          <h1 className="text-2xl font-bold">Sent to {senior.name}</h1>
+          <p className="mt-2 leading-relaxed text-muted-foreground">
+            It’ll show on his home screen as a small card. He can heart it. You
+            won’t get a read receipt — that’s on purpose.
+          </p>
+          <Button
+            className="mt-5 h-12 w-full rounded-full"
+            onClick={() => {
+              setStatus("idle");
+              setNote("");
+            }}
+          >
+            Write another
+          </Button>
+        </div>
+      ) : (
+        <div className="flex flex-1 flex-col gap-4">
+          <div>
+            <h1 className="text-2xl font-bold">Keep it short</h1>
+            <p className="mt-2 text-muted-foreground">
+              This is a nudge, not a chat thread. He’ll see it before he leaves
+              or when he’s next on the app.
+            </p>
+          </div>
+          <Textarea
+            value={note}
+            onChange={(event) => {
+              setNote(event.target.value);
+              if (status === "error") setStatus("idle");
+            }}
+            rows={5}
+            className="min-h-32 rounded-2xl text-base"
+            placeholder="Bring a bottle of water?"
+          />
+          {status === "error" ? (
+            <p className="text-sm font-medium text-destructive">
+              Write a few words so he knows it’s from you.
+            </p>
+          ) : null}
+          <Button className="mt-auto h-14 w-full rounded-full text-base" onClick={send}>
+            Send note
+          </Button>
+        </div>
+      )}
+    </AppShell>
+  );
+}
