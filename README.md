@@ -2,7 +2,7 @@
 
 A clickable Singapore community companion demo. Journeys and copy follow the [Stitch](https://stitch.withgoogle.com/projects/15237305400784592082) screens (elderly + volunteer), with **Family** kept as a third role so daughter **Sarah Tan** can follow outing check-ins.
 
-The UI uses a fixed four-colour system: **beige**, **lilac**, **crimson**, and **green**, with large type and a bottom tab bar that stays in the page flow so it never covers names, cards, or check-ins. Product copy, names, and tap paths are unchanged.
+The UI uses a fixed four-colour system: **lilac** for outlines and buttons, **beige** for quiet paper surfaces, **green** for outdoor and “all good”, and **crimson** for SOS. Ink stays on the type. Large type and a bottom tab bar stay in the page flow so they never cover names, cards, or check-ins. Product copy, names, and tap paths are unchanged.
 
 ## Roles
 
