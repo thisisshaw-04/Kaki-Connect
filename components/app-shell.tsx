@@ -64,15 +64,15 @@ export function AppShell({
   const items = nav[role];
 
   return (
-    <div className={cn("relative flex h-full min-h-0 flex-col bg-transparent", className)}>
-      <header className="shrink-0 border-b border-[#c2c6d1]/30 bg-[#fbf9f5]">
+    <div className={cn("relative flex h-full min-h-0 flex-col bg-white", className)}>
+      <header className="shrink-0 bg-white">
         <div className="flex items-center gap-2 px-4 py-3">
           {onBack ? (
             <button
               type="button"
               aria-label="Go back"
               onClick={onBack}
-              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f0eeea] text-foreground shadow-xs active:scale-95"
+              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#f4f5f7] text-foreground active:scale-95"
             >
               <ArrowLeft className="size-5" />
             </button>
@@ -80,15 +80,15 @@ export function AppShell({
             <Link
               href={backHref}
               aria-label="Go back"
-              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f0eeea] text-foreground shadow-xs active:scale-95"
+              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#f4f5f7] text-foreground active:scale-95"
             >
               <ArrowLeft className="size-5" />
             </Link>
           ) : (
-            <div className="size-10 shrink-0" />
+            <div className="size-11 shrink-0" />
           )}
           <div className="min-w-0 flex-1 text-center">
-            <p className="text-[18px] leading-6 font-bold tracking-[-0.01em] text-foreground">
+            <p className="text-[18px] leading-6 font-extrabold tracking-[-0.03em] text-foreground">
               {title ?? brand.name}
             </p>
             {subtitle ? (
@@ -97,10 +97,10 @@ export function AppShell({
               </p>
             ) : null}
           </div>
-          <div className="flex min-w-10 justify-end">{action}</div>
+          <div className="flex min-w-11 justify-end">{action}</div>
         </div>
         {typeof progress === "number" ? (
-          <div className="kaki-progress-track mx-4 mb-3">
+          <div className="kaki-progress-track mx-5 mb-2">
             <span
               className="kaki-progress-fill"
               style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
@@ -108,20 +108,25 @@ export function AppShell({
           </div>
         ) : null}
       </header>
-      <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-4">
+      <main
+        className={cn(
+          "flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-3",
+          showNav && "pb-28"
+        )}
+      >
         {children}
       </main>
       {footer ? (
-        <div className="relative z-20 shrink-0 bg-[var(--surface)] px-5 pt-1 pb-3">
+        <div className="relative z-20 shrink-0 bg-white px-5 pt-1 pb-3">
           {footer}
         </div>
       ) : null}
       {showNav ? (
         <nav
           aria-label="Main navigation"
-          className="shrink-0 border-t border-[#c2c6d1]/30 bg-white px-2 py-1.5"
+          className="pointer-events-none absolute inset-x-0 bottom-3 z-30 px-5"
         >
-          <div className="flex items-center justify-around">
+          <div className="pointer-events-auto flex items-center justify-around rounded-[30px] bg-white px-2 py-2 shadow-[0_16px_40px_-18px_rgba(22,24,29,0.45)] ring-1 ring-black/5">
             {items.map((item) => {
               const active = current === item.href;
               const Icon = item.icon;
@@ -130,17 +135,18 @@ export function AppShell({
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex min-h-[52px] min-w-[64px] flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-2 text-[11px] font-semibold transition",
-                    active
-                      ? "text-primary"
-                      : "text-muted-foreground hover:bg-[#f0eeea]"
+                    "flex min-h-[52px] min-w-[56px] flex-1 flex-col items-center justify-center gap-0.5 px-1 text-[10px] font-semibold transition",
+                    active ? "text-[#16181d]" : "text-muted-foreground"
                   )}
                 >
-                  <Icon
-                    className="size-6"
-                    strokeWidth={active ? 2.4 : 1.8}
-                    fill={active ? "currentColor" : "none"}
-                  />
+                  <span
+                    className={cn(
+                      "flex size-10 items-center justify-center rounded-full",
+                      active ? "bg-[#16181d] text-white" : "bg-transparent"
+                    )}
+                  >
+                    <Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} />
+                  </span>
                   {item.label}
                 </Link>
               );

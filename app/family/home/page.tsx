@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card, Portrait, StatusDot } from "@/components/ui-bits";
+import { Card, Portrait, StatusDot, UiPic } from "@/components/ui-bits";
 import { checkIns, outing, photos, senior, volunteer } from "@/lib/data";
 
 export default async function FamilyHome({
@@ -24,8 +24,8 @@ export default async function FamilyHome({
         showNav
         current="/family/home"
       >
-        <Card className="border-[#ba1a1a]/20 bg-[#ffdad6]">
-          <h1 className="text-xl font-bold tracking-tight">
+        <Card tone="blush">
+          <h1 className="text-xl font-extrabold tracking-tight">
             Couldn&apos;t refresh Dad&apos;s day
           </h1>
           <p className="mt-2 text-sm leading-relaxed">
@@ -49,12 +49,17 @@ export default async function FamilyHome({
         showNav
         current="/family/home"
       >
-        <Card>
-          <p className="text-sm font-semibold text-primary">Home</p>
-          <h1 className="mt-2 text-[26px] font-semibold tracking-[-0.02em]">
+        <Card tone="mint" className="relative overflow-hidden">
+          <UiPic
+            src="/ui/icon-home.png"
+            alt=""
+            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
+          />
+          <p className="text-sm font-semibold">Home</p>
+          <h1 className="mt-2 max-w-[75%] text-[28px] font-extrabold tracking-[-0.04em]">
             {senior.name} is at home
           </h1>
-          <p className="mt-2 leading-relaxed text-muted-foreground">
+          <p className="mt-2 leading-relaxed text-[#3d4a42]">
             No outing booked today. Last activity was a 22-minute video kopi chat with Uncle Raymond yesterday.
           </p>
         </Card>
@@ -81,15 +86,20 @@ export default async function FamilyHome({
       current="/family/home"
     >
       <div className="space-y-3.5">
-        <section className="rounded-[24px] bg-primary p-5 text-primary-foreground">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-2.5 py-1 text-[12px] font-semibold">
+        <section className="relative overflow-hidden rounded-[32px] bg-[#dff5e8] p-5">
+          <UiPic
+            src="/ui/icon-fish.png"
+            alt=""
+            className="pointer-events-none absolute -right-2 -top-1 h-28 w-28"
+          />
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-2.5 py-1 text-[12px] font-semibold">
             <StatusDot live />
             Out right now
           </div>
-          <h1 className="mt-3 text-[26px] leading-[1.1] font-semibold tracking-[-0.02em]">
+          <h1 className="mt-3 max-w-[78%] text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
             {senior.name} is at {outing.area}
           </h1>
-          <p className="mt-2 flex items-start gap-2 text-[14px] leading-relaxed text-primary-foreground/85">
+          <p className="mt-2 flex max-w-[85%] items-start gap-2 text-[14px] leading-relaxed text-[#3d4a42]">
             <MapPin className="mt-0.5 size-4 shrink-0" />
             {outing.title} · {outing.pavilion}
           </p>
@@ -97,11 +107,11 @@ export default async function FamilyHome({
             {checkIns.map((item) => (
               <span
                 key={item.id}
-                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#ffdd67]" : "bg-white/25"}`}
+                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#16181d]" : "bg-white/70"}`}
               />
             ))}
           </div>
-          <p className="mt-2 text-[12px] text-primary-foreground/80">
+          <p className="mt-2 text-[12px] text-[#3d4a42]">
             {latest?.label} · {latest?.time} · {done}/{checkIns.length} taps · home ~ {outing.expectedHome}
           </p>
         </section>
@@ -109,7 +119,7 @@ export default async function FamilyHome({
         <Card>
           <div className="flex items-center justify-between">
             <h2 className="font-semibold tracking-tight">Who he&apos;s with</h2>
-            <Link href="/family/outing" className="text-[13px] font-semibold text-primary">
+            <Link href="/family/outing" className="text-[13px] font-semibold">
               Live check-ins
             </Link>
           </div>
@@ -118,7 +128,7 @@ export default async function FamilyHome({
               <Portrait
                 src={photos.rachel}
                 alt={volunteer.name}
-                className="size-12 rounded-2xl"
+                className="size-12 rounded-full"
               />
               <div>
                 <p className="font-semibold">{volunteer.name}</p>
@@ -128,14 +138,14 @@ export default async function FamilyHome({
               </div>
             </li>
             <li className="flex items-center gap-3">
-              <Portrait src={photos.ahmad} alt="Ahmad" className="size-12 rounded-2xl" />
+              <Portrait src={photos.ahmad} alt="Ahmad" className="size-12 rounded-full" />
               <div>
                 <p className="font-semibold">Ahmad</p>
                 <p className="text-sm text-muted-foreground">Fishing kaki</p>
               </div>
             </li>
             <li className="flex items-center gap-3">
-              <Portrait src={photos.susan} alt="Susan" className="size-12 rounded-2xl" />
+              <Portrait src={photos.susan} alt="Susan" className="size-12 rounded-full" />
               <div>
                 <p className="font-semibold">Susan</p>
                 <p className="text-sm text-muted-foreground">Bringing extra bait</p>
@@ -146,7 +156,7 @@ export default async function FamilyHome({
 
         <Link
           href="/family/outing"
-          className="flex items-center justify-between rounded-[22px] border border-[#c2c6d1]/30 bg-white p-4"
+          className="flex items-center justify-between rounded-[28px] bg-[#d7f0f7] p-4"
         >
           <div>
             <p className="font-semibold tracking-tight">Check-in timeline</p>
@@ -154,7 +164,7 @@ export default async function FamilyHome({
               Left home, arrived, next tap at wrap-up
             </p>
           </div>
-          <ArrowRight className="size-5 text-primary" />
+          <ArrowRight className="size-5" />
         </Link>
 
         <div className="flex gap-2.5">
@@ -168,11 +178,11 @@ export default async function FamilyHome({
         </div>
 
         <p className="text-center text-[11px] text-muted-foreground">
-          <Link href="/family/home?view=quiet" className="underline decoration-primary/30">
+          <Link href="/family/home?view=quiet" className="underline decoration-black/20">
             Preview a quiet day
           </Link>
           {" · "}
-          <Link href="/family/home?view=error" className="underline decoration-primary/30">
+          <Link href="/family/home?view=error" className="underline decoration-black/20">
             If updates fail
           </Link>
         </p>

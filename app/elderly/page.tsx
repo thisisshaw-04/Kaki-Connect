@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Coffee, Heart, Play, Shield, Smile, Volume2 } from "lucide-react";
+import { ArrowRight, Play, Shield, Volume2 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { PrimaryLink } from "@/components/primary-link";
-import { SlashMark } from "@/components/ui-bits";
+import { SlashMark, UiPic } from "@/components/ui-bits";
 import { brand } from "@/lib/data";
 
 export default function ElderlyWelcome() {
@@ -14,60 +14,61 @@ export default function ElderlyWelcome() {
   return (
     <AppShell role="elderly" backHref="/" action={<ListenButton />}>
       <div className="flex flex-1 flex-col">
-        <div className="relative overflow-hidden rounded-[28px] border border-[#d4e3ff]/60 bg-white p-6 text-center shadow-[0_8px_30px_-4px_rgba(99,142,203,0.12)]">
-          <p className="absolute top-4 right-5">
-            <SlashMark label="// 01" />
-          </p>
-          <div className="mb-5 mt-2 flex items-end justify-center gap-4">
-            <div className="flex size-16 flex-col items-center justify-center rounded-2xl border border-[#ffdd67] bg-[#ffdd67]/50 text-[#766100] shadow-sm">
-              <Coffee className="size-6" />
-              <span className="mt-0.5 text-[11px] font-semibold">Kopi</span>
-            </div>
-            <div className="flex size-20 flex-col items-center justify-center rounded-full bg-[#d4e3ff] text-primary ring-4 ring-white">
-              <Smile className="size-9" />
-              <span className="mt-0.5 text-[11px] font-bold">Kaki</span>
-            </div>
-            <div className="flex size-16 flex-col items-center justify-center rounded-2xl border border-[#ffdad6] bg-[#ffdcd9] text-[#ba1a1a] shadow-sm">
-              <Heart className="size-6 fill-current" />
-              <span className="mt-0.5 text-[11px] font-semibold">Care</span>
-            </div>
-          </div>
-          <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.02em]">
-            Welcome to KakiConnect! ☕
-          </h1>
-          <p className="mt-2 text-[10px] tracking-[0.12em] text-[#737781] uppercase">
-            {brand.hangul}
-          </p>
-          <p className="mx-auto mt-3 max-w-sm text-[16px] leading-[26px] text-muted-foreground">
-            {brand.promise}
-          </p>
-          <button
-            type="button"
-            className="mt-6 flex w-full items-center gap-3 rounded-xl border border-[#e4e2de] bg-[#f0eeea] px-4 py-3.5 text-left"
-            onClick={() => {
-              setPlaying(true);
-              window.setTimeout(() => setPlaying(false), 3200);
-            }}
-          >
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-sm">
-              <Volume2 className="size-5" />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="flex items-center gap-1.5 text-[13px] font-semibold text-primary">
-                Tap to listen to greeting
-                <span className="rounded bg-[#d4e3ff] px-1.5 py-0.5 text-xs text-[#001c3a]">
-                  Voice
-                </span>
-              </span>
-              <span className="block truncate text-[12px] text-muted-foreground">
-                Hokkien • English • Mandarin • Malay
-              </span>
-            </span>
-            <Play className="size-5 shrink-0 text-muted-foreground" />
-          </button>
-        </div>
+        <p className="text-sm font-medium text-muted-foreground">Hello there</p>
+        <h1 className="mt-1 text-[34px] leading-[1.05] font-extrabold tracking-[-0.045em]">
+          Welcome to KakiConnect! ☕
+        </h1>
+        <p className="mt-2 text-[10px] tracking-[0.12em] text-[#737781] uppercase">
+          {brand.hangul}
+        </p>
+        <p className="mt-3 max-w-sm text-[16px] leading-[26px] text-muted-foreground">
+          {brand.promise}
+        </p>
 
-        <div className="mt-4 flex items-center justify-center gap-2 rounded-full border border-[#ffdd67]/60 bg-[#f5f3ef] px-4 py-2.5 text-center text-[13px] font-semibold shadow-sm">
+        <div className="mt-5 grid grid-cols-3 gap-2">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#fff3c9] px-2 py-4">
+            <UiPic src="/ui/icon-kopi.png" alt="" className="h-14 w-14" />
+            <span className="mt-1 text-[12px] font-bold">Kopi</span>
+          </div>
+          <div className="flex flex-col items-center rounded-[28px] bg-[#dff5e8] px-2 py-4">
+            <UiPic src="/ui/icon-kaki.png" alt="" className="h-14 w-14" />
+            <span className="mt-1 text-[12px] font-bold">Kaki</span>
+          </div>
+          <div className="flex flex-col items-center rounded-[28px] bg-[#ffe4e2] px-2 py-4">
+            <UiPic src="/ui/icon-care.png" alt="" className="h-14 w-14" />
+            <span className="mt-1 text-[12px] font-bold">Care</span>
+          </div>
+        </div>
+        <p className="mt-2 text-right">
+          <SlashMark label="// 01" />
+        </p>
+
+        <button
+          type="button"
+          className="mt-2 flex w-full items-center gap-3 rounded-[28px] bg-[#f4f5f7] px-4 py-3.5 text-left"
+          onClick={() => {
+            setPlaying(true);
+            window.setTimeout(() => setPlaying(false), 3200);
+          }}
+        >
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#16181d] text-white">
+            <Volume2 className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-1.5 text-[13px] font-semibold">
+              Tap to listen to greeting
+              <span className="rounded-full bg-[#d7f0f7] px-1.5 py-0.5 text-xs text-[#124780]">
+                Voice
+              </span>
+            </span>
+            <span className="block truncate text-[12px] text-muted-foreground">
+              Hokkien • English • Mandarin • Malay
+            </span>
+          </span>
+          <Play className="size-5 shrink-0 text-muted-foreground" />
+        </button>
+
+        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#fff3c9] px-4 py-2.5 text-center text-[13px] font-semibold">
           <Shield className="size-4 text-[#715c00]" />
           100% Free & Safe for seniors and families
         </div>
@@ -82,7 +83,7 @@ export default function ElderlyWelcome() {
           </p>
         </div>
         {playing ? (
-          <p className="mt-3 rounded-full bg-[#30312e] px-4 py-2 text-center text-[13px] font-semibold text-[#f2f0ec]">
+          <p className="mt-3 rounded-full bg-[#16181d] px-4 py-2 text-center text-[13px] font-semibold text-white">
             Playing greeting in English & Hokkien...
           </p>
         ) : null}

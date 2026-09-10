@@ -15,7 +15,7 @@ export default function FamilyLink() {
             {familyMember.relation} · you live in {familyMember.livesIn}. He lives in {senior.neighbourhood}.
           </p>
         </div>
-        <Card className="bg-[#eaf1f8]">
+        <Card tone="sky">
           <h2 className="font-bold text-primary">He is sharing</h2>
           <ul className="mt-2 space-y-2 text-sm leading-relaxed">
             {familyShare.yes.map((item) => (

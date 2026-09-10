@@ -30,13 +30,13 @@ export default function FamilyWeek() {
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-3">
-                <p className={cn("text-sm font-semibold", live ? "text-[#ffdd67]" : "text-primary")}>
+                <p className={cn("text-sm font-semibold", live ? "text-[#1b5e20]" : "text-muted-foreground")}>
                   {item.day} · {item.date}
                 </p>
                 <span
                   className={cn(
                     "text-xs font-semibold tracking-wide uppercase",
-                    live ? "text-primary-foreground/75" : "text-muted-foreground"
+                    live ? "text-[#3d4a42]" : "text-muted-foreground"
                   )}
                 >
                   {item.status === "live"
@@ -48,7 +48,7 @@ export default function FamilyWeek() {
               </div>
               <h2 className="mt-1 font-bold">{item.title}</h2>
               {item.with ? (
-                <p className={cn("mt-1 text-sm", live ? "text-primary-foreground/80" : "text-muted-foreground")}>
+                <p className={cn("mt-1 text-sm", live ? "text-[#3d4a42]" : "text-muted-foreground")}>
                   {item.with}
                 </p>
               ) : null}
@@ -60,7 +60,7 @@ export default function FamilyWeek() {
               {item.status === "live" ? (
                 <Link
                   href="/family/outing"
-                  className="block rounded-[22px] bg-primary p-4 text-primary-foreground"
+                  className="block rounded-[28px] bg-[#dff5e8] p-4"
                 >
                   {inner}
                 </Link>

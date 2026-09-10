@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
-import { Card, Pill, SlashMark } from "@/components/ui-bits";
+import { Card, Pill, SlashMark, UiPic } from "@/components/ui-bits";
 import { volunteerRequests } from "@/lib/data";
 
 export default function VolunteerRequests() {
@@ -14,7 +14,7 @@ export default function VolunteerRequests() {
       showNav
       current="/volunteer/requests"
     >
-      <h1 className="text-2xl font-bold">Open Companion Requests</h1>
+      <h1 className="text-[30px] font-extrabold tracking-[-0.04em]">Open Companion Requests</h1>
       <p className="mt-1 text-sm text-muted-foreground">
         All Requests (4) · Nearby East Coast & Bedok
       </p>
@@ -25,11 +25,20 @@ export default function VolunteerRequests() {
               href={request.id === "fishing" ? "/volunteer/outing" : "/volunteer/requests"}
               className="block"
             >
-              <Card highlight={request.featured}>
-                <div className="flex items-start justify-between gap-2">
+              <Card
+                highlight={request.featured}
+                tone={request.featured ? undefined : "sky"}
+                className="relative overflow-hidden"
+              >
+                <UiPic
+                  src={request.id === "fishing" ? "/ui/icon-fish.png" : "/ui/icon-dimsum.png"}
+                  alt=""
+                  className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
+                />
+                <div className="flex items-start justify-between gap-2 pr-16">
                   <SlashMark label={`// 0${index + 1}`} />
                   {request.featured ? (
-                    <Pill className="bg-[#ffdd67] text-[#3d3200]">
+                    <Pill className="bg-white/80 text-[#3d3200]">
                       Featured Match · {request.distance}
                     </Pill>
                   ) : null}

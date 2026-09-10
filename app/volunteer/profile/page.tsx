@@ -14,11 +14,11 @@ export default function VolunteerProfile() {
       current="/volunteer/profile"
     >
       <div className="space-y-4">
-        <Card className="flex gap-3">
+        <Card className="flex gap-3" tone="sky">
           <Portrait
             src={volunteer.photo}
             alt={volunteer.name}
-            className="size-16 rounded-2xl"
+            className="size-16 rounded-full"
           />
           <div>
             <h1 className="text-xl font-bold">{volunteer.name}</h1>

@@ -15,7 +15,7 @@ export function ListenButton({
   return (
     <button
       type="button"
-      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[#fde047] px-4 text-sm font-bold text-neutral-900 shadow-sm transition hover:bg-[#facc15] active:scale-95"
+      className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[#fff3c9] px-4 text-sm font-bold text-[#3d3200] transition hover:bg-[#ffe27a] active:scale-95"
       onClick={() => {
         setPlaying(true);
         window.setTimeout(() => setPlaying(false), 2200);

@@ -14,14 +14,14 @@ export function PrimaryLink({
 }) {
   const styles = {
     primary:
-      "min-h-16 rounded-full bg-primary text-base font-semibold text-white shadow-md hover:bg-[#4a76b1] active:scale-[0.98]",
+      "min-h-14 rounded-full bg-[#16181d] text-base font-bold text-white shadow-[0_10px_24px_-12px_rgba(22,24,29,0.55)] hover:bg-black active:scale-[0.98]",
     black:
-      "min-h-12 rounded-full bg-[#18181b] text-[13px] font-bold text-white shadow-sm hover:bg-black active:scale-95",
+      "min-h-12 rounded-full bg-[#16181d] text-[13px] font-bold text-white shadow-sm hover:bg-black active:scale-95",
     outline:
-      "min-h-14 rounded-full border border-border bg-white text-base font-semibold",
+      "min-h-14 rounded-full bg-[#f4f5f7] text-base font-semibold text-[#16181d]",
     ghost: "min-h-12 rounded-full text-sm font-semibold text-muted-foreground",
     secondary:
-      "min-h-14 rounded-full bg-[#ffdd67] text-base font-semibold text-[#3d3200]",
+      "min-h-14 rounded-full bg-[#fff3c9] text-base font-semibold text-[#3d3200]",
   } as const;
 
   return (

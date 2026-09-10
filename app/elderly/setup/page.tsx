@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
-import { Card, Pill, SlashMark } from "@/components/ui-bits";
+import { Card, Pill, SlashMark, UiPic, choiceClass } from "@/components/ui-bits";
 import { familyMember, senior } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -151,7 +151,7 @@ export default function ElderlySetup() {
           <button
             type="button"
             onClick={next}
-            className="relative z-20 inline-flex min-h-16 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-primary text-base font-semibold text-white shadow-md active:scale-[0.98]"
+            className="relative z-20 inline-flex min-h-16 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-[#16181d] text-base font-bold text-white shadow-[0_10px_24px_-12px_rgba(22,24,29,0.55)] active:scale-[0.98]"
           >
             {step === 6
               ? "Confirm & Continue"
@@ -184,19 +184,17 @@ export default function ElderlySetup() {
               Use your friendly nickname, English name, or casual senior address so nearby Kakis know what to call you.
             </p>
           </div>
-          <Card className="flex items-center gap-4">
-            <div className="flex size-16 items-center justify-center rounded-2xl bg-[#d4e3ff] text-primary">
-              <Smile className="size-8" />
-            </div>
+          <Card tone="sky" className="flex items-center gap-4">
+            <UiPic src="/ui/icon-elderly.png" alt="" className="size-16" />
             <div className="flex-1">
               <p className="flex items-center gap-1 text-sm font-semibold text-primary">
                 <Check className="size-4" /> Using Uncle Joy avatar
               </p>
               <div className="mt-2 flex gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#f0eeea] px-3 py-1 text-xs font-semibold">
+                <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold">
                   <Camera className="size-3.5" /> Take Photo
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#f0eeea] px-3 py-1 text-xs font-semibold">
+                <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold">
                   <Smile className="size-3.5" /> Choose Avatar
                 </span>
               </div>
@@ -208,7 +206,7 @@ export default function ElderlySetup() {
               <input
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="h-14 w-full rounded-xl border border-[#e2dfd7] bg-white px-4 pr-12 text-lg outline-none focus:border-primary focus:ring-4 focus:ring-primary/15"
+                className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 pr-12 text-lg outline-none focus:ring-4 focus:ring-black/10"
               />
               <Mic className="absolute top-1/2 right-4 size-5 -translate-y-1/2 text-[#fde047]" />
             </div>
@@ -228,8 +226,8 @@ export default function ElderlySetup() {
                   className={cn(
                     "rounded-full px-4 py-2 text-sm font-semibold",
                     title === item
-                      ? "bg-primary text-white"
-                      : "bg-[#f0eeea] text-foreground"
+                      ? "bg-[#16181d] text-white"
+                      : "bg-[#f4f5f7] text-foreground"
                   )}
                 >
                   {item}
@@ -263,10 +261,7 @@ export default function ElderlySetup() {
                   type="button"
                   onClick={() => setAge(item.id)}
                   className={cn(
-                    "rounded-2xl border p-4 text-left",
-                    age === item.id
-                      ? "border-primary bg-[#eaf1f8]"
-                      : "border-[#c2c6d1]/40 bg-white"
+                    choiceClass(age === item.id)
                   )}
                 >
                   <p className="text-[11px] font-semibold tracking-wide text-primary uppercase">
@@ -286,7 +281,7 @@ export default function ElderlySetup() {
             <select
               value={estate}
               onChange={(event) => setEstate(event.target.value)}
-              className="h-14 w-full rounded-xl border border-[#e2dfd7] bg-white px-4 text-base"
+              className="h-14 w-full rounded-full bg-[#f4f5f7] px-4 text-base"
             >
               {estates.map((item) => (
                 <option key={item}>{item}</option>
@@ -303,14 +298,14 @@ export default function ElderlySetup() {
                   }
                   className={cn(
                     "rounded-full px-3 py-1.5 text-sm font-semibold",
-                    estate.startsWith(item) ? "bg-primary text-white" : "bg-[#f0eeea]"
+                    estate.startsWith(item) ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
                   )}
                 >
                   {item}
                 </button>
               ))}
             </div>
-            <Card className="mt-4 bg-[#eaf1f8] p-4">
+            <Card tone="sky" className="mt-4 p-4">
               <p className="font-bold text-primary">14 Kakis are active in Bedok!</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.
@@ -345,8 +340,8 @@ export default function ElderlySetup() {
                     )
                   }
                   className={cn(
-                    "flex items-center gap-3 rounded-2xl border p-4 text-left",
-                    on ? "border-primary bg-[#eaf1f8]" : "border-[#c2c6d1]/40 bg-white"
+                    "flex items-center gap-3",
+                    choiceClass(on)
                   )}
                 >
                   <span className="flex size-9 items-center justify-center rounded-full bg-white text-xs font-bold text-primary">
@@ -358,7 +353,7 @@ export default function ElderlySetup() {
               );
             })}
           </div>
-          <Card className="bg-[#fffef9]">
+          <Card tone="butter">
             <p className="font-bold">Helpful Tip · No worries!</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Speaking local dialects helps us pair you with Kakis who love the same banter!
@@ -397,10 +392,7 @@ export default function ElderlySetup() {
               type="button"
               onClick={() => setMobility(item.id)}
               className={cn(
-                "w-full rounded-[24px] border p-5 text-left",
-                mobility === item.id
-                  ? "border-primary bg-[#eaf1f8]"
-                  : "border-[#c2c6d1]/40 bg-white"
+                choiceClass(mobility === item.id)
               )}
             >
               <SlashMark label={item.mark} />
@@ -432,10 +424,7 @@ export default function ElderlySetup() {
                 type="button"
                 onClick={() => setSupport(item.id)}
                 className={cn(
-                  "w-full rounded-2xl border p-4 text-left",
-                  support === item.id
-                    ? "border-primary bg-[#eaf1f8]"
-                    : "border-[#c2c6d1]/40 bg-white"
+                  choiceClass(support === item.id)
                 )}
               >
                 <p className="font-bold">{item.title}</p>
@@ -458,27 +447,36 @@ export default function ElderlySetup() {
           <p className="text-[16px] leading-[26px] text-muted-foreground">
             Tap what you&apos;d like to do with your new kaki.
           </p>
-          {activities.map((item) => (
+          {activities.map((item) => {
+            const art =
+              item.id === "kopi"
+                ? "/ui/icon-kopi.png"
+                : item.id === "park"
+                  ? "/ui/icon-park.png"
+                  : "/ui/icon-karaoke.png";
+            return (
             <button
               key={item.id}
               type="button"
               onClick={() => setActivity(item.id)}
               className={cn(
-                "flex w-full items-center justify-between rounded-2xl border p-4 text-left",
-                activity === item.id
-                  ? "border-primary bg-[#eaf1f8]"
-                  : "border-[#c2c6d1]/40 bg-white"
+                "flex items-center justify-between gap-3",
+                choiceClass(activity === item.id)
               )}
             >
-              <span>
-                <span className="block font-bold">{item.title}</span>
-                <span className="mt-1 block text-sm text-muted-foreground">
-                  {item.detail} · {item.hangul}
+              <span className="flex min-w-0 items-center gap-3">
+                <UiPic src={art} alt="" className="size-14 shrink-0" />
+                <span>
+                  <span className="block font-bold">{item.title}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground">
+                    {item.detail} · {item.hangul}
+                  </span>
                 </span>
               </span>
-              {activity === item.id ? <Check className="size-5 text-primary" /> : null}
+              {activity === item.id ? <Check className="size-5" /> : null}
             </button>
-          ))}
+            );
+          })}
           <p className="text-sm text-muted-foreground">
             No rush! You can always change activities later or invite family along.
           </p>
@@ -494,7 +492,7 @@ export default function ElderlySetup() {
           <p className="text-[16px] leading-[26px] text-muted-foreground">
             Link a trusted family member or caregiver so they stay updated whenever you go on an outing.
           </p>
-          <Card className="bg-[#eaf1f8]">
+          <Card tone="mint">
             <p className="flex items-center gap-2 text-sm font-bold text-primary">
               <Shield className="size-4" /> Protected by Fei Yue Community Care
             </p>
@@ -520,7 +518,7 @@ export default function ElderlySetup() {
                   onClick={() => setRelation(item)}
                   className={cn(
                     "rounded-full px-3 py-1.5 text-sm font-semibold",
-                    relation === item ? "bg-primary text-white" : "bg-[#f0eeea]"
+                    relation === item ? "bg-[#16181d] text-white" : "bg-[#f4f5f7]"
                   )}
                 >
                   {item}
@@ -531,24 +529,24 @@ export default function ElderlySetup() {
             <input
               value={contactName}
               onChange={(event) => setContactName(event.target.value)}
-              className="mt-1 h-12 w-full rounded-xl border border-[#e2dfd7] px-3"
+              className="mt-1 h-12 w-full rounded-full bg-[#f4f5f7] px-3"
             />
             <label className="mt-3 block text-sm font-semibold">Mobile Phone Number</label>
             <div className="mt-1 flex gap-2">
-              <span className="flex h-12 items-center rounded-xl border border-[#e2dfd7] px-3 text-sm">
+              <span className="flex h-12 items-center rounded-full bg-[#f4f5f7] px-3 text-sm">
                 🇸🇬 +65
               </span>
               <input
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
-                className="h-12 flex-1 rounded-xl border border-[#e2dfd7] px-3"
+                className="h-12 flex-1 rounded-full bg-[#f4f5f7] px-3"
               />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
               SMS alert with live tracking will be sent to this number.
             </p>
           </Card>
-          <Card className="border-[#ffdad6] bg-[#fff6f5]">
+          <Card tone="blush">
             <p className="font-bold">Automatic Safety Escalation · 60 Min Guarantee</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               If no check-in or reply is received within 60 minutes after an outing begins, an urgent alert and live GPS location will be automatically escalated to your family contact (+65 9123 4567) and the community care center.
@@ -557,12 +555,12 @@ export default function ElderlySetup() {
           <button
             type="button"
             onClick={() => setFscEscalation((value) => !value)}
-            className="flex w-full items-start gap-3 rounded-2xl border border-[#c2c6d1]/40 bg-white p-4 text-left"
+            className={cn("flex items-start gap-3", choiceClass(fscEscalation))}
           >
             <span
               className={cn(
                 "mt-0.5 flex size-5 items-center justify-center rounded-[6px]",
-                fscEscalation ? "bg-primary text-white" : "border border-[#c2c6d1]"
+                fscEscalation ? "bg-[#16181d] text-white" : "border border-[#c2c6d1] bg-white"
               )}
             >
               {fscEscalation ? <Check className="size-3.5" /> : null}
@@ -595,12 +593,12 @@ export default function ElderlySetup() {
             <p className="mt-1 text-sm text-muted-foreground">0:10 / 0:10</p>
             <button
               type="button"
-              className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-white"
+              className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#16181d] px-4 py-2 text-sm font-bold text-white"
             >
               <Play className="size-4" /> Play My Greeting
             </button>
           </Card>
-          <Card className="bg-[#fffef9]">
+          <Card tone="butter">
             <p className="font-semibold">Example prompt to say:</p>
             <p className="mt-1 text-sm italic">
               “Hello! I am Uncle Tan, love morning kopi and brisk walks!”
@@ -631,10 +629,8 @@ export default function ElderlySetup() {
               type="button"
               onClick={() => setTextSize(item.id)}
               className={cn(
-                "flex w-full items-center justify-between rounded-2xl border p-4 text-left",
-                textSize === item.id
-                  ? "border-primary bg-[#eaf1f8]"
-                  : "border-[#c2c6d1]/40 bg-white"
+                "flex items-center justify-between",
+                choiceClass(textSize === item.id)
               )}
             >
               <span>
@@ -644,7 +640,7 @@ export default function ElderlySetup() {
                 <span className="mt-1 block text-sm text-muted-foreground">{item.hint}</span>
               </span>
               {item.recommended ? (
-                <span className="rounded-full bg-[#ffdd67] px-2 py-0.5 text-[10px] font-bold uppercase">
+                <span className="rounded-full bg-[#fff3c9] px-2 py-0.5 text-[10px] font-bold uppercase">
                   Recommended
                 </span>
               ) : null}
@@ -666,8 +662,8 @@ export default function ElderlySetup() {
 
       {step === 9 ? (
         <div className="flex flex-1 flex-col items-center pt-8 text-center">
-          <div className="flex size-20 items-center justify-center rounded-full bg-[#d6f0dc] text-[#1b5e20]">
-            <Check className="size-10" />
+          <div className="flex size-24 items-center justify-center rounded-full bg-[#dff5e8]">
+            <UiPic src="/ui/icon-kaki.png" alt="" className="size-20" />
           </div>
           <p className="mt-4 text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
             Profile Activated

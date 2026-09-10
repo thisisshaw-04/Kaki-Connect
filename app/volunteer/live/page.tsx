@@ -47,7 +47,7 @@ export default function VolunteerLive() {
       current="/volunteer/live"
     >
       <div className="space-y-4">
-        <Card className="bg-[#eaf1f8]">
+        <Card tone="mint">
           <p className="text-sm font-semibold text-primary">
             Active Companionship · Mr Tan (Bedok)
           </p>
@@ -70,8 +70,8 @@ export default function VolunteerLive() {
             <li
               key={item.id}
               className={cn(
-                "rounded-2xl border p-4",
-                item.done ? "border-border bg-white" : "border-primary/30 bg-[#eaf1f8]"
+                "rounded-[28px] p-4",
+                item.done ? "bg-[#f4f5f7]" : "bg-[#d7f0f7]"
               )}
             >
               <div className="flex items-start justify-between gap-3">
@@ -95,7 +95,7 @@ export default function VolunteerLive() {
             </li>
           ))}
         </ul>
-        <Card className="bg-[#fffef9]">
+        <Card tone="butter">
           <p className="font-bold">Companion Care Prompts · 실시간 주의 사항</p>
           <ul className="mt-2 space-y-2 text-sm">
             <li>
@@ -112,13 +112,13 @@ export default function VolunteerLive() {
         <div className="grid grid-cols-2 gap-2">
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-12 items-center justify-center rounded-full bg-primary text-sm font-bold text-white"
+            className="flex min-h-12 items-center justify-center rounded-full bg-[#16181d] text-sm font-bold text-white"
           >
             Call Daughter Sarah
           </a>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="flex min-h-12 items-center justify-center rounded-full bg-[#f0eeea] text-sm font-bold"
+            className="flex min-h-12 items-center justify-center rounded-full bg-[#f4f5f7] text-sm font-bold"
           >
             Contact FSC
           </a>

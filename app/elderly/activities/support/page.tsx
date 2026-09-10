@@ -4,9 +4,8 @@ import { useState } from "react";
 import { ArrowRight, Check, Volume2 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill } from "@/components/ui-bits";
+import { Card, Pill, choiceClass } from "@/components/ui-bits";
 import { outing } from "@/lib/data";
-import { cn } from "@/lib/utils";
 import { PrimaryLink } from "@/components/primary-link";
 
 const options = [
@@ -52,7 +51,7 @@ export default function SupportPreferencePage() {
       current="/elderly/home"
     >
       <div className="space-y-4">
-        <Card className="bg-[#eaf1f8] p-4">
+        <Card tone="sky" className="p-4">
           <p className="text-[11px] font-bold tracking-[0.1em] text-primary uppercase">
             Selected outing · // {outing.code}
           </p>
@@ -70,7 +69,7 @@ export default function SupportPreferencePage() {
         </p>
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-full bg-[#fde047] px-4 py-2 text-sm font-bold"
+              className="inline-flex items-center gap-2 rounded-full bg-[#fff3c9] px-4 py-2 text-sm font-bold"
         >
           <Volume2 className="size-4" /> Tap to listen in Hokkien / Mandarin / English
         </button>
@@ -81,12 +80,7 @@ export default function SupportPreferencePage() {
               key={item.id}
               type="button"
               onClick={() => setChoice(item.id)}
-              className={cn(
-                "w-full rounded-2xl border p-4 text-left",
-                choice === item.id
-                  ? "border-primary bg-[#eaf1f8]"
-                  : "border-[#c2c6d1]/40 bg-white"
-              )}
+              className={choiceClass(choice === item.id)}
             >
               <p className="flex items-center gap-2 font-bold">
                 {item.title}

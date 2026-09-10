@@ -1,7 +1,7 @@
-import { Phone, Shield } from "lucide-react";
+import { Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { SosButton } from "@/components/sos-button";
-import { Card, Pill } from "@/components/ui-bits";
+import { Card, Pill, UiPic } from "@/components/ui-bits";
 import { familyMember, fsc, senior } from "@/lib/data";
 
 export default function CareHubPage() {
@@ -16,24 +16,27 @@ export default function CareHubPage() {
       current="/elderly/care"
     >
       <div className="space-y-4">
-        <Pill>Care Hub</Pill>
-        <h1 className="text-[26px] leading-tight font-bold">Help is always nearby</h1>
+        <Pill className="bg-[#ece7ff]">Care Hub</Pill>
+        <h1 className="text-[30px] leading-tight font-extrabold tracking-[-0.04em]">Help is always nearby</h1>
         <p className="text-[16px] leading-relaxed text-muted-foreground">
           Family peace of mind, Fei Yue FSC, and emergency numbers — without leaving the app.
         </p>
-        <Card className="bg-[#eaf1f8]">
-          <p className="flex items-center gap-2 font-bold text-primary">
-            <Shield className="size-4" /> Family Peace of Mind
-          </p>
-          <p className="mt-2 text-sm leading-relaxed">
+        <Card tone="mint" className="relative overflow-hidden">
+          <UiPic
+            src="/ui/icon-care.png"
+            alt=""
+            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
+          />
+          <p className="pr-16 font-bold">Family Peace of Mind</p>
+          <p className="mt-2 max-w-[85%] text-sm leading-relaxed">
             {familyMember.name} ({familyMember.relation}) is your verified emergency contact at {familyMember.phone}.
             She receives automated check-in SMS when an outing begins.
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-2 max-w-[90%] text-sm leading-relaxed text-[#3d4a42]">
             60 Min Guarantee: if no check-in is received, an urgent alert and live GPS is escalated to family and the community care centre.
           </p>
         </Card>
-        <Card>
+        <Card tone="sky">
           <p className="font-bold">FSC Care Coordinator</p>
           <p className="mt-1 text-sm">
             {fsc.coordinator} · {fsc.organisation}
@@ -41,12 +44,12 @@ export default function CareHubPage() {
           <p className="text-sm text-muted-foreground">{fsc.hours}</p>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary font-bold text-white"
+            className="mt-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#16181d] font-bold text-white"
           >
             <Phone className="size-4" /> Call {fsc.phone}
           </a>
         </Card>
-        <Card className="bg-[#fff6f5]">
+        <Card tone="blush">
           <p className="font-bold">Need assistance right now?</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Reach Silver Generation Ambassador or emergency response with one tap. Stay with {senior.name} until help arrives.
@@ -54,14 +57,14 @@ export default function CareHubPage() {
           <div className="mt-3 grid grid-cols-2 gap-2">
             <a
               href="tel:995"
-              className="flex min-h-14 flex-col items-center justify-center rounded-2xl bg-[#ba1a1a] text-sm font-bold text-white"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-white text-sm font-bold text-[#c62828]"
             >
               995
               <span className="text-[11px] font-medium">Ambulance / SCDF</span>
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 flex-col items-center justify-center rounded-2xl bg-primary text-sm font-bold text-white"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#16181d] text-sm font-bold text-white"
             >
               Call Sarah
               <span className="text-[11px] font-medium">Daughter</span>

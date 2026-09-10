@@ -17,7 +17,7 @@ export default function VolunteerCommunity() {
         <p className="text-sm leading-relaxed text-muted-foreground">
           Heartlands Edition tips, Fei Yue FSC updates, and the companionship safety guide.
         </p>
-        <Card>
+        <Card tone="lavender">
           <p className="font-bold">Safe & Dignified Companionship</p>
           <p className="mt-1 text-sm text-muted-foreground">
             3 golden rules, allowed vs not-allowed support, and 24/7 emergency numbers.
@@ -26,7 +26,7 @@ export default function VolunteerCommunity() {
             Open safety guidelines
           </PrimaryLink>
         </Card>
-        <Card>
+        <Card tone="sky">
           <p className="font-bold">Fei Yue FSC desk</p>
           <p className="mt-1 text-sm">6743-9821 · Direct volunteer coordinator</p>
         </Card>

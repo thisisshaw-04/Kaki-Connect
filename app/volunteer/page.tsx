@@ -1,7 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card, Pill, SlashMark } from "@/components/ui-bits";
+import { Card, Pill, SlashMark, UiPic } from "@/components/ui-bits";
+
+const tones = ["mint", "sky", "lavender"] as const;
 
 export default function VolunteerWelcome() {
   return (
@@ -12,16 +14,23 @@ export default function VolunteerWelcome() {
       backHref="/"
     >
       <div className="flex flex-1 flex-col gap-4">
-        <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
-          Neighborhood Companionship Initiative
-        </p>
-        <h1 className="text-[26px] leading-tight font-bold">
-          Help an older adult stay connected.
-        </h1>
-        <p className="text-[16px] leading-relaxed text-muted-foreground">
-          Accompany a senior to their favorite neighborhood activity. Every small walk, MRT trip, or reservoir visit helps prevent isolation right in your estate.
-        </p>
-        <Pill>Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
+        <div className="relative overflow-hidden rounded-[32px] bg-[#d7f0f7] p-5">
+          <UiPic
+            src="/ui/icon-volunteer.png"
+            alt=""
+            className="pointer-events-none absolute -right-2 -top-3 h-28 w-28"
+          />
+          <p className="text-[11px] font-bold tracking-[0.12em] uppercase">
+            Neighborhood Companionship Initiative
+          </p>
+          <h1 className="mt-2 max-w-[75%] text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
+            Help an older adult stay connected.
+          </h1>
+          <p className="mt-2 max-w-[82%] text-[15px] leading-relaxed text-[#315e8e]">
+            Accompany a senior to their favorite neighborhood activity. Every small walk, MRT trip, or reservoir visit helps prevent isolation right in your estate.
+          </p>
+        </div>
+        <Pill className="bg-[#ece7ff]">Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
         <p className="text-sm font-semibold">Scope of Volunteering · // Reassurances</p>
         {[
           {
@@ -39,14 +48,14 @@ export default function VolunteerWelcome() {
             title: "Privacy-Protected Details",
             body: "Senior profiles and NRIC information remain strictly safeguarded under PDPA. Meeting addresses unlock only when a walk is confirmed.",
           },
-        ].map((item) => (
-          <Card key={item.n}>
+        ].map((item, index) => (
+          <Card key={item.n} tone={tones[index]}>
             <SlashMark label={item.n} />
             <p className="mt-1 font-bold">{item.title}</p>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
           </Card>
         ))}
-        <Card className="bg-[#fffef9]">
+        <Card tone="butter">
           <p className="font-bold">Kaki Volunteer Quick Tips · 봉사 팁</p>
           <ul className="mt-2 space-y-2 text-sm">
             <li>

@@ -1,8 +1,8 @@
 # KakiConnect
 
-A clickable Singapore community companion demo, rebuilt to match the [Stitch](https://stitch.withgoogle.com/projects/15237305400784592082) screens: **Serene Play** cream stationery, Plus Jakarta Sans, yellow **Listen**, pink **SOS**, and the original elderly / volunteer journeys.
+A clickable Singapore community companion demo. Journeys and copy follow the [Stitch](https://stitch.withgoogle.com/projects/15237305400784592082) screens (elderly + volunteer), with **Family** kept as a third role so daughter **Sarah Tan** can follow outing check-ins.
 
-Family is kept as a third role so daughter **Sarah Tan** can follow outing check-ins without changing those journeys.
+The UI uses a pastel wellness look: white canvas, mint / sky / butter / blush cards, large type, and a floating pill nav. Product copy, names, and tap paths are unchanged.
 
 ## Roles
 

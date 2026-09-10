@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PrimaryLink } from "@/components/primary-link";
-import { Card, Pill, Portrait } from "@/components/ui-bits";
+import { Card, Pill, Portrait, UiPic } from "@/components/ui-bits";
 import {
   outing,
   photos,
@@ -34,8 +34,13 @@ export default function VolunteerOuting() {
             </p>
           </div>
         </div>
-        <Card>
-          <p className="font-bold">
+        <Card tone="mint" className="relative overflow-hidden">
+          <UiPic
+            src="/ui/icon-fish.png"
+            alt=""
+            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
+          />
+          <p className="pr-16 font-bold">
             Reservoir Fishing & Kopi Gathering with 3 peer kakis
           </p>
           <p className="text-sm text-muted-foreground">{outing.pavilion}</p>
@@ -65,15 +70,15 @@ export default function VolunteerOuting() {
           </p>
           <p className="mt-2 text-xs font-semibold text-primary">PCN Green Track #B4</p>
           <div className="mt-3 grid grid-cols-3 gap-2 text-center text-sm">
-            <div className="rounded-xl bg-[#f0eeea] p-2">
+            <div className="rounded-[20px] bg-[#dff5e8] p-2">
               <p className="font-bold">85%</p>
               <p className="text-[11px] text-muted-foreground">Fully shaded</p>
             </div>
-            <div className="rounded-xl bg-[#f0eeea] p-2">
+            <div className="rounded-[20px] bg-[#dff5e8] p-2">
               <p className="font-bold">750 m</p>
               <p className="text-[11px] text-muted-foreground">Distance</p>
             </div>
-            <div className="rounded-xl bg-[#f0eeea] p-2">
+            <div className="rounded-[20px] bg-[#dff5e8] p-2">
               <p className="font-bold">4 stops</p>
               <p className="text-[11px] text-muted-foreground">Rest benches</p>
             </div>

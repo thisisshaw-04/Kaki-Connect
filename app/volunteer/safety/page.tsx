@@ -67,7 +67,7 @@ export default function VolunteerSafety() {
             <p className="mt-1 text-xs font-semibold text-primary">{item.tag}</p>
           </Card>
         ))}
-        <Card className="bg-[#eaf1f8]">
+        <Card tone="mint">
           <p className="font-bold">Allowed · 일반 자원봉사자 역할 (General Volunteer)</p>
           <ul className="mt-2 space-y-2 text-sm">
             {allowed.map(([title, detail]) => (
@@ -77,7 +77,7 @@ export default function VolunteerSafety() {
             ))}
           </ul>
         </Card>
-        <Card className="bg-[#fff6f5]">
+        <Card tone="blush">
           <p className="font-bold">Not Allowed · 전문 간병인 전용 (Trained Caregiver Required)</p>
           <ul className="mt-2 space-y-2 text-sm">
             {notAllowed.map(([title, detail]) => (
@@ -98,7 +98,7 @@ export default function VolunteerSafety() {
           <div className="mt-3 space-y-2">
             <a
               href={`tel:${fsc.phone.replace("-", "")}`}
-              className="flex min-h-12 items-center justify-between rounded-2xl bg-primary px-4 font-bold text-white"
+              className="flex min-h-12 items-center justify-between rounded-[22px] bg-[#16181d] px-4 font-bold text-white"
             >
               <span>
                 Fei Yue FSC Befriender
@@ -110,7 +110,7 @@ export default function VolunteerSafety() {
             </a>
             <a
               href="tel:995"
-              className="flex min-h-12 items-center justify-between rounded-2xl bg-[#ba1a1a] px-4 font-bold text-white"
+              className="flex min-h-12 items-center justify-between rounded-[22px] bg-[#ffe4e2] px-4 font-bold text-[#c62828]"
             >
               <span>
                 Ambulance / SCDF
@@ -120,7 +120,7 @@ export default function VolunteerSafety() {
             </a>
             <a
               href="tel:999"
-              className="flex min-h-12 items-center justify-between rounded-2xl bg-[#30312e] px-4 font-bold text-white"
+              className="flex min-h-12 items-center justify-between rounded-[22px] bg-[#f4f5f7] px-4 font-bold text-[#16181d]"
             >
               <span>
                 Singapore Police Force

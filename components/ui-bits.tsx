@@ -1,5 +1,17 @@
 import { cn } from "@/lib/utils";
 
+export const pastel = {
+  mint: "bg-[#dff5e8]",
+  sky: "bg-[#d7f0f7]",
+  butter: "bg-[#fff3c9]",
+  blush: "bg-[#ffe4e2]",
+  lavender: "bg-[#ece7ff]",
+  peach: "bg-[#ffe8d6]",
+  fog: "bg-[#f4f5f7]",
+} as const;
+
+export type PastelTone = keyof typeof pastel;
+
 export function Initials({
   name,
   className,
@@ -10,10 +22,10 @@ export function Initials({
   tone?: "blue" | "gold" | "rose" | "green";
 }) {
   const tones = {
-    blue: "bg-[#d4e3ff] text-[#124780]",
-    gold: "bg-[#ffe17a] text-[#554500]",
-    rose: "bg-[#ffdad6] text-[#93000a]",
-    green: "bg-[#d6f0dc] text-[#1b5e20]",
+    blue: "bg-[#d7f0f7] text-[#124780]",
+    gold: "bg-[#fff3c9] text-[#554500]",
+    rose: "bg-[#ffe4e2] text-[#93000a]",
+    green: "bg-[#dff5e8] text-[#1b5e20]",
   };
   const initials = name
     .split(" ")
@@ -25,7 +37,7 @@ export function Initials({
   return (
     <div
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-[16px] text-sm font-bold",
+        "flex size-12 shrink-0 items-center justify-center rounded-full text-sm font-bold",
         tones[tone],
         className
       )}
@@ -50,6 +62,21 @@ export function Portrait({
   );
 }
 
+export function UiPic({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={alt} className={cn("object-contain", className)} />
+  );
+}
+
 export function Pill({
   children,
   className,
@@ -60,7 +87,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-[#eaf1f8] px-3 py-1 text-[11px] font-semibold tracking-tight text-primary",
+        "inline-flex items-center gap-1.5 rounded-full bg-white/70 px-3 py-1 text-[11px] font-semibold tracking-tight text-[#16181d]",
         className
       )}
     >
@@ -89,18 +116,21 @@ export function Card({
   children,
   className,
   highlight = false,
+  tone,
 }: {
   children: React.ReactNode;
   className?: string;
   highlight?: boolean;
+  tone?: PastelTone | "white";
 }) {
+  const resolved = highlight ? "butter" : (tone ?? "white");
   return (
     <div
       className={cn(
-        "rounded-[24px] border bg-white p-5",
-        highlight
-          ? "border-2 border-[#ffdd67] bg-gradient-to-b from-[#fffef9] to-white"
-          : "border-[#c2c6d1]/30",
+        "rounded-[32px] p-5",
+        resolved === "white"
+          ? "bg-white shadow-[0_12px_32px_-20px_rgba(22,24,29,0.28)]"
+          : pastel[resolved],
         className
       )}
     >
@@ -111,8 +141,15 @@ export function Card({
 
 export function SlashMark({ label = "//" }: { label?: string }) {
   return (
-    <span className="text-[11px] tracking-[0.18em] text-[#737781]/70">
+    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-white/70 px-2 text-[10px] font-semibold tracking-[0.08em] text-[#6b7280]">
       {label}
     </span>
+  );
+}
+
+export function choiceClass(on: boolean) {
+  return cn(
+    "w-full rounded-[28px] p-4 text-left transition",
+    on ? "bg-[#dff5e8]" : "bg-[#f4f5f7]"
   );
 }

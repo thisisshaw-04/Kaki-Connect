@@ -48,7 +48,7 @@ export default function SupportCompanionPage() {
                 </Pill>
               ))}
             </div>
-            <div className="mt-4 rounded-xl bg-[#f0eeea] p-3">
+            <div className="mt-4 rounded-[22px] bg-white/70 p-3">
               <p className="text-sm font-bold">Dedicated Meeting Arrangement</p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 Rachel will accompany you to the activity and travel with you directly from{" "}
@@ -57,7 +57,7 @@ export default function SupportCompanionPage() {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-[#fde047] py-3 text-sm font-bold"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#fff3c9] py-3 text-sm font-bold"
             >
               <Play className="size-4" /> Listen to Rachel&apos;s voice greeting
             </button>
@@ -73,7 +73,7 @@ export default function SupportCompanionPage() {
               </a>
               <a
                 href="tel:67439821"
-                className="flex min-h-11 items-center justify-center rounded-full bg-[#f0eeea] text-sm font-bold"
+                className="flex min-h-11 items-center justify-center rounded-full bg-[#f4f5f7] text-sm font-bold"
               >
                 Safety hotline
               </a>
