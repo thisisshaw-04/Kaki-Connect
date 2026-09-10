@@ -87,7 +87,7 @@ function FamilyHomeInner() {
       <div className="space-y-3.5">
         <a
           href="/family/outing"
-          className="relative block overflow-hidden rounded-[32px] bg-[#d5efe6] p-5"
+          className="relative block overflow-hidden rounded-[32px] border-2 border-ink bg-[#d5efe6] p-5"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-2.5 py-1 text-[12px] font-semibold">
             <StatusDot live />
@@ -129,7 +129,7 @@ function FamilyHomeInner() {
             { src: photos.ahmad, name: "Ahmad", hint: "Fishing kaki" },
             { src: photos.susan, name: "Susan", hint: "Bringing extra bait" },
           ].map((person) => (
-            <li key={person.name} className="flex items-center gap-3 rounded-[24px] bg-white p-3 ring-1 ring-lilac">
+            <li key={person.name} className="flex items-center gap-3 rounded-[24px] border-2 border-ink bg-white p-3">
               <Portrait src={person.src} alt={person.name} className="size-14 rounded-full" />
               <div className="min-w-0">
                 <p className="font-extrabold leading-tight">{person.name}</p>
@@ -141,7 +141,7 @@ function FamilyHomeInner() {
 
         <a
           href="/family/outing"
-          className="flex items-center justify-between rounded-[28px] bg-[#f6ede3] p-4"
+          className="flex items-center justify-between rounded-[28px] border-2 border-ink bg-[#f6ede3] p-4"
         >
           <div>
             <p className="font-semibold tracking-tight">Check-in timeline</p>

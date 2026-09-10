@@ -101,7 +101,7 @@ const textSizes = [
 function setupChoice(on: boolean) {
   return cn(
     "min-h-14 w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-lilac-wash ring-2 ring-lilac" : "bg-white ring-1 ring-lilac"
+    on ? "bg-lilac-wash ring-2 ring-ink" : "bg-white ring-1 ring-ink"
   );
 }
 
@@ -183,10 +183,10 @@ export function SetupFlow({ step }: { step: number }) {
               Using Uncle Joy avatar
             </p>
             <div className="mt-3 grid w-full grid-cols-2 gap-2">
-              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full bg-white px-3 text-xs font-semibold ring-1 ring-lilac">
+              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full bg-white px-3 text-xs font-semibold ring-1 ring-ink">
                 <Camera className="size-3.5" /> Take Photo
               </span>
-              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full bg-white px-3 text-xs font-semibold ring-1 ring-lilac">
+              <span className="inline-flex min-h-11 items-center justify-center gap-1 rounded-full bg-white px-3 text-xs font-semibold ring-1 ring-ink">
                 <Smile className="size-3.5" /> Choose Avatar
               </span>
             </div>
@@ -233,8 +233,8 @@ export function SetupFlow({ step }: { step: number }) {
                   className={cn(
                     "min-h-11 rounded-xl border px-3 py-2 text-sm font-semibold",
                     title === item
-                      ? "border-lilac bg-lilac text-ink"
-                      : "border-lilac bg-white text-foreground"
+                      ? "border-ink bg-lilac text-ink"
+                      : "border-ink bg-white text-foreground"
                   )}
                 >
                   <span className="block">{item}</span>
@@ -272,14 +272,14 @@ export function SetupFlow({ step }: { step: number }) {
                   onClick={() => setAge(item.id)}
                   className={cn(
                     "rounded-[20px] border-2 bg-white p-4 text-left",
-                    age === item.id ? "border-lilac bg-lilac-wash" : "border-lilac"
+                    age === item.id ? "border-ink bg-lilac-wash" : "border-ink"
                   )}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span
                       className={cn(
                         "flex size-5 items-center justify-center rounded-full border-2",
-                        age === item.id ? "border-lilac bg-lilac text-ink" : "border-lilac bg-white"
+                        age === item.id ? "border-ink bg-lilac text-ink" : "border-ink bg-white"
                       )}
                     >
                       {age === item.id ? <Check className="size-3" /> : null}
@@ -304,7 +304,7 @@ export function SetupFlow({ step }: { step: number }) {
               value={estate}
               onChange={(event) => setEstate(event.target.value)}
               aria-label="Your estate or town"
-              className="h-14 w-full rounded-full border-2 border-lilac bg-white px-5 text-base"
+              className="h-14 w-full rounded-full border-2 border-ink bg-white px-5 text-base"
             >
               {estates.map((item) => (
                 <option key={item}>{item}</option>
@@ -321,7 +321,7 @@ export function SetupFlow({ step }: { step: number }) {
                     setEstate(item === "Bedok" ? "Bedok / East Coast" : item)
                   }
                   className={cn(
-                    "min-h-11 rounded-full border-2 border-lilac px-3 text-sm font-semibold",
+                    "min-h-11 rounded-full border-2 border-ink px-3 text-sm font-semibold",
                     estate.startsWith(item) ? "bg-lilac text-ink" : "bg-white"
                   )}
                 >
@@ -329,7 +329,7 @@ export function SetupFlow({ step }: { step: number }) {
                 </button>
               ))}
             </div>
-            <div className="mt-4 rounded-[24px] bg-green-wash p-4">
+            <div className="mt-4 rounded-[24px] border-2 border-ink bg-green-wash p-4">
               <p className="font-bold text-[#1f5a48]">14 Kakis are active in Bedok!</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.
@@ -537,7 +537,7 @@ export function SetupFlow({ step }: { step: number }) {
                   aria-pressed={relation === item}
                   onClick={() => setRelation(item)}
                   className={cn(
-                    "min-h-11 rounded-full border-2 border-lilac px-3 text-sm font-semibold",
+                    "min-h-11 rounded-full border-2 border-ink px-3 text-sm font-semibold",
                     relation === item ? "bg-lilac text-ink" : "bg-white"
                   )}
                 >
@@ -553,13 +553,13 @@ export function SetupFlow({ step }: { step: number }) {
               value={contactName}
               onChange={(event) => setContactName(event.target.value)}
               autoComplete="name"
-              className="mt-1 h-12 w-full rounded-full border-2 border-lilac bg-white px-5 text-base"
+              className="mt-1 h-12 w-full rounded-full border-2 border-ink bg-white px-5 text-base"
             />
             <label className="mt-3 block text-sm font-semibold" htmlFor="contact-phone">
               Mobile Phone Number
             </label>
             <div className="mt-1 flex gap-2">
-              <span className="flex h-12 items-center rounded-full border-2 border-lilac bg-white px-4 text-sm">
+              <span className="flex h-12 items-center rounded-full border-2 border-ink bg-white px-4 text-sm">
                 🇸🇬 +65
               </span>
               <input
@@ -569,7 +569,7 @@ export function SetupFlow({ step }: { step: number }) {
                 type="tel"
                 inputMode="numeric"
                 autoComplete="tel-national"
-                className="h-12 flex-1 rounded-full border-2 border-lilac bg-white px-5 text-base"
+                className="h-12 flex-1 rounded-full border-2 border-ink bg-white px-5 text-base"
               />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
@@ -592,7 +592,7 @@ export function SetupFlow({ step }: { step: number }) {
             <span
               className={cn(
                 "mt-0.5 flex size-5 items-center justify-center rounded-[6px]",
-                fscEscalation ? "bg-lilac text-ink" : "border-2 border-lilac bg-white"
+                fscEscalation ? "bg-lilac text-ink" : "border-2 border-ink bg-white"
               )}
             >
               {fscEscalation ? <Check className="size-3.5" /> : null}

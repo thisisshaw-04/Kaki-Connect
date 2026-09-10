@@ -62,7 +62,7 @@ export default function VolunteerWelcome() {
           return (
             <article
               key={item.n}
-              className="flex gap-3 rounded-[24px] border-2 border-lilac bg-white p-4"
+              className="flex gap-3 rounded-[24px] border-2 border-ink bg-white p-4"
             >
               <span
                 className={`flex size-12 shrink-0 items-center justify-center rounded-full ${item.well}`}
@@ -79,7 +79,7 @@ export default function VolunteerWelcome() {
             </article>
           );
         })}
-        <article className="rounded-[24px] border-2 border-lilac bg-white p-4">
+        <article className="rounded-[24px] border-2 border-ink bg-white p-4">
           <p className="font-bold">Kaki Volunteer Quick Tips</p>
           <ol className="mt-3 space-y-3 text-sm">
             <li className="flex gap-3">

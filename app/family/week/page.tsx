@@ -67,11 +67,11 @@ export default function FamilyWeek() {
           return (
             <li key={item.date}>
               {item.status === "live" ? (
-                <a href="/family/outing" className="block rounded-[28px] bg-[#d5efe6] p-4">
+                <a href="/family/outing" className="block rounded-[28px] border-2 border-ink bg-[#d5efe6] p-4">
                   {inner}
                 </a>
               ) : (
-                <div className={`rounded-[28px] p-4 ${tones[index % tones.length]}`}>{inner}</div>
+                <div className={`rounded-[28px] border-2 border-ink p-4 ${tones[index % tones.length]}`}>{inner}</div>
               )}
             </li>
           );

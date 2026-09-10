@@ -69,7 +69,7 @@ export default function VolunteerLive() {
             <li
               key={item.id}
               className={cn(
-                "rounded-[28px] p-4",
+                "rounded-[28px] border-2 border-ink p-4",
                 item.done ? "bg-[#f6ede3]" : "bg-[#d5efe6]"
               )}
             >

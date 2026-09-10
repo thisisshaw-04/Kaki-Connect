@@ -19,7 +19,7 @@ export default function ElderlyWelcome() {
       action={<ListenButton />}
     >
       <div className="flex flex-1 flex-col">
-        <div className="relative overflow-hidden rounded-[28px] border-2 border-lilac bg-white px-5 py-6 text-center">
+        <div className="relative overflow-hidden rounded-[28px] border-2 border-ink bg-white px-5 py-6 text-center">
           <p className="absolute top-4 right-5 text-[11px] tracking-[0.16em] text-muted-foreground">
             {"// 01"}
           </p>
@@ -54,7 +54,7 @@ export default function ElderlyWelcome() {
           <button
             type="button"
             aria-label="Listen to voice greeting"
-            className="mt-6 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-lilac"
+            className="mt-6 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-ink"
             onClick={() => {
               setPlaying(true);
               window.setTimeout(() => setPlaying(false), 3200);

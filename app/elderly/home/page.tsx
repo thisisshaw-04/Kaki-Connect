@@ -38,9 +38,9 @@ export default function ElderlyHome() {
         </section>
 
         <a href="/elderly/activities" className="block">
-          <article className="relative flex flex-col overflow-hidden rounded-[24px] border-2 border-lilac bg-white p-5">
+          <article className="relative flex flex-col overflow-hidden rounded-[24px] border-2 border-ink bg-white p-5">
             <div className="flex items-start justify-between gap-2">
-              <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-lilac">
+              <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-ink">
                 Fresh air & walking
               </span>
               <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-green-wash text-[#1f5a48]">
@@ -58,7 +58,7 @@ export default function ElderlyHome() {
               alt=""
               className="pointer-events-none absolute right-[-6px] bottom-16 h-[148px] w-auto"
             />
-            <div className="relative z-10 mt-5 border-t border-lilac pt-3">
+            <div className="relative z-10 mt-5 border-t border-ink pt-3">
               <span className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-lilac text-[13px] font-bold text-ink">
                 Explore Outing Activities
                 <ArrowRight className="size-4" />
@@ -68,12 +68,12 @@ export default function ElderlyHome() {
         </a>
 
         <a href="/elderly/call" className="block">
-          <article className="relative flex flex-col overflow-hidden rounded-[24px] border-2 border-lilac bg-white p-5">
+          <article className="relative flex flex-col overflow-hidden rounded-[24px] border-2 border-ink bg-white p-5">
             <span className="absolute top-0 right-6 rounded-b-lg bg-lilac-wash px-3 py-0.5 text-[11px] font-bold text-[#5a3d8a]">
               Recommended for today
             </span>
             <div className="mt-3 flex items-start justify-between gap-2">
-              <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-lilac">
+              <span className="inline-flex items-center rounded-full bg-[#fbf6f0] px-3 py-1 text-[11px] font-semibold text-ink ring-1 ring-ink">
                 Cozy & relaxing at home
               </span>
               <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-lilac-wash text-[#5a3d8a]">
@@ -91,7 +91,7 @@ export default function ElderlyHome() {
               alt=""
               className="pointer-events-none absolute right-[-10px] top-[78px] h-[92px] w-auto"
             />
-            <div className="relative z-10 mt-3 flex items-center gap-3 rounded-xl bg-[#fbf6f0] p-3 ring-1 ring-lilac">
+            <div className="relative z-10 mt-3 flex items-center gap-3 rounded-xl bg-[#fbf6f0] p-3 ring-1 ring-ink">
               <Portrait
                 src={raymond.photo}
                 alt={raymond.name}
@@ -105,7 +105,7 @@ export default function ElderlyHome() {
                 <p className="truncate text-xs text-muted-foreground">Shared: {raymond.shared}</p>
               </div>
             </div>
-            <div className="relative z-10 mt-5 border-t border-lilac pt-3">
+            <div className="relative z-10 mt-5 border-t border-ink pt-3">
               <span className="flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-lilac text-[13px] font-bold text-ink">
                 Video Call Uncle Raymond
                 <ArrowRight className="size-4" />

@@ -24,7 +24,7 @@ const roles = [
     title: "Volunteer",
     hint: "Help seniors stay connected",
     art: "/illustrations/person-wave.png",
-    tone: "bg-beige-card ring-2 ring-lilac",
+    tone: "bg-beige-card",
     featured: false,
   },
 ];
@@ -56,7 +56,7 @@ export default function RolePage() {
 
       <a
         href={featured.href}
-        className={`relative mt-6 flex items-end overflow-hidden rounded-[32px] ${featured.tone} px-5 pt-5`}
+        className={`relative mt-6 flex items-end overflow-hidden rounded-[32px] border-2 border-ink ${featured.tone} px-5 pt-5`}
       >
         <div className="min-w-0 flex-1 pb-5">
           <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
@@ -78,7 +78,7 @@ export default function RolePage() {
           <a
             key={role.href}
             href={role.href}
-            className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[28px] ${role.tone} p-4 pb-3`}
+            className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[28px] border-2 border-ink ${role.tone} p-4 pb-3`}
           >
             <p className="text-[18px] font-extrabold tracking-[-0.03em]">{role.title}</p>
             <p className="mt-1 text-[13px] leading-snug text-[#7a6c60]">{role.hint}</p>

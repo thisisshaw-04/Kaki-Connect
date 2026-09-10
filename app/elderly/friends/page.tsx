@@ -34,7 +34,7 @@ export default function BuddiesPage() {
           >
             <a
               href={person.id === "raymond" ? "/elderly/call" : "/elderly/friends"}
-              className={`relative flex min-h-[48px] rounded-[28px] p-4 ${
+              className={`relative flex min-h-[48px] rounded-[28px] border-2 border-ink p-4 ${
                 index === 0 ? "flex-row items-center gap-4" : "min-h-[220px] flex-col"
               } ${tones[index % tones.length]}`}
             >

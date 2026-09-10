@@ -61,7 +61,7 @@ export default function ActivitiesPage() {
                 role="listitem"
                 aria-current={index === 0 ? "true" : undefined}
                 className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-[13px] font-semibold ${
-                  index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-lilac"
+                  index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-ink"
                 }`}
               >
                 {item}

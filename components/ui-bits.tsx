@@ -95,7 +95,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink ring-1 ring-lilac",
+        "inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1.5 text-[11px] font-semibold tracking-tight text-ink ring-1 ring-ink",
         className
       )}
     >
@@ -135,8 +135,8 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-[28px] p-5",
-        resolved === "white" ? "bg-white ring-1 ring-lilac" : pastel[resolved],
+        "rounded-[28px] border-2 border-ink p-5",
+        resolved === "white" ? "bg-white" : pastel[resolved],
         className
       )}
     >
@@ -156,7 +156,7 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 export function choiceClass(on: boolean) {
   return cn(
     "min-h-14 w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-lilac-wash ring-2 ring-lilac" : "bg-white ring-1 ring-lilac"
+    on ? "bg-lilac-wash ring-2 ring-ink" : "bg-white ring-1 ring-ink"
   );
 }
 
@@ -165,7 +165,7 @@ export function GoButton({ className }: { className?: string }) {
     <span
       aria-hidden
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-full bg-lilac text-ink",
+        "flex size-11 shrink-0 items-center justify-center rounded-full bg-ink text-white",
         className
       )}
     >
