@@ -19,7 +19,7 @@ export default function ElderlyWelcome() {
           Welcome to KakiConnect! ☕
         </h1>
         <p className="mt-2 text-xs tracking-[0.12em] text-muted-foreground uppercase">
-          {brand.hangul}
+          {brand.shortLine}
         </p>
         <p className="mt-3 max-w-sm text-[16px] leading-[26px] text-muted-foreground">
           {brand.promise}

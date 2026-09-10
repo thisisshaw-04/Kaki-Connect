@@ -61,7 +61,7 @@ export default function VolunteerLive() {
         <div>
           <h2 className="font-bold">1-Tap Check-in Timeline</h2>
           <p className="text-sm text-muted-foreground">
-            Tap button to seamlessly notify family and FSC coordinator via SMS · 원클릭 기록
+            Tap to notify family and the FSC coordinator by SMS.
           </p>
         </div>
         <ul className="space-y-3">
@@ -95,7 +95,7 @@ export default function VolunteerLive() {
           ))}
         </ul>
         <Card tone="butter">
-          <p className="font-bold">Companion Care Prompts · 실시간 주의 사항</p>
+          <p className="font-bold">Companion Care Prompts</p>
           <ul className="mt-2 space-y-2 text-sm">
             <li>
               <strong>Hydration reminder.</strong> Offer water break after 20 mins of walking · Recommended in 8 mins

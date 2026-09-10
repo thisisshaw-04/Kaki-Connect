@@ -51,7 +51,7 @@ export default function VolunteerOuting() {
                 <span>
                   <span className="block font-semibold">{item.title}</span>
                   <span className="block text-sm text-muted-foreground">{item.detail}</span>
-                  <span className="text-[11px] text-[#7a6c60]">{item.hangul}</span>
+                  <span className="text-[11px] text-[#7a6c60]">{item.tag}</span>
                 </span>
               </li>
             ))}
@@ -93,7 +93,7 @@ export default function VolunteerOuting() {
           </p>
         </Card>
         <Card>
-          <h2 className="font-bold">4. Peer Kakis Joining · 동반 이웃 2명</h2>
+          <h2 className="font-bold">4. Peer Kakis Joining · 2 neighbours</h2>
           <p className="mt-1 text-sm text-muted-foreground">
             Mr Tan will meet his regular neighborhood friends at the jetty pavilion:
           </p>
@@ -105,7 +105,7 @@ export default function VolunteerOuting() {
           </p>
         </Card>
         <Card>
-          <h2 className="font-bold">5. Language & Rapport · 소통 팁</h2>
+          <h2 className="font-bold">5. Language & Rapport · Conversation tips</h2>
           <p className="mt-1 text-sm">
             Primary Tongues: Hokkien (福建话) · Bahasa Melayu (Pasar) · Basic English
           </p>

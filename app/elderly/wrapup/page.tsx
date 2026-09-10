@@ -24,7 +24,7 @@ export default function WrapupPage() {
     >
       <div className="space-y-4">
         <p className="text-[11px] tracking-[0.16em] text-muted-foreground">
-          {"// 04:CONN · 대화 완료 • CALL COMPLETED"}
+          {"// 04:CONN · Call completed"}
         </p>
         <div className="flex items-center gap-3">
           <Portrait
@@ -44,7 +44,7 @@ export default function WrapupPage() {
         </p>
         <div>
           <p className="font-semibold">How was your chat today?</p>
-          <p className="text-xs text-muted-foreground">소중한 후기를 남겨주세요</p>
+          <p className="text-xs text-muted-foreground">A short note helps us match you better next time</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {ratings.map((item) => (
               <button

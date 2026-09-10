@@ -40,21 +40,18 @@ export default function VolunteerSafety() {
           {
             n: "01",
             title: "Walk at Their Rhythm",
-            hangul: "어르신의 걸음에 맞추기",
             body: "Never rush curbs, road crossings, or MRT gantries. Match the senior's natural gait and take shaded pauses whenever needed.",
             tag: "Patience over speed",
           },
           {
             n: "02",
             title: "Listen with Empathy",
-            hangul: "마음으로 경청하기",
             body: "Older adults love sharing nostalgic neighborhood stories (e.g. 1970s kampung days). Give them plenty of room to speak and reminisce.",
             tag: "Warm, non-judgmental presence",
           },
           {
             n: "03",
             title: "Preserve Agency & Dignity",
-            hangul: "존엄과 자율성 존중",
             body: 'Ask "Would you like an arm to hold?" rather than grabbing. Let the senior make choices about snacks and seating.',
             tag: "Choice creates empowerment",
           },
@@ -62,13 +59,12 @@ export default function VolunteerSafety() {
           <Card key={item.n}>
             <SlashMark label={item.n} />
             <p className="mt-1 font-bold">{item.title}</p>
-            <p className="text-xs text-muted-foreground">{item.hangul}</p>
             <p className="mt-2 text-sm leading-relaxed">{item.body}</p>
             <p className="mt-1 text-xs font-semibold text-primary">{item.tag}</p>
           </Card>
         ))}
         <Card tone="mint">
-          <p className="font-bold">Allowed · 일반 자원봉사자 역할 (General Volunteer)</p>
+          <p className="font-bold">Allowed · General volunteer role</p>
           <ul className="mt-2 space-y-2 text-sm">
             {allowed.map(([title, detail]) => (
               <li key={title}>
@@ -78,7 +74,7 @@ export default function VolunteerSafety() {
           </ul>
         </Card>
         <Card tone="blush">
-          <p className="font-bold">Not Allowed · 전문 간병인 전용 (Trained Caregiver Required)</p>
+          <p className="font-bold">Not Allowed · Trained caregiver required</p>
           <ul className="mt-2 space-y-2 text-sm">
             {notAllowed.map(([title, detail]) => (
               <li key={title}>
@@ -91,7 +87,7 @@ export default function VolunteerSafety() {
           </p>
         </Card>
         <Card>
-          <p className="font-bold">Emergency & Support Network · 비상 연락망 24/7</p>
+          <p className="font-bold">Emergency & Support Network · 24/7</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Tap any hotline to directly place a call. Stay on the line with the operator and remain with the senior until verified help arrives.
           </p>

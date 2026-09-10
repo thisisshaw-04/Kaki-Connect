@@ -77,20 +77,17 @@ const activities = [
     id: "kopi",
     title: "Drink Kopi & Chat",
     detail: "Warm drinks & warm talk",
-    hangul: "커피 타임",
     selected: true,
   },
   {
     id: "park",
     title: "Gentle Park Walk",
     detail: "Breeze, shade & stroll",
-    hangul: "공원 산책",
   },
   {
     id: "karaoke",
     title: "Sing Oldies & Karaoke",
     detail: "Favorite classic songs",
-    hangul: "노래방",
   },
 ];
 
@@ -403,7 +400,7 @@ export function SetupFlow({ step }: { step: number }) {
             </button>
           ))}
           <p className="text-sm text-muted-foreground">
-            Don’t worry! You can change this anytime with your volunteer. 안심 케어
+            Don’t worry! You can change this anytime with your volunteer.
           </p>
         </div>
       ) : null}
@@ -463,7 +460,7 @@ export function SetupFlow({ step }: { step: number }) {
               <span className="min-w-0">
                 <span className="block font-bold">{item.title}</span>
                 <span className="mt-1 block text-sm text-muted-foreground">
-                  {item.detail} · {item.hangul}
+                  {item.detail}
                 </span>
               </span>
               {activity === item.id ? <Check className="size-5 shrink-0" /> : null}

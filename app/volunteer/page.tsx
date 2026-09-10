@@ -30,7 +30,7 @@ export default function VolunteerWelcome() {
             className="mx-auto mt-2 h-36 w-auto object-contain object-bottom"
           />
         </div>
-        <Pill className="bg-[#ede0fa]">Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
+        <Pill className="bg-[#ede0fa]">Heartlands Edition · Kaki Companion</Pill>
         <p className="text-sm font-semibold">Scope of Volunteering · // Reassurances</p>
         {[
           {
@@ -56,7 +56,7 @@ export default function VolunteerWelcome() {
           </Card>
         ))}
         <Card tone="butter">
-          <p className="font-bold">Kaki Volunteer Quick Tips · 봉사 팁</p>
+          <p className="font-bold">Kaki Volunteer Quick Tips</p>
           <ul className="mt-2 space-y-2 text-sm">
             <li>
               <strong>Walk at Their Rhythm.</strong> Never rush curbs or MRT gantries. Allow seniors to set their comfortable walking pace.

@@ -40,7 +40,7 @@ export default function VolunteerRequests() {
                 </p>
                 <h2 className="mt-1 text-lg font-bold">{request.title}</h2>
                 <p className="text-sm text-muted-foreground">
-                  {request.senior} · {request.age}y · {request.hangul}
+                  {request.senior} · {request.age}y · {request.note}
                 </p>
                 <p className="mt-2 text-sm leading-relaxed">{request.blurb}</p>
                 <p className="mt-2 text-sm font-semibold">{request.need}</p>

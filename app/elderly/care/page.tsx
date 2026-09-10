@@ -9,7 +9,7 @@ export default function CareHubPage() {
     <AppShell
       role="elderly"
       title="KakiConnect"
-      subtitle="싱가포르 케어 허브"
+      subtitle="Care Hub"
       backHref="/elderly/home"
       action={<SosButton />}
       showNav

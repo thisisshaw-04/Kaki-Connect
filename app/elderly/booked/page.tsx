@@ -20,7 +20,7 @@ export default function BookedPage() {
           Confirmed • 4 Kakis & 1 Volunteer
         </Pill>
         <p className="text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
-          Coordinated dual-match // 듀얼 매치
+          Coordinated dual-match
         </p>
         <h1 className="text-[26px] leading-tight font-bold">Your Outing is Ready!</h1>
         <p className="text-sm leading-relaxed text-muted-foreground">

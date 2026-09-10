@@ -1,7 +1,6 @@
 export const brand = {
   name: "KakiConnect",
   shortLine: "Community Companion App",
-  hangul: "우리 동네 좋은 친구 • Kampung Companions",
   promise:
     "A friendly Singapore community to make kakis, share a warm cup of kopi downstairs, or find caring neighbourhood companions.",
 };
@@ -325,7 +324,7 @@ export const volunteerRequests = [
     title: "Accompany Mr Tan to Fishing",
     senior: "Mr Tan",
     age: 71,
-    hangul: "낚시 나들이 케어 프렌즈",
+    note: "Bedok Reservoir outing",
     blurb:
       "Gentle walk from home to lakeside gazebo. Loves sharing stories of 1970s Katong.",
     need: "Travel companionship + light arm assistance",
@@ -341,7 +340,7 @@ export const volunteerRequests = [
     title: "Morning Dim Sum Walk with Mdm Wong",
     senior: "Mdm Wong",
     age: 78,
-    hangul: "차이나타운 아침 산책 딤섬",
+    note: "Chinatown dim sum stroll",
     blurb:
       "Weekly breakfast gathering with church friends at Chinatown Complex Hawker.",
     need: "Trained Volunteer Support • Wheelchair guidance",
@@ -358,25 +357,25 @@ export const volunteerSchedule = [
     time: "3:30 PM",
     title: "Doorstep Pickup",
     detail: "Meet Mr Tan outside Blk 122 Bedok North lift lobby.",
-    hangul: "출발지",
+    tag: "Pickup",
   },
   {
     time: "4:00 PM",
     title: "Arrive Bedok Reservoir Jetty",
     detail: "Settle down at sheltered pavilion benches & assemble fishing kakis.",
-    hangul: "활동 장소",
+    tag: "Venue",
   },
   {
     time: "6:00 PM",
     title: "Outing Concludes",
     detail: "Pack up fishing gear, dispose cups responsibly at recycling stations.",
-    hangul: "종료",
+    tag: "Wrap-up",
   },
   {
     time: "6:30 PM",
     title: "Return Home safely",
     detail: "Walk back to Blk 122 doorway and complete in-app companion sign-off.",
-    hangul: "귀가 완료",
+    tag: "Home safely",
   },
 ];
 

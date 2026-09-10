@@ -15,7 +15,7 @@ export default function VolunteerPlan() {
       current="/volunteer/requests"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#d5efe6] text-[#1f5a48]">Confirmed Match · // 봉사 동행 완료</Pill>
+        <Pill className="bg-[#d5efe6] text-[#1f5a48]">Confirmed Match · Companion outing ready</Pill>
         <h1 className="text-[26px] leading-tight font-bold">
           You&apos;re helping Mr Tan join! 🎉
         </h1>
@@ -26,7 +26,7 @@ export default function VolunteerPlan() {
           <p className="text-[11px] font-bold tracking-wide text-primary uppercase">
             MEET // 01 · Essential Meeting Details
           </p>
-          <p className="text-xs text-muted-foreground">약속 및 이동 일정</p>
+          <p className="text-xs text-muted-foreground">Meeting point and travel timing</p>
           <dl className="mt-3 space-y-3 text-sm">
             <div>
               <dt className="font-semibold">Meeting Point</dt>
@@ -48,7 +48,7 @@ export default function VolunteerPlan() {
         </Card>
         <Card>
           <p className="font-bold">Family & Caregiver Connection</p>
-          <p className="text-xs text-muted-foreground">가족 및 전담 복지사 연결망 · // CARE 02</p>
+          <p className="text-xs text-muted-foreground">Family and FSC coordinator · // CARE 02</p>
           <div className="mt-3 space-y-3 text-sm">
             <div>
               <p className="font-semibold">Emergency Contact · Family</p>
@@ -74,7 +74,7 @@ export default function VolunteerPlan() {
         </Card>
         <Card>
           <p className="flex items-center gap-2 font-bold">
-            <Shield className="size-4 text-primary" /> Privacy Protected · 개인정보 안심보호
+            <Shield className="size-4 text-primary" /> Privacy Protected
           </p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Senior NRIC and sensitive health history are kept confidential under Singapore PDPA. Only necessary accompaniment notes are shared.
