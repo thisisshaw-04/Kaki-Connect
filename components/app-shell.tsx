@@ -34,7 +34,7 @@ const nav = {
 } as const;
 
 const circleBtn =
-  "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-foreground transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d] focus-visible:ring-offset-2";
+  "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-foreground transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2a2218] focus-visible:ring-offset-2";
 
 export function AppShell({
   children,
@@ -127,12 +127,12 @@ export function AppShell({
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className="flex min-h-16 min-w-[64px] flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d]"
+                  className="flex min-h-16 min-w-[64px] flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2a2218]"
                 >
                   <span
                     className={cn(
                       "flex size-12 items-center justify-center rounded-full",
-                      active ? "bg-[#16181d] text-white" : "bg-white text-[#5c6370]"
+                      active ? "bg-[#2a2218] text-white" : "bg-white text-[#5c6370]"
                     )}
                   >
                     <Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} />
@@ -140,7 +140,7 @@ export function AppShell({
                   <span
                     className={cn(
                       "text-center text-xs leading-tight font-semibold",
-                      active ? "text-[#16181d]" : "text-muted-foreground"
+                      active ? "text-[#2a2218]" : "text-muted-foreground"
                     )}
                   >
                     {item.label}

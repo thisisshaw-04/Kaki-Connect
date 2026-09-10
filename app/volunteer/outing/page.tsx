@@ -28,7 +28,7 @@ export default function VolunteerOuting() {
           />
           <div>
             <h1 className="text-2xl font-bold">Mr Tan (Age 71)</h1>
-            <Pill className="mt-1 bg-[#d6f0dc] text-[#1b5e20]">Verified Resident</Pill>
+            <Pill className="mt-1 bg-[#d4efe4] text-[#1b5e20]">Verified Resident</Pill>
             <p className="mt-1 text-sm text-muted-foreground">
               Living at Blk 122 Bedok North St 2
             </p>
@@ -70,15 +70,15 @@ export default function VolunteerOuting() {
           </p>
           <p className="mt-2 text-xs font-semibold text-primary">PCN Green Track #B4</p>
           <div className="mt-3 grid grid-cols-3 gap-2 text-center text-sm">
-            <div className="rounded-[20px] bg-[#dff5e8] p-2">
+            <div className="rounded-[20px] bg-[#d4efe4] p-2">
               <p className="font-bold">85%</p>
               <p className="text-[11px] text-muted-foreground">Fully shaded</p>
             </div>
-            <div className="rounded-[20px] bg-[#dff5e8] p-2">
+            <div className="rounded-[20px] bg-[#d4efe4] p-2">
               <p className="font-bold">750 m</p>
               <p className="text-[11px] text-muted-foreground">Distance</p>
             </div>
-            <div className="rounded-[20px] bg-[#dff5e8] p-2">
+            <div className="rounded-[20px] bg-[#d4efe4] p-2">
               <p className="font-bold">4 stops</p>
               <p className="text-[11px] text-muted-foreground">Rest benches</p>
             </div>

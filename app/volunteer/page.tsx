@@ -14,23 +14,23 @@ export default function VolunteerWelcome() {
       backHref="/"
     >
       <div className="flex flex-1 flex-col gap-4">
-        <div className="relative overflow-hidden rounded-[32px] bg-[#d7f0f7] p-5">
-          <UiPic
-            src="/ui/icon-volunteer.svg"
-            alt=""
-            className="pointer-events-none absolute -right-2 -top-3 h-28 w-28"
-          />
+        <div className="overflow-hidden rounded-[32px] bg-[#d4efe4] px-5 pt-5">
           <p className="text-[11px] font-bold tracking-[0.12em] uppercase">
             Neighborhood Companionship Initiative
           </p>
-          <h1 className="mt-2 max-w-[75%] text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
+          <h1 className="mt-2 text-[28px] leading-[1.08] font-extrabold tracking-[-0.04em]">
             Help an older adult stay connected.
           </h1>
-          <p className="mt-2 max-w-[82%] text-[15px] leading-relaxed text-[#315e8e]">
+          <p className="mt-2 text-[15px] leading-relaxed text-[#1f5a48]">
             Accompany a senior to their favorite neighborhood activity. Every small walk, MRT trip, or reservoir visit helps prevent isolation right in your estate.
           </p>
+          <UiPic
+            src="/illustrations/person-broom.png"
+            alt=""
+            className="mx-auto mt-2 h-36 w-auto object-contain object-bottom"
+          />
         </div>
-        <Pill className="bg-[#ece7ff]">Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
+        <Pill className="bg-[#ead9fa]">Heartlands Edition · 동네 친구 파트너 // Kaki Companion</Pill>
         <p className="text-sm font-semibold">Scope of Volunteering · // Reassurances</p>
         {[
           {

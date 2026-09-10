@@ -36,7 +36,7 @@ export default function VolunteerRequests() {
                 <div className="flex items-start justify-between gap-2 pr-16">
                   <SlashMark label={`// 0${index + 1}`} />
                   {request.featured ? (
-                    <Pill className="bg-white/80 text-[#3d3200]">
+                    <Pill className="bg-white/80 text-[#4a3200]">
                       Featured Match · {request.distance}
                     </Pill>
                   ) : null}

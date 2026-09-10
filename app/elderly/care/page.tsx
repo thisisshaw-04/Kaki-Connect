@@ -16,16 +16,16 @@ export default function CareHubPage() {
       current="/elderly/care"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#ece7ff]">Care Hub</Pill>
+        <Pill className="bg-[#ead9fa]">Care Hub</Pill>
         <h1 className="text-[30px] leading-tight font-extrabold tracking-[-0.04em]">Help is always nearby</h1>
         <p className="text-[16px] leading-relaxed text-muted-foreground">
           Family peace of mind, Fei Yue FSC, and emergency numbers — without leaving the app.
         </p>
         <Card tone="mint" className="relative overflow-hidden">
           <UiPic
-            src="/ui/icon-care.svg"
+            src="/illustrations/person-dog.png"
             alt=""
-            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
+            className="pointer-events-none absolute right-0 -bottom-1 h-20 w-auto"
           />
           <p className="pr-16 font-bold">Family Peace of Mind</p>
           <p className="mt-2 max-w-[85%] text-sm leading-relaxed">
@@ -44,7 +44,7 @@ export default function CareHubPage() {
           <p className="text-sm text-muted-foreground">{fsc.hours}</p>
           <a
             href={`tel:${fsc.phone.replace("-", "")}`}
-            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#16181d] font-bold text-white"
+            className="mt-3 flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#2a2218] font-bold text-white"
           >
             <Phone className="size-4" /> Call {fsc.phone}
           </a>
@@ -64,7 +64,7 @@ export default function CareHubPage() {
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#16181d] text-sm font-bold text-white"
+              className="flex min-h-14 flex-col items-center justify-center rounded-[22px] bg-[#2a2218] text-sm font-bold text-white"
             >
               Call Sarah
               <span className="text-[11px] font-medium">Daughter</span>

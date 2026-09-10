@@ -40,7 +40,7 @@ export default function ActivitiesPage() {
             Good morning, {senior.name}!
           </h1>
           <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
-            <Sun className="size-4 text-[#715c00]" />
+            <Sun className="size-4 text-[#4a3200]" />
             {outing.weather}
           </p>
           <div className="mt-3">
@@ -60,7 +60,7 @@ export default function ActivitiesPage() {
                 role="listitem"
                 aria-current={index === 0 ? "true" : undefined}
                 className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-[13px] font-semibold ${
-                  index === 0 ? "bg-[#16181d] text-white" : "bg-white text-foreground"
+                  index === 0 ? "bg-[#2a2218] text-white" : "bg-white text-foreground"
                 }`}
               >
                 {item}
@@ -76,7 +76,7 @@ export default function ActivitiesPage() {
               alt="Bedok Reservoir at sunset"
               className="h-full w-full object-cover"
             />
-            <Pill className="absolute top-3 left-3 bg-[#fff3c9] text-[#3d3200]">
+            <Pill className="absolute top-3 left-3 bg-[#ffe9a0] text-[#4a3200]">
               Specially picked for you today
             </Pill>
           </div>
@@ -171,7 +171,7 @@ export default function ActivitiesPage() {
             </a>
             <a
               href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-[#16181d] text-sm font-bold text-white"
+              className="flex min-h-14 items-center justify-center gap-1 rounded-full bg-[#2a2218] text-sm font-bold text-white"
             >
               <Phone className="size-4" /> Call Sarah
             </a>

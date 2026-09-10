@@ -2,13 +2,13 @@ import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const pastel = {
-  mint: "bg-[#d8efe4]",
-  sky: "bg-[#d5ebf5]",
-  butter: "bg-[#f6e79c]",
-  blush: "bg-[#f5d6d2]",
-  lavender: "bg-[#e5dff4]",
-  peach: "bg-[#f8e0cc]",
-  fog: "bg-white",
+  mint: "bg-[#d4efe4]",
+  sky: "bg-[#d7e5f4]",
+  butter: "bg-[#f8e56a]",
+  blush: "bg-[#f7c8c4]",
+  lavender: "bg-[#ead9fa]",
+  peach: "bg-[#f3e0c8]",
+  fog: "bg-[#fffdf9]",
 } as const;
 
 export type PastelTone = keyof typeof pastel;
@@ -23,10 +23,10 @@ export function Initials({
   tone?: "blue" | "gold" | "rose" | "green";
 }) {
   const tones = {
-    blue: "bg-[#d7f0f7] text-[#124780]",
-    gold: "bg-[#fff3c9] text-[#554500]",
-    rose: "bg-[#ffe4e2] text-[#93000a]",
-    green: "bg-[#dff5e8] text-[#1b5e20]",
+    blue: "bg-[#d7e5f4] text-[#3d5270]",
+    gold: "bg-[#f8e56a] text-[#4a3200]",
+    rose: "bg-[#f7c8c4] text-[#8a2a32]",
+    green: "bg-[#d4efe4] text-[#1f5a48]",
   };
   const initials = name
     .split(" ")
@@ -93,7 +93,7 @@ export function Pill({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold tracking-tight text-[#16181d]",
+        "inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold tracking-tight text-[#2a2218]",
         className
       )}
     >
@@ -154,7 +154,7 @@ export function SlashMark({ label = "//" }: { label?: string }) {
 export function choiceClass(on: boolean) {
   return cn(
     "min-h-14 w-full rounded-[28px] p-4 text-left transition",
-    on ? "bg-[#d8efe4] ring-2 ring-[#16181d]" : "bg-white"
+    on ? "bg-[#d4efe4] ring-2 ring-[#2a2218]" : "bg-white"
   );
 }
 
@@ -163,7 +163,7 @@ export function GoButton({ className }: { className?: string }) {
     <span
       aria-hidden
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-full bg-[#16181d] text-white",
+        "flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2a2218] text-white",
         className
       )}
     >
@@ -182,7 +182,7 @@ export function IconCircle({
   return (
     <span
       className={cn(
-        "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[#16181d]",
+        "flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[#2a2218]",
         className
       )}
     >

@@ -15,19 +15,19 @@ export default function ElderlyProfile() {
       current="/elderly/profile"
     >
       <div className="space-y-4">
-        <Card tone="sky" className="relative overflow-hidden">
-          <UiPic
-            src="/ui/icon-elderly.svg"
-            alt=""
-            className="pointer-events-none absolute -right-2 -top-3 h-28 w-28"
-          />
+        <Card tone="butter" className="overflow-hidden">
           <p className="text-sm text-muted-foreground">Signed in as</p>
-          <h1 className="mt-1 max-w-[70%] text-[28px] font-extrabold tracking-[-0.04em]">{senior.fullName}</h1>
+          <h1 className="mt-1 text-[28px] font-extrabold tracking-[-0.04em]">{senior.fullName}</h1>
           <p className="text-muted-foreground">
             {senior.name} · {senior.age} · {senior.estate}
           </p>
           <p className="mt-3 text-sm">{senior.languages.join(" · ")}</p>
           <p className="mt-1 text-sm text-muted-foreground">{senior.block}</p>
+          <UiPic
+            src="/illustrations/person-wave.png"
+            alt=""
+            className="mx-auto mt-3 h-32 w-auto object-contain object-bottom"
+          />
         </Card>
         <Card tone="mint">
           <h2 className="font-bold">Family Peace of Mind</h2>

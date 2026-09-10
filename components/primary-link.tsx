@@ -13,21 +13,21 @@ export function PrimaryLink({
 }) {
   const styles = {
     primary:
-      "min-h-14 rounded-full bg-[#16181d] text-base font-bold text-white shadow-[0_10px_24px_-12px_rgba(22,24,29,0.55)] hover:bg-black active:scale-[0.98]",
+      "min-h-14 rounded-full bg-[#2a2218] text-base font-bold text-white shadow-[0_10px_24px_-12px_rgba(22,24,29,0.55)] hover:bg-black active:scale-[0.98]",
     black:
-      "min-h-12 rounded-full bg-[#16181d] text-[13px] font-bold text-white shadow-sm hover:bg-black active:scale-95",
+      "min-h-12 rounded-full bg-[#2a2218] text-[13px] font-bold text-white shadow-sm hover:bg-black active:scale-95",
     outline:
-      "min-h-14 rounded-full bg-white text-base font-semibold text-[#16181d]",
+      "min-h-14 rounded-full bg-white text-base font-semibold text-[#2a2218]",
     ghost: "min-h-12 rounded-full text-sm font-semibold text-muted-foreground",
     secondary:
-      "min-h-14 rounded-full bg-[#fff3c9] text-base font-semibold text-[#3d3200]",
+      "min-h-14 rounded-full bg-[#ffe9a0] text-base font-semibold text-[#4a3200]",
   } as const;
 
   return (
     <a
       href={href}
       className={cn(
-        "inline-flex w-full items-center justify-center gap-2 px-5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16181d] focus-visible:ring-offset-2",
+        "inline-flex w-full items-center justify-center gap-2 px-5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2a2218] focus-visible:ring-offset-2",
         styles[variant],
         className
       )}

@@ -51,39 +51,39 @@
 }
 
 :root {
-  --surface: #f8f8f6;
-  --background: #f8f8f6;
-  --foreground: #16181d;
-  --card: #ffffff;
-  --card-foreground: #16181d;
-  --popover: #ffffff;
-  --popover-foreground: #16181d;
-  --primary: #16181d;
-  --primary-foreground: #ffffff;
-  --secondary: #f6e79c;
-  --secondary-foreground: #3d3200;
-  --muted: #eeeeec;
-  --muted-foreground: #4b5563;
-  --accent: #d5ebf5;
-  --accent-foreground: #124780;
-  --destructive: #e11d48;
-  --border: #eef0f4;
-  --input: #eef0f4;
-  --ring: #16181d;
-  --chart-1: #16181d;
-  --chart-2: #715c00;
-  --chart-3: #315e8e;
-  --chart-4: #e4c451;
-  --chart-5: #4a76b1;
+  --surface: #fbf6f0;
+  --background: #fbf6f0;
+  --foreground: #2a2218;
+  --card: #fffdf9;
+  --card-foreground: #2a2218;
+  --popover: #fffdf9;
+  --popover-foreground: #2a2218;
+  --primary: #2a2218;
+  --primary-foreground: #fffdf9;
+  --secondary: #f5d04a;
+  --secondary-foreground: #4a3200;
+  --muted: #f3ebe3;
+  --muted-foreground: #6b5e52;
+  --accent: #d4efe4;
+  --accent-foreground: #1f5a48;
+  --destructive: #e85d62;
+  --border: #ede4d8;
+  --input: #ede4d8;
+  --ring: #2a2218;
+  --chart-1: #2a2218;
+  --chart-2: #8b5a32;
+  --chart-3: #3d5270;
+  --chart-4: #f5d04a;
+  --chart-5: #7ecdb4;
   --radius: 1.85rem;
-  --sidebar: #f7f8fa;
-  --sidebar-foreground: #16181d;
-  --sidebar-primary: #16181d;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e7f3ff;
-  --sidebar-accent-foreground: #124780;
-  --sidebar-border: #eef0f4;
-  --sidebar-ring: #4a76b1;
+  --sidebar: #fbf6f0;
+  --sidebar-foreground: #2a2218;
+  --sidebar-primary: #2a2218;
+  --sidebar-primary-foreground: #fffdf9;
+  --sidebar-accent: #ead9fa;
+  --sidebar-accent-foreground: #4a2f78;
+  --sidebar-border: #ede4d8;
+  --sidebar-ring: #7ecdb4;
 }
 
 @layer base {
@@ -121,7 +121,7 @@
   .kaki-progress-track {
     width: 100%;
     height: 6px;
-    background-color: #eef0f4;
+    background-color: #ede4d8;
     border-radius: 9999px;
     overflow: hidden;
   }
@@ -130,18 +130,18 @@
     display: block;
     height: 100%;
     border-radius: 9999px;
-    background-color: #16181d;
+    background-color: #2a2218;
   }
 
   .lift {
     border: none;
-    background: #fff;
-    box-shadow: 0 12px 32px -20px rgba(22, 24, 29, 0.28);
+    background: #fffdf9;
+    box-shadow: 0 12px 32px -20px rgba(42, 34, 24, 0.22);
   }
 
   .lift-fun {
     border: none;
-    background: #fff3c9;
+    background: #f8e56a;
     box-shadow: none;
   }
 
@@ -170,7 +170,7 @@
   isolation: isolate;
   overflow: hidden;
   padding: 10px;
-  background: #ffffff;
+  background: #fbf6f0;
 }
 
 .phone-aurora {
@@ -193,8 +193,8 @@
   left: -10%;
   width: 38%;
   height: 42%;
-  background: #ffe27a;
-  opacity: 0.55;
+  background: #f5d04a;
+  opacity: 0.48;
   border-radius: 46% 54% 42% 58% / 52% 40% 60% 48%;
   animation: blob-drift-a 18s ease-in-out infinite;
 }
@@ -204,8 +204,8 @@
   right: -12%;
   width: 36%;
   height: 40%;
-  background: #a5c8ff;
-  opacity: 0.5;
+  background: #7ecdb4;
+  opacity: 0.42;
   border-radius: 58% 42% 62% 38% / 44% 56% 44% 56%;
   animation: blob-drift-b 22s ease-in-out infinite;
 }
@@ -215,8 +215,8 @@
   left: 8%;
   width: 34%;
   height: 36%;
-  background: #ffdad6;
-  opacity: 0.45;
+  background: #c9a6f0;
+  opacity: 0.38;
   border-radius: 62% 38% 44% 56% / 48% 62% 38% 52%;
   animation: blob-drift-a 20s ease-in-out infinite reverse;
 }

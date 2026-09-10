@@ -48,19 +48,19 @@ export default async function FamilyHome({
         showNav
         current="/family/home"
       >
-        <Card tone="mint" className="relative overflow-hidden">
-          <UiPic
-            src="/ui/icon-home.svg"
-            alt=""
-            className="pointer-events-none absolute -right-2 -top-2 h-24 w-24"
-          />
+        <Card tone="mint" className="overflow-hidden">
           <p className="text-sm font-semibold">Home</p>
-          <h1 className="mt-2 max-w-[75%] text-[28px] font-extrabold tracking-[-0.04em]">
+          <h1 className="mt-2 text-[28px] font-extrabold tracking-[-0.04em]">
             {senior.name} is at home
           </h1>
-          <p className="mt-2 leading-relaxed text-[#3d4a42]">
+          <p className="mt-2 leading-relaxed text-[#6b5e52]">
             No outing booked today. Last activity was a 22-minute video kopi chat with Uncle Raymond yesterday.
           </p>
+          <UiPic
+            src="/illustrations/person-phone.png"
+            alt=""
+            className="mx-auto mt-3 h-28 w-auto object-contain object-bottom"
+          />
         </Card>
         <p className="mt-6 text-sm text-muted-foreground">
           That&apos;s the whole update. A quiet day is still a good day.
@@ -87,7 +87,7 @@ export default async function FamilyHome({
       <div className="space-y-3.5">
         <a
           href="/family/outing"
-          className="relative block overflow-hidden rounded-[32px] bg-[#d8efe4] p-5"
+          className="relative block overflow-hidden rounded-[32px] bg-[#d4efe4] p-5"
         >
           <UiPic
             src="/ui/icon-fish.svg"
@@ -109,7 +109,7 @@ export default async function FamilyHome({
             {checkIns.map((item) => (
               <span
                 key={item.id}
-                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#16181d]" : "bg-white/70"}`}
+                className={`h-1.5 flex-1 rounded-full ${item.done ? "bg-[#2a2218]" : "bg-white/70"}`}
               />
             ))}
           </div>
@@ -141,7 +141,7 @@ export default async function FamilyHome({
 
         <a
           href="/family/outing"
-          className="flex items-center justify-between rounded-[28px] bg-[#d5ebf5] p-4"
+          className="flex items-center justify-between rounded-[28px] bg-[#d7e5f4] p-4"
         >
           <div>
             <p className="font-semibold tracking-tight">Check-in timeline</p>

@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
-  <circle cx="80" cy="80" r="70" fill="#FFE4E2"/>
-  <ellipse cx="80" cy="128" rx="26" ry="8" fill="#F3D0CC"/>
-  <circle cx="80" cy="58" r="22" fill="#E8B894"/>
-  <path d="M56 58c2-20 12-28 24-28s22 8 24 28c-4-10-12-16-24-16s-20 6-24 16Z" fill="#3A2A24"/>
-  <path d="M56 62c2 8 6 14 10 14V58C62 58 58 60 56 62Z" fill="#3A2A24"/>
-  <path d="M104 62c-2 8-6 14-10 14V58c4 0 8 2 10 4Z" fill="#3A2A24"/>
-  <circle cx="73" cy="58" r="2.4" fill="#16181D"/>
-  <circle cx="87" cy="58" r="2.4" fill="#16181D"/>
-  <path d="M74 66c4 4 8 4 12 0" stroke="#C47A6A" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="70" cy="63" r="3" fill="#F4B4AE" opacity=".7"/>
-  <circle cx="90" cy="63" r="3" fill="#F4B4AE" opacity=".7"/>
-  <path d="M58 96c0-10 10-16 22-16s22 6 22 16v22c0 10-10 16-22 16s-22-6-22-16V96Z" fill="#F4A8A2"/>
+  <circle cx="80" cy="80" r="72" fill="#EAD9FA"/>
+  <path d="M128 36l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#C9A6F0"/>
+  <circle cx="80" cy="48" r="16" fill="#E8B494" stroke="#2A2218" stroke-width="2.5"/>
+  <path d="M66 46c2-12 10-18 18-16 6 2 10 8 10 16" fill="#F4EEE6" stroke="#2A2218" stroke-width="2.5"/>
+  <circle cx="74" cy="48" r="1.8" fill="#2A2218"/>
+  <circle cx="86" cy="48" r="1.8" fill="#2A2218"/>
+  <path d="M68 48h4M88 48h4" stroke="#2A2218" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M74 56c4 3 8 3 12 0" stroke="#2A2218" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 86c0-10 12-16 28-16s28 6 28 16v22H52V86Z" fill="#C9A6F0" stroke="#2A2218" stroke-width="2.5"/>
+  <rect x="44" y="108" width="72" height="10" rx="2" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
+  <rect x="48" y="118" width="6" height="16" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
+  <rect x="106" y="118" width="6" height="16" fill="#C4A070" stroke="#2A2218" stroke-width="2"/>
+  <rect x="86" y="96" width="22" height="14" rx="2" fill="#FFFDF9" stroke="#2A2218" stroke-width="2"/>
+  <rect x="88" y="98" width="18" height="8" rx="1" fill="#2A2218"/>
 </svg>

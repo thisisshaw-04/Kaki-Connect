@@ -8,7 +8,7 @@ export function SosButton() {
     <label
       htmlFor={SOS_SHEET_ID}
       aria-label="Emergency SOS"
-      className="relative z-[90] flex size-12 cursor-pointer items-center justify-center rounded-full bg-[#f5d6d2] text-[13px] font-bold tracking-tight text-[#9b1c1c] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c1c] focus-visible:ring-offset-2"
+      className="relative z-[90] flex size-12 cursor-pointer items-center justify-center rounded-full bg-[#f7c8c4] text-[13px] font-bold tracking-tight text-[#9b1c1c] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b1c1c] focus-visible:ring-offset-2"
     >
       SOS
     </label>
@@ -43,14 +43,14 @@ export function SosSheet() {
         <div className="mt-4 grid grid-cols-2 gap-2">
           <a
             href="tel:995"
-            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#f5d6d2] font-bold text-[#9b1c1c]"
+            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#f7c8c4] font-bold text-[#9b1c1c]"
           >
             <Phone className="size-5" />
             Call 995
           </a>
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#d5ebf5] font-bold text-[#124780]"
+            className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[24px] bg-[#d7e5f4] font-bold text-[#3d5270]"
           >
             <Phone className="size-5" />
             Call Sarah

@@ -15,7 +15,7 @@ export default function VolunteerPlan() {
       current="/volunteer/requests"
     >
       <div className="space-y-4">
-        <Pill className="bg-[#d6f0dc] text-[#1b5e20]">Confirmed Match · // 봉사 동행 완료</Pill>
+        <Pill className="bg-[#d4efe4] text-[#1b5e20]">Confirmed Match · // 봉사 동행 완료</Pill>
         <h1 className="text-[26px] leading-tight font-bold">
           You&apos;re helping Mr Tan join! 🎉
         </h1>

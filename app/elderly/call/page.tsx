@@ -35,7 +35,7 @@ export default function CallSetup() {
             <p className="mt-1 text-sm">{person.languages}</p>
             <button
               type="button"
-              className="mt-3 min-h-12 w-full rounded-full bg-[#fff3c9] px-4 py-3 text-sm font-bold"
+              className="mt-3 min-h-12 w-full rounded-full bg-[#ffe9a0] px-4 py-3 text-sm font-bold"
             >
               10s Voice Greeting · Tap to hear Uncle Raymond&apos;s warm hello
             </button>

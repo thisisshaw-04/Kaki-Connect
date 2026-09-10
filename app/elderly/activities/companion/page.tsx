@@ -43,7 +43,7 @@ export default function SupportCompanionPage() {
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {volunteer.skills.map((skill) => (
-                <Pill key={skill} className="bg-[#fff4c4] text-[#715c00]">
+                <Pill key={skill} className="bg-[#fff4c4] text-[#4a3200]">
                   {skill}
                 </Pill>
               ))}
@@ -57,7 +57,7 @@ export default function SupportCompanionPage() {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#fff3c9] py-3 text-sm font-bold"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#ffe9a0] py-3 text-sm font-bold"
             >
               <Play className="size-4" /> Listen to Rachel&apos;s voice greeting
             </button>

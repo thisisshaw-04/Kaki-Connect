@@ -3,7 +3,7 @@ import { SosButton } from "@/components/sos-button";
 import { GoButton, Portrait, StatusDot } from "@/components/ui-bits";
 import { friends } from "@/lib/data";
 
-const tones = ["bg-[#f6e79c]", "bg-white", "bg-[#d5ebf5]"];
+const tones = ["bg-[#f8e56a]", "bg-white", "bg-[#d7e5f4]"];
 
 export default function BuddiesPage() {
   return (

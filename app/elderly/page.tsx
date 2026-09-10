@@ -25,16 +25,25 @@ export default function ElderlyWelcome() {
           {brand.promise}
         </p>
 
-        <div className="mt-5 grid grid-cols-3 gap-2">
-          <div className="flex flex-col items-center rounded-[28px] bg-[#f6e79c] px-2 py-5">
+        <div className="relative mx-auto mt-3 h-32 w-full max-w-[200px]">
+          <span aria-hidden className="absolute top-1 left-1 size-20 rounded-full border-[12px] border-[#d4efe4]" />
+          <UiPic
+            src="/illustrations/person-wave.png"
+            alt=""
+            className="relative mx-auto h-32 w-auto object-contain object-bottom"
+          />
+        </div>
+
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#f8e56a] px-2 py-5">
             <UiPic src="/ui/icon-kopi.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Kopi</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#d8efe4] px-2 py-5">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#d4efe4] px-2 py-5">
             <UiPic src="/ui/icon-kaki.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Kaki</span>
           </div>
-          <div className="flex flex-col items-center rounded-[28px] bg-[#f5d6d2] px-2 py-5">
+          <div className="flex flex-col items-center rounded-[28px] bg-[#f7c8c4] px-2 py-5">
             <UiPic src="/ui/icon-care.svg" alt="" className="h-14 w-14" />
             <span className="mt-2 text-[12px] font-bold">Care</span>
           </div>
@@ -52,13 +61,13 @@ export default function ElderlyWelcome() {
             window.setTimeout(() => setPlaying(false), 3200);
           }}
         >
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#16181d] text-white">
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2a2218] text-white">
             <Volume2 className="size-5" />
           </span>
           <span className="min-w-0 flex-1">
             <span className="flex flex-wrap items-center gap-1.5 text-[13px] font-semibold">
               Tap to listen to greeting
-              <span className="rounded-full bg-[#d7f0f7] px-1.5 py-0.5 text-xs text-[#124780]">
+              <span className="rounded-full bg-[#ead9fa] px-1.5 py-0.5 text-xs text-[#4a2f78]">
                 Voice
               </span>
             </span>
@@ -69,8 +78,8 @@ export default function ElderlyWelcome() {
           <Play className="size-5 shrink-0 text-muted-foreground" />
         </button>
 
-        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#f6e79c] px-4 py-2.5 text-center text-[13px] font-semibold">
-          <Shield className="size-4 text-[#715c00]" />
+        <div className="mt-3 flex items-center justify-center gap-2 rounded-full bg-[#f8e56a] px-4 py-2.5 text-center text-[13px] font-semibold">
+          <Shield className="size-4 text-[#4a3200]" />
           100% Free & Safe for seniors and families
         </div>
 
@@ -84,7 +93,7 @@ export default function ElderlyWelcome() {
           </p>
         </div>
         {playing ? (
-          <p className="mt-3 rounded-full bg-[#16181d] px-4 py-2 text-center text-[13px] font-semibold text-white">
+          <p className="mt-3 rounded-full bg-[#2a2218] px-4 py-2 text-center text-[13px] font-semibold text-white">
             Playing greeting in English & Hokkien...
           </p>
         ) : null}

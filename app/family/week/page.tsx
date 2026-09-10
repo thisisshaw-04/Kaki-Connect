@@ -11,10 +11,10 @@ const kindLabel = {
 
 const tones = [
   "bg-white",
-  "bg-[#d5ebf5]",
-  "bg-[#f6e79c]",
-  "bg-[#d8efe4]",
-  "bg-[#e5dff4]",
+  "bg-[#d7e5f4]",
+  "bg-[#f8e56a]",
+  "bg-[#d4efe4]",
+  "bg-[#ead9fa]",
 ];
 
 export default function FamilyWeek() {
@@ -59,7 +59,7 @@ export default function FamilyWeek() {
           return (
             <li key={item.date}>
               {item.status === "live" ? (
-                <a href="/family/outing" className="block rounded-[28px] bg-[#d8efe4] p-4">
+                <a href="/family/outing" className="block rounded-[28px] bg-[#d4efe4] p-4">
                   {inner}
                 </a>
               ) : (

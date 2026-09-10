@@ -70,7 +70,7 @@ export default function VolunteerLive() {
               key={item.id}
               className={cn(
                 "rounded-[28px] p-4",
-                item.done ? "bg-[#f4f5f7]" : "bg-[#d7f0f7]"
+                item.done ? "bg-[#f4f5f7]" : "bg-[#d4efe4]"
               )}
             >
               <div className="flex items-start justify-between gap-3">
@@ -84,7 +84,7 @@ export default function VolunteerLive() {
                 ) : (
                   <button
                     type="button"
-                    className="min-h-12 shrink-0 rounded-full bg-[#16181d] px-4 text-sm font-bold text-white"
+                    className="min-h-12 shrink-0 rounded-full bg-[#2a2218] px-4 text-sm font-bold text-white"
                     onClick={() => tap(item.id)}
                   >
                     Tap to send
@@ -111,7 +111,7 @@ export default function VolunteerLive() {
         <div className="grid grid-cols-2 gap-2">
           <a
             href={`tel:${familyMember.phone.replace(/\s/g, "")}`}
-            className="flex min-h-14 items-center justify-center rounded-full bg-[#16181d] px-3 text-center text-sm font-bold text-white"
+            className="flex min-h-14 items-center justify-center rounded-full bg-[#2a2218] px-3 text-center text-sm font-bold text-white"
           >
             Call Daughter Sarah
           </a>
