@@ -17,7 +17,6 @@ export default function FamilyWeek() {
       backHref="/family/home"
       showNav
       current="/family/week"
-      wide
     >
       <h1 className="text-2xl font-bold">A light week so far</h1>
       <p className="mt-2 text-muted-foreground">

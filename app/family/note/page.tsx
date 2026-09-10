@@ -25,7 +25,6 @@ export default function FamilyNote() {
       backHref="/family/home"
       showNav
       current="/family/note"
-      wide
     >
       {status === "sent" ? (
         <div className="rounded-[24px] border border-[#cfe3c8] bg-[#f3faf3] p-5">

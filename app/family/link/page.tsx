@@ -4,7 +4,7 @@ import { familyMember, familyShare, senior } from "@/lib/data";
 
 export default function FamilyLink() {
   return (
-    <AppShell role="family" title="What you can see" backHref="/family" wide>
+    <AppShell role="family" title="What you can see" backHref="/family">
       <div className="flex flex-1 flex-col gap-5">
         <div>
           <h1 className="text-2xl font-bold">

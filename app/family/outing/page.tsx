@@ -14,7 +14,6 @@ export default function FamilyOuting() {
       backHref="/family/home"
       showNav
       current="/family/home"
-      wide
     >
       <div className="space-y-5">
         <div>

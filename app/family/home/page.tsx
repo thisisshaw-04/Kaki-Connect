@@ -22,7 +22,6 @@ export default async function FamilyHome({
         backHref="/family/link"
         showNav
         current="/family/home"
-        wide
       >
         <div className="rounded-2xl border border-destructive/30 bg-[#ffdad6] p-5">
           <h1 className="text-xl font-bold">Couldn’t refresh Dad’s day</h1>
@@ -46,7 +45,6 @@ export default async function FamilyHome({
         backHref="/family/link"
         showNav
         current="/family/home"
-        wide
       >
         <div className="rounded-[24px] border border-border bg-card p-5">
           <Pill>Home</Pill>
@@ -75,7 +73,6 @@ export default async function FamilyHome({
       backHref="/family/link"
       showNav
       current="/family/home"
-      wide
     >
       <div className="space-y-4">
         <section className="rounded-[24px] border border-[#cfe3c8] bg-[#f3faf3] p-5">

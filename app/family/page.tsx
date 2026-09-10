@@ -5,7 +5,7 @@ import { familyMember, senior } from "@/lib/data";
 
 export default function FamilyWelcome() {
   return (
-    <AppShell role="family" backHref="/" wide>
+    <AppShell role="family" backHref="/">
       <div className="flex flex-1 flex-col">
         <p className="text-sm font-semibold text-primary">Family view</p>
         <h1 className="mt-2 text-3xl leading-tight font-bold tracking-tight">

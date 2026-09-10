@@ -28,8 +28,7 @@ const roles = [
 
 export default function RolePage() {
   return (
-    <div className="min-h-full bg-[#dfe3eb]">
-      <div className="mx-auto flex min-h-screen max-w-[420px] flex-col bg-[var(--surface)] px-6 py-10 shadow-[0_0_40px_rgba(0,0,0,0.08)]">
+    <div className="flex h-full min-h-0 flex-col overflow-y-auto bg-[var(--surface)] px-6 py-8">
         <div className="mb-10 flex flex-col items-center text-center">
           <div className="mb-4 flex size-16 items-center justify-center rounded-3xl bg-primary text-primary-foreground shadow-sm">
             <Home className="size-8" />
@@ -81,7 +80,6 @@ export default function RolePage() {
           Built for Bedok, Tampines, and the next block over. Free for seniors
           and the people who look in on them.
         </p>
-      </div>
     </div>
   );
 }

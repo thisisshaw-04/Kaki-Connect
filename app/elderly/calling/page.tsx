@@ -13,8 +13,7 @@ export default function CallingPage() {
   const [cameraOff, setCameraOff] = useState(false);
 
   return (
-    <div className="min-h-full bg-[#1b1c1a] text-white">
-      <div className="mx-auto flex min-h-screen max-w-[420px] flex-col px-6 py-8">
+    <div className="phone-dark flex h-full min-h-0 flex-col bg-[#1b1c1a] px-6 py-8 text-white">
         <p className="text-center text-sm text-white/70">Connected · 00:12</p>
         <div className="mt-10 flex flex-1 flex-col items-center justify-center">
           <Initials name={person.name} className="size-28 text-3xl" />
@@ -47,7 +46,6 @@ export default function CallingPage() {
             {cameraOff ? <VideoOff /> : <Video />}
           </button>
         </div>
-      </div>
     </div>
   );
 }
