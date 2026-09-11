@@ -22,7 +22,7 @@ function RequestCard({ request }: { request: Request }) {
       >
         <div
           className={cn(
-            "relative h-40 overflow-hidden",
+            "relative h-36 overflow-hidden",
             request.hero ? "bg-green-wash" : "bg-lilac-wash"
           )}
         >
@@ -76,7 +76,7 @@ function RequestCard({ request }: { request: Request }) {
           </div>
         </div>
 
-        <div className="p-4">
+        <div className="px-4 pt-3 pb-4">
           <p
             className={cn(
               "text-[11px] font-bold tracking-[0.12em] uppercase",
@@ -85,14 +85,14 @@ function RequestCard({ request }: { request: Request }) {
           >
             {request.category}
           </p>
-          <h2 className="mt-1 text-[21px] leading-tight font-extrabold tracking-[-0.03em]">
+          <h2 className="mt-0.5 text-[20px] leading-tight font-extrabold tracking-[-0.03em]">
             {request.title}
           </h2>
           <p className="mt-1 text-sm leading-snug text-muted-foreground">
             {request.blurb}
           </p>
 
-          <div className="mt-3 flex flex-wrap gap-1.5">
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
             {request.chips.map((chip) => (
               <Pill key={chip} className="bg-white text-ink">
                 {chip}
@@ -100,23 +100,21 @@ function RequestCard({ request }: { request: Request }) {
             ))}
           </div>
 
-          <p className="mt-3 text-[13px] font-semibold leading-snug">
+          <p className="mt-2.5 text-[13px] font-semibold leading-snug">
             {request.need}
           </p>
-          <p className="mt-1.5 flex items-start gap-1.5 text-sm">
+          <p className="mt-1 flex items-start gap-1.5 text-sm">
             <MapPin className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
             <span>
               <span className="font-semibold">{request.place}</span>
               {request.pickup ? (
-                <span className="block text-xs text-muted-foreground">
-                  {request.pickup}
-                </span>
+                <span className="text-muted-foreground"> · {request.pickup}</span>
               ) : null}
             </span>
           </p>
 
           {request.companions.length > 0 ? (
-            <div className="mt-3 flex items-center gap-2">
+            <div className="mt-2.5 flex items-center gap-2">
               <div className="flex -space-x-2">
                 {request.companions.map((person) => (
                   <Portrait
@@ -132,17 +130,17 @@ function RequestCard({ request }: { request: Request }) {
               </p>
             </div>
           ) : (
-            <p className="mt-3 text-xs leading-snug text-muted-foreground">
+            <p className="mt-2.5 text-xs leading-snug text-muted-foreground">
               {request.group}
             </p>
           )}
 
-          <p className="mt-3 flex items-start gap-1.5 text-xs font-semibold text-[#1f5a48]">
+          <p className="mt-2 flex items-start gap-1.5 text-xs font-semibold text-[#1f5a48]">
             <Shield className="mt-0.5 size-3.5 shrink-0" />
             {request.badge}
           </p>
 
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-3 flex items-center justify-between">
             <span className="text-[13px] font-bold">I Can Help</span>
             <GoButton />
           </div>
@@ -164,7 +162,7 @@ export default function VolunteerRequests() {
     >
       <div className="flex items-end justify-between gap-3">
         <div>
-          <h1 className="text-[30px] font-extrabold tracking-[-0.04em]">
+          <h1 className="text-[28px] font-extrabold tracking-[-0.04em]">
             Open Companion Requests
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -174,7 +172,7 @@ export default function VolunteerRequests() {
         <UiPic
           src="/illustrations/person-wave.png"
           alt=""
-          className="h-20 w-auto shrink-0"
+          className="h-16 w-auto shrink-0"
         />
       </div>
       <ul className="mt-4 space-y-3">

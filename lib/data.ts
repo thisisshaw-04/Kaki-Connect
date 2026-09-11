@@ -356,7 +356,7 @@ export const volunteerRequests = [
     need: "Travel companionship + light arm assistance",
     when: "Tomorrow • 3:30 PM – 6:30 PM (Pickup 3:30 PM)",
     place: "Bedok Reservoir Jetty",
-    pickup: "Pickup 3:30 PM · Blk 122 Bedok North",
+    pickup: "Blk 122 Bedok North",
     group: "Fishing Kakis • 3 older adults (Ahmad, Susan, Mr Tan)",
     badge: "Verified General Volunteer Friendly • No medical training required",
     distance: "1.2 km away",
