@@ -51,7 +51,7 @@ export default function SupportPreferencePage() {
       current="/elderly/home"
     >
       <div className="space-y-4">
-        <Card tone="sky" className="p-4">
+        <Card tone="mint" className="p-4">
           <p className="text-[11px] font-bold tracking-[0.1em] text-primary uppercase">
             Selected outing · // {outing.code}
           </p>
