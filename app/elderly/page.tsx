@@ -78,21 +78,22 @@ export default function ElderlyWelcome() {
           </button>
         </div>
 
-        <div className="mt-auto pt-8">
-          <PrimaryLink href="/elderly/setup" className="h-16 text-lg">
-            Get Started
-            <ArrowRight className="size-5" />
-          </PrimaryLink>
-        </div>
         {error ? (
           <p className="mt-3 rounded-full bg-crimson-wash px-4 py-2 text-center text-[13px] font-semibold text-[#8f2428]">
             Greeting could not play. Please try again.
           </p>
         ) : playing ? (
           <p className="mt-3 rounded-full bg-lilac px-4 py-2 text-center text-[13px] font-semibold text-ink">
-            Playing greeting in English, Hokkien, Mandarin & Malay...
+            Playing greeting in English & Hokkien...
           </p>
         ) : null}
+
+        <div className="mt-auto pt-8">
+          <PrimaryLink href="/elderly/setup" className="h-16 text-lg">
+            Get Started
+            <ArrowRight className="size-5" />
+          </PrimaryLink>
+        </div>
       </div>
     </AppShell>
   );
