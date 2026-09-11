@@ -685,16 +685,6 @@
   fill: none;
 }
 
-.kc-display-name-hint {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  margin-top: 10px;
-  font-size: 12px;
-  line-height: 18px;
-  color: #4b5563;
-}
-
 .phone-home {
   display: flex;
   flex-shrink: 0;

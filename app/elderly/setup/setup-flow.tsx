@@ -216,10 +216,6 @@ export function SetupFlow({ step }: { step: number }) {
                 </svg>
               </span>
             </div>
-            <p className="kc-display-name-hint">
-              <Info className="mt-0.5 size-3.5 shrink-0" />
-              Tap the mic icon anytime to speak instead of typing.
-            </p>
           </label>
           <div>
             <p className="mb-2 text-sm font-semibold">Quick Title Shortcut (Tap to add):</p>
