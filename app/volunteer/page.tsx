@@ -42,7 +42,7 @@ export default function VolunteerWelcome() {
             Neighborhood Companionship Initiative
           </p>
           <UiPic
-            src="/illustrations/person-wave.png"
+            src="/illustrations/person-volunteer.png"
             alt=""
             className="-mt-1 h-[84px] w-auto shrink-0"
           />

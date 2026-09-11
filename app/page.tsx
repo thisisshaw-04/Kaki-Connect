@@ -23,7 +23,7 @@ const roles = [
     href: "/volunteer",
     title: "Volunteer",
     hint: "Help seniors stay connected",
-    art: "/illustrations/person-wave.png",
+    art: "/illustrations/person-volunteer.png",
     tone: "bg-beige-card",
     featured: false,
   },
