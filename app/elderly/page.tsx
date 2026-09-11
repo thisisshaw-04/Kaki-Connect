@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Heart, Play, Shield, Smile, Volume2 } from "lucide-react";
+import { ArrowRight, Heart, Play, Smile, Volume2 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { PrimaryLink } from "@/components/primary-link";
@@ -74,11 +74,6 @@ export default function ElderlyWelcome() {
             </span>
             <Play className="size-5 shrink-0 text-muted-foreground" />
           </button>
-        </div>
-
-        <div className="mt-4 flex items-center justify-center gap-2 rounded-full bg-green-wash px-4 py-2.5 text-center text-[13px] font-semibold text-[#1f5a48]">
-          <Shield className="size-4 text-[#1f5a48]" />
-          100% Free & Safe for seniors and families
         </div>
 
         <div className="mt-auto pt-8">
