@@ -178,7 +178,7 @@ export function SetupFlow({ step }: { step: number }) {
   const [estate, setEstate] = useState("Bedok / East Coast");
   const [langs, setLangs] = useState(languages.filter((l) => l.on).map((l) => l.id));
   const [mobility, setMobility] = useState("help");
-  const [support, setSupport] = useState("arm");
+  const [support, setSupport] = useState<string[]>(["arm"]);
   const [activity, setActivity] = useState("kopi");
   const [relation, setRelation] = useState("Daughter");
   const [contactName, setContactName] = useState(familyMember.name);
@@ -513,11 +513,19 @@ export function SetupFlow({ step }: { step: number }) {
               <button
                 key={item.id}
                 type="button"
-                aria-pressed={support === item.id}
-                onClick={() => setSupport(item.id)}
-                className={cn(
-                  setupChoice(support === item.id)
-                )}
+                aria-pressed={support.includes(item.id)}
+                onClick={() =>
+                  setSupport((current) => {
+                    if (item.id === "none") {
+                      return current.includes("none") ? [] : ["none"];
+                    }
+                    const withoutNone = current.filter((id) => id !== "none");
+                    return withoutNone.includes(item.id)
+                      ? withoutNone.filter((id) => id !== item.id)
+                      : [...withoutNone, item.id];
+                  })
+                }
+                className={cn(setupChoice(support.includes(item.id)))}
               >
                 <p className="font-bold">{item.title}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{item.detail}</p>
