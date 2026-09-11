@@ -1,22 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, Heart, Play, Smile, Volume2 } from "lucide-react";
+import { ArrowRight, Heart, Pause, Play, Smile, Volume2 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { ListenButton } from "@/components/listen-button";
 import { PrimaryLink } from "@/components/primary-link";
 import { UiPic } from "@/components/ui-bits";
 import { brand } from "@/lib/data";
+import { WELCOME_GREETING_SRC, useSharedAudio } from "@/lib/welcome-greeting";
 
 export default function ElderlyWelcome() {
-  const [playing, setPlaying] = useState(false);
+  const { playing, error, toggle } = useSharedAudio(WELCOME_GREETING_SRC);
 
   return (
     <AppShell
       role="elderly"
       title="KakiConnect"
       backHref="/"
-      action={<ListenButton />}
+      action={<ListenButton src={WELCOME_GREETING_SRC} />}
     >
       <div className="flex flex-1 flex-col">
         <div className="relative overflow-hidden rounded-[28px] border-2 border-ink bg-white px-5 py-6 text-center">
@@ -53,12 +53,10 @@ export default function ElderlyWelcome() {
           </p>
           <button
             type="button"
-            aria-label="Listen to voice greeting"
+            aria-label={playing ? "Stop greeting" : "Listen to voice greeting"}
+            aria-pressed={playing}
             className="mt-6 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-ink"
-            onClick={() => {
-              setPlaying(true);
-              window.setTimeout(() => setPlaying(false), 3200);
-            }}
+            onClick={toggle}
           >
             <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-lilac text-ink">
               <Volume2 className="size-5" />
@@ -72,7 +70,11 @@ export default function ElderlyWelcome() {
                 Hokkien • English • Mandarin • Malay
               </span>
             </span>
-            <Play className="size-5 shrink-0 text-muted-foreground" />
+            {playing ? (
+              <Pause className="size-5 shrink-0 text-muted-foreground" />
+            ) : (
+              <Play className="size-5 shrink-0 text-muted-foreground" />
+            )}
           </button>
         </div>
 
@@ -82,9 +84,13 @@ export default function ElderlyWelcome() {
             <ArrowRight className="size-5" />
           </PrimaryLink>
         </div>
-        {playing ? (
+        {error ? (
+          <p className="mt-3 rounded-full bg-crimson-wash px-4 py-2 text-center text-[13px] font-semibold text-[#8f2428]">
+            Greeting could not play. Please try again.
+          </p>
+        ) : playing ? (
           <p className="mt-3 rounded-full bg-lilac px-4 py-2 text-center text-[13px] font-semibold text-ink">
-            Playing greeting in English & Hokkien...
+            Playing greeting in English, Hokkien, Mandarin & Malay...
           </p>
         ) : null}
       </div>

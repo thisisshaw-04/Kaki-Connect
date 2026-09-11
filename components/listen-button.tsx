@@ -2,18 +2,23 @@
 
 import { Volume2 } from "lucide-react";
 import { useState } from "react";
+import { useSharedAudio } from "@/lib/welcome-greeting";
 import { cn } from "@/lib/utils";
 
 export function ListenButton({
   label = "Listen",
   playingLabel = "Playing…",
   className,
+  src,
 }: {
   label?: string;
   playingLabel?: string;
   className?: string;
+  src?: string;
 }) {
-  const [playing, setPlaying] = useState(false);
+  const audio = useSharedAudio(src);
+  const [fakePlaying, setFakePlaying] = useState(false);
+  const playing = src ? audio.playing : fakePlaying;
 
   return (
     <button
@@ -25,8 +30,12 @@ export function ListenButton({
         className ?? "bg-lilac-wash text-[#5a3d8a]"
       )}
       onClick={() => {
-        setPlaying(true);
-        window.setTimeout(() => setPlaying(false), 2200);
+        if (src) {
+          audio.toggle();
+          return;
+        }
+        setFakePlaying(true);
+        window.setTimeout(() => setFakePlaying(false), 2200);
       }}
     >
       <Volume2 className="size-5" />
