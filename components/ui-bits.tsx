@@ -147,7 +147,7 @@ export function Card({
 
 export function SlashMark({ label = "//" }: { label?: string }) {
   return (
-    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-beige-card/80 px-2 text-[10px] font-semibold tracking-[0.08em] text-[#7a6c60]">
+    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-white px-2 text-[10px] font-semibold tracking-[0.08em] text-ink ring-1 ring-ink">
       {label}
     </span>
   );
