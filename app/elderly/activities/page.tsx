@@ -35,7 +35,7 @@ export default function ActivitiesPage() {
       showNav
       current="/elderly/home"
     >
-      <div className="space-y-5">
+      <div className="min-w-0 space-y-5">
         <div>
           <h1 className="text-[26px] font-extrabold tracking-[-0.04em]">
             Good morning, {senior.name}!
@@ -49,24 +49,30 @@ export default function ActivitiesPage() {
           </div>
         </div>
 
-        <div>
-          <div className="flex items-center justify-between">
-            <h2 className="font-semibold">What would you like to do?</h2>
-            <span className="text-xs text-muted-foreground">Swipe for more</span>
+        <div className="min-w-0">
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="min-w-0 font-semibold">What would you like to do?</h2>
+            <span className="shrink-0 text-xs text-muted-foreground">Swipe for more</span>
           </div>
-          <div className="mt-2 flex gap-2 overflow-x-auto pb-1" role="list" aria-label="Activity filters">
-            {activityFilters.map((item, index) => (
-              <span
-                key={item}
-                role="listitem"
-                aria-current={index === 0 ? "true" : undefined}
-                className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-[13px] font-semibold ${
-                  index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-ink"
-                }`}
-              >
-                {item}
-              </span>
-            ))}
+          <div
+            className="-mx-5 mt-2 min-w-0 overflow-x-auto overscroll-x-contain"
+            role="list"
+            aria-label="Activity filters"
+          >
+            <div className="flex w-max min-h-12 items-center gap-2 px-5 py-1.5">
+              {activityFilters.map((item, index) => (
+                <span
+                  key={item}
+                  role="listitem"
+                  aria-current={index === 0 ? "true" : undefined}
+                  className={`inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] leading-none font-semibold ${
+                    index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-ink"
+                  }`}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

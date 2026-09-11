@@ -67,7 +67,7 @@ export function AppShell({
   const heading = title ?? brand.name;
 
   return (
-    <div className={cn("relative flex h-full min-h-0 flex-col bg-background", className)}>
+    <div className={cn("relative flex h-full min-h-0 min-w-0 flex-col bg-background", className)}>
       <header className="shrink-0 bg-background">
         <div className="flex items-center justify-between gap-2 px-4 py-3">
           {onBack ? (
@@ -107,7 +107,7 @@ export function AppShell({
           </div>
         ) : null}
       </header>
-      <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-3">
+      <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto px-5 py-3">
         {children}
       </main>
       {footer ? (
