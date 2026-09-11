@@ -183,7 +183,7 @@ export default function VolunteerRequests() {
           </p>
         </div>
         <UiPic
-          src="/illustrations/person-wave.png"
+          src="/illustrations/person-volunteer.png"
           alt=""
           className="h-16 w-auto shrink-0"
         />
