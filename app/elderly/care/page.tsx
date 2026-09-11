@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
+import { PartnerList } from "@/components/partner-list";
 import { SosButton } from "@/components/sos-button";
 import { Card, Pill, UiPic } from "@/components/ui-bits";
 import { familyMember, fsc, senior } from "@/lib/data";
@@ -19,7 +20,7 @@ export default function CareHubPage() {
         <Pill className="bg-[#ede0fa]">Care Hub</Pill>
         <h1 className="text-[30px] leading-tight font-extrabold tracking-[-0.04em]">Help is always nearby</h1>
         <p className="text-[16px] leading-relaxed text-muted-foreground">
-          Family peace of mind, Fei Yue FSC, and emergency numbers — without leaving the app.
+          Family peace of mind, Fei Yue FSC, and neighbourhood partners — without leaving the app.
         </p>
         <Card tone="mint" className="relative overflow-hidden">
           <UiPic
@@ -49,10 +50,11 @@ export default function CareHubPage() {
             <Phone className="size-4" /> Call {fsc.phone}
           </a>
         </Card>
+        <PartnerList heading="Neighbourhood partners" />
         <Card tone="blush">
           <p className="font-bold">Need assistance right now?</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Reach Silver Generation Ambassador or emergency response with one tap. Stay with {senior.name} until help arrives.
+            Reach AIC Silver Generation Ambassador or emergency response with one tap. Stay with {senior.name} until help arrives.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2">
             <a

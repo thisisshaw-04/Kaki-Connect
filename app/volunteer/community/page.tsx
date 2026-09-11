@@ -1,4 +1,5 @@
 import { AppShell } from "@/components/app-shell";
+import { PartnerList } from "@/components/partner-list";
 import { PrimaryLink } from "@/components/primary-link";
 import { Card, UiPic } from "@/components/ui-bits";
 
@@ -17,7 +18,7 @@ export default function VolunteerCommunity() {
           <div>
             <h1 className="text-2xl font-bold">Community</h1>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Heartlands Edition tips, Fei Yue FSC updates, and the companionship safety guide.
+              Heartlands Edition tips, Fei Yue FSC updates, and tie-ups with Lion Befrienders, TOUCH, and AIC.
             </p>
           </div>
           <UiPic
@@ -35,9 +36,10 @@ export default function VolunteerCommunity() {
             Open safety guidelines
           </PrimaryLink>
         </Card>
+        <PartnerList heading="Neighbourhood tie-ups" />
         <Card tone="sky">
           <p className="font-bold">Fei Yue FSC desk</p>
-          <p className="mt-1 text-sm">6743-9821 · Direct volunteer coordinator</p>
+          <p className="mt-1 text-sm">6743-9821 · Direct volunteer coordinator for this outing</p>
         </Card>
       </div>
     </AppShell>

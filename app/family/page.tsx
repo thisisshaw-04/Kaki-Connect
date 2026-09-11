@@ -19,6 +19,9 @@ export default function FamilyWelcome() {
           <p className="mt-1 text-sm leading-relaxed text-[#7a6c60]">
             No live GPS unless the 60-minute safety escalation fires. No recordings. If he&apos;s at home, that&apos;s all you&apos;ll see: home, and well.
           </p>
+          <p className="mt-2 text-sm leading-relaxed text-[#7a6c60]">
+            Neighbourhood tie-ups: Lion Befrienders, TOUCH Community Services, and AIC&apos;s Silver Generation Volunteer programme.
+          </p>
           <UiPic
             src="/illustrations/person-tablet.png"
             alt=""

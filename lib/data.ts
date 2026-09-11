@@ -63,12 +63,36 @@ export const fsc = {
   hours: "Available during activity hours",
 };
 
+export const partners = [
+  {
+    id: "lion",
+    name: "Lion Befrienders",
+    role: "Befriending & well-being",
+    detail:
+      "Serves thousands of isolated seniors, with a track record of digital tools that help monitor well-being between visits.",
+  },
+  {
+    id: "touch",
+    name: "TOUCH Community Services",
+    role: "Active ageing centres",
+    detail:
+      "Operates multiple Active Ageing Centres (AACs) and focuses heavily on group physical activities in the heartlands.",
+  },
+  {
+    id: "aic",
+    name: "Agency for Integrated Care (AIC)",
+    role: "Silver Generation Volunteers",
+    detail:
+      "Actively expanding the national Silver Generation Volunteer programme — training and matching companions for neighbourhood outings.",
+  },
+] as const;
+
 export const volunteer = {
   id: "rachel",
   name: "Rachel Lin",
   age: 28,
   neighbourhood: "Tampines Central",
-  verified: "Fei Yue FSC & Silver Generation Office Verified",
+  verified: "Fei Yue FSC & AIC Silver Generation Volunteer Verified",
   role: "General Volunteer Support",
   firstAid: true,
   meetingFrom: "Bedok MRT (Exit B Passenger Service)",

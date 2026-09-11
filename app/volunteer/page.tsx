@@ -1,5 +1,6 @@
 import { ArrowRight, Clock, HeartHandshake, Shield } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
+import { PartnerList } from "@/components/partner-list";
 import { PrimaryLink } from "@/components/primary-link";
 import { UiPic } from "@/components/ui-bits";
 
@@ -53,6 +54,7 @@ export default function VolunteerWelcome() {
           Accompany a senior to their favorite neighborhood activity. Every small walk, MRT trip, or reservoir visit helps prevent isolation right in your estate.
         </p>
         <p className="text-[13px] font-semibold text-ink">Heartlands Edition · Kaki Companion</p>
+        <PartnerList heading="Working with neighbourhood partners" />
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold">Scope of Volunteering</p>
           <p className="text-[11px] text-muted-foreground">{"// Reassurances"}</p>

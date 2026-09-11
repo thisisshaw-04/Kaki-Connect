@@ -95,7 +95,7 @@ export default function SupportPreferencePage() {
         </div>
         <Card>
           <p className="text-sm leading-relaxed">
-            Support is matched per activity with our verified community volunteers and Fei Yue FSC befrienders.
+            Support is matched per activity with Lion Befrienders, TOUCH Community Services, AIC Silver Generation Volunteers, and Fei Yue FSC befrienders.
           </p>
           <Pill className="mt-2">Changeable anytime · Your choice only applies to this outing</Pill>
         </Card>

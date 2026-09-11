@@ -29,7 +29,7 @@ export function SosSheet() {
               Reach help with one tap
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Silver Generation Ambassador, family, or emergency response.
+              AIC Silver Generation Ambassador, family, or emergency response.
             </p>
           </div>
           <label
