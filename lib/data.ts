@@ -364,6 +364,7 @@ export const volunteerRequests = [
     heroAlt: "Bedok Reservoir boardwalk at sunset",
     portrait: photos.uncleTanVolunteer,
     illustration: "/illustrations/fishing.png",
+    supportArt: null,
     accent: null,
     chips: ["1.2 km away", "Tomorrow · 3:30–6:30 PM", "Pickup 3:30 PM"],
     companions: [
@@ -393,6 +394,7 @@ export const volunteerRequests = [
     heroAlt: "Morning dim sum walk",
     portrait: null,
     illustration: "/illustrations/outing-walk.png",
+    supportArt: "/illustrations/kopi-chat.png",
     accent: "/ui/icon-dimsum.svg",
     chips: ["Friday · 9:00–11:00 AM", "2 hrs", "Outram Park MRT"],
     companions: [],

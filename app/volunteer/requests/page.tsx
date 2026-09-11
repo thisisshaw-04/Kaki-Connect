@@ -3,7 +3,6 @@ import { AppShell } from "@/components/app-shell";
 import {
   Card,
   GoButton,
-  Initials,
   Pill,
   Portrait,
   UiPic,
@@ -12,6 +11,21 @@ import { volunteerRequests } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 type Request = (typeof volunteerRequests)[number];
+
+function SeniorMark({ name }: { name: string }) {
+  const letters = name
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2);
+
+  return (
+    <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-white text-sm font-bold text-[#5a3d8a] ring-[3px] ring-white">
+      {letters}
+    </div>
+  );
+}
 
 function RequestCard({ request }: { request: Request }) {
   return (
@@ -45,6 +59,13 @@ function RequestCard({ request }: { request: Request }) {
               )}
             />
           ) : null}
+          {request.supportArt ? (
+            <UiPic
+              src={request.supportArt}
+              alt=""
+              className="pointer-events-none absolute bottom-[-6px] left-16 h-[4.75rem] w-auto"
+            />
+          ) : null}
           {request.featured ? (
             <Pill className="absolute top-3 left-3 bg-white text-ink">
               Featured Match
@@ -64,11 +85,7 @@ function RequestCard({ request }: { request: Request }) {
                 className="size-14 rounded-2xl object-cover object-top ring-[3px] ring-white"
               />
             ) : (
-              <Initials
-                name={request.senior}
-                tone="lilac"
-                className="size-14 rounded-2xl ring-[3px] ring-white"
-              />
+              <SeniorMark name={request.senior} />
             )}
             <span className="rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold text-ink ring-1 ring-ink">
               {request.senior} · {request.age}y
@@ -129,11 +146,7 @@ function RequestCard({ request }: { request: Request }) {
                 {request.group}
               </p>
             </div>
-          ) : (
-            <p className="mt-2.5 text-xs leading-snug text-muted-foreground">
-              {request.group}
-            </p>
-          )}
+          ) : null}
 
           <p className="mt-2 flex items-start gap-1.5 text-xs font-semibold text-[#1f5a48]">
             <Shield className="mt-0.5 size-3.5 shrink-0" />
