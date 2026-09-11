@@ -36,8 +36,8 @@ export default function RolePage() {
   return (
     <div className="relative h-full min-h-0">
       <OpeningScreen />
-      <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-6">
-      <div className="relative mb-6 inline-grid size-[72px] place-items-center">
+      <div className="relative flex h-full min-h-0 flex-col overflow-y-auto bg-background px-5 py-5">
+      <div className="relative mb-4 inline-grid size-[72px] place-items-center">
         <span
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-full border-[6px] border-green-wash"
@@ -56,7 +56,7 @@ export default function RolePage() {
 
       <a
         href={featured.href}
-        className={`relative mt-6 flex flex-col overflow-hidden rounded-[32px] border-2 border-ink ${featured.tone} px-5 pt-5 pb-3`}
+        className={`relative mt-5 flex flex-col overflow-hidden rounded-[32px] border-2 border-ink ${featured.tone} px-5 pt-5 pb-3`}
       >
         <div className="flex min-h-0 flex-1 items-end gap-2">
           <div className="min-w-0 flex-1 pb-1">
@@ -66,7 +66,7 @@ export default function RolePage() {
           <UiPic
             src={featured.art}
             alt=""
-            className="-mb-1 h-40 w-auto max-w-[46%] shrink-0 object-contain object-bottom"
+            className="-mb-1 h-36 w-auto max-w-[46%] shrink-0 object-contain object-bottom"
           />
         </div>
         <span className="relative z-10 mt-auto flex items-center justify-between pt-2">
@@ -80,7 +80,7 @@ export default function RolePage() {
           <a
             key={role.href}
             href={role.href}
-            className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[28px] border-2 border-ink ${role.tone} p-4 pb-3`}
+            className={`relative flex min-h-[220px] flex-col overflow-hidden rounded-[28px] border-2 border-ink ${role.tone} p-4 pb-3`}
           >
             <p className="text-[18px] font-extrabold tracking-[-0.03em]">{role.title}</p>
             <p className="mt-1 text-[13px] leading-snug text-[#7a6c60]">{role.hint}</p>

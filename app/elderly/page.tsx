@@ -17,9 +17,15 @@ export default function ElderlyWelcome() {
       title="KakiConnect"
       backHref="/"
       action={<ListenButton src={WELCOME_GREETING_SRC} />}
+      footer={
+        <PrimaryLink href="/elderly/setup" className="h-16 text-lg">
+          Get Started
+          <ArrowRight className="size-5" />
+        </PrimaryLink>
+      }
     >
       <div className="flex flex-1 flex-col">
-        <div className="relative overflow-hidden rounded-[28px] border-2 border-ink bg-white px-5 py-6 text-center">
+        <div className="relative overflow-hidden rounded-[28px] border-2 border-ink bg-white px-5 py-5 text-center">
           <p className="absolute top-4 right-5 text-[11px] tracking-[0.16em] text-muted-foreground">
             {"// 01"}
           </p>
@@ -42,7 +48,7 @@ export default function ElderlyWelcome() {
               <span className="text-[11px] font-semibold">Care</span>
             </div>
           </div>
-          <h1 className="mt-5 text-[28px] leading-9 font-semibold tracking-[-0.02em]">
+          <h1 className="mt-4 text-[28px] leading-9 font-semibold tracking-[-0.02em]">
             Welcome to KakiConnect! ☕
           </h1>
           <p className="mt-2 text-[11px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
@@ -55,7 +61,7 @@ export default function ElderlyWelcome() {
             type="button"
             aria-label={playing ? "Stop greeting" : "Listen to voice greeting"}
             aria-pressed={playing}
-            className="mt-6 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-ink"
+            className="mt-5 flex w-full items-center gap-3 rounded-xl bg-lilac-wash px-4 py-3.5 text-left ring-1 ring-ink"
             onClick={toggle}
           >
             <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-lilac text-ink">
@@ -88,12 +94,6 @@ export default function ElderlyWelcome() {
           </p>
         ) : null}
 
-        <div className="mt-auto pt-8">
-          <PrimaryLink href="/elderly/setup" className="h-16 text-lg">
-            Get Started
-            <ArrowRight className="size-5" />
-          </PrimaryLink>
-        </div>
       </div>
     </AppShell>
   );

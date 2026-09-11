@@ -217,7 +217,7 @@ export function SetupFlow({ step }: { step: number }) {
           {step === 7 ? (
             <a
               href={nextHref}
-              className="mt-2 flex min-h-12 w-full items-center justify-center py-2 text-center text-sm font-semibold text-muted-foreground"
+              className="mt-1 flex min-h-10 w-full items-center justify-center py-1 text-center text-sm font-semibold text-muted-foreground"
             >
               Skip voice greeting for now
             </a>
@@ -226,7 +226,7 @@ export function SetupFlow({ step }: { step: number }) {
       }
     >
       {step === 0 ? (
-        <div className="space-y-5">
+        <div className="space-y-4">
           <div>
             <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.02em]">
               What should we call you?
@@ -686,14 +686,14 @@ export function SetupFlow({ step }: { step: number }) {
       ) : null}
 
       {step === 7 ? (
-        <div className="space-y-4">
+        <div className="space-y-3">
           <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.02em]">
             Say a quick hello! <span className="text-base font-medium text-muted-foreground">(Optional)</span>
           </h1>
           <p className="text-[16px] leading-[26px] text-muted-foreground">
             A short 10-second voice note makes fellow Kakis feel welcome and at ease.
           </p>
-          <Card>
+          <Card className="p-4">
             <p className="font-bold">Voice Note Recorded</p>
             <p className="mt-1 text-sm text-muted-foreground">0:10 / 0:10</p>
             <button
@@ -703,13 +703,13 @@ export function SetupFlow({ step }: { step: number }) {
               <Play className="size-4" /> Play My Greeting
             </button>
           </Card>
-          <Card>
+          <Card className="p-4">
             <p className="font-semibold">Example prompt to say:</p>
             <p className="mt-1 text-sm italic">
               “Hello! I am Uncle Tan, love morning kopi and brisk walks!”
             </p>
           </Card>
-          <Card>
+          <Card className="p-4">
             <p className="flex items-center gap-2 font-bold">
               <Shield className="size-4 text-primary" /> Privacy & Dignity Guarantee
             </p>
@@ -721,7 +721,7 @@ export function SetupFlow({ step }: { step: number }) {
       ) : null}
 
       {step === 8 ? (
-        <div className="space-y-4">
+        <div className="space-y-3">
           <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.02em]">
             Make text comfortable to read
           </h1>
@@ -752,7 +752,7 @@ export function SetupFlow({ step }: { step: number }) {
               ) : null}
             </button>
           ))}
-          <Card>
+          <Card className="p-4">
             <p className="text-[11px] font-bold tracking-wide text-primary uppercase">
               Live Preview · Comfortable Size
             </p>
