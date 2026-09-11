@@ -64,8 +64,8 @@ export default function FamilyNote() {
                 setNote(event.target.value);
                 if (status === "error") setStatus("idle");
               }}
-              rows={5}
-              className="min-h-32 rounded-2xl text-base md:text-base"
+              rows={4}
+              className="field-sizing-fixed min-h-[8.5rem] resize-none rounded-[18px] bg-white px-5 py-4 text-base leading-relaxed md:text-base"
               placeholder="Bring a bottle of water?"
             />
           </label>
