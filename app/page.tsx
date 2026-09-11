@@ -56,21 +56,23 @@ export default function RolePage() {
 
       <a
         href={featured.href}
-        className={`relative mt-6 flex items-end overflow-hidden rounded-[32px] border-2 border-ink ${featured.tone} px-5 pt-5`}
+        className={`relative mt-6 flex flex-col overflow-hidden rounded-[32px] border-2 border-ink ${featured.tone} px-5 pt-5 pb-3`}
       >
-        <div className="min-w-0 flex-1 pb-5">
-          <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
-          <p className="mt-1 max-w-[11rem] text-sm text-[#7a6c60]">{featured.hint}</p>
-          <div className="mt-8 flex items-center justify-between gap-3 pr-2">
-            <p className="text-sm font-bold">Continue</p>
-            <GoButton />
+        <div className="flex min-h-0 flex-1 items-end gap-2">
+          <div className="min-w-0 flex-1 pb-1">
+            <p className="text-[22px] font-extrabold tracking-[-0.03em]">{featured.title}</p>
+            <p className="mt-1 max-w-[11rem] text-sm text-[#7a6c60]">{featured.hint}</p>
           </div>
+          <UiPic
+            src={featured.art}
+            alt=""
+            className="-mb-1 h-40 w-auto max-w-[46%] shrink-0 object-contain object-bottom"
+          />
         </div>
-        <UiPic
-          src={featured.art}
-          alt=""
-          className="-mb-1 h-44 w-auto max-w-[46%] shrink-0 object-contain object-bottom"
-        />
+        <span className="relative z-10 mt-auto flex items-center justify-between pt-2">
+          <span className="text-sm font-bold">Continue</span>
+          <GoButton />
+        </span>
       </a>
 
       <div className="relative mt-3 grid grid-cols-2 gap-3">
