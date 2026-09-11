@@ -33,6 +33,72 @@ const estates = [
   "Woodlands",
 ];
 
+const estateDetails: Record<
+  string,
+  { short: string; region: string; kakis: number; scene: string }
+> = {
+  "Bedok / East Coast": {
+    short: "Bedok",
+    region: "East Region",
+    kakis: 14,
+    scene:
+      "Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.",
+  },
+  "Toa Payoh": {
+    short: "Toa Payoh",
+    region: "Central Region",
+    kakis: 11,
+    scene:
+      "Void-deck kopi, garden walks, and market uncles are looking for new friends nearby.",
+  },
+  "Ang Mo Kio": {
+    short: "Ang Mo Kio",
+    region: "North-East Region",
+    kakis: 18,
+    scene:
+      "Bishan-AMK park walks, library chats, and morning stretches are looking for new friends nearby.",
+  },
+  Tampines: {
+    short: "Tampines",
+    region: "East Region",
+    kakis: 9,
+    scene:
+      "Hub kopi meet-ups, evening park loops, and supermarket buddies are looking for new friends nearby.",
+  },
+  "Jurong East": {
+    short: "Jurong East",
+    region: "West Region",
+    kakis: 7,
+    scene:
+      "Lakeside strolls, mall kopi, and Chinese garden walks are looking for new friends nearby.",
+  },
+  Clementi: {
+    short: "Clementi",
+    region: "West Region",
+    kakis: 8,
+    scene:
+      "West Coast walks, Clementi Mall chats, and kopitiam regulars are looking for new friends nearby.",
+  },
+  Woodlands: {
+    short: "Woodlands",
+    region: "North Region",
+    kakis: 12,
+    scene:
+      "Causeway Point meet-ups, park connector walks, and morning tai chi are looking for new friends nearby.",
+  },
+};
+
+function estateInfo(estate: string) {
+  return (
+    estateDetails[estate] ?? {
+      short: estate,
+      region: "Singapore",
+      kakis: 6,
+      scene: "Friendly neighbourhood kakis are looking for new friends nearby.",
+    }
+  );
+}
+
 const languages = [
   { id: "hk", code: "HK", label: "Hokkien", on: true },
   { id: "en", code: "EN", label: "English", on: true },
@@ -124,6 +190,7 @@ export function SetupFlow({ step }: { step: number }) {
   const progress = ((step + 1) / total) * 100;
   const nextHref = step >= total - 1 ? "/elderly/home" : `/elderly/setup?step=${step + 1}`;
   const backHref = step === 0 ? "/elderly" : `/elderly/setup?step=${step - 1}`;
+  const area = estateInfo(estate);
 
   return (
     <AppShell
@@ -295,7 +362,9 @@ export function SetupFlow({ step }: { step: number }) {
           </div>
           <div>
             <p className="mb-2 font-semibold">Your Estate / Town</p>
-            <p className="mb-2 text-xs font-semibold text-primary">East Region · Selected Location</p>
+            <p className="mb-2 text-xs font-semibold text-primary">
+              {area.region} · Selected Location
+            </p>
             <select
               value={estate}
               onChange={(event) => setEstate(event.target.value)}
@@ -326,10 +395,10 @@ export function SetupFlow({ step }: { step: number }) {
               ))}
             </div>
             <div className="mt-4 rounded-[24px] border-2 border-ink bg-green-wash p-4">
-              <p className="font-bold text-[#1f5a48]">14 Kakis are active in Bedok!</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Morning tai chi, coffee chats, and supermarket buddies are looking for new friends nearby.
+              <p className="font-bold text-[#1f5a48]">
+                {area.kakis} Kakis are active in {area.short}!
               </p>
+              <p className="mt-1 text-sm text-muted-foreground">{area.scene}</p>
             </div>
           </div>
         </div>
@@ -703,7 +772,7 @@ export function SetupFlow({ step }: { step: number }) {
             You&apos;re all set, Uncle Tan!
           </h1>
           <p className="mt-3 max-w-sm text-[16px] leading-[26px] text-muted-foreground">
-            Your profile is ready. Friendly Kakis in Bedok are excited to meet you!
+            Your profile is ready. Friendly Kakis in {area.short} are excited to meet you!
           </p>
         </div>
       ) : null}
