@@ -34,7 +34,7 @@ const nav = {
 } as const;
 
 const circleBtn =
-  "flex size-10 shrink-0 items-center justify-center rounded-full bg-lilac-wash text-[#5a3d8a] ring-1 ring-lilac transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lilac focus-visible:ring-offset-2";
+  "flex size-10 shrink-0 items-center justify-center rounded-full bg-lilac text-ink transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lilac focus-visible:ring-offset-2";
 
 export function AppShell({
   children,
