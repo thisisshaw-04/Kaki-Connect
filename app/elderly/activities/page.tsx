@@ -166,7 +166,7 @@ export default function ActivitiesPage() {
         <Card tone="blush">
           <p className="font-bold">Need assistance right now?</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Reach Silver Generation Ambassador or emergency response hotline with one tap.
+            Reach AIC Silver Generation Ambassador or emergency response hotline with one tap.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2">
             <a
