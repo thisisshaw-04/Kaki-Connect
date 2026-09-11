@@ -59,13 +59,13 @@ export default function ActivitiesPage() {
             role="list"
             aria-label="Activity filters"
           >
-            <div className="flex w-max min-h-12 items-center gap-2 px-5 py-1.5">
+            <div className="flex w-max min-h-12 items-center gap-2 px-5 py-2">
               {activityFilters.map((item, index) => (
                 <span
                   key={item}
                   role="listitem"
                   aria-current={index === 0 ? "true" : undefined}
-                  className={`inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] leading-none font-semibold ${
+                  className={`inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full px-3.5 py-2.5 text-[13px] leading-snug font-semibold ${
                     index === 0 ? "bg-lilac text-ink" : "bg-white text-foreground ring-1 ring-ink"
                   }`}
                 >
